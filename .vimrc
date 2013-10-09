@@ -14,3 +14,4 @@ set background=dark
 color solarized 
 colorscheme solarized 
 
+set noswapfile
