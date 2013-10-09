@@ -1,5 +1,3 @@
-[user]
-	name = Cyryl Plotnicki-Chudyk
 
 [mergetool "filemerge"]
 	cmd = /Applications/Xcode.app/Contents/Applications/FileMerge.app/Contents/MacOS/FileMerge -merge $MERGED -left $LOCAL -ancestor $BASE -right $REMOTE
@@ -25,9 +23,4 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
-[push]
-	default = simple
-[color]
-	ui = true
-[help]
-	autocorrect = 1
+
