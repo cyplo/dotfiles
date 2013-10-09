@@ -15,6 +15,7 @@ color solarized
 colorscheme solarized 
 
 set noswapfile
+set encoding=utf-8
 
 execute pathogen#infect()
 filetype plugin indent on
