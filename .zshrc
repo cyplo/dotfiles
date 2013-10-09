@@ -13,4 +13,8 @@ promptinit
 
 prompt redhat
 
+if [[ `uname` == 'Darwin' ]]; then
+	alias vim=/usr/local/Cellar/vim/7.4/bin/vim
+fi
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
