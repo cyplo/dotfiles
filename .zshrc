@@ -4,6 +4,8 @@ SAVEHIST=1000
 setopt appendhistory autocd extendedglob nomatch notify
 unsetopt beep
 
+bindkey -v
+
 autoload -U compinit
 compinit
 setopt completealiases
