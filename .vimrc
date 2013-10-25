@@ -24,5 +24,10 @@ set encoding=utf-8
 
 execute pathogen#infect()
 filetype plugin indent on
+
+"always show statusline
 set laststatus=2
+"don't show default mode indicators
+set noshowmode
+let g:bufferline_echo = 0
 
