@@ -10,3 +10,6 @@
 [submodule ".vim/bundle/vim-syntastic"]
 	path = .vim/bundle/vim-syntastic
 	url = https://github.com/scrooloose/syntastic
+[submodule "cygwin/mintty-colors-solarized"]
+	path = cygwin/mintty-colors-solarized
+	url = https://github.com/mavnn/mintty-colors-solarized.git
