@@ -13,3 +13,6 @@
 [submodule "cygwin/mintty-colors-solarized"]
 	path = cygwin/mintty-colors-solarized
 	url = https://github.com/mavnn/mintty-colors-solarized.git
+[submodule ".vim/bundle/salt-vim"]
+	path = .vim/bundle/salt-vim
+	url = https://github.com/saltstack/salt-vim.git
