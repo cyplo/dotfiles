@@ -29,6 +29,7 @@ filetype plugin indent on
 set laststatus=2
 "don't show default mode indicators
 set noshowmode
+"airline
 let g:bufferline_echo = 0
 let g:airline_powerline_fonts = 1
-
+let g:airline#extensions#tabline#enabled = 1
