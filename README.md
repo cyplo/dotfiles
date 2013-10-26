@@ -3,6 +3,7 @@ My common dotfiles for Linux, Mac and Cygwin
 Contains my e.g. my vim, terminal and font configs.
 
 Fonts:
+
     [cyryl@dagrey ~]$ cd .local/share/  
     [cyryl@dagrey share]$ rm -fr fonts 
     [cyryl@dagrey share]$ ln -s /home/cyryl/dev/dotfiles/.local/share/fonts .
