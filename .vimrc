@@ -2,13 +2,6 @@
 set noswapfile
 set encoding=utf-8
 
-" colours
-set t_Co=256
-syntax on
-set background=dark
-color solarized 
-colorscheme solarized 
-
 " special chars
 nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
@@ -25,6 +18,12 @@ set expandtab
 execute pathogen#infect()
 filetype plugin indent on
 
+" colours [need pathogen]
+set t_Co=256
+syntax enable
+set background=dark
+colorscheme solarized
+
 " plugins: airline
 let g:bufferline_echo = 0
 let g:airline_powerline_fonts = 1
@@ -32,8 +31,6 @@ let g:airline#extensions#tabline#enabled = 1
 
 
 " appearance
-highlight clear SignColumn
-"highlight SignColumn ctermbg=brblack
 set relativenumber
 set laststatus=2
 set noshowmode
