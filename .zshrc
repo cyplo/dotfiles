@@ -10,11 +10,20 @@ autoload -U compinit
 compinit
 setopt completealiases
 
-autoload -U promptinit
+autoload -U comptinit promptinit
+compinit
 promptinit
 
+#default, should be everywhere
 prompt redhat
 
+prompt -l | grep -i gentoo > /dev/null
+code=$?
+if [[ $code == 0 ]]; then
+    prompt gentoo
+fi
+
+zstyle ':completion::complete:*' use-cache 1
 if [[ `uname` == 'Darwin' ]]; then
 	alias vim=/usr/local/Cellar/vim/7.4/bin/vim
 fi
