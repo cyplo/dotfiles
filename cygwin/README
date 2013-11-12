@@ -1,0 +1,4 @@
+install CACerts:
+    cp cacert.pem /etc/pki/ca-trust/extracted/pem/cacert.pem 
+    ln -s /etc/pki/ca-trust/extracted/pem/cacert.pem /usr/ssl/certs/ca-bundle.crt
+
