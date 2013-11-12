@@ -1,3 +1,3 @@
 [http]
-sslCAinfo = /usr/ssl/certs/github.bundle.pem
+#sslCAinfo = /usr/ssl/certs/github.bundle.pem
 
