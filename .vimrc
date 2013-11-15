@@ -2,8 +2,9 @@
 set noswapfile
 set encoding=utf-8
 
-" paste toggle
 nmap <leader>p :set paste!<CR>
+nmap <leader>h :set hlsearch!<CR>
+
 " special chars
 nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
