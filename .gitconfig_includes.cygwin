@@ -1,3 +1,14 @@
-[http]
-#sslCAinfo = /usr/ssl/certs/github.bundle.pem
+[difftool "kdiff3"]
+    path = kdiff3
+    trustExitCode = false
+[difftool]
+    prompt = false
+[diff]
+    tool = kdiff3
+[mergetool "kdiff3"]
+    path = kdiff3
+    trustExitCode = false
+    keepBackup = false
+[merge]
+    tool = kdiff3
 
