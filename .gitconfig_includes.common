@@ -8,5 +8,3 @@
 [push]
 	default = simple
 
-[core]
-	autocrlf = true
