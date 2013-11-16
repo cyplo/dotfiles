@@ -4,3 +4,6 @@
 
 [user]
 	signingkey = 49EEAFC2
+
+[alias]
+	signedcommit = !git commit -S
