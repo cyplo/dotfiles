@@ -12,3 +12,5 @@
 [merge]
     tool = kdiff3
 
+[core]
+	autocrlf = true
