@@ -10,5 +10,5 @@
 [core]
 	pager = cat
 [alias]
-    tree = log --oneline --decorate --all --graph -n 16
+    tree = log --oneline --show-signature --decorate --all --graph -n 16
 
