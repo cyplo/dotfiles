@@ -14,6 +14,4 @@
 
 [core]
 	autocrlf = true
-[alias]
-    tree = log --oneline --decorate --all --graph -n 16
 

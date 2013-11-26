@@ -9,3 +9,6 @@
 	default = simple
 [core]
 	pager = cat
+[alias]
+    tree = log --oneline --decorate --all --graph -n 16
+
