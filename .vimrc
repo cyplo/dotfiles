@@ -2,8 +2,16 @@
 set noswapfile
 set encoding=utf-8
 
+" key mappings
+let mapleader = ","
 nmap <leader>p :set paste!<CR>
 nmap <leader>h :set hlsearch!<CR>
+nnoremap ; :
+
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
 
 " special chars
 nmap <leader>l :set list!<CR>
