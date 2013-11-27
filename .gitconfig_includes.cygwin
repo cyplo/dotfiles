@@ -13,5 +13,5 @@
     tool = kdiff3
 
 [core]
-	autocrlf = true
+	autocrlf = false
 
