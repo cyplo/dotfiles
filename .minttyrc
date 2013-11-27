@@ -1,4 +1,4 @@
-BoldAsFont=no
+BoldAsFont=yes
 Term=xterm-256color
 Columns=225
 Rows=70
@@ -23,6 +23,7 @@ White=238,232,213
 BoldWhite=253,246,227
 Font=Inconsolata for Powerline
 FontHeight=12
-FontSmoothing=full
-Locale=C
+FontSmoothing=partial
+Locale=en_GB
 Charset=UTF-8
+FontIsBold=yes

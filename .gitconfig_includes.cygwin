@@ -1,5 +1,5 @@
 [difftool "kdiff3"]
-    path = kdiff3
+    path = kdiff3.sh
     trustExitCode = false
 [difftool]
     prompt = false
