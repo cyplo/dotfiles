@@ -64,6 +64,10 @@ if [[ `uname` == 'Darwin' ]]; then
 	alias vim=/usr/local/Cellar/vim/7.4/bin/vim
 fi
 
+if [[ `uname` =~ 'CYGWIN.*' ]]; then
+    export DISPLAY=:0.0
+fi
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$HOME/tools:$PATH
 EDITOR="vim"
