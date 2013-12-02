@@ -10,5 +10,5 @@
 [core]
 	pager = cat
 [alias]
-    tree = log --show-signature --color --pretty=format:\"%ad %d %C(yellow) %h %C(reset)%an \" --date=short --all --graph -n 16
+    tree = log --show-signature --color --decorate --date=short --all --graph -n 8
 
