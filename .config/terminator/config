@@ -11,9 +11,9 @@
     cursor_color = "#eee8d5"
     foreground_color = "#eee8d5"
     show_titlebar = False
-    font = Inconsolata for Powerline Medium 12
+    font = Inconsolata Medium 12
     background_color = "#002b36"
-  [layouts]
+[layouts]
   [[default]]
     [[[child1]]]
       type = Terminal
