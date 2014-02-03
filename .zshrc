@@ -69,6 +69,7 @@ if [[ `uname` =~ 'CYGWIN.*' ]]; then
 fi
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-PATH=$HOME/tools:$PATH
-EDITOR="vim"
+export PATH=$HOME/tools:$PATH
+export EDITOR="vim"
+export KEYTIMEOUT=1
 
