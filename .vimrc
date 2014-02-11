@@ -48,3 +48,6 @@ set laststatus=2
 set noshowmode
 set showtabline=1 "only show tabline when more than 1 tab
 
+" vimdiff
+set diffopt+=iwhite
+set diffexpr=""
