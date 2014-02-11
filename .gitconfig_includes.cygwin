@@ -10,7 +10,7 @@
     trustExitCode = false
     keepBackup = false
 [merge]
-    tool = kdiff3
+    tool = vimdiff
 
 [core]
 	autocrlf = false
