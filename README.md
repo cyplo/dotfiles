@@ -2,6 +2,10 @@ My common dotfiles for Linux, Mac and Cygwin
 
 e.g. my vim, terminal and font configs.
 
+install:
+clone this repo
+run install_fedora.sh on fedora, more systems coming soon
+
 Fonts:
 
     [cyryl@dagrey ~]$ cd .local/share/  
