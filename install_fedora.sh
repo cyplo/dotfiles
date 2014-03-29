@@ -2,7 +2,7 @@
 
 #software and shell
 sudo yum install vim tmux atop zsh
-chsh -s /bin/zsh
+sudo chsh -s `which zsh` $USER 
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
@@ -30,4 +30,6 @@ $DIR/gnome-terminal-colors-solarized/install.sh
 #setting colors to solarized should result in the default proile with the following id set
 #TODO: choose the profile dynamically
 dconf write /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/font "'Inconsolata for Powerline Medium 18'"
+dconf write /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/login-shell true
+echo "now go ahead and restart Gnome session"
 
