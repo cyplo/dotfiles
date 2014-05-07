@@ -3,6 +3,8 @@
 #software and shell
 sudo yum install vim tmux atop zsh thunderbird thunderbird-enigmail thunderbird-lightning firefox
 sudo chsh -s `which zsh` $USER 
+curl -sSL https://get.rvm.io | bash -s stable
+rvm install ruby
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
