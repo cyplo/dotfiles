@@ -11,6 +11,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 #symbolic links
 ln -s "$DIR/.vim" ~/.
 ln -s "$DIR/.vimrc" ~/.
+ln -s "$DIR/.tmux.conf" ~/.
 ln -s "$DIR/.zshrc" ~/.
 ln -s "$DIR/.oh-my-zsh" ~/.
 ln -s "$DIR/.gitconfig.linux.private" ~/.gitconfig
