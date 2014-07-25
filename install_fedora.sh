@@ -3,6 +3,12 @@
 #software and shell
 sudo yum install vim tmux atop zsh thunderbird thunderbird-enigmail thunderbird-lightning firefox
 sudo chsh -s `which zsh` $USER 
+#fetch dependencies
+cd $DIR
+git submodule init
+git submodule update --recursive
+#rvm
+
 curl -sSL https://get.rvm.io | bash -s stable
 rvm install ruby
 
@@ -12,6 +18,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ln -s "$DIR/.vim" ~/.
 ln -s "$DIR/.vimrc" ~/.
 ln -s "$DIR/.tmux.conf" ~/.
+rm -f "$DIR/.zshrc"
 ln -s "$DIR/.zshrc" ~/.
 ln -s "$DIR/.oh-my-zsh" ~/.
 ln -s "$DIR/.gitconfig.linux.private" ~/.gitconfig
@@ -22,10 +29,6 @@ mkdir ~/.fonts
 cp -rv "$DIR/fonts" ~/.fonts
 fc-cache
 
-#fetch dependencies
-cd $DIR
-git submodule init
-git submodule update
 
 #set solarized scheme
 $DIR/gnome-terminal-colors-solarized/install.sh
