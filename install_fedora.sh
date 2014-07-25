@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #software and shell
-sudo yum install vim tmux atop zsh thunderbird thunderbird-enigmail thunderbird-lightning firefox aria2
+sudo yum install vim tmux atop zsh thunderbird thunderbird-enigmail thunderbird-lightning firefox aria2 gajim lm_sensors
 sudo chsh -s `which zsh` $USER 
 #fetch dependencies
 cd $DIR
