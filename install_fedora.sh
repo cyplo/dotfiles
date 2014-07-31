@@ -4,15 +4,15 @@
 sudo yum install vim tmux atop zsh thunderbird thunderbird-enigmail thunderbird-lightning firefox aria2 gajim lm_sensors
 sudo chsh -s `which zsh` $USER 
 #fetch dependencies
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR
 git submodule init
 git submodule update --recursive
-#rvm
 
+#rvm
 curl -sSL https://get.rvm.io | bash -s stable
 rvm install ruby
-
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 #symbolic links
 ln -s "$DIR/.vim" ~/.
