@@ -1,7 +1,10 @@
 #!/bin/bash
 
 #software and shell
-sudo yum install vim tmux atop zsh thunderbird thunderbird-enigmail thunderbird-lightning firefox aria2 gajim lm_sensors
+FEDORA_VERSION=`rpm -E %fedora`
+sudo yum install http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$FEDORA_VERSION.noarch.rpm
+sudo yum install http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$FEDORA_VERSION.noarch.rpm
+sudo yum install vim tmux atop zsh thunderbird thunderbird-enigmail thunderbird-lightning firefox aria2 gajim lm_sensors vlc freecad
 sudo chsh -s `which zsh` $USER 
 #fetch dependencies
 
