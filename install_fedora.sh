@@ -24,6 +24,7 @@ ln -s "$DIR/.tmux.conf" ~/.
 rm -f "$DIR/.zshrc"
 ln -s "$DIR/.zshrc" ~/.
 ln -s "$DIR/.oh-my-zsh" ~/.
+ln -s "$DIR/.Slic3r" ~/.
 ln -s "$DIR/.gitconfig.linux.private" ~/.gitconfig
 ln -s "$DIR/tools" ~/
 
