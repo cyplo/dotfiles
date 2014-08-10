@@ -3,7 +3,7 @@
 	path = dev/dotfiles/.gitconfig_includes.linux
 
 [user]
-	signingkey = 49EEAFC2
+	signingkey = B5D5BFAF
 
 [alias]
 	signedcommit = !git commit -S
