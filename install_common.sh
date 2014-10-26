@@ -25,6 +25,10 @@ ln -s "$DIR/.Slic3r" ~/.
 ln -s "$DIR/.gitconfig.linux.private" ~/.gitconfig
 ln -s "$DIR/tools" ~/
 
+# stuff that does not like symbolic links
+rm -f ~/.config/terminator/config
+ln "$DIR/.config/terminator/config" ~/.config/terminator/config
+
 #install fonts
 mkdir ~/.fonts
 cp -rv "$DIR/fonts" ~/.fonts
