@@ -7,7 +7,7 @@ fi
 
 device=$1
 
-timestamp=`date +%Y%M%d`
+timestamp=`date +%Y%m%d`
 dest_file="/tmp/$timestamp.dd.xz"
 
 echo "about to clone $device to $dest_file"

@@ -67,7 +67,7 @@ fi
 if [[ `uname` =~ 'CYGWIN.*' ]]; then
     export DISPLAY=:0.0
 else
-    alias ssh="torsocks ssh"
+    alias tssh="torsocks ssh"
 fi
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

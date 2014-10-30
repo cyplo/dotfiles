@@ -14,6 +14,10 @@ curl -sSL https://get.rvm.io | bash -s stable
 source $HOME/.rvm/scripts/rvm
 rvm install ruby
 
+# talks: reveal-md
+sudo ln -s /usr/bin/nodejs /usr/bin/node
+sudo npm install -g reveal-md
+
 #symbolic links
 ln -s "$DIR/.vim" ~/.
 ln -s "$DIR/.vimrc" ~/.
@@ -24,6 +28,10 @@ ln -s "$DIR/.oh-my-zsh" ~/.
 ln -s "$DIR/.Slic3r" ~/.
 ln -s "$DIR/.gitconfig.linux.private" ~/.gitconfig
 ln -s "$DIR/tools" ~/
+
+# stuff that does not like symbolic links
+rm -f ~/.config/terminator/config
+ln "$DIR/.config/terminator/config" ~/.config/terminator/config
 
 #install fonts
 mkdir ~/.fonts
