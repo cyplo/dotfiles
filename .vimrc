@@ -43,6 +43,7 @@ let g:airline#extensions#tabline#enabled = 1
 
 
 " appearance
+set number
 set relativenumber
 set laststatus=2
 set noshowmode
