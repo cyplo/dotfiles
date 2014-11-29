@@ -10,6 +10,6 @@
 [core]
 	pager = cat
 [alias]
-    tree = log --show-signature --color --decorate --date=short --all --graph -n 6
+    tree = log --show-signature --color --decorate --date=short --all --graph -n 9
 [mergetool]
 	keepBackup = false
