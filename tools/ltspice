@@ -1,0 +1,3 @@
+#!/bin/sh
+wine /home/cyryl/.wine/drive_c/Program\ Files\ \(x86\)/LTC/LTspiceIV/scad3.exe
+
