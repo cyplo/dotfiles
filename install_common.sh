@@ -1,14 +1,14 @@
 #!/bin/bash
 
 #zsh
-sudo chsh -s `which zsh` $USER 
+sudo true
+chsh -s `which zsh` $USER 
 
 #submodules
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR
 git submodule init
 git submodule update --recursive
-
 
 #symbolic links
 ln -vfs "$DIR/.vim" ~/.
