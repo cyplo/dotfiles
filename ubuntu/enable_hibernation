@@ -1,0 +1,4 @@
+#!/bin/sh
+sudo cp -v com.ubuntu.enable-hibernate.pkla /var/lib/polkit-1/localauthority/50-local.d/
+echo "Don't forget to install Hibernate Status Button"
+
