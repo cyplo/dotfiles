@@ -11,5 +11,15 @@
 	pager = cat
 [alias]
     tree = log --show-signature --color --decorate --date=short --all --graph -n 9
+[core]
+    autocrlf = false
+
+
+[diff]
+    tool = kdiff3
+[difftool]
+    prompt = false
+[merge]
+    tool = kdiff3
 [mergetool]
 	keepBackup = false
