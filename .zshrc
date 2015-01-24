@@ -8,7 +8,6 @@ plugins=(vi-mode svn git python history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
 HISTFILE=~/.histfile
 HISTSIZE=10240
 SAVEHIST=10240
@@ -20,6 +19,13 @@ compinit
 setopt completealiases
 
 zstyle ':completion::complete:*' use-cache 1
+
+# bind UP and DOWN arrow keys
+zmodload zsh/terminfo
+bindkey "$terminfo[cuu1]" history-substring-search-up
+bindkey "$terminfo[cud1]" history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
 
 if [[ `uname` == 'Darwin' ]]; then
 	alias vim=/usr/local/Cellar/vim/7.4/bin/vim
