@@ -3,12 +3,19 @@ My common dotfiles for Linux, Mac and Cygwin
 e.g. my vim, terminal and font configs.
 
 install:
-clone this repo
-run install_fedora.sh or install_ubuntu.sh to setup the whole box
+
+    sudo apt-get update
+    sudo apt-get install git # or yum install git
+     
+    ssh-keygen -b 8192
+    cat ~/.ssh/id_rsa.pub
+    #add the above key to github
+    mkdir ~/dev
+    cd ~/dev
+    git clone git@github.com:cyplo/dotfiles.git
+    cd dotfiles
+    ./install_ubuntu #or ./install_fedora
 
 TODO:
-* use terminator for all configs
-* investigate chsh failing
 * automate adding backports to debian-based distros
-* automate enabling hibernation on ubuntu
 
