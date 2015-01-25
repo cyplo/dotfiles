@@ -44,5 +44,7 @@ sudo ln -s /usr/bin/nodejs /usr/bin/node
 sudo npm install -g reveal-md
 
 echo
-echo "now go ahead and restart Gnome session"
+echo "now go ahead and restart"
+echo
+
 
