@@ -1,7 +1,9 @@
 #!/bin/bash
 
-#zsh
+echo
+echo "configuring settings common among OSes"
 sudo true
+#zsh
 chsh -s `which zsh` $USER 
 
 #submodules

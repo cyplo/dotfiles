@@ -14,7 +14,8 @@ install:
     cd ~/dev
     git clone git@github.com:cyplo/dotfiles.git
     cd dotfiles
-    ./install_ubuntu #or ./install_fedora
+    ./ubuntu/configure_fresh_system
+    # or /debian/.. or /fedora/..
 
 TODO:
 * automate adding backports to debian-based distros
