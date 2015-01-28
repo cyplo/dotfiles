@@ -6,7 +6,7 @@
 [diff]
     tool = kdiff3
 [mergetool "kdiff3"]
-    path = kdiff3
+    path = kdiff3.sh
     trustExitCode = false
     keepBackup = false
 [merge]
