@@ -1,0 +1,27 @@
+#!/bin/bash
+
+if [[ -z $1 ]] || [[ -z $2 ]]; then
+    echo "usage: $0 restore_file.xz device_to_restore_to"
+    exit
+fi
+
+source_file=$1
+if [[ ! -f $source_file ]]; then
+    echo "cannot open $source_file"
+    exit
+fi
+
+device=$2
+timestamp=`date +%Y%m%d`
+
+echo "about to restore $source_file onto $device"
+echo "ctrl-c or [enter]"
+read
+
+sudo umount $device?
+sudo umount $device
+
+pv -tpreb $source_file | pixz -d | sudo dd bs=4M of=$device
+sudo sync
+sudo eject $device
+
