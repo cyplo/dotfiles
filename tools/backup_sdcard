@@ -17,6 +17,7 @@ read
 sudo umount $device?
 sudo umount $device
 
+sudo sync
 sudo pv -tpreb $device | dd bs=4M | pixz > $dest_file
 sudo sync
 

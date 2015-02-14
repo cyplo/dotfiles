@@ -12,7 +12,6 @@ if [[ ! -f $source_file ]]; then
 fi
 
 device=$2
-timestamp=`date +%Y%m%d`
 
 echo "about to restore $source_file onto $device"
 echo "ctrl-c or [enter]"
