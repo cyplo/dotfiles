@@ -1,0 +1,3 @@
+#!/bin/bash
+sudo apt-get remove $(dpkg -l|egrep '^ii  linux-(im|he)'|awk '{print $2}'|grep -v `uname -r`)
+
