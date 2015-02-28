@@ -14,8 +14,10 @@ echo "about to clone $device to $dest_file"
 echo "ctrl-c or [enter]"
 read
 
-umount $device?
-umount $device
+sudo umount $device?
+sudo umount $device
 
+sudo sync
 sudo pv -tpreb $device | dd bs=4M | pixz > $dest_file
+sudo sync
 

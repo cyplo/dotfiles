@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 bzr launchpad-login "saipeloan" 
 bzr whoami "Cyryl Plotnicki-Chudyk <bzr@cyplo.net>" 
 
@@ -16,17 +18,21 @@ bzr checkout lp:kicad kicad.bzr
 cd kicad.bzr
 mkdir build
 cd build
+echo "compiling...."
 cmake -DKICAD_STABLE_VERSION=ON ../
 make clean
 make -j8
+echo "installing..."
 sudo make install
 
 # install component libraries
 cd ~/build/kicad
+echo "checking out libraries..."
 bzr checkout lp:~kicad-product-committers/kicad/library kicad-library.bzr
 cd kicad-library.bzr
 mkdir build 
 cd build/ 
+echo "installing libraries"
 cmake ../ 
 sudo make install
 
