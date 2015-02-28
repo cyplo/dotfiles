@@ -20,6 +20,7 @@ rm -f "~/.zshrc"
 ln -vfs "$DIR/.zshrc" ~/.
 ln -vfs "$DIR/.oh-my-zsh" ~/.
 ln -vfs "$DIR/.Slic3r" ~/.
+ln -vfs "$DIR/.ghci" ~/.
 ln -vfs "$DIR/.gitconfig.linux.private" ~/.gitconfig
 ln -vfs "$DIR/tools" ~/
 
