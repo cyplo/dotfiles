@@ -11,6 +11,7 @@
 	pager = cat
 [alias]
     tree = log --show-signature --color --decorate --date=short --all --graph -n 9
+    head = log HEAD -n1
 [core]
     autocrlf = false
 
