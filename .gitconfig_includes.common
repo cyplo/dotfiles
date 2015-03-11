@@ -17,7 +17,7 @@
 
 
 [diff]
-    tool = vimdiff
+    tool = kdiff3
 [difftool]
     prompt = false
 [merge]
