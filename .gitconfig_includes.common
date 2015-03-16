@@ -14,16 +14,11 @@
     head = log HEAD -n1
 [core]
     autocrlf = false
-
-
 [diff]
-    tool = kdiff3
+    tool = vimdiff
 [difftool]
     prompt = false
 [merge]
     tool = kdiff3
 [mergetool]
 	keepBackup = false
-[mergetool "splice"]
-    cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
-    trustExitCode = true
