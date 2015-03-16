@@ -1,5 +1,9 @@
-" file settings
+" global settings
+set nocompatible
 set noswapfile
+set undofile
+set undodir=$HOME/.vim/undo
+" file settings
 set encoding=utf-8
 
 " key mappings
