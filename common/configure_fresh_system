@@ -12,7 +12,7 @@ cd $DIR
 git submodule init
 git submodule update --recursive
 
-#symbolic links
+#configs
 ln -vfs "$DIR/.vim" ~/.
 ln -vfs "$DIR/.vimrc" ~/.
 ln -vfs "$DIR/.tmux.conf" ~/.
@@ -24,6 +24,8 @@ ln -vfs "$DIR/.ghci" ~/.
 mkdir -p ~/.kde/share/config/
 ln -vfs "$DIR/.kdiff3rc" ~/.kde/share/config/kdiff3rc
 ln -vfs "$DIR/.gitconfig.linux.private" ~/.gitconfig
+
+# tools
 ln -vfs "$DIR/tools" ~/
 
 # stuff that does not like symbolic links
