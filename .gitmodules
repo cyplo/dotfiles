@@ -44,3 +44,6 @@
 [submodule ".vim/bundle/vim-dirdiff"]
 	path = .vim/bundle/vim-dirdiff
 	url = git://github.com/will133/vim-dirdiff
+[submodule "tools/subuser"]
+	path = tools/subuser
+	url = https://github.com/subuser-security/subuser
