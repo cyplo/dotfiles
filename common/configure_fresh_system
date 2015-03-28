@@ -7,7 +7,8 @@ sudo true
 chsh -s `which zsh` $USER 
 
 #submodules
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DIR=`realpath $DIR`
+echo "using $DIR as the top level directory"
 cd $DIR
 git submodule init
 git submodule update --recursive
