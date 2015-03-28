@@ -12,10 +12,10 @@
 #==============================================================================
 
 background yes
-update_interval 1
+update_interval 10
 
-cpu_avg_samples 1
-net_avg_samples 2
+cpu_avg_samples 3
+net_avg_samples 5
 temperature_unit celsius
 
 double_buffer yes
