@@ -1,0 +1,9 @@
+#!/bin/bash
+sudo yum install -y libbsd-devel libbsd glibc-devel libX11-devel help2man autoconf git tar glib2 glib2-devel kernel-devel kernel-headers automake gcc gtk2-devel
+sudo yum install -y VirtualGL VirtualGL.i686
+sudo yum install -y http://install.linux.ncsu.edu/pub/yum/itecs/public/bumblebee/fedora21/noarch/bumblebee-release-1.2-1.noarch.rpm 
+sudo yum install -y bbswitch bumblebee
+sudo yum install -y http://install.linux.ncsu.edu/pub/yum/itecs/public/bumblebee-nonfree/fedora21/noarch/bumblebee-nonfree-release-1.2-1.noarch.rpm
+sudo yum install -y bumblebee-nvidia
+sudo yum install -y primus primus.i686
+
