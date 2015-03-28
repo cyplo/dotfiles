@@ -27,6 +27,12 @@ bindkey "$terminfo[cud1]" history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
+# override prompt builder for the dir part
+# render just the last dir name
+prompt_dir() {
+    prompt_segment blue black '%1~'
+}
+
 if [[ `uname` == 'Darwin' ]]; then
 	alias vim=/usr/local/Cellar/vim/7.4/bin/vim
 fi
