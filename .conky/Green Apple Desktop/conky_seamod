@@ -103,9 +103,9 @@ ${offset 150}${font Ubuntu:size=9,weight:bold}${color1}/home free: ${font Ubuntu
 ${voffset 43}
 ${offset 90}${font Ubuntu:size=10,weight:bold}${color5}NETWORK
 ${voffset 60}             
-${offset 15}${color1}${font Ubuntu:size=9,weight:bold}Up: ${alignr}${font Ubuntu:size=9,weight:normal}$color2${upspeed wlp3s0} / ${totalup}
+${offset 15}${color1}${font Ubuntu:size=9,weight:bold}Up: ${alignr}${font Ubuntu:size=9,weight:normal}$color2${upspeed wlp3s0}
 ${offset 15}${upspeedgraph wlp3s0 40,285 4B1B0C FF5C2B 100 -l}
-${offset 15}${color1}${font Ubuntu:size=9,weight:bold}Down: ${alignr}${font Ubuntu:size=9,weight:normal}$color2${downspeed wlp3s0} / ${totaldown}
+${offset 15}${color1}${font Ubuntu:size=9,weight:bold}Down: ${alignr}${font Ubuntu:size=9,weight:normal}$color2${downspeed wlp3s0}
 ${offset 15}${downspeedgraph wlp3s0 40,285 324D23 77B753 100 -l}
 
 ${color4}${hr 2}
