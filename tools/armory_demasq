@@ -1,0 +1,12 @@
+#!/bin/bash
+set -e
+set -v
+USB_INTERFACE=enp0s20u3
+INTERNET_INTERFACE=wlp3s0
+
+echo 0 | sudo tee /proc/sys/net/ipv4/ip_forward
+
+sudo /sbin/ip addr del 10.0.0.2/24 dev $USB_INTERFACE
+
+sudo /sbin/ip link set $USB_INTERFACE down
+
