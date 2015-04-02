@@ -1,8 +1,13 @@
 #!/bin/bash
 set -e
 set -v
-USB_INTERFACE=enp0s20u3
-INTERNET_INTERFACE=wlp3s0
+if [[ -z "$USB_INTERFACE" ]]; then
+    USB_INTERFACE=usb0
+fi
+
+if [[ -z "$INTERNET_INTERFACE" ]]; then
+    INTERNET_INTERFACE=wlan0
+fi
 
 echo 0 | sudo tee /proc/sys/net/ipv4/ip_forward
 
