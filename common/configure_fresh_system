@@ -26,6 +26,8 @@ mkdir -p ~/.kde/share/config/
 ln -vfs "$DIR/.kdiff3rc" ~/.kde/share/config/kdiff3rc
 ln -vfs "$DIR/.conky" ~/.
 ln -vfs "$DIR/.gitconfig.linux.private" ~/.gitconfig
+mkdir -p ~/.config/autostart/
+ln -vfs "$DIR/.config/autostart/conky.desktop" ~/.config/autostart/
 
 # tools
 ln -vfs "$DIR/tools" ~/
