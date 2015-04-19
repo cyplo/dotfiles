@@ -1,0 +1,9 @@
+#!/bin/sh
+sudo apt-get install build-essential python libcoin80-dev libsoqt4-dev \
+libxerces-c2-dev libboost-dev libboost-date-time-dev libboost-filesystem-dev \
+libboost-graph-dev libboost-iostreams-dev libboost-program-options-dev \
+libboost-serialization-dev libboost-signals-dev \
+libboost-regex-dev libboost-thread-dev \
+libqt4-dev qt4-dev-tools python2.7-dev liboce-foundation-dev liboce-modeling-dev liboce-ocaf-dev liboce-visualization-dev oce-draw libsoqt4-dev \
+libode-dev subversion cmake libeigen2-dev libsimage-dev python-qt4 \
+libtool autotools-dev automake bison flex gfortran libeigen3-dev libqtwebkit-dev git libpyside-dev pyside-tools libshiboken-dev
