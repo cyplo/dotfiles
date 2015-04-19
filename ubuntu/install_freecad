@@ -1,7 +1,8 @@
 #!/bin/sh
 set -e
 set -v
-
+sudo add-apt-repository ppa:freecad-maintainers/freecad-daily 
+sudo apt-get update
 sudo apt-get install build-essential python libcoin80-dev libsoqt4-dev \
 libxerces-c2-dev libboost-dev libboost-date-time-dev libboost-filesystem-dev \
 libboost-graph-dev libboost-iostreams-dev libboost-program-options-dev \
