@@ -1,0 +1,5 @@
+[mergetool "p4merge"]
+    cmd = 'C:/Program Files/Perforce/p4merge.exe' "$(cygpath -wla $BASE)" "$(cygpath -wla $LOCAL)" "$(cygpath -wla $REMOTE)" "$(cygpath -wla $MERGED)" 
+    trustExitCode = false
+[merge]
+  tool = p4merge
