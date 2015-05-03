@@ -33,6 +33,7 @@ prompt_dir() {
     prompt_segment blue black '%1~'
 }
 
+# aliases
 if [[ `uname` == 'Darwin' ]]; then
 	alias vim=/usr/local/Cellar/vim/7.4/bin/vim
 fi
@@ -43,6 +44,7 @@ else
     alias tssh="torsocks ssh"
 fi
 
+# env vars
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$HOME/tools:$PATH
 export PATH=/usr/local/heroku/bin:$PATH

@@ -1,0 +1,6 @@
+#!/bin/sh
+set -e
+set -v
+sudo add-apt-repository ppa:freecad-maintainers/freecad-daily 
+sudo apt-get update
+sudo aptitude install freecad
