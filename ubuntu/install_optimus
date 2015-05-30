@@ -1,8 +1,7 @@
 #!/bin/bash
 set -e
 set -v
-sudo aptitude install -y bumblebee
 sudo aptitude install -y nvidia-346
-sudo aptitude install -y bumblebee-nvidia
+sudo aptitude install -y bumblebee bumblebee-nvidia primus
 sudo cp -v bumblebee.conf /etc/bumblebee/bumblebee.conf
 sudo cp -v nouveau.conf /etc/modprobe.d/nouveau.conf
