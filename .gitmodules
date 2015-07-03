@@ -47,3 +47,6 @@
 [submodule "tools/subuser"]
 	path = tools/subuser
 	url = https://github.com/subuser-security/subuser
+[submodule ".oh-my-zsh-plugins/zsh-syntax-highlighting"]
+	path = .oh-my-zsh-plugins/zsh-syntax-highlighting
+	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
