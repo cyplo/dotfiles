@@ -30,6 +30,8 @@ ln -vfs "$DIR/.conky" ~/.
 ln -vfs "$DIR/.gitconfig.linux.private" ~/.gitconfig
 mkdir -p ~/.config/autostart/
 ln -vfs "$DIR/.config/autostart/conky.desktop" ~/.config/autostart/
+mkdir -p ~/.config/todoman/
+ln -vfs "$DIR/.config/todoman/todoman.conf" ~/.config/todoman/
 
 # tools
 ln -vfs "$DIR/tools" ~/
@@ -53,6 +55,10 @@ rvm install ruby
 # talks: reveal-md
 sudo ln -s /usr/bin/nodejs /usr/bin/node
 sudo npm install -g reveal-md
+
+# todoman
+cd "$DIR/common/todoman/"
+sudo python3 setup.py install
 
 echo
 echo "now go ahead and restart"
