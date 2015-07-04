@@ -56,9 +56,10 @@ rvm install ruby
 sudo ln -s /usr/bin/nodejs /usr/bin/node
 sudo npm install -g reveal-md
 
-# todoman
+# TODOs + sync
 cd "$DIR/common/todoman/"
 sudo python3 setup.py install
+sudo pip install vdirsyncer
 
 echo
 echo "now go ahead and restart"
