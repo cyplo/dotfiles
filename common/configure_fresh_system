@@ -32,6 +32,8 @@ mkdir -p ~/.config/autostart/
 ln -vfs "$DIR/.config/autostart/conky.desktop" ~/.config/autostart/
 mkdir -p ~/.config/todoman/
 ln -vfs "$DIR/.config/todoman/todoman.conf" ~/.config/todoman/
+mkdir -p ~/.config/vdirsyncer/
+ln -vfs "$DIR/.config/vdirsyncer/config" ~/.config/vdirsyncer/
 
 # tools
 ln -vfs "$DIR/tools" ~/

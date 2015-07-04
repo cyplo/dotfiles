@@ -1,0 +1,28 @@
+# An example configuration for vdirsyncer.
+
+# Optional parameters are commented out.
+# This file doesn't document all available parameters, see
+# http://vdirsyncer.readthedocs.org/ for the rest of them.
+
+[general]
+# A folder where vdirsyncer can store some metadata about each pair.
+status_path = ~/.vdirsyncer/status/
+
+[pair calendar]
+a = calendar_local
+b = calendar_remote
+collections = ["from b"]
+#conflict_resolution = null
+
+[storage calendar_local]
+type = filesystem
+path = ~/.calendars/
+fileext = .ics
+
+[storage calendar_remote]
+type = caldav
+url = https://pim.cyplo.net/cal.php/calendars/cyryl/
+username = cyryl
+#password =
+
+
