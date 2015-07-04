@@ -17,6 +17,11 @@ install:
     ./ubuntu/configure_fresh_system
     # or /debian/.. or /fedora/..
 
+GNOME extensions list:
+* Clipboard Indicator
+* Hibernate Status Button
+* Pixel Saver
+
 TODO:
 * automate adding backports to debian-based distros
-
+* automate adding gnome extensions
