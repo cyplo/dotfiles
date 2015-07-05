@@ -12,10 +12,15 @@ nmap <leader>p :set paste!<CR>
 nmap <leader>h :set hlsearch!<CR>
 nnoremap ; :
 
+" no cheating !
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
+
+" for damaged keyboards
+map <F1> <Esc>
+imap <F1> <Esc>
 
 " special chars
 nmap <leader>l :set list!<CR>
