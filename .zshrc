@@ -41,6 +41,7 @@ if [[ `uname` =~ 'CYGWIN.*' ]]; then
     export DISPLAY=:0.0
 else
     alias tssh="torsocks ssh"
+    alias tscp="torsocks scp"
 fi
 
 # env vars
