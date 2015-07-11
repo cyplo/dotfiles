@@ -53,3 +53,6 @@
 [submodule "common/todoman"]
 	path = common/todoman
 	url = https://git.barrera.io/hobarrera/todoman.git
+[submodule ".vim/bundle/rust.vim"]
+	path = .vim/bundle/rust.vim
+	url = https://github.com/rust-lang/rust.vim.git
