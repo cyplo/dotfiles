@@ -48,6 +48,13 @@ mkdir ~/.fonts
 cp -rv "$DIR/fonts" ~/.fonts
 fc-cache
 
+#rust
+curl -sSf https://static.rust-lang.org/rustup.sh | sh
+cd "$DIR/.vim/bundle/racer/"
+cargo build
+cd "$HOME/dev/"
+git clone https://github.com/rust-lang/rust.git
+
 #rvm
 gpg --recv-keys BF04FF17
 curl -sSL https://get.rvm.io | bash -s stable

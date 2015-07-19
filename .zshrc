@@ -49,6 +49,8 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$HOME/tools:$PATH
 export PATH=/usr/local/heroku/bin:$PATH
 export PATH=$HOME/tools/subuser/logic:$HOME/.subuser/bin:$PATH
+export PATH=$HOME/dev/dotfiles/.vim/bundle/racer/target/debug:$PATH
+export RUST_SRC_PATH=$HOME/dev/rust/src
 export EDITOR="vim"
 export KEYTIMEOUT=1
 
