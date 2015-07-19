@@ -1,0 +1,2 @@
+language: bash
+script: ./ubuntu/configure_fresh_system
