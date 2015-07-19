@@ -3,7 +3,6 @@
 set -e
 echo
 echo "configuring settings common among OSes"
-sudo true
 #zsh
 chsh -s `which zsh` $USER 
 
