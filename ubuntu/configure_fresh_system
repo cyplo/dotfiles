@@ -9,7 +9,7 @@ sudo apt-get update
 UPGRADE_COMMAND="sudo $COMMAND_PREFIX dist-upgrade"
 eval ${UPGRADE_COMMAND}
 
-INSTALL_COMMAND="sudo $COMMAND_PREFIX install meld whois zsh tmux vim atop aria2 curl pv pixz gajim tor torsocks nodejs npm terminator gsmartcontrol python-pip mesa-utils mesa-utils-extra aptitude p7zip-full p7zip-rar thunderbird mercurial kdiff3 gnupg2 python3-setuptools aircrack-ng macchanger realpath"
+INSTALL_COMMAND="sudo $COMMAND_PREFIX install meld whois zsh tmux vim atop aria2 curl pv pixz gajim tor torsocks nodejs npm terminator gsmartcontrol python-pip mesa-utils mesa-utils-extra aptitude p7zip-full p7zip-rar thunderbird mercurial kdiff3 gnupg2 python3-setuptools aircrack-ng macchanger realpath python3-dev python3 python3-pip"
 eval ${INSTALL_COMMAND}
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
