@@ -1,2 +1,2 @@
 language: bash
-script: ./ubuntu/configure_fresh_system
+script: ./travis/configure_fresh_system

@@ -1,21 +1,13 @@
 #!/bin/bash
 # detect if building inside a CI system, like Travis
-if [ -z ${IN_CI+x} ]; then
-    echo "choosing the more interactive installation method"
-    COMMAND_PREFIX="apt-get -y";
-else
-    echo "choosing totally noninteractive installation method"
-    COMMAND_PREFIX="DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::=\"--force-confdef\" -o Dpkg::Options::=\"--force-confnew\"";
-fi 
+echo "choosing the more interactive installation method"
+COMMAND_PREFIX="apt-get -y";
 set -e
 
 sudo apt-get update
 
-if [ -z ${IN_CI+x} ]; then
-    echo "upgrading whole system, as not in CI"
-    UPGRADE_COMMAND="sudo $COMMAND_PREFIX dist-upgrade"
-    eval ${UPGRADE_COMMAND}
-fi
+UPGRADE_COMMAND="sudo $COMMAND_PREFIX dist-upgrade"
+eval ${UPGRADE_COMMAND}
 
 INSTALL_COMMAND="sudo $COMMAND_PREFIX install meld whois zsh tmux vim atop aria2 curl pv pixz gajim tor torsocks nodejs npm terminator gsmartcontrol python-pip mesa-utils mesa-utils-extra aptitude p7zip-full p7zip-rar thunderbird mercurial kdiff3 gnupg2 python3-setuptools aircrack-ng macchanger"
 eval ${INSTALL_COMMAND}
