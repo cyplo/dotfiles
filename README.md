@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/cyplo/dotfiles.svg?branch=master)](https://travis-ci.org/cyplo/dotfiles)
+
 My common dotfiles for Linux, Mac and Cygwin
 
 e.g. my vim, terminal and font configs.
