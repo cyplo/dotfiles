@@ -1,2 +1,4 @@
 language: bash
 script: ./travis/configure_fresh_system
+git:
+    submodules: false
