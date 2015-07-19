@@ -74,7 +74,7 @@ echo "installing todoman"
 cd "$DIR/common/todoman/"
 sudo python3 setup.py install
 echo "installing vdirsyncer"
-sudo pip3 install vdirsyncer
+sudo pip install vdirsyncer
 
 echo
 echo "now go ahead and restart"
