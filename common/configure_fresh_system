@@ -66,7 +66,7 @@ source $HOME/.rvm/scripts/rvm
 rvm install ruby
 
 # talks: reveal-md
-sudo ln -s /usr/bin/nodejs /usr/bin/node
+sudo ln -vfs /usr/bin/nodejs /usr/bin/node
 sudo npm install -g reveal-md
 
 # TODOs + sync
