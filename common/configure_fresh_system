@@ -53,7 +53,7 @@ cp -rv "$DIR/fonts" ~/.fonts
 fc-cache
 
 #rust
-curl -sSf https://static.rust-lang.org/rustup.sh | sh
+curl -sSf https://static.rust-lang.org/rustup.sh | bash -s -- -y
 cd "$DIR/.vim/bundle/racer/"
 cargo build
 cd "$HOME/dev/"
