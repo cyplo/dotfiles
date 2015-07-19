@@ -3,8 +3,13 @@
 set -e
 echo
 echo "configuring settings common among OSes"
+sudo true
+
 #zsh
-chsh -s `which zsh` $USER 
+if [[ -z $DONT_CHANGE_SHELL ]]; then
+    echo "changing shell to zsh"
+    chsh -s `which zsh` $USER 
+fi
 
 #submodules
 DIR=`realpath $DIR`

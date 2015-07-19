@@ -5,10 +5,10 @@ COMMAND_PREFIX="DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::=\"-
 
 sudo apt-get update
 
-INSTALL_COMMAND="sudo $COMMAND_PREFIX install meld whois zsh tmux vim atop aria2 curl pv pixz gajim tor torsocks nodejs npm terminator gsmartcontrol python-pip mesa-utils mesa-utils-extra aptitude p7zip-full p7zip-rar thunderbird mercurial kdiff3 gnupg2 python3-setuptools"
+INSTALL_COMMAND="sudo $COMMAND_PREFIX install meld whois zsh tmux vim atop aria2 curl pv gajim tor torsocks nodejs npm terminator gsmartcontrol python-pip mesa-utils mesa-utils-extra aptitude p7zip-full p7zip-rar thunderbird mercurial kdiff3 gnupg2 python3-setuptools"
 eval ${INSTALL_COMMAND}
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DIR="$DIR/../"
-DIR="$DIR" $DIR/common/configure_fresh_system
+DONT_CHANGE_SHELL=TRUE DIR="$DIR" $DIR/common/configure_fresh_system
 
