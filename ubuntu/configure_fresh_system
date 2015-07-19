@@ -1,9 +1,11 @@
 #!/bin/bash
 # detect if building inside a CI system, like Travis
 if [ -z ${IN_CI+x} ]; then
-    COMMAND_PREFIX="DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::=\"--force-confdef\" -o Dpkg::Options::=\"--force-confnew\"";
-else
+    echo "choosing the more interactive installation method"
     COMMAND_PREFIX="apt-get -y";
+else
+    echo "choosing totally noninteractive installation method"
+    COMMAND_PREFIX="DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::=\"--force-confdef\" -o Dpkg::Options::=\"--force-confnew\"";
 fi 
 
 sudo apt-get update
