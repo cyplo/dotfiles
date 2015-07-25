@@ -25,5 +25,6 @@ GNOME extensions list:
 * Pixel Saver
 
 TODO:
+* make the list of packages for the different debian-based distros shared among them
 * automate adding backports to debian-based distros
 * automate adding gnome extensions
