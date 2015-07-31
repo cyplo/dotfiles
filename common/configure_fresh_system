@@ -48,16 +48,23 @@ rm -f ~/.config/terminator/config
 ln "$DIR/.config/terminator/config" ~/.config/terminator/config
 
 #install fonts
-mkdir ~/.fonts
+mkdir -p ~/.fonts
 cp -rv "$DIR/fonts" ~/.fonts
 fc-cache
 
 #rust
+echo "installing rust"
 curl -sSf https://static.rust-lang.org/rustup.sh | bash -s -- -y
 cd "$DIR/.vim/bundle/racer/"
 cargo build
 cd "$DIR/../"
-git clone https://github.com/rust-lang/rust.git
+echo "getting rust sources..."
+if [[ ! -d rust ]]; then
+    git clone https://github.com/rust-lang/rust.git
+else
+    cd rust 
+    git pull
+fi
 
 #rvm
 gpg --recv-keys BF04FF17
