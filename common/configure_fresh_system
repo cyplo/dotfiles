@@ -37,6 +37,12 @@ ln -vfs "$DIR/.config/autostart/conky.desktop" ~/.config/autostart/
 mkdir -p ~/.config/vdirsyncer/
 ln -vfs "$DIR/.config/vdirsyncer/config" ~/.config/vdirsyncer/
 
+# symlink 'nodejs' as node on some systems
+# will replace symlink if it exists, but won't replace regular file
+if [[ ! -f /usr/bin/node ]]; then
+    sudo ln -vfs /usr/bin/nodejs /usr/bin/node
+fi
+
 # tools
 ln -vfs "$DIR/tools" ~/
 
@@ -73,7 +79,6 @@ source $HOME/.rvm/scripts/rvm
 rvm install ruby
 
 # talks: reveal-md
-sudo ln -vfs /usr/bin/nodejs /usr/bin/node
 sudo npm install -g reveal-md
 
 # vdir syncer
