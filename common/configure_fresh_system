@@ -34,8 +34,6 @@ ln -vfs "$DIR/.conky" ~/.
 ln -vfs "$DIR/.gitconfig.linux.private" ~/.gitconfig
 mkdir -p ~/.config/autostart/
 ln -vfs "$DIR/.config/autostart/conky.desktop" ~/.config/autostart/
-mkdir -p ~/.config/todoman/
-ln -vfs "$DIR/.config/todoman/todoman.conf" ~/.config/todoman/
 mkdir -p ~/.config/vdirsyncer/
 ln -vfs "$DIR/.config/vdirsyncer/config" ~/.config/vdirsyncer/
 
@@ -77,9 +75,7 @@ rvm install ruby
 sudo ln -vfs /usr/bin/nodejs /usr/bin/node
 sudo npm install -g reveal-md
 
-# TODOs + sync
-echo "installing todoman"
-cd "$DIR/common/todoman/"
+# vdir syncer
 sudo python3 setup.py install
 echo "installing vdirsyncer"
 sudo pip install vdirsyncer
