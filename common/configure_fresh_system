@@ -76,7 +76,6 @@ sudo ln -vfs /usr/bin/nodejs /usr/bin/node
 sudo npm install -g reveal-md
 
 # vdir syncer
-sudo python3 setup.py install
 echo "installing vdirsyncer"
 sudo pip install vdirsyncer
 
