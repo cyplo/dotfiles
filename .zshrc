@@ -54,3 +54,6 @@ export RUST_SRC_PATH=$HOME/dev/rust/src
 export EDITOR="vim"
 export KEYTIMEOUT=1
 
+#temporary fix for rustc [https://github.com/rust-lang/rust-installer/issues/30], for Fedora only
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+

@@ -34,10 +34,14 @@ ln -vfs "$DIR/.conky" ~/.
 ln -vfs "$DIR/.gitconfig.linux.private" ~/.gitconfig
 mkdir -p ~/.config/autostart/
 ln -vfs "$DIR/.config/autostart/conky.desktop" ~/.config/autostart/
-mkdir -p ~/.config/todoman/
-ln -vfs "$DIR/.config/todoman/todoman.conf" ~/.config/todoman/
 mkdir -p ~/.config/vdirsyncer/
 ln -vfs "$DIR/.config/vdirsyncer/config" ~/.config/vdirsyncer/
+
+# symlink 'nodejs' as node on some systems
+# will replace symlink if it exists, but won't replace regular file
+if [[ ! -f /usr/bin/node ]]; then
+    sudo ln -vfs /usr/bin/nodejs /usr/bin/node
+fi
 
 # tools
 ln -vfs "$DIR/tools" ~/
@@ -48,31 +52,36 @@ rm -f ~/.config/terminator/config
 ln "$DIR/.config/terminator/config" ~/.config/terminator/config
 
 #install fonts
-mkdir ~/.fonts
+mkdir -p ~/.fonts
 cp -rv "$DIR/fonts" ~/.fonts
 fc-cache
 
 #rust
+echo "installing rust"
 curl -sSf https://static.rust-lang.org/rustup.sh | bash -s -- -y
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 cd "$DIR/.vim/bundle/racer/"
 cargo build
 cd "$DIR/../"
-git clone https://github.com/rust-lang/rust.git
+echo "getting rust sources..."
+if [[ ! -d rust ]]; then
+    git clone https://github.com/rust-lang/rust.git
+else
+    cd rust 
+    git pull
+fi
 
 #rvm
 gpg --recv-keys BF04FF17
+gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 curl -sSL https://get.rvm.io | bash -s stable
 source $HOME/.rvm/scripts/rvm
 rvm install ruby
 
 # talks: reveal-md
-sudo ln -vfs /usr/bin/nodejs /usr/bin/node
 sudo npm install -g reveal-md
 
-# TODOs + sync
-echo "installing todoman"
-cd "$DIR/common/todoman/"
-sudo python3 setup.py install
+# vdir syncer
 echo "installing vdirsyncer"
 sudo pip install vdirsyncer
 
