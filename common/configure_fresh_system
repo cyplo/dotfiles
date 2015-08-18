@@ -85,6 +85,9 @@ sudo npm install -g reveal-md
 echo "installing vdirsyncer"
 sudo pip install vdirsyncer
 
+# normalize npm permissions
+sudo chown $USER .npm -R
+
 echo
 echo "now go ahead and restart"
 echo
