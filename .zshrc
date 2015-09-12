@@ -47,6 +47,7 @@ fi
 # env vars
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$HOME/tools:$PATH
+export PATH=$HOME/.local/bin:$PATH
 export PATH=/usr/local/heroku/bin:$PATH
 export PATH=$HOME/tools/subuser/logic:$HOME/.subuser/bin:$PATH
 export PATH=$HOME/dev/dotfiles/.vim/bundle/racer/target/debug:$PATH
