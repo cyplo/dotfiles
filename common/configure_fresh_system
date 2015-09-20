@@ -37,6 +37,9 @@ ln -vfs "$DIR/.config/autostart/conky.desktop" ~/.config/autostart/
 mkdir -p ~/.config/vdirsyncer/
 ln -vfs "$DIR/.config/vdirsyncer/config" ~/.config/vdirsyncer/
 
+cd "$DIR/.vim/bundle/YouCompleteMe/"
+./install.sh --clang-completer
+
 # symlink 'nodejs' as node on some systems
 # will replace symlink if it exists, but won't replace regular file
 if [[ ! -f /usr/bin/node ]]; then
