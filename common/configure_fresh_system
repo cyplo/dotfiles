@@ -15,8 +15,7 @@ fi
 DIR=`realpath $DIR`
 echo "using $DIR as the top level directory"
 cd $DIR
-git submodule init
-git submodule update --recursive
+git submodule update --init --recursive
 
 #configs
 ln -vfs "$DIR/.vim" ~/.
@@ -38,6 +37,7 @@ mkdir -p ~/.config/vdirsyncer/
 ln -vfs "$DIR/.config/vdirsyncer/config" ~/.config/vdirsyncer/
 
 cd "$DIR/.vim/bundle/YouCompleteMe/"
+git submodule update --init --recursive
 ./install.sh --clang-completer
 
 # symlink 'nodejs' as node on some systems
