@@ -3,6 +3,10 @@ set nocompatible
 set noswapfile
 set undofile
 set undodir=$HOME/.vim/undo
+
+" buffers can be switched despite having changes
+set hidden
+
 " file settings
 set encoding=utf-8
 
@@ -10,6 +14,10 @@ set encoding=utf-8
 let mapleader = ","
 nmap <leader>p :set paste!<CR>
 nmap <leader>h :set hlsearch!<CR>
+
+" navigate buffers by ctrl-b
+nmap <C-b> :bprevious<CR>
+
 nnoremap ; :
 
 " no cheating !
