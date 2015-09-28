@@ -35,6 +35,7 @@ mkdir -p ~/.config/autostart/
 ln -vfs "$DIR/.config/autostart/conky.desktop" ~/.config/autostart/
 mkdir -p ~/.config/vdirsyncer/
 ln -vfs "$DIR/.config/vdirsyncer/config" ~/.config/vdirsyncer/
+ln -vfs "$DIR/.config/redshift.conf" ~/.config/redshift.conf
 
 cd "$DIR/.vim/bundle/YouCompleteMe/"
 git submodule update --init --recursive
