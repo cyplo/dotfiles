@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #software and shell
-sudo dnf -y install vim tmux atop zsh thunderbird thunderbird-enigmail thunderbird-lightning firefox aria2 gajim lm_sensors freecad python3-pip qt5-qtbase-devel qt5-qtwebkit-devel meld whois curl pv tor torsocks nodejs npm terminator gsmartcontrol python-pip mercurial python-devel libxslt-devel libjpeg-turbo-devel conky conky-manager redshift redshift-gtk cmake
+sudo dnf -y install vim tmux atop zsh thunderbird thunderbird-enigmail thunderbird-lightning firefox aria2 gajim lm_sensors freecad python3-pip qt5-qtbase-devel qt5-qtwebkit-devel meld whois curl pv tor torsocks nodejs npm terminator gsmartcontrol python-pip mercurial python-devel libxslt-devel libjpeg-turbo-devel conky conky-manager redshift redshift-gtk cmake gtk2-devel intltool
 FEDORA_VERSION=`rpm -E %fedora`
 sudo dnf -y install http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$FEDORA_VERSION.noarch.rpm
 sudo dnf -y install http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$FEDORA_VERSION.noarch.rpm
