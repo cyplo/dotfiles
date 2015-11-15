@@ -5,7 +5,7 @@ sudo dnf -y install vim tmux atop zsh thunderbird thunderbird-enigmail thunderbi
 FEDORA_VERSION=`rpm -E %fedora`
 sudo dnf -y install http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$FEDORA_VERSION.noarch.rpm
 sudo dnf -y install http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$FEDORA_VERSION.noarch.rpm
-sudo dnf -y install vlc
+sudo dnf -y install vlc splix gutenprint-cups cups-bjnp
 sudo dnf -y groupinstall "C Development Tools and Libraries"
 
 sudo systemctl enable tor
