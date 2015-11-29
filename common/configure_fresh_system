@@ -64,7 +64,11 @@ fc-cache
 
 #rust
 echo "installing rust"
-curl -sf https://raw.githubusercontent.com/brson/multirust/master/blastoff.sh | sh
+BLASTOFF_TEMP="/tmp/blastoff.sh"
+curl -sf https://raw.githubusercontent.com/brson/multirust/master/blastoff.sh > "$BLASTOFF_TEMP"
+chmod a+x "$BLASTOFF_TEMP"
+"$BLASTOFF_TEMP" --yes
+rm -f "$BLASTOFF_TEMP"
 multirust update
 multirust default stable
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
