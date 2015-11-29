@@ -64,7 +64,9 @@ fc-cache
 
 #rust
 echo "installing rust"
-curl -sSf https://static.rust-lang.org/rustup.sh | bash -s -- -y
+curl -sf https://raw.githubusercontent.com/brson/multirust/master/blastoff.sh | sh
+multirust update
+multirust default stable
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 cd "$DIR/.vim/bundle/racer/"
 cargo build
