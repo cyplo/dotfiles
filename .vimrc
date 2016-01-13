@@ -59,6 +59,11 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
 
+" plugins: ag/ack
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
 " appearance
 set number
 set relativenumber
