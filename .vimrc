@@ -3,6 +3,7 @@ set nocompatible
 set noswapfile
 set undofile
 set undodir=$HOME/.vim/undo
+set spell spelllang=en_gb
 
 " buffers can be switched despite having changes
 set hidden
