@@ -41,7 +41,7 @@ ln -vfs "$DIR/.config/redshift.conf" ~/.config/redshift.conf
 
 cd "$DIR/.vim/bundle/YouCompleteMe/"
 git submodule update --init --recursive
-./install.sh --clang-completer
+python install.py --clang-completer
 
 # symlink 'nodejs' as node on some systems
 # will replace symlink if it exists, but won't replace regular file
