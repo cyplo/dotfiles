@@ -25,6 +25,7 @@ bindkey "$terminfo[cuu1]" history-substring-search-up
 bindkey "$terminfo[cud1]" history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
+bindkey "^R" history-incremental-search-backward
 
 # override prompt builder for the dir part
 # render just the last dir name
