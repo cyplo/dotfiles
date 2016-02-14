@@ -1,12 +1,11 @@
 #!/bin/bash
+set -e
 FEDORA_VERSION=`rpm -E %fedora`
 sudo dnf install -y libbsd-devel libbsd glibc-devel libX11-devel help2man autoconf git tar glib2 glib2-devel kernel-devel kernel-headers automake gcc gtk2-devel
-sudo dnf install -y VirtualGL VirtualGL.i686
+sudo dnf install -y VirtualGL VirtualGL.i686 --best --allowerasing
 sudo dnf install -y http://install.linux.ncsu.edu/pub/yum/itecs/public/bumblebee/fedora$FEDORA_VERSION/noarch/bumblebee-release-1.2-1.noarch.rpm 
-sudo dnf install -y bbswitch bumblebee
 sudo dnf install -y http://install.linux.ncsu.edu/pub/yum/itecs/public/bumblebee-nonfree/fedora$FEDORA_VERSION/noarch/bumblebee-nonfree-release-1.2-1.noarch.rpm
-sudo dnf install -y bumblebee-nvidia
-sudo dnf install -y primus primus.i686
+sudo dnf install -y bumblebee-nvidia bbswitch-dkms primus primus.i686 --best --allowerasing
 sudo systemctl enable bumblebeed.service
 sudo systemctl start bumblebeed.service
 
