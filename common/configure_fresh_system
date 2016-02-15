@@ -60,7 +60,10 @@ ln "$DIR/.config/terminator/config" ~/.config/terminator/config
 #install fonts
 mkdir -p ~/.fonts
 cp -rv "$DIR/fonts" ~/.fonts
+set +e
 fc-cache -rv
+sudo fc-cache -rv
+set -e
 
 #rust
 echo "installing rust"
