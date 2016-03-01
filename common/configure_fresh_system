@@ -94,7 +94,8 @@ source $HOME/.rvm/scripts/rvm
 rvm install ruby
 
 # talks: reveal-md
-sudo npm install -g reveal-md diff-so-fancy
+sudo npm install -g reveal-md
+sudo npm install -g diff-so-fancy
 
 # vdir syncer
 echo "installing vdirsyncer"
