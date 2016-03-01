@@ -68,7 +68,7 @@ set -e
 #rust
 echo "installing rust"
 BLASTOFF_TEMP="/tmp/blastoff.sh"
-curl -sf https://raw.githubusercontent.com/brson/multirust/master/blastoff.sh > "$BLASTOFF_TEMP"
+curl -sf https://raw.githubusercontent.com/brson/multirust/master/quick-install.sh > "$BLASTOFF_TEMP"
 chmod a+x "$BLASTOFF_TEMP"
 "$BLASTOFF_TEMP" --yes
 rm -f "$BLASTOFF_TEMP"
