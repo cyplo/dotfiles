@@ -75,8 +75,6 @@ rm -f "$BLASTOFF_TEMP"
 multirust update
 multirust default stable
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
-cd "$DIR/.vim/bundle/racer/"
-cargo build
 cd "$DIR/../"
 echo "getting rust sources..."
 if [[ ! -d rust ]]; then
