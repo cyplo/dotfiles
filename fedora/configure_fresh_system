@@ -2,11 +2,11 @@
 
 #software and shell
 sudo dnf -y upgrade --best --allowerasing
-sudo dnf -y --best --allowerasing install vim tmux atop zsh thunderbird thunderbird-enigmail thunderbird-lightning firefox aria2 gajim lm_sensors freecad python3-pip qt5-qtbase-devel qt5-qtwebkit-devel meld whois curl pv tor torsocks nodejs npm terminator gsmartcontrol python-pip mercurial python-devel libxslt-devel libjpeg-turbo-devel conky conky-manager redshift redshift-gtk cmake gtk2-devel intltool gparted wine solaar glances mplayer the_silver_searcher dkms kernel-devel
+sudo dnf -y --best --allowerasing install vim tmux atop zsh thunderbird thunderbird-enigmail thunderbird-lightning firefox aria2 gajim lm_sensors freecad python3-pip qt5-qtbase-devel qt5-qtwebkit-devel meld whois curl pv tor torsocks nodejs npm terminator gsmartcontrol python-pip mercurial python-devel libxslt-devel libjpeg-turbo-devel conky conky-manager redshift redshift-gtk cmake gtk2-devel intltool gparted wine solaar glances the_silver_searcher dkms kernel-devel
 FEDORA_VERSION=`rpm -E %fedora`
 sudo dnf -y install http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$FEDORA_VERSION.noarch.rpm
 sudo dnf -y install http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$FEDORA_VERSION.noarch.rpm
-sudo dnf -y install vlc splix gutenprint-cups cups-bjnp keepass
+sudo dnf -y install vlc splix gutenprint-cups cups-bjnp keepass mplayer
 sudo dnf -y groupinstall "C Development Tools and Libraries"
 
 sudo systemctl enable tor
