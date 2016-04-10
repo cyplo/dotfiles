@@ -68,15 +68,13 @@ set -e
 #rust
 echo "installing rust"
 BLASTOFF_TEMP="/tmp/blastoff.sh"
-curl -sf https://raw.githubusercontent.com/brson/multirust/master/blastoff.sh > "$BLASTOFF_TEMP"
+curl -sf https://raw.githubusercontent.com/brson/multirust/master/quick-install.sh > "$BLASTOFF_TEMP"
 chmod a+x "$BLASTOFF_TEMP"
 "$BLASTOFF_TEMP" --yes
 rm -f "$BLASTOFF_TEMP"
 multirust update
 multirust default stable
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
-cd "$DIR/.vim/bundle/racer/"
-cargo build
 cd "$DIR/../"
 echo "getting rust sources..."
 if [[ ! -d rust ]]; then
@@ -94,7 +92,8 @@ source $HOME/.rvm/scripts/rvm
 rvm install ruby
 
 # talks: reveal-md
-sudo npm install -g reveal-md diff-so-fancy
+sudo npm install -g reveal-md
+sudo npm install -g diff-so-fancy
 
 # vdir syncer
 echo "installing vdirsyncer"
