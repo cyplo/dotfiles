@@ -1,3 +1,4 @@
 #!/bin/bash
-sudo apt-get remove $(dpkg -l|egrep '^ii  linux-(im|he)'|awk '{print $2}'|grep -v `uname -r`)
-
+sudo apt-get remove -y $(dpkg -l|egrep '^ii  linux-(im|he)'|awk '{print $2}'|grep -v `uname -r`)
+sudo apt-get install -y linux-image-generic
+sudo apt-get autoremove
