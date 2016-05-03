@@ -17,7 +17,7 @@
     foreground_color = "#eee8d5"
     icon_bell = False
     show_titlebar = False
-    font = Inconsolata for Powerline Bold 12
+    font = DejaVu Sans Mono for Powerline 12
     background_color = "#002b36"
     scrollback_infinite = True
 [layouts]
