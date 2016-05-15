@@ -11,10 +11,15 @@ set hidden
 " file settings
 set encoding=utf-8
 
+" plugins
+execute pathogen#infect()
+filetype plugin indent on
+
 " key mappings
 let mapleader = ","
 nmap <leader>p :set paste!<CR>
 nmap <leader>h :set hlsearch!<CR>
+nmap <leader>t :w <bar> :Make test<CR>
 
 " navigate buffers by ctrl-b
 nmap <C-b> :bprevious<CR>
@@ -42,10 +47,6 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
-
-" plugins
-execute pathogen#infect()
-filetype plugin indent on
 
 " colours [need pathogen]
 set t_Co=256
