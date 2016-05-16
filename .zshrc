@@ -54,6 +54,7 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=/usr/local/heroku/bin:$PATH
 export PATH=$HOME/tools/subuser/logic:$HOME/.subuser/bin:$PATH
 export PATH=$HOME/.multirust/toolchains/stable/cargo/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
 export RUST_SRC_PATH=$HOME/dev/rust/src
 export EDITOR="vim"
 export KEYTIMEOUT=1
