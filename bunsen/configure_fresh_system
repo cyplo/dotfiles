@@ -6,6 +6,9 @@ sudo apt-get -y install aptitude meld whois zsh tmux atop aria2 curl pv gajim to
 sudo systemctl enable tor
 sudo systemctl start tor
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DIR="$DIR/../"
+
 # install vim from sources
 git clone https://github.com/vim/vim.git
 cd vim
@@ -22,6 +25,4 @@ sudo make install
 cd
 rm -fr /tmp/vim
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-DIR="$DIR/../"
 DIR="$DIR" $DIR/common/configure_fresh_system
