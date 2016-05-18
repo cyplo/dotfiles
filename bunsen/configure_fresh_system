@@ -10,6 +10,8 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DIR="$DIR/../"
 
 # install vim from sources
+VIM_BUILD_DIR=/tmp
+cd "$VIM_BUILD_DIR"
 git clone https://github.com/vim/vim.git
 cd vim
 ./configure --with-features=huge \
@@ -23,6 +25,6 @@ cd vim
 make -j2
 sudo make install
 cd
-rm -fr /tmp/vim
+rm -fvr "$VIM_BUILD_DIR/vim"
 
 DIR="$DIR" $DIR/common/configure_fresh_system
