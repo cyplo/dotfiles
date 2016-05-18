@@ -83,6 +83,8 @@ else
     git pull
 fi
 
+cargo install rustfmt
+
 # racer
 set +e
 cargo install racer

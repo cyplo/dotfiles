@@ -15,6 +15,7 @@ set encoding=utf-8
 let mapleader = ","
 nmap <leader>p :set paste!<CR>
 nmap <leader>h :set hlsearch!<CR>
+nmap <leader>t :wa <bar> :Make test<CR>
 
 " navigate buffers by ctrl-b
 nmap <C-b> :bprevious<CR>
@@ -59,6 +60,8 @@ let g:bufferline_echo = 0
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
+" plugins: rust
+let g:rustfmt_autosave = 1
 
 " plugins: ag/ack
 if executable('ag')
