@@ -75,6 +75,12 @@ set laststatus=2
 set noshowmode
 set showtabline=1 "only show tabline when more than 1 tab
 
+" exclude quickfix from the buffers list
+augroup qf
+    autocmd!
+    autocmd FileType qf set nobuflisted
+augroup END
+
 " vimdiff
 set diffopt+=iwhite
 set diffexpr=""
