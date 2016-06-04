@@ -89,7 +89,6 @@ else
 fi
 
 cargo install rustfmt
-cargo install clippy
 cargo install racer
 
 # rvm
