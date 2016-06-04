@@ -93,7 +93,7 @@ cargo install racer
 
 # rvm
 gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-$CURL https://get.rvm.io | bash -s stable
+$CURL -L https://get.rvm.io | bash -s stable
 source $HOME/.rvm/scripts/rvm
 rvm install ruby
 
