@@ -11,6 +11,8 @@ if [[ -z $DONT_CHANGE_SHELL ]]; then
     chsh -s `which zsh` $USER 
 fi
 
+CURL="curl -sSf"
+
 #submodules
 DIR=`realpath $DIR`
 echo "using $DIR as the top level directory"
@@ -66,13 +68,13 @@ set -e
 
 #rust
 echo "installing rust"
-BLASTOFF_TEMP="/tmp/blastoff.sh"
-curl -sf https://raw.githubusercontent.com/brson/multirust/master/quick-install.sh > "$BLASTOFF_TEMP"
-chmod a+x "$BLASTOFF_TEMP"
-"$BLASTOFF_TEMP" --yes
-rm -f "$BLASTOFF_TEMP"
-multirust update
-multirust default stable
+RUSTUP_TEMP="/tmp/blastoff.sh"
+$CURL https://sh.rustup.rs > "$RUSTUP_TEMP"
+chmod a+x "$RUSTUP_TEMP"
+"$RUSTUP_TEMP" -y
+rm -f "$RUSTUP_TEMP"
+rustup update
+rustup default stable
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 cd "$DIR/../"
 echo "getting rust sources..."
@@ -92,7 +94,7 @@ set -e
 
 # rvm
 gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-curl -sSL https://get.rvm.io | bash -s stable
+$CURL https://get.rvm.io | bash -s stable
 source $HOME/.rvm/scripts/rvm
 rvm install ruby
 
