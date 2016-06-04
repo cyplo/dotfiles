@@ -25,6 +25,7 @@ ln -vfs "$DIR/.vimrc" ~/.
 ln -vfs "$DIR/.tmux.conf" ~/.
 rm -f "~/.zshrc"
 ln -vfs "$DIR/.zshrc" ~/.
+ln -vfs "$DIR/.setenv" ~/.
 ln -vfs "$DIR/.oh-my-zsh" ~/.
 ln -vfs "$DIR/.oh-my-zsh-plugins/zsh-syntax-highlighting" ~/.oh-my-zsh/custom/plugins/
 ln -vfs "$DIR/.Slic3r" ~/.
@@ -39,6 +40,8 @@ ln -vfs "$DIR/.config/autostart/redshift-gtk.desktop" ~/.config/autostart/
 mkdir -p ~/.config/vdirsyncer/
 ln -vfs "$DIR/.config/vdirsyncer/config" ~/.config/vdirsyncer/
 ln -vfs "$DIR/.config/redshift.conf" ~/.config/redshift.conf
+
+source ~/.setenv
 
 cd "$DIR/.vim/bundle/YouCompleteMe/"
 git submodule update --init --recursive
@@ -86,11 +89,8 @@ else
 fi
 
 cargo install rustfmt
-
-# racer
-set +e
+cargo install clippy
 cargo install racer
-set -e
 
 # rvm
 gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
