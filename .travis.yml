@@ -1,4 +1,4 @@
 language: bash
-script: ./travis/configure_fresh_system
+script: ./bunsen/test
 git:
     submodules: false
