@@ -3,6 +3,9 @@
 set -e
 
 export DEBIAN_FRONTEND=noninteractive
+export DONT_CHANGE_SHELL
+export DONT_START_TOR
+
 apt-get update
 apt-get install sudo
 cd $HOME
