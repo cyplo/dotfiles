@@ -12,6 +12,7 @@ if [[ -z $DONT_CHANGE_SHELL ]]; then
 fi
 
 CURL="curl -sSf"
+jobs_count=`nproc`
 
 #submodules
 DIR=`realpath $DIR`
@@ -92,8 +93,8 @@ set +e
 cargo uninstall rustfmt
 cargo uninstall racer
 set -e
-cargo install rustfmt
-cargo install racer
+cargo install -j $jobs_count rustfmt
+cargo install -j $jobs_count racer
 
 # rvm
 gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
