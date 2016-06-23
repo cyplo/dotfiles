@@ -1,4 +1,11 @@
 language: bash
+
 script: ./bunsen/test
+
+sudo: required
+
+services:
+      - docker
 git:
     submodules: false
+
