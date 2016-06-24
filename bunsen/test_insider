@@ -12,8 +12,8 @@ apt-get update
 apt-get install sudo
 cd $HOME
 
-mkdir -p dev/dotfiles/
-cp -rv temp/dotfiles dev/dotfiles
+mkdir -p dev/
+cp -rv temp/dotfiles dev/
 
 ./dev/dotfiles/bunsen/configure_fresh_system
 
