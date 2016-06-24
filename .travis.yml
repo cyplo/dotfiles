@@ -1,6 +1,6 @@
 language: bash
 
-script: docker run -v `pwd`:/root/dev/dotfiles/ debian:jessie /root/dev/dotfiles/bunsen/test
+script: ./bunsen/test_outsider 
 
 sudo: required
 

@@ -11,5 +11,9 @@ echo "APT::Acquire::Retries=16;" >> /etc/apt/apt.conf.d/99_retries
 apt-get update
 apt-get install sudo
 cd $HOME
+
+mkdir -p dev/dotfiles/
+cp -rv temp/dotfiles dev/dotfiles
+
 ./dev/dotfiles/bunsen/configure_fresh_system
 
