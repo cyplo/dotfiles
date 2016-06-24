@@ -22,6 +22,7 @@ fi
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DIR="$DIR/../"
+DIR="$DIR" $DIR/common/configure_fresh_system
 
 # install vim from sources
 VIM_BUILD_DIR=/tmp
@@ -41,4 +42,3 @@ sudo make install
 cd
 rm -fvr "$VIM_BUILD_DIR/vim"
 
-DIR="$DIR" $DIR/common/configure_fresh_system
