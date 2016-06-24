@@ -6,6 +6,9 @@ export DEBIAN_FRONTEND=noninteractive
 export DONT_CHANGE_SHELL
 export DONT_START_TOR
 
+echo "APT::Acquire::Retries=16" >> /etc/apt/apt.conf
+cat /etc/apt/apt.conf
+
 apt-get update
 apt-get install sudo
 cd $HOME
