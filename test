@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [[ -z $DETECTED_OS ]]; then
+    echo "cannot detect OS, please set DETECTED_OS manually"
+    exit 1
+fi
+
+./$DETECTED_OS/test_outsider
+

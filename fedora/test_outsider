@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker run -v `pwd`:/root/temp/dotfiles/ fedora:24 /root/temp/dotfiles/fedora/test_insider

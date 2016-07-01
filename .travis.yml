@@ -1,6 +1,12 @@
-language: bash
+language: 
+    - bash
 
-script: ./bunsen/test_outsider 
+script: 
+    - ./test 
+
+env:
+    - DETECTED_OS=fedora
+    - DETECTED_OS=bunsen
 
 sudo: required
 

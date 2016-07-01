@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e
+
+export DONT_CHANGE_SHELL=true
+export DONT_START_TOR=true
+
+dnf -y install sudo
+
+cd $HOME
+
+mkdir -p dev/
+cp -rv temp/dotfiles dev/
+
+./dev/dotfiles/fedora/configure_fresh_system
+
