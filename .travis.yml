@@ -1,8 +1,11 @@
 language: bash
 
 script: 
-    - ./fedora/test_outsider 
-    - ./bunsen/test_outsider 
+    - ./test 
+
+env:
+    - DETECTED_OS=fedora
+    - DETECTED_OS=bunsen
 
 sudo: required
 
