@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e
+set -v
 echo
 echo "configuring settings common among OSes"
 sudo true
@@ -98,7 +99,10 @@ cargo install racer
 # rvm
 gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 $CURL -L https://get.rvm.io | bash -s stable
+set +e
+source /etc/profile.d/rvm.sh
 source $HOME/.rvm/scripts/rvm
+set -e
 rvm install ruby
 
 # go
@@ -115,6 +119,10 @@ sudo npm install -g diff-so-fancy
 # vdir syncer
 echo "installing vdirsyncer"
 sudo pip install vdirsyncer
+
+if [[ -z $USER ]]; then
+    USER=`whoami`
+fi
 
 # normalize npm permissions
 mkdir -p $HOME/.npm

@@ -1,4 +1,11 @@
 language: bash
-script: ./travis/configure_fresh_system
+
+script: ./bunsen/test_outsider 
+
+sudo: required
+
+services:
+      - docker
 git:
     submodules: false
+
