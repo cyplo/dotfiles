@@ -1,6 +1,8 @@
 language: bash
 
-script: ./bunsen/test_outsider 
+script: 
+    ./fedora/test_outsider 
+    ./bunsen/test_outsider 
 
 sudo: required
 
