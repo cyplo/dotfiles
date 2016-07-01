@@ -11,8 +11,10 @@ sudo dnf -y install http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonf
 sudo dnf -y --best --allowerasing install vlc splix gutenprint-cups cups-bjnp keepass mplayer golang
 sudo dnf -y groupinstall "C Development Tools and Libraries"
 
-sudo systemctl enable tor
-sudo systemctl start tor
+if [[ -z $DONT_START_TOR ]]; then
+    sudo systemctl enable tor
+    sudo systemctl start tor
+fi
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DIR="$DIR/../"
