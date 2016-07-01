@@ -5,5 +5,5 @@ if [[ -z $DETECTED_OS ]]; then
     exit 1
 fi
 
-./$DETECTED_OS/configure_fresh_system
+./$DETECTED_OS/test_outsider
 
