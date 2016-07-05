@@ -23,22 +23,3 @@ fi
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DIR="$DIR/../"
 DIR="$DIR" $DIR/common/configure_fresh_system
-
-# install vim from sources
-VIM_BUILD_DIR=/tmp
-cd "$VIM_BUILD_DIR"
-git clone https://github.com/vim/vim.git
-cd vim
-./configure --with-features=huge \
-            --enable-multibyte \
-            --enable-rubyinterp \
-            --enable-pythoninterp \
-            --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \
-            --enable-perlinterp \
-            --enable-luainterp \
-            --enable-gui=gtk2 --enable-cscope --prefix=/usr
-make -j2
-sudo make install
-cd
-rm -fvr "$VIM_BUILD_DIR/vim"
-
