@@ -1,18 +1,44 @@
 #!/bin/bash
-# detect if building inside a CI system, like Travis
-echo "choosing the more interactive installation method"
-COMMAND_PREFIX="apt-get -y";
+
 set -e
+set -v
 
 sudo apt-get update
+sudo apt-get -y upgrade
+install_packages="sudo apt-get -y --fix-missing install aptitude meld whois zsh tmux atop aria2 curl pv gajim tor torsocks nodejs thunderbird thunderbird-enigmail thunderbird-ublock-origin gajim lm-sensors freecad python3-pip meld whois curl pv tor torsocks nodejs npm terminator gsmartcontrol python-pip mercurial redshift gtk-redshift cmake intltool gparted wine solaar glances silversearcher-ag dkms linux-kernel-headers golang keepass2 libncurses5-dev libgnome2-dev libgnomeui-dev libgtk2.0-dev libatk1.0-dev libbonoboui2-dev libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev ruby-dev git retext kdiff3 gnupg2 realpath apt-file"
 
-UPGRADE_COMMAND="sudo $COMMAND_PREFIX dist-upgrade"
-eval ${UPGRADE_COMMAND}
+set +e
+for i in `seq 1 3`; do
+        eval $install_packages
+done
 
-INSTALL_COMMAND="sudo $COMMAND_PREFIX install meld whois zsh tmux vim atop aria2 curl pv pixz gajim tor torsocks nodejs npm terminator gsmartcontrol python-pip mesa-utils mesa-utils-extra aptitude p7zip-full p7zip-rar thunderbird mercurial kdiff3 gnupg2 python3-setuptools aircrack-ng macchanger realpath python3-dev python3 python3-pip apt-file"
-eval ${INSTALL_COMMAND}
+set -e
+eval $install_packages
+
+if [[ -z $DONT_START_TOR ]]; then
+	sudo systemctl enable tor
+	sudo systemctl start tor
+fi
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DIR="$DIR/../"
 DIR="$DIR" $DIR/common/configure_fresh_system
+
+# install vim from sources
+VIM_BUILD_DIR=/tmp
+cd "$VIM_BUILD_DIR"
+git clone https://github.com/vim/vim.git
+cd vim
+./configure --with-features=huge \
+            --enable-multibyte \
+            --enable-rubyinterp \
+            --enable-pythoninterp \
+            --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \
+            --enable-perlinterp \
+            --enable-luainterp \
+            --enable-gui=gtk2 --enable-cscope --prefix=/usr
+make -j2
+sudo make install
+cd
+rm -fvr "$VIM_BUILD_DIR/vim"
 
