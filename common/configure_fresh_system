@@ -89,12 +89,8 @@ else
     git pull
 fi
 
-set +e
-cargo uninstall rustfmt
-cargo uninstall racer
-set -e
-cargo install rustfmt
-cargo install racer
+cargo install -f rustfmt
+cargo install -f racer
 
 # go
 export GOPATH="$HOME/go"
