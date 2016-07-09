@@ -71,6 +71,7 @@ Plugin 'tpope/vim-fugitive.git'
 Plugin 'airblade/vim-gitgutter.git'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
