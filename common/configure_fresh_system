@@ -45,7 +45,7 @@ source ~/.setenv
 
 cd "$DIR/.vim/bundle/YouCompleteMe/"
 git submodule update --init --recursive
-./install.py --all
+./install.py --racer-completer --clang-completer
 
 # symlink 'nodejs' as node on some systems
 # will replace symlink if it exists, but won't replace regular file
