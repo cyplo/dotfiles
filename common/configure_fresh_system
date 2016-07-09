@@ -1,7 +1,6 @@
 #!/bin/bash
 
 set -e
-set -v
 echo
 echo "configuring settings common among OSes"
 sudo true
@@ -83,10 +82,11 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 cd "$DIR/../"
 echo "getting rust sources..."
 if [[ ! -d rust ]]; then
-    git clone https://github.com/rust-lang/rust.git
+    git clone https://github.com/rust-lang/rust.git --recursive
 else
     cd rust 
     git pull
+    git submodule update --init --recursive
 fi
 
 cargo install -f rustfmt
