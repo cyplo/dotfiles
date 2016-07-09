@@ -20,6 +20,9 @@ nmap <leader>t :wa <bar> :Make test<CR>
 " navigate buffers by ctrl-b
 nmap <C-b> :bprevious<CR>
 
+" YCM
+nnoremap <Leader>g :YcmCompleter GoTo<CR>
+
 nnoremap ; :
 
 " no cheating !
