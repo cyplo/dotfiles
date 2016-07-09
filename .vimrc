@@ -48,10 +48,37 @@ set shiftwidth=4
 set expandtab
 
 " plugins
-execute pathogen#infect()
+
+filetype off 
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'https://github.com/cyplo/vim-colors-solarized.git'
+Plugin 'mileszs/ack.vim'
+Plugin 'scrooloose/nerdtree.git'
+Plugin 'scrooloose/syntastic.git'
+Plugin 'wting/rust.vim'
+Plugin 'sjl/splice.vim.git'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'timonv/vim-cargo'
+Plugin 'kien/ctrlp.vim'
+Plugin 'will133/vim-dirdiff'
+Plugin 'tpope/vim-dispatch.git'
+Plugin 'tpope/vim-fugitive.git'
+Plugin 'tpope/vim-sensible'
+Plugin 'airblade/vim-gitgutter.git'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'Valloric/YouCompleteMe'
+
+call vundle#end()
 filetype plugin indent on
 
-" colours [need pathogen]
+" colours
 set t_Co=256
 syntax enable
 set background=dark

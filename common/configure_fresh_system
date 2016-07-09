@@ -87,6 +87,8 @@ fi
 
 cargo install -f rustfmt
 
+echo "\n" | vim +PluginInstall +qa
+
 cd "$DIR/.vim/bundle/YouCompleteMe/"
 git submodule update --init --recursive
 ./install.py --racer-completer --clang-completer
