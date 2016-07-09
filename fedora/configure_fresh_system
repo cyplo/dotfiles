@@ -8,7 +8,7 @@ sudo dnf -y --best --allowerasing install vim tmux atop zsh thunderbird thunderb
 FEDORA_VERSION=`rpm -E %fedora`
 sudo dnf -y install http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$FEDORA_VERSION.noarch.rpm
 sudo dnf -y install http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$FEDORA_VERSION.noarch.rpm
-sudo dnf -y --best --allowerasing install vlc splix gutenprint-cups cups-bjnp keepass mplayer golang
+sudo dnf -y --best --allowerasing install vlc splix gutenprint-cups cups-bjnp keepass mplayer golang ncurses-compat-libs
 sudo dnf -y groupinstall "C Development Tools and Libraries"
 
 if [[ -z $DONT_START_TOR ]]; then
