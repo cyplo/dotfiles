@@ -43,10 +43,6 @@ ln -vfs "$DIR/.config/redshift.conf" ~/.config/redshift.conf
 
 source ~/.setenv
 
-cd "$DIR/.vim/bundle/YouCompleteMe/"
-git submodule update --init --recursive
-python install.py --clang-completer
-
 # symlink 'nodejs' as node on some systems
 # will replace symlink if it exists, but won't replace regular file
 if [[ ! -f /usr/bin/node ]]; then
@@ -90,7 +86,10 @@ else
 fi
 
 cargo install -f rustfmt
-cargo install -f racer
+
+cd "$DIR/.vim/bundle/YouCompleteMe/"
+git submodule update --init --recursive
+./install.py --racer-completer --clang-completer
 
 # go
 export GOPATH="$HOME/go"
