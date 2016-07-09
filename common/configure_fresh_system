@@ -86,7 +86,6 @@ else
 fi
 
 cargo install -f rustfmt
-cargo install -f racer
 
 cd "$DIR/.vim/bundle/YouCompleteMe/"
 git submodule update --init --recursive
