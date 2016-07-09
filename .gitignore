@@ -1,3 +1,4 @@
 .vim/undo/
 .vim/.netrwhist
-
+.vim/bundle/*
+!.vim/bundle/Vundle.vim
