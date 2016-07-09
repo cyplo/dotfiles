@@ -1,6 +1,3 @@
-[submodule ".vim/bundle/vim-powerline"]
-	path = .vim/bundle/vim-powerline
-	url = https://github.com/Lokaltog/vim-powerline.git
 [submodule "cygwin/mintty-colors-solarized"]
 	path = cygwin/mintty-colors-solarized
 	url = https://github.com/mavnn/mintty-colors-solarized.git
@@ -16,9 +13,6 @@
 [submodule ".oh-my-zsh-plugins/zsh-syntax-highlighting"]
 	path = .oh-my-zsh-plugins/zsh-syntax-highlighting
 	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule ".vim/bundle/YouCompleteMe"]
-	path = .vim/bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
 [submodule ".vim/bundle/Vundle.vim"]
 	path = .vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
