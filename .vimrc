@@ -51,20 +51,31 @@ set expandtab
 
 filetype off 
 
-" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'https://github.com/cyplo/vim-colors-solarized.git'
+Plugin 'mileszs/ack.vim'
+Plugin 'scrooloose/nerdtree.git'
+Plugin 'scrooloose/syntastic.git'
+Plugin 'wting/rust.vim'
+Plugin 'sjl/splice.vim.git'
+Plugin 'vim-airline/vim-airline'
+Plugin 'timonv/vim-cargo'
+Plugin 'kien/ctrlp.vim'
+Plugin 'will133/vim-dirdiff'
+Plugin 'tpope/vim-dispatch.git'
+Plugin 'tpope/vim-fugitive.git'
+Plugin 'airblade/vim-gitgutter.git'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+call vundle#end()
+filetype plugin indent on
 
-
-" colours [need pathogen]
+" colours
 set t_Co=256
 syntax enable
 set background=dark
