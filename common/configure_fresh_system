@@ -1,7 +1,6 @@
 #!/bin/bash
 
 set -e
-set -v
 echo
 echo "configuring settings common among OSes"
 sudo true
@@ -44,10 +43,6 @@ ln -vfs "$DIR/.config/redshift.conf" ~/.config/redshift.conf
 
 source ~/.setenv
 
-cd "$DIR/.vim/bundle/YouCompleteMe/"
-git submodule update --init --recursive
-python install.py --clang-completer
-
 # symlink 'nodejs' as node on some systems
 # will replace symlink if it exists, but won't replace regular file
 if [[ ! -f /usr/bin/node ]]; then
@@ -83,18 +78,20 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 cd "$DIR/../"
 echo "getting rust sources..."
 if [[ ! -d rust ]]; then
-    git clone https://github.com/rust-lang/rust.git
+    git clone https://github.com/rust-lang/rust.git --recursive
 else
     cd rust 
     git pull
+    git submodule update --init --recursive
 fi
 
-set +e
-cargo uninstall rustfmt
-cargo uninstall racer
-set -e
-cargo install rustfmt
-cargo install racer
+cargo install -f rustfmt
+
+echo "\n" | vim +PluginInstall +qa
+
+cd "$DIR/.vim/bundle/YouCompleteMe/"
+git submodule update --init --recursive
+./install.py --racer-completer --clang-completer
 
 # go
 export GOPATH="$HOME/go"
