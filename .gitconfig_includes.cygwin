@@ -1,3 +1,9 @@
+[difftool "winmerge"]
+    cmd = 'C:/Program Files (x86)/WinMerge/WinMergeU.exe' "$(cygpath -wla $LOCAL)" "$(cygpath -wla $REMOTE)"
+    trustExitCode = false
+[difftool "p4merge"]
+    cmd = 'C:/Program Files/Perforce/p4merge.exe' "$(cygpath -wla $LOCAL)" "$(cygpath -wla $REMOTE)"
+    trustExitCode = false
 [mergetool "p4merge"]
     cmd = 'C:/Program Files/Perforce/p4merge.exe' "$(cygpath -wla $BASE)" "$(cygpath -wla $LOCAL)" "$(cygpath -wla $REMOTE)" "$(cygpath -wla $MERGED)" 
     trustExitCode = false
