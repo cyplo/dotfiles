@@ -7,3 +7,6 @@ choco install -y googlechrome
 
 # install cygwin and all things inside
 choco install -y cygwin cyg-get
+
+cyg-get git
+
