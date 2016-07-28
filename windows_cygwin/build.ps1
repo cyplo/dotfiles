@@ -2,8 +2,8 @@
 iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex
 
 # install base tools
-choco install firefox
-choco install googlechrome
+choco install -y firefox
+choco install -y googlechrome
 
 # install cygwin and all things inside
-choco install cygwin cyg-get
+choco install -y cygwin cyg-get
