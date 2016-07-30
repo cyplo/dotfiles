@@ -2,8 +2,10 @@
 
 SUDO=""
 if [[ -z $NOSUDO ]]; then
-    SUDO=sudo
+    SUDO="sudo"
 fi
+
+echo "using '$SUDO' as sudo"
 
 set -e
 echo
