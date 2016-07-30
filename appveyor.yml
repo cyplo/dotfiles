@@ -1,2 +1,2 @@
-install: @powershell -NoProfile -ExecutionPolicy Bypass -Command "windows_cygwin\bootstrap.ps1"
+install: powershell -NoProfile -ExecutionPolicy Bypass -Command "windows_cygwin\bootstrap.ps1"
 build_script: windows_cygwin\build.bat
