@@ -1,1 +1,3 @@
-powershell -NoProfile -ExecutionPolicy Bypass -Command "windows_cygwin\build.ps1"
+choco install -y firefox googlechrome cygwin
+refreshenv
+
