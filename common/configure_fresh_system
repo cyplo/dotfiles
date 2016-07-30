@@ -13,7 +13,11 @@ fi
 
 CURL="curl -sSf"
 
-#submodules
+if [[ -z $DIR ]]; then
+    echo "please set DIR"
+    exit 1
+fi
+
 DIR=`realpath $DIR`
 echo "using $DIR as the top level directory"
 cd $DIR
