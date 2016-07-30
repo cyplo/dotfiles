@@ -7,5 +7,5 @@ c:\cygwin64\bin\bash.exe --login -c "cp -vr `cygpath $HOMEPATH`/.ssh $HOME/"
 c:\cygwin64\bin\bash.exe --login -c "mkdir -pv $HOME/dev/"
 c:\cygwin64\bin\bash.exe --login -c "git clone git@github.com:cyplo/dotfiles.git dev/dotfiles"
 
-c:\cygwin64\bin\bash.exe --login -c "export DIR=$HOME/dev/dotfiles && bash $DIR/common/configure_fresh_system"
+c:\cygwin64\bin\bash.exe --login -c "export DIR=$HOME/dev/dotfiles && export NOSUDO=true && export DONT_CHANGE_SHELL=true && bash $DIR/common/configure_fresh_system"
 
