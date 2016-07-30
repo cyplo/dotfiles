@@ -1,2 +1,2 @@
-install: windows_cygwin\bootstrap.bat
+install: windows_cygwin\bootstrap.ps1
 build_script: windows_cygwin\build.bat
