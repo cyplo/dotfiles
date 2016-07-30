@@ -1,4 +1,4 @@
 choco install -y firefox googlechrome
-choco install -fy cygwin --installargs "-P curl,zsh,git,vim,wget"
+choco install -fy cygwin --installargs "-Pg curl,zsh,git,vim,wget"
 refreshenv
 
