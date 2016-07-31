@@ -76,33 +76,38 @@ fc-cache -rv
 $SUDO fc-cache -rv
 set -e
 
-#rust
-echo "installing rust"
-RUSTUP_TEMP="/tmp/blastoff.sh"
-$CURL https://sh.rustup.rs > "$RUSTUP_TEMP"
-chmod a+x "$RUSTUP_TEMP"
-"$RUSTUP_TEMP" -y
-rm -f "$RUSTUP_TEMP"
-rustup update
-rustup default stable
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
-cd "$DIR/../"
-echo "getting rust sources..."
-if [[ ! -d rust ]]; then
-    git clone https://github.com/rust-lang/rust.git --recursive
-else
-    cd rust 
-    git pull
-    git submodule update --init --recursive
+if [[ -z $NORUST ]]; then
+    #rust
+    echo "installing rust"
+    RUSTUP_TEMP="/tmp/blastoff.sh"
+    $CURL https://sh.rustup.rs > "$RUSTUP_TEMP"
+    chmod a+x "$RUSTUP_TEMP"
+    "$RUSTUP_TEMP" -y
+    rm -f "$RUSTUP_TEMP"
+    rustup update
+    rustup default stable
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+    cd "$DIR/../"
+    echo "getting rust sources..."
+    if [[ ! -d rust ]]; then
+        git clone https://github.com/rust-lang/rust.git --recursive
+    else
+        cd rust 
+        git pull
+        git submodule update --init --recursive
+    fi
+    cargo install -f rustfmt
 fi
-
-cargo install -f rustfmt
 
 echo "\n" | vim +PluginInstall +qa
 
 cd "$DIR/.vim/bundle/YouCompleteMe/"
 git submodule update --init --recursive
-./install.py --racer-completer --clang-completer
+if [[ -z $NORUST ]]; then
+    ./install.py --racer-completer --clang-completer
+else
+    ./install.py --clang-completer
+fi
 
 # go
 export GOPATH="$HOME/go"

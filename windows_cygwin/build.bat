@@ -12,6 +12,8 @@ for /f "delims=" %%A in ('%bash% "cd `cygpath $HOMEPATH`/dev/dotfiles && git rev
 %bash% "mkdir -pv $HOME/dev/"
 %bash% "rm -fr $HOME/dev/dotfiles"
 %bash% "git clone `cygpath $HOMEPATH`/dev/dotfiles $HOME/dev/dotfiles"
+%bash% "cd $HOME/dev/dotfiles && git remote set-url origin git@github.com:cyplo/dotfiles.git"
 %bash% "cd $HOME/dev/dotfiles && git checkout $branch"
-%bash% "export DIR=$HOME/dev/dotfiles && export NOSUDO=true && export DONT_CHANGE_SHELL=true && bash $DIR/common/configure_fresh_system"
+%bash% "cd $HOME/dev/dotfiles && git pull"
+%bash% "DIR=$HOME/dev/dotfiles NOSUDO=true DONT_CHANGE_SHELL=true NORUST=true $DIR/common/configure_fresh_system"
 
