@@ -13,10 +13,10 @@ sudo dnf -y groupinstall "C Development Tools and Libraries"
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-cp -v /etc/dnf/automatic.conf /etc/dnf/automatic.conf.bak
-cp -v $DIR/etc/dnf/automatic.conf /etc/dnf/automatic.conf
+sudo cp -v /etc/dnf/automatic.conf /etc/dnf/automatic.conf.bak
+sudo cp -v $DIR/etc/dnf/automatic.conf /etc/dnf/automatic.conf
 set +e
-diff /etc/dnf/automatic.conf.bak /etc/dnf/automatic.conf
+sudo diff /etc/dnf/automatic.conf.bak /etc/dnf/automatic.conf
 set -e
 
 sudo systemctl enable dnf-automatic.timer
