@@ -4,7 +4,7 @@ set -e
 
 export DEBIAN_FRONTEND=noninteractive
 export DONT_CHANGE_SHELL=true
-export DONT_START_TOR=true
+export NO_SYSTEMCTL=true
 
 echo "APT::Acquire::Retries=16;" >> /etc/apt/apt.conf.d/99_retries
 

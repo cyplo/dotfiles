@@ -15,7 +15,7 @@ done
 set -e
 eval $install_packages
 
-if [[ -z $DONT_START_TOR ]]; then
+if [[ -z $NO_SYSTEMCTL ]]; then
 	sudo systemctl enable tor
 	sudo systemctl start tor
 fi
