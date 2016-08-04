@@ -6,7 +6,8 @@ if [[ -z $DETECTED_OS ]]; then
 fi
 
 if [[ $DETECTED_OS =~ .*:.* ]]; then
-   DIR=`echo $DETECTED_OS | cut -d':' -f1` 
+   SYSTEM_NAME=`echo $DETECTED_OS | cut -d':' -f1` 
+   SYSTEM_VERSION=`echo $DETECTED_OS | cut -d':' -f2` 
 else
     echo "please set DETECTED_OS to system:version"
     exit 1
@@ -15,8 +16,13 @@ fi
 INSIDER_ROOT_DIR=/root/temp/dotfiles/
 CURRENT_DIR=`pwd`
 
-if [[ -d "$CURRENT_DIR/$DETECTED_OS" ]]; then
-    DIR=$DETECTED_OS
+SYSTEM_DIR="$SYSTEM_NAME/"
+SYSTEM_VERSION_DIR="$SYSTEM_NAME/$SYSTEM_VERSION/"
+
+if [[ -d "$CURRENT_DIR/$SYSTEM_VERSION_DIR" ]]; then
+    DIR=$SYSTEM_VERSION_DIR
+else
+    DIR=$SYSTEM_DIR
 fi
 
 docker run -v $CURRENT_DIR:$INSIDER_ROOT_DIR $DETECTED_OS $INSIDER_ROOT_DIR/$DIR/test_insider
