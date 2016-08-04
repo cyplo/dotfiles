@@ -1,3 +1,0 @@
-#!/bin/bash
-
-docker run -v `pwd`:/root/temp/dotfiles/ ubuntu:trusty /root/temp/dotfiles/ubuntu/test_insider

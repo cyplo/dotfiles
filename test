@@ -5,5 +5,14 @@ if [[ -z $DETECTED_OS ]]; then
     exit 1
 fi
 
-./$DETECTED_OS/test_outsider
+DIR=$DETECTED_OS
+
+if [[ $DETECTED_OS =~ .*:.* ]]; then
+   DIR=`echo $DETECTED_OS | cut -d':' -f1` 
+else
+    echo "please set DETECTED_OS to system:version"
+    exit 1
+fi
+
+docker run -v `pwd`:/root/temp/dotfiles/ $DETECTED_OS /root/temp/dotfiles/$DIR/test_insider
 
