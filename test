@@ -5,8 +5,6 @@ if [[ -z $DETECTED_OS ]]; then
     exit 1
 fi
 
-DIR=$DETECTED_OS
-
 if [[ $DETECTED_OS =~ .*:.* ]]; then
    DIR=`echo $DETECTED_OS | cut -d':' -f1` 
 else
@@ -14,5 +12,12 @@ else
     exit 1
 fi
 
-docker run -v `pwd`:/root/temp/dotfiles/ $DETECTED_OS /root/temp/dotfiles/$DIR/test_insider
+INSIDER_ROOT_DIR=/root/temp/dotfiles/
+CURRENT_DIR=`pwd`
+
+if [[ -d "$CURRENT_DIR/$DETECTED_OS" ]]; then
+    DIR=$DETECTED_OS
+fi
+
+docker run -v $CURRENT_DIR:$INSIDER_ROOT_DIR $DETECTED_OS $INSIDER_ROOT_DIR/$DIR/test_insider
 
