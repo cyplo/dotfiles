@@ -4,19 +4,30 @@ set -e
 
 #software and shell
 sudo dnf -y upgrade --best --allowerasing
-sudo dnf -y --best --allowerasing install vim tmux atop zsh thunderbird thunderbird-enigmail thunderbird-lightning firefox aria2 gajim lm_sensors freecad python3-pip qt5-qtbase-devel qt5-qtwebkit-devel meld whois curl pv tor torsocks nodejs terminator gsmartcontrol python-pip mercurial python-devel libxslt-devel libjpeg-turbo-devel conky conky-manager redshift redshift-gtk cmake gtk2-devel intltool gparted wine solaar glances the_silver_searcher dkms kernel-devel gimp transmission-gtk git xz util-linux-user powertop
+sudo dnf -y --best --allowerasing install vim tmux atop zsh thunderbird thunderbird-enigmail thunderbird-lightning firefox aria2 gajim lm_sensors freecad python3-pip qt5-qtbase-devel qt5-qtwebkit-devel meld whois curl pv tor torsocks nodejs terminator gsmartcontrol python-pip mercurial python-devel libxslt-devel libjpeg-turbo-devel conky conky-manager redshift redshift-gtk cmake gtk2-devel intltool gparted wine solaar glances the_silver_searcher dkms kernel-devel gimp transmission-gtk git xz util-linux-user powertop dnf-automatic
 FEDORA_VERSION=`rpm -E %fedora`
 sudo dnf -y install http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$FEDORA_VERSION.noarch.rpm
 sudo dnf -y install http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$FEDORA_VERSION.noarch.rpm
-sudo dnf -y --best --allowerasing install vlc splix gutenprint-cups cups-bjnp keepass mplayer golang
+sudo dnf -y --best --allowerasing install vlc splix gutenprint-cups cups-bjnp keepass mplayer golang ncurses-compat-libs kicad retext
 sudo dnf -y groupinstall "C Development Tools and Libraries"
 
-if [[ -z $DONT_START_TOR ]]; then
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+sudo cp -v /etc/dnf/automatic.conf /etc/dnf/automatic.conf.bak
+sudo cp -v $DIR/etc/dnf/automatic.conf /etc/dnf/automatic.conf
+set +e
+sudo diff /etc/dnf/automatic.conf.bak /etc/dnf/automatic.conf
+set -e
+
+if [[ -z $NO_SYSTEMCTL ]]; then
+    sudo systemctl enable dnf-automatic.timer
+    sudo systemctl start  dnf-automatic.timer
+    sudo systemctl list-timers "*dnf-*"
+
     sudo systemctl enable tor
     sudo systemctl start tor
 fi
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DIR="$DIR/../"
 DIR="$DIR" $DIR/common/configure_fresh_system
 

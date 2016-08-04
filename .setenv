@@ -11,3 +11,5 @@ export PATH=$HOME/.cargo/bin:$PATH
 export RUST_SRC_PATH=$HOME/dev/rust/src
 export EDITOR="vim"
 export KEYTIMEOUT=1
+export VAGRANT_DEFAULT_PROVIDER=virtualbox
+

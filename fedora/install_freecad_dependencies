@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo dnf install cmake doxygen swig gettext dos2unix desktop-file-utils libXmu-devel freeimage-devel mesa-libGLU-devel OCE-devel python python-devel python-pyside-devel pyside-tools boost-devel tbb-devel eigen3-devel qt-devel qt-webkit-devel ode-devel xerces-c xerces-c-devel opencv-devel smesh-devel freetype freetype-devel boost-devel Coin3-devel
+sudo dnf install cmake doxygen swig gettext dos2unix desktop-file-utils libXmu-devel freeimage-devel mesa-libGLU-devel OCE-devel python python-devel python-pyside-devel pyside-tools boost-devel tbb-devel eigen3-devel qt-devel qt-webkit-devel ode-devel xerces-c xerces-c-devel opencv-devel smesh-devel freetype freetype-devel boost-devel Coin3-devel vtk-devel med-devel

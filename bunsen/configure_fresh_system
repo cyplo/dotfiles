@@ -1,7 +1,6 @@
 #!/bin/bash
 
 set -e
-set -v
 
 sudo apt-get update
 sudo apt-get -y upgrade
@@ -15,14 +14,10 @@ done
 set -e
 eval $install_packages
 
-if [[ -z $DONT_START_TOR ]]; then
+if [[ -z $NO_SYSTEMCTL ]]; then
 	sudo systemctl enable tor
 	sudo systemctl start tor
 fi
-
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-DIR="$DIR/../"
-DIR="$DIR" $DIR/common/configure_fresh_system
 
 # install vim from sources
 VIM_BUILD_DIR=/tmp
@@ -41,4 +36,9 @@ make -j2
 sudo make install
 cd
 rm -fvr "$VIM_BUILD_DIR/vim"
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DIR="$DIR/../"
+DIR="$DIR" $DIR/common/configure_fresh_system
+
 
