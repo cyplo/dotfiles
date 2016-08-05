@@ -16,5 +16,8 @@ export NOVIM=true
 export NO_GO=true
 export DIR=$DOTFILES_PATH 
 
+curl https://bootstrap.pypa.io/get-pip.py > /tmp/get-pip.py
+python /tmp/get-pip.py
+
 $DIR/common/configure_fresh_system
 
