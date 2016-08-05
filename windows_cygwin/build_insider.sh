@@ -8,5 +8,12 @@ git clone "$OUTER_CLONE" "$DOTFILES_PATH"
 cd "$DOTFILES_PATH"
 git remote set-url origin git@github.com:cyplo/dotfiles.git
 git checkout $branch
-export DIR=$DOTFILES_PATH && NOSUDO=true DONT_CHANGE_SHELL=true NORUST=true $DIR/common/configure_fresh_system
+
+export NOSUDO=true
+export DONT_CHANGE_SHELL=true
+export NORUST=true
+export NOVIM=true
+export DIR=$DOTFILES_PATH 
+
+$DIR/common/configure_fresh_system
 

@@ -99,7 +99,9 @@ if [[ -z $NORUST ]]; then
     cargo install -f rustfmt
 fi
 
-echo "\n" | vim +PluginInstall +qa
+if [[ -z $NOVIM ]]; then
+    echo "\n" | vim +PluginInstall +qa
+fi
 
 cd "$DIR/.vim/bundle/YouCompleteMe/"
 git submodule update --init --recursive
