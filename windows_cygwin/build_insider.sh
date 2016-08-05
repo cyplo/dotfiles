@@ -13,6 +13,7 @@ export NOSUDO=true
 export DONT_CHANGE_SHELL=true
 export NORUST=true
 export NOVIM=true
+export NO_GO=true
 export DIR=$DOTFILES_PATH 
 
 $DIR/common/configure_fresh_system
