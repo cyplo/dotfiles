@@ -1,9 +1,16 @@
 #!/bin/bash
 
+SUDO=""
+if [[ -z $NOSUDO ]]; then
+    SUDO="sudo"
+fi
+
+echo "using '$SUDO' as sudo"
+
 set -e
 echo
 echo "configuring settings common among OSes"
-sudo true
+$SUDO true
 
 #zsh
 if [[ -z $DONT_CHANGE_SHELL ]]; then
@@ -13,7 +20,11 @@ fi
 
 CURL="curl -sSf"
 
-#submodules
+if [[ -z $DIR ]]; then
+    echo "please set DIR"
+    exit 1
+fi
+
 DIR=`realpath $DIR`
 echo "using $DIR as the top level directory"
 cd $DIR
@@ -46,7 +57,7 @@ source ~/.setenv
 # symlink 'nodejs' as node on some systems
 # will replace symlink if it exists, but won't replace regular file
 if [[ ! -f /usr/bin/node ]]; then
-    sudo ln -vfs /usr/bin/nodejs /usr/bin/node
+    $SUDO ln -vfs /usr/bin/nodejs /usr/bin/node
 fi
 
 # tools
@@ -62,36 +73,42 @@ mkdir -p ~/.fonts
 cp -rv "$DIR/fonts" ~/.fonts
 set +e
 fc-cache -rv
-sudo fc-cache -rv
+$SUDO fc-cache -rv
 set -e
 
-#rust
-echo "installing rust"
-RUSTUP_TEMP="/tmp/blastoff.sh"
-$CURL https://sh.rustup.rs > "$RUSTUP_TEMP"
-chmod a+x "$RUSTUP_TEMP"
-"$RUSTUP_TEMP" -y
-rm -f "$RUSTUP_TEMP"
-rustup update
-rustup default stable
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
-cd "$DIR/../"
-echo "getting rust sources..."
-if [[ ! -d rust ]]; then
-    git clone https://github.com/rust-lang/rust.git --recursive
-else
-    cd rust 
-    git pull
-    git submodule update --init --recursive
+if [[ -z $NORUST ]]; then
+    #rust
+    echo "installing rust"
+    RUSTUP_TEMP="/tmp/blastoff.sh"
+    $CURL https://sh.rustup.rs > "$RUSTUP_TEMP"
+    chmod a+x "$RUSTUP_TEMP"
+    "$RUSTUP_TEMP" -y
+    rm -f "$RUSTUP_TEMP"
+    rustup update
+    rustup default stable
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+    cd "$DIR/../"
+    echo "getting rust sources..."
+    if [[ ! -d rust ]]; then
+        git clone https://github.com/rust-lang/rust.git --recursive
+    else
+        cd rust 
+        git pull
+        git submodule update --init --recursive
+    fi
+    cargo install -f rustfmt
 fi
 
-cargo install -f rustfmt
-
-echo "\n" | vim +PluginInstall +qa
-
-cd "$DIR/.vim/bundle/YouCompleteMe/"
-git submodule update --init --recursive
-./install.py --racer-completer --clang-completer
+if [[ -z $NOVIM ]]; then
+    echo "\n" | vim +PluginInstall +qa
+    cd "$DIR/.vim/bundle/YouCompleteMe/"
+    git submodule update --init --recursive
+    if [[ -z $NORUST ]]; then
+        ./install.py --racer-completer --clang-completer
+    else
+        ./install.py --clang-completer
+    fi
+fi
 
 if [[ -z $NO_GO ]]; then
     export GOPATH="$HOME/go"
@@ -102,12 +119,12 @@ if [[ -z $NO_GO ]]; then
 fi
 
 # talks: reveal-md
-sudo npm install -g reveal-md
-sudo npm install -g diff-so-fancy
+$SUDO npm install -g reveal-md
+$SUDO npm install -g diff-so-fancy
 
 # vdir syncer
 echo "installing vdirsyncer"
-sudo pip install vdirsyncer
+$SUDO pip install vdirsyncer
 
 if [[ -z $USER ]]; then
     USER=`whoami`
@@ -115,7 +132,7 @@ fi
 
 # normalize npm permissions
 mkdir -p $HOME/.npm
-sudo chown $USER $HOME/.npm -R
+$SUDO chown $USER $HOME/.npm -R
 
 echo
 echo "now go ahead and restart"
