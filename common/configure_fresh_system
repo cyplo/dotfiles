@@ -93,12 +93,13 @@ cd "$DIR/.vim/bundle/YouCompleteMe/"
 git submodule update --init --recursive
 ./install.py --racer-completer --clang-completer
 
-# go
-export GOPATH="$HOME/go"
-mkdir -p "$GOPATH"
+if [[ -z $NO_GO ]]; then
+    export GOPATH="$HOME/go"
+    mkdir -p "$GOPATH"
 
-# excercism
-go get -u github.com/exercism/cli/exercism
+    # excercism
+    go get -u github.com/exercism/cli/exercism
+fi
 
 # talks: reveal-md
 sudo npm install -g reveal-md

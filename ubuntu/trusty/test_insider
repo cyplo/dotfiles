@@ -15,5 +15,5 @@ cd $HOME
 mkdir -p dev/
 cp -rv temp/dotfiles dev/
 
-./dev/dotfiles/bunsen/configure_fresh_system
+./dev/dotfiles/ubuntu/trusty/configure_fresh_system
 
