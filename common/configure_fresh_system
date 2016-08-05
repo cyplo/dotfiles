@@ -101,14 +101,13 @@ fi
 
 if [[ -z $NOVIM ]]; then
     echo "\n" | vim +PluginInstall +qa
-fi
-
-cd "$DIR/.vim/bundle/YouCompleteMe/"
-git submodule update --init --recursive
-if [[ -z $NORUST ]]; then
-    ./install.py --racer-completer --clang-completer
-else
-    ./install.py --clang-completer
+    cd "$DIR/.vim/bundle/YouCompleteMe/"
+    git submodule update --init --recursive
+    if [[ -z $NORUST ]]; then
+        ./install.py --racer-completer --clang-completer
+    else
+        ./install.py --clang-completer
+    fi
 fi
 
 if [[ -z $NO_GO ]]; then
