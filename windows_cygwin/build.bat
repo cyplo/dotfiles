@@ -2,7 +2,7 @@
 choco install -y firefox googlechrome wget notepadplusplus sublimetext3
 
 wget -c https://cygwin.com/setup-x86_64.exe
-setup-x86_64.exe -R "C:\cygwin64" -s http://cygwin.netbet.org/ -q -g -P curl,zsh,git,vim,wget,xz,tar,gawk,bzip2,subversion,zlib,fontconfig,clang
+setup-x86_64.exe -R "C:\cygwin64" -s http://cygwin.netbet.org/ -q -g -P curl,zsh,git,vim,wget,xz,tar,gawk,bzip2,subversion,zlib,fontconfig,clang,mono,monodevelop,gtksharp,visualstudiocode,microsoft-build-tools,visualstudio2015community,p4merge,dotnet4.5
 
 set script_path=%~dp0
 set repo_path=%script_path%\..\
