@@ -109,12 +109,13 @@ else
     ./install.py --clang-completer
 fi
 
-# go
-export GOPATH="$HOME/go"
-mkdir -p "$GOPATH"
+if [[ -z $NO_GO ]]; then
+    export GOPATH="$HOME/go"
+    mkdir -p "$GOPATH"
 
-# excercism
-go get -u github.com/exercism/cli/exercism
+    # excercism
+    go get -u github.com/exercism/cli/exercism
+fi
 
 # talks: reveal-md
 $SUDO npm install -g reveal-md

@@ -15,5 +15,5 @@ cd $HOME
 mkdir -p dev/
 cp -rv temp/dotfiles dev/
 
-./dev/dotfiles/ubuntu/configure_fresh_system
+./dev/dotfiles/debian/configure_fresh_system
 
