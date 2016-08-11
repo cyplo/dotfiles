@@ -51,3 +51,5 @@ alias benice="ionice -c3 nice -n20"
 source ~/.setenv
 
 
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
