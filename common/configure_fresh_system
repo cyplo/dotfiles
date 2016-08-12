@@ -109,9 +109,9 @@ if [[ -z $NOVIM ]]; then
     cd "$DIR/.vim/bundle/YouCompleteMe/"
     git submodule update --init --recursive
     if [[ -z $NORUST ]]; then
-        ./install.py --racer-completer --clang-completer
+        ./install.py --system-boost --clang-completer --omnisharp-completer
     else
-        ./install.py --clang-completer
+        ./install.py --system-boost --racer-completer --clang-completer --omnisharp-completer
     fi
 fi
 
