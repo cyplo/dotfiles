@@ -78,6 +78,9 @@ Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 filetype plugin indent on
 
+" line ending
+set fileformats=unix,dos
+
 " colours
 set t_Co=256
 syntax enable
