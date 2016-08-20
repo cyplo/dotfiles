@@ -1,16 +1,16 @@
 [user]
-	name = Cyryl Płotnicki-Chudyk
-	email = cyplo@cyplo.net
+    name = Cyryl Płotnicki
+    email = cyplo@cyplo.net
 [color]
-	ui = true
+    ui = true
 [help]
-	autocorrect = 1
+    autocorrect = 1
 [push]
-	default = simple
+    default = simple
 [core]
-	pager = cat
+    pager = cat
 [alias]
-    tree = log --show-signature --color --decorate --date=short --all --graph -n 9
+    tree = log --show-signature --color --decorate --date=short --all --graph -n 8
     head = log HEAD -n1
 [core]
     autocrlf = false
@@ -23,7 +23,7 @@
 [merge]
     tool = kdiff3
 [mergetool]
-	keepBackup = false
+    keepBackup = false
 [pager]
     diff = diff-so-fancy | less --tabs=1,5 -RFX
     show = diff-so-fancy | less --tabs=1,5 -RFX
