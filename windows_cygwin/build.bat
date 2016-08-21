@@ -1,5 +1,5 @@
 @echo on
-choco install -y firefox googlechrome wget notepadplusplus sublimetext3 mono monodevelop gtksharp visualstudiocode microsoft-build-tools visualstudio2015community p4merge dotnet4.5 ruby nodejs
+choco install -y --allowEmptyChecksum firefox googlechrome wget notepadplusplus sublimetext3 mono monodevelop gtksharp visualstudiocode microsoft-build-tools visualstudio2015community p4merge dotnet4.5 ruby nodejs
 
 wget -c https://cygwin.com/setup-x86_64.exe
 setup-x86_64.exe -R "C:\cygwin64" -s http://cygwin.netbet.org/ -q -g -P curl,zsh,git,vim,wget,xz,tar,gawk,bzip2,subversion,zlib,fontconfig,clang,cmake,lua,perl
