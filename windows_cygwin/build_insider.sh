@@ -13,7 +13,6 @@ export NOSUDO=true
 export DONT_CHANGE_SHELL=true
 export NORUST=true
 export NORUBY=true
-export NOVIM=true
 export NO_GO=true
 export DIR=$DOTFILES_PATH 
 
@@ -21,4 +20,5 @@ curl https://bootstrap.pypa.io/get-pip.py > /tmp/get-pip.py
 python /tmp/get-pip.py
 
 $DIR/common/configure_fresh_system
+ln -vfs $DIR/windows_cygwin/.minttyrc $HOME/
 

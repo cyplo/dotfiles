@@ -74,7 +74,7 @@ Plugin 'tpope/vim-cucumber'
 Plugin 'airblade/vim-gitgutter.git'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'Shougo/neocomplete.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -88,6 +88,17 @@ syntax enable
 set background=dark
 highlight clear SignColumn
 colorscheme solarized
+
+" plugins: neocomplete
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+"" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+endfunction
+"" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " plugins: airline
 let g:bufferline_echo = 0
