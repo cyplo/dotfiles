@@ -15,5 +15,8 @@ cd $HOME
 mkdir -p dev/
 cp -rv temp/dotfiles dev/
 
+# use dbus on TCP 
+sudo sed -i 's$<listen>.*</listen>$<listen>tcp:host=localhost,port=0</listen>$' /etc/dbus-1/session.conf
+
 ./dev/dotfiles/ubuntu/trusty/configure_fresh_system
 
