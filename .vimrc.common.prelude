@@ -1,0 +1,53 @@
+
+" global settings
+set nocompatible
+set noswapfile
+set undofile
+set undodir=$HOME/.vim/undo
+set spell spelllang=en_gb
+
+" buffers can be switched despite having changes
+set hidden
+
+" file settings
+set encoding=utf-8
+
+" key mappings
+let mapleader = ","
+nmap <leader>p :set paste!<CR>
+nmap <leader>h :set hlsearch!<CR>
+nmap <leader>t :wa <bar> :Make test<CR>
+
+" navigate buffers by ctrl-b
+nmap <C-b> :bprevious<CR>
+
+nnoremap ; :
+
+" no cheating !
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+" for damaged keyboards
+map <F1> <Esc>
+imap <F1> <Esc>
+
+" special chars
+nmap <leader>l :set list!<CR>
+set listchars=tab:▸\ ,eol:¬
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59
+
+" tabs and spaces
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
+" plugins
+
+filetype off 
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()

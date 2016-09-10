@@ -1,0 +1,6 @@
+source .vimrc.cygwin.prelude
+source .vimrc.common.plugins
+source .vimrc.cygwin.plugins
+source .vimrc.common.epilogue
+source .vimrc.cygwin.settings
+
