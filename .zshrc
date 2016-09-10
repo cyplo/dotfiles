@@ -45,7 +45,11 @@ else
     alias tscp="torsocks scp"
 fi
 
+alias benice="ionice -c3 nice -n20"
+
 # env vars
 source ~/.setenv
 
 
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

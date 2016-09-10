@@ -20,6 +20,9 @@ nmap <leader>t :wa <bar> :Make test<CR>
 " navigate buffers by ctrl-b
 nmap <C-b> :bprevious<CR>
 
+" YCM
+nnoremap <Leader>g :YcmCompleter GoTo<CR>
+
 nnoremap ; :
 
 " no cheating !
@@ -45,15 +48,57 @@ set shiftwidth=4
 set expandtab
 
 " plugins
-execute pathogen#infect()
+
+filetype off 
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'https://github.com/cyplo/vim-colors-solarized.git'
+Plugin 'mileszs/ack.vim'
+Plugin 'scrooloose/nerdtree.git'
+Plugin 'scrooloose/syntastic.git'
+Plugin 'wting/rust.vim'
+Plugin 'sjl/splice.vim.git'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'timonv/vim-cargo'
+Plugin 'kien/ctrlp.vim'
+Plugin 'will133/vim-dirdiff'
+Plugin 'tpope/vim-dispatch.git'
+Plugin 'tpope/vim-fugitive.git'
+Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-cucumber'
+Plugin 'airblade/vim-gitgutter.git'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'Shougo/neocomplete.vim'
+
+call vundle#end()
 filetype plugin indent on
 
-" colours [need pathogen]
+" line ending
+set fileformats=unix,dos
+
+" colours
 set t_Co=256
 syntax enable
 set background=dark
 highlight clear SignColumn
 colorscheme solarized
+
+" plugins: neocomplete
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+"" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+endfunction
+"" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " plugins: airline
 let g:bufferline_echo = 0
