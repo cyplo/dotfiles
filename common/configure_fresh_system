@@ -33,7 +33,7 @@ git submodule update --init --recursive
 
 #configs
 ln -vfs "$DIR/.vim" ~/.
-ln -vfs "$DIR/.vimrc" ~/.
+ln -vfs "$DIR/.vimrc.linux" ~/.vimrc
 ln -vfs "$DIR/.tmux.conf" ~/.
 rm -f "~/.zshrc"
 ln -vfs "$DIR/.zshrc" ~/.
@@ -107,6 +107,10 @@ fi
 
 if [[ -z $NOVIM ]]; then
     echo "\n" | vim +PluginInstall +qa
+    if [[ -z $NOYCM ]]; then
+        cd ~/.vim/bundle/YouCompleteMe
+        ./install.py --clang-completer --racer-completer --tern-completer
+    fi
 fi
 
 if [[ -z $NO_GO ]]; then
