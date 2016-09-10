@@ -106,6 +106,10 @@ fi
 
 if [[ -z $NOVIM ]]; then
     echo "\n" | vim +PluginInstall +qa
+    if [[ -z $NOYCM ]]; then
+        cd ~/.vim/bundle/YouCompleteMe
+        ./install.py --clang-completer --racer-completer --tern-completer
+    fi
 fi
 
 if [[ -z $NO_GO ]]; then
