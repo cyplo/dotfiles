@@ -22,4 +22,5 @@ python /tmp/get-pip.py
 $DIR/common/configure_fresh_system
 ln -vfs $DIR/windows_cygwin/.minttyrc $HOME/
 ln -vfs $DIR/.gitconfig.cygwin $HOME/.gitconfig
+ln -vfs $DIR/.vimrc.cygwin $HOME/.vimrc
 
