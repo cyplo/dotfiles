@@ -100,7 +100,6 @@ if [[ -z $NORUST ]]; then
     cargo install -j $jobs_count -f rustfmt
     cargo install -j $jobs_count -f racer
     cargo install -j $jobs_count -f rustsym
-    cargo install -j $jobs_count -f cargo-clippy
 fi
 
 if [[ -z $NORUBY ]]; then
