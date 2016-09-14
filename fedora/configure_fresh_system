@@ -33,7 +33,6 @@ cd vim
             --enable-multibyte \
             --enable-rubyinterp \
             --enable-python3interp=yes \
-            --enable-perlinterp \
             --enable-luainterp \
             --enable-gui=no \
             --enable-cscope 
