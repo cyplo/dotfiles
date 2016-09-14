@@ -4,7 +4,7 @@ set -e
 
 #software and shell
 sudo dnf -y upgrade --best --allowerasing
-sudo dnf -y --best --allowerasing install vim tmux atop zsh thunderbird thunderbird-enigmail thunderbird-lightning firefox aria2 gajim lm_sensors freecad python3-pip qt5-qtbase-devel qt5-qtwebkit-devel meld whois curl pv nodejs npm terminator gsmartcontrol python-pip mercurial python-devel libxslt-devel libjpeg-turbo-devel conky conky-manager redshift redshift-gtk cmake gtk2-devel intltool gparted wine solaar glances the_silver_searcher dkms kernel-devel gimp transmission-gtk git xz util-linux-user powertop dnf-automatic kdiff3 yum-utils
+sudo dnf -y --best --allowerasing install tmux atop zsh thunderbird thunderbird-enigmail thunderbird-lightning firefox aria2 gajim lm_sensors freecad python3-pip qt5-qtbase-devel qt5-qtwebkit-devel meld whois curl pv nodejs npm terminator gsmartcontrol python-pip mercurial python3-devel libxslt-devel libjpeg-turbo-devel conky conky-manager redshift redshift-gtk cmake gtk2-devel intltool gparted wine solaar glances the_silver_searcher dkms kernel-devel gimp transmission-gtk git xz util-linux-user powertop dnf-automatic kdiff3 yum-utils ncurses-devel
 FEDORA_VERSION=`rpm -E %fedora`
 sudo dnf -y install http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$FEDORA_VERSION.noarch.rpm
 sudo dnf -y install http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$FEDORA_VERSION.noarch.rpm
@@ -24,6 +24,23 @@ if [[ -z $NO_SYSTEMCTL ]]; then
     sudo systemctl start  dnf-automatic.timer
     sudo systemctl list-timers "*dnf-*"
 fi
+
+VIM_BUILD_DIR=/tmp
+cd "$VIM_BUILD_DIR"
+git clone https://github.com/vim/vim.git
+cd vim
+./configure --with-features=huge \
+            --enable-multibyte \
+            --enable-rubyinterp \
+            --enable-python3interp=yes \
+            --enable-perlinterp \
+            --enable-luainterp \
+            --enable-gui=no \
+            --enable-cscope \
+make -j2
+sudo make install
+cd
+rm -fvr "$VIM_BUILD_DIR/vim"
 
 DIR="$DIR/../"
 DIR="$DIR" $DIR/common/configure_fresh_system
