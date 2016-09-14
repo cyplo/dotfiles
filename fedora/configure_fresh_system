@@ -36,7 +36,7 @@ cd vim
             --enable-perlinterp \
             --enable-luainterp \
             --enable-gui=no \
-            --enable-cscope \
+            --enable-cscope 
 make -j2
 sudo make install
 cd
