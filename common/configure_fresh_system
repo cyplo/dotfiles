@@ -19,6 +19,7 @@ if [[ -z $DONT_CHANGE_SHELL ]]; then
 fi
 
 CURL="curl -sSf"
+jobs_count=`nproc`
 
 if [[ -z $DIR ]]; then
     echo "please set DIR"
@@ -96,7 +97,7 @@ if [[ -z $NORUST ]]; then
         git pull
         git submodule update --init --recursive
     fi
-    cargo install -f rustfmt
+    cargo install -j $jobs_count -f rustfmt
 fi
 
 if [[ -z $NORUBY ]]; then
