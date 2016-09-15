@@ -109,7 +109,12 @@ if [[ -z $NOVIM ]]; then
     echo "\n" | vim +PluginInstall +qa
     if [[ -z $NOYCM ]]; then
         cd ~/.vim/bundle/YouCompleteMe
-        python3 ./install.py --clang-completer --racer-completer --tern-completer
+
+        if [[ -z $NOPYTHON3 ]]; then
+            python3 ./install.py --clang-completer --racer-completer --tern-completer
+        else
+            python ./install.py --clang-completer --racer-completer --tern-completer
+        fi
     fi
 fi
 

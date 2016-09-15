@@ -29,4 +29,5 @@ sudo apt-get -y install mono-devel mono-complete
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DIR="$DIR/../../"
 export NO_GO=true
+eport NOPYTHON3=true
 DIR="$DIR" $DIR/common/configure_fresh_system
