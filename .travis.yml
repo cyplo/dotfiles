@@ -6,7 +6,7 @@ script:
 
 env:
     - DETECTED_OS=fedora:24
-    - DETECTED_OS=debian:jessie
+    - DETECTED_OS=debian:jessie NOUPGRADE=true
     - DETECTED_OS=ubuntu:trusty
     - DETECTED_OS=ubuntu:xenial
 
