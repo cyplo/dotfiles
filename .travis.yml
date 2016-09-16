@@ -5,6 +5,7 @@ script:
     - ./test 
 
 env:
+    - NOUPGRADE=true
     - DETECTED_OS=fedora:24
     - DETECTED_OS=debian:jessie
     - DETECTED_OS=ubuntu:trusty
