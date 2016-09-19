@@ -5,7 +5,7 @@ script:
     - ./test 
 
 env:
-    - DETECTED_OS=fedora:24 DOCKER_IMAGE=cyplo/fedora24_base NO_COMPILE_VIM=true
+    - DETECTED_OS=fedora:24 DOCKER_IMAGE=cyplo/fedora24_base
     - DETECTED_OS=debian:jessie NOUPGRADE=true
     - DETECTED_OS=ubuntu:trusty
     - DETECTED_OS=ubuntu:xenial
