@@ -4,6 +4,7 @@ set -e
 
 export DONT_CHANGE_SHELL=true
 export NO_SYSTEMCTL=true
+export NO_COMPILE_VIM=true
 
 dnf -y install sudo
 

@@ -25,5 +25,9 @@ else
     DIR=$SYSTEM_DIR
 fi
 
-docker run -v $CURRENT_DIR:$INSIDER_ROOT_DIR $DETECTED_OS $INSIDER_ROOT_DIR/$DIR/test_insider
+if [[ -z $DOCKER_IMAGE ]]; then
+    DOCKER_IMAGE="$DETECTED_OS"
+fi
+
+docker run -v $CURRENT_DIR:$INSIDER_ROOT_DIR $DOCKER_IMAGE $INSIDER_ROOT_DIR/$DIR/test_insider
 

@@ -1,0 +1,3 @@
+#!/bin//sh
+nmcli device show | grep DNS | cut -d']' -f2 | tr -d ' ' | cut -c2-
+
