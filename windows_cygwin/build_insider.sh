@@ -25,3 +25,6 @@ ln -vfs $DIR/windows_cygwin/.minttyrc $HOME/
 ln -vfs $DIR/.gitconfig.cygwin $HOME/.gitconfig
 ln -vfs $DIR/.vimrc.cygwin $HOME/.vimrc
 
+# reinstall plugins with the new vimrc
+echo "\n" | vim +PluginInstall +qa
+
