@@ -1,0 +1,43 @@
+#!/bin/bash
+
+set -e
+
+SUDO=""
+if [[ -z $NOSUDO ]]; then
+    SUDO="sudo"
+fi
+
+echo "using '$SUDO' as sudo"
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd .. && pwd )"
+DIR=`realpath $DIR`
+
+echo "using $DIR as the top level directory"
+cd $DIR
+git submodule update --init --recursive
+
+rm -f "~/.zshrc"
+ln -vfs "$DIR/.zshrc" ~/.
+ln -vfs "$DIR/.setenv" ~/.
+ln -vfs "$DIR/.oh-my-zsh" ~/.
+ln -vfs "$DIR/.oh-my-zsh-plugins/zsh-syntax-highlighting" ~/.oh-my-zsh/custom/plugins/
+ln -vfs "$DIR/.gitconfig.linux.private" ~/.gitconfig
+source ~/.setenv
+
+# tools
+ln -vfs "$DIR/tools" ~/
+
+# stuff that does not like symbolic links
+mkdir -vp ~/.config/terminator
+rm -f ~/.config/terminator/config
+ln "$DIR/.config/terminator/config" ~/.config/terminator/config
+
+#install fonts
+mkdir -p ~/.fonts
+cp -rv "$DIR/fonts" ~/.fonts
+set +e
+fc-cache -rv
+$SUDO fc-cache -rv
+set -e
+
+
