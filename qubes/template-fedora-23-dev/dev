@@ -1,0 +1,22 @@
+#!/bin/bash
+
+sudo dnf groupinstall -y "C Development Tools and Libraries"
+sudo dnf install -y ncurses-devel
+
+
+VIM_BUILD_DIR=/tmp
+cd "$VIM_BUILD_DIR"
+git clone https://github.com/vim/vim.git
+cd vim
+./configure 	--with-features=huge \
+		--enable-multibyte \
+		--enable-rubyinterp \
+		--enable-python3interp=yes \
+		--enable-luainterp \
+		--enable-gui=no \
+		--enable-cscope 
+make -j2
+sudo make install
+cd
+rm -fvr "$VIM_BUILD_DIR/vim"
+
