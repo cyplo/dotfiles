@@ -1,2 +1,2 @@
- DISM /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux
+DISM /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /NoRestart
  
