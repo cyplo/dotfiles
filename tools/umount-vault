@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -e
+umount ~/.vault
+gpg2 -c ~/.vault.tar.xz
+mv ~/.vault.tar.xz.gpg ~/Nextcloud/vault.tar.xz.gpg
+rm -vfr ~/.vault*
+
