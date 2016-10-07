@@ -2,8 +2,8 @@
 
 set -e
 echo "decrypting..."
-gpg2 -d ~/Nextcloud/vault.tar.xz.gpg > ~/.vault.tar.xz
+gpg2 -d ~/Nextcloud/vault.zip.gpg > ~/.vault.zip
 echo "mounting..."
 mkdir -p ~/.vault
-archivemount ~/.vault.tar.xz ~/.vault
+archivemount -o nobackup ~/.vault.zip ~/.vault
 
