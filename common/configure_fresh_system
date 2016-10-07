@@ -98,10 +98,12 @@ if [[ -z $NORUST ]]; then
         git pull
         git submodule update --init --recursive
     fi
-    cargo install -j $jobs_count -f rustfmt
-    cargo install -j $jobs_count -f racer
-    cargo install -j $jobs_count -f rustsym
-    cargo install -j $jobs_count -f ripgrep
+set +e
+    cargo install rustfmt
+    cargo install racer
+    cargo install rustsym
+    cargo install ripgrep
+set -e
 fi
 
 if [[ -z $NORUBY ]]; then
