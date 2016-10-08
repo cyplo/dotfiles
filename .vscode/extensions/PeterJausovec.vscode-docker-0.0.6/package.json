@@ -1,0 +1,70 @@
+{
+	"name": "vscode-docker",
+	"version": "0.0.6",
+	"publisher": "PeterJausovec",
+	"displayName": "Dockerfile and Docker Compose File (yml) Support",
+	"description": "Adds syntax highlighting, snippets and description on hover for Dockerfiles and Docker compose files.",
+	"license": "SEE LICENSE IN LICENSE.md",
+	"icon": "images/docker_icon.svg",
+	"galleryBanner": {
+		"color": "#5c2d91",
+		"theme": "dark"
+	},
+	"homepage": "https://github.com/Microsoft/vscode-docker/blob/master/README.md",
+	"bugs": {
+		"url": "https://github.com/Microsoft/vscode-docker/issues"
+	},
+	"categories": [
+		"Languages"
+	],
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Microsoft/vscode-docker.git"
+	},
+	"activationEvents": [
+		"onLanguage:dockerfile",
+		"onLanguage:yaml"
+	],
+	"main": "./out/dockerExtension",
+	"contributes": {
+		"snippets": [
+			{
+				"language": "dockerfile",
+				"path": "./snippets/dockerfile.json"
+			}
+		],
+		"languages": [
+			{
+				"id": "dockerfile",
+				"aliases": [
+					"Dockerfile"
+				],
+				"filenamePatterns": [
+					"dockerfile*.*",
+					"Dockerfile*.*"
+				]
+			}
+		]
+	},
+	"engines": {
+		"vscode": "^0.10.8"
+	},
+	"scripts": {
+		"vscode:prepublish": "tsc",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./"
+	},
+	"extensionDependencies": [
+		"vscode.docker",
+		"vscode.yaml"
+	],
+	"devDependencies": {
+		"vscode": "0.11.x"
+	},
+	"__metadata": {
+		"id": "0479fc1c-3d67-49f9-b087-fb9069afe48f",
+		"publisherId": "bc3f1075-3ced-4395-9b1b-3f0ecaee83be",
+		"publisherDisplayName": "Microsoft"
+	}
+}

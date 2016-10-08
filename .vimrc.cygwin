@@ -1,0 +1,6 @@
+source ~/dev/dotfiles/.vimrc.common.prelude
+source ~/dev/dotfiles/.vimrc.common.plugins
+source ~/dev/dotfiles/.vimrc.cygwin.plugins
+source ~/dev/dotfiles/.vimrc.common.epilogue
+source ~/dev/dotfiles/.vimrc.cygwin.settings
+

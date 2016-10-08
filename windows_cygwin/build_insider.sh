@@ -15,6 +15,7 @@ export NORUST=true
 export NORUBY=true
 export NO_GO=true
 export DIR=$DOTFILES_PATH 
+export NOYCM=true
 
 curl https://bootstrap.pypa.io/get-pip.py > /tmp/get-pip.py
 python /tmp/get-pip.py
@@ -22,4 +23,8 @@ python /tmp/get-pip.py
 $DIR/common/configure_fresh_system
 ln -vfs $DIR/windows_cygwin/.minttyrc $HOME/
 ln -vfs $DIR/.gitconfig.cygwin $HOME/.gitconfig
+ln -vfs $DIR/.vimrc.cygwin $HOME/.vimrc
+
+# reinstall plugins with the new vimrc
+echo "\n" | vim +PluginInstall +qa
 
