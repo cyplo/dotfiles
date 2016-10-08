@@ -22,10 +22,14 @@ set -e
 # SSD TRIM
 sudo cp -v /etc/crypttab /etc/crypttab.bak
 sudo sed -i 's/none.*$/none luks,discard/g' /etc/crypttab
+echo "crypttab:"
 set +e
+sudo cat /etc/crypttab
 sudo diff /etc/crypttab.bak /etc/crypttab
 set -e
+echo "generating grub config..."
 sudo grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
+echo "generating initramfs..."
 sudo dracut -f
 
 if [[ -z $NO_SYSTEMCTL ]]; then
