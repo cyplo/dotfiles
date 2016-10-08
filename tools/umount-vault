@@ -1,8 +1,16 @@
 #!/bin/bash
 
 set -e
+echo "Unmounting vault.."
 sudo umount ~/.vault
+echo "Encrypting archive..."
 gpg2 -c ~/.vault.zip
+echo "Calculating checksum..."
+sha512sum ~/.vault.zip.gpg > ~/.vault.zip.gpg.sha512
+sha512sum -c ~/.vault.zip.gpg.sha512
+cat ~/.vault.zip.gpg.sha512
+echo "Moving vault to storage..."
 mv ~/.vault.zip.gpg ~/Nextcloud/vault.zip.gpg
+mv ~/.vault.zip.gpg.sha512 ~/Nextcloud/vault.zip.gpg.sha512
 rm -vfr ~/.vault*
 

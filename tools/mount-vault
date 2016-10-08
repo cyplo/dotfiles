@@ -2,7 +2,10 @@
 
 set -e
 echo "decrypting..."
-gpg2 -d ~/Nextcloud/vault.zip.gpg > ~/.vault.zip
+cp -v ~/Nextcloud/vault.zip.gpg ~/.vault.zip.gpg
+cp -v ~/Nextcloud/vault.zip.gpg.sha512 ~/.vault.zip.gpg.sha512
+sha512sum -c ~/.vault.zip.gpg.sha512
+gpg2 -d  ~/.vault.zip.gpg > ~/.vault.zip
 echo "mounting..."
 mkdir -p ~/.vault
 archivemount -o nobackup ~/.vault.zip ~/.vault
