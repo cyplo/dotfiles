@@ -112,7 +112,13 @@ if [[ -z $NORUBY ]]; then
 fi
 
 if [[ -z $NOVIM ]]; then
-    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    if [[ ! -d ~/.fzf ]]; then
+        git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    else
+        cd ~/.fzf
+        git pull
+        git submodule update --init --recursive
+    fi
     ~/.fzf/install --64 --all
     echo "\n" | vim +PluginInstall +qa
     if [[ -z $NOYCM ]]; then
