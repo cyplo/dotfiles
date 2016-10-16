@@ -145,9 +145,9 @@ $SUDO npm install -g reveal-md
 $SUDO npm install -g diff-so-fancy
 
 if [[ -z $NOPYTHON3 ]]; then
-    $SUDO pip3 install Nikola --upgrade
+    $SUDO pip3 install ws4py watchdog webassets Nikola --upgrade
 else
-    $SUDO pip install Nikola --upgrade
+    $SUDO pip install ws4py watchdog webassets Nikola --upgrade
 fi
 
 if [[ -z $USER ]]; then
