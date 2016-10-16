@@ -150,7 +150,7 @@ else
     PIP=pip
 fi
 
-$SUDO $PIP install pygments-style-solarized ws4py watchdog webassets Nikola --upgrade
+$SUDO $PIP install pygments-style-solarized ws4py watchdog webassets Nikola
 
 if [[ -z $USER ]]; then
     USER=`whoami`
