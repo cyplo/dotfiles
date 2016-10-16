@@ -144,9 +144,11 @@ fi
 $SUDO npm install -g reveal-md
 $SUDO npm install -g diff-so-fancy
 
-# vdir syncer
-echo "installing vdirsyncer"
-$SUDO pip install vdirsyncer
+if [[ -z $NOPYTHON3 ]]; then
+    $SUDO pip3 install Nikola --upgrade
+else
+    $SUDO pip install Nikola --upgrade
+fi
 
 if [[ -z $USER ]]; then
     USER=`whoami`
