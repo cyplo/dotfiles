@@ -1,12 +1,7 @@
 #!/bin/bash
 
 set -e
-echo "decrypting..."
-cp -v ~/Nextcloud/vault.zip.gpg ~/.vault.zip.gpg
-cp -v ~/Nextcloud/vault.zip.gpg.sha512 ~/.vault.zip.gpg.sha512
-sha512sum -c ~/.vault.zip.gpg.sha512
-gpg2 -d  ~/.vault.zip.gpg > ~/.vault.zip
-echo "mounting..."
 mkdir -p ~/.vault
-archivemount -o nobackup ~/.vault.zip ~/.vault
-
+sudo cryptsetup luksOpen ~/Nextcloud/vault.img vault
+sudo mount /dev/mapper/vault ~/.vault
+sudo chown $USER ~/.vault
