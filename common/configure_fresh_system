@@ -98,10 +98,12 @@ if [[ -z $NORUST ]]; then
         git pull
         git submodule update --init --recursive
     fi
-    cargo install -j $jobs_count -f rustfmt
-    cargo install -j $jobs_count -f racer
-    cargo install -j $jobs_count -f rustsym
-    cargo install -j $jobs_count -f ripgrep
+set +e
+    cargo install rustfmt
+    cargo install racer
+    cargo install rustsym
+    cargo install ripgrep
+set -e
 fi
 
 if [[ -z $NORUBY ]]; then
@@ -110,6 +112,14 @@ if [[ -z $NORUBY ]]; then
 fi
 
 if [[ -z $NOVIM ]]; then
+    if [[ ! -d ~/.fzf ]]; then
+        git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    else
+        cd ~/.fzf
+        git pull
+        git submodule update --init --recursive
+    fi
+    ~/.fzf/install --64 --all
     echo "\n" | vim +PluginInstall +qa
     if [[ -z $NOYCM ]]; then
         cd ~/.vim/bundle/YouCompleteMe
@@ -134,9 +144,13 @@ fi
 $SUDO npm install -g reveal-md
 $SUDO npm install -g diff-so-fancy
 
-# vdir syncer
-echo "installing vdirsyncer"
-$SUDO pip install vdirsyncer
+if [[ -z $NOPYTHON3 ]]; then
+    PIP=pip3
+else
+    PIP=pip
+fi
+
+$SUDO $PIP install pygments-style-solarized ws4py watchdog webassets Nikola
 
 if [[ -z $USER ]]; then
     USER=`whoami`
