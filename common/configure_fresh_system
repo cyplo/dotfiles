@@ -144,9 +144,13 @@ fi
 $SUDO npm install -g reveal-md
 $SUDO npm install -g diff-so-fancy
 
-# vdir syncer
-echo "installing vdirsyncer"
-$SUDO pip install vdirsyncer
+if [[ -z $NOPYTHON3 ]]; then
+    PIP=pip3
+else
+    PIP=pip
+fi
+
+$SUDO $PIP install pygments-style-solarized ws4py watchdog webassets Nikola
 
 if [[ -z $USER ]]; then
     USER=`whoami`
