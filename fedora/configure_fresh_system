@@ -5,17 +5,19 @@ set -e
 if [[ -z $NOUPGRADE ]]; then
     sudo dnf -y upgrade --best --allowerasing
 fi
-sudo dnf -y --best --allowerasing install tmux atop zsh thunderbird thunderbird-enigmail thunderbird-lightning firefox aria2 gajim lm_sensors freecad python3-pip qt5-qtbase-devel qt5-qtwebkit-devel meld whois curl pv nodejs terminator gsmartcontrol python-pip mercurial python3-devel libxslt-devel libjpeg-turbo-devel conky conky-manager redshift redshift-gtk cmake gtk2-devel intltool gparted wine solaar glances the_silver_searcher dkms kernel-devel gimp transmission-gtk git xz util-linux-user powertop dnf-automatic kdiff3 yum-utils util-linux-user ncurses-devel zeal
-FEDORA_VERSION=`rpm -E %fedora`
-sudo dnf -y install http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$FEDORA_VERSION.noarch.rpm
-sudo dnf -y install http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$FEDORA_VERSION.noarch.rpm
-sudo dnf -y --best --allowerasing install vlc splix gutenprint-cups cups-bjnp mono-devel keepass mplayer golang ncurses-compat-libs kicad retext
+
+sudo dnf -y --best --allowerasing install tmux atop zsh thunderbird thunderbird-enigmail thunderbird-lightning firefox aria2 gajim lm_sensors freecad python3-pip qt5-qtbase-devel qt5-qtwebkit-devel meld whois curl pv nodejs npm terminator gsmartcontrol python-pip mercurial python3-devel libxslt-devel libjpeg-turbo-devel conky conky-manager redshift redshift-gtk cmake gtk2-devel intltool gparted wine solaar glances the_silver_searcher dkms kernel-devel gimp transmission-gtk git xz util-linux-user powertop dnf-automatic kdiff3 yum-utils util-linux-user ncurses-devel zeal qt5-linguist qtkeychain-qt5-devel archivemount keepass splix gutenprint-cups cups-bjnp golang redhat-rpm-config
+
 sudo dnf -y groupinstall "C Development Tools and Libraries"
+sudo dnf -y groupinstall "Development Tools"
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 sudo cp -v /etc/dnf/automatic.conf /etc/dnf/automatic.conf.bak
 sudo cp -v $DIR/etc/dnf/automatic.conf /etc/dnf/automatic.conf
+sudo cp -v $DIR/etc/ld.so.conf.d/nextcloud.conf /etc/ld.so.conf.d/nextcloud.conf
+sudo ldconfig
+
 set +e
 sudo diff /etc/dnf/automatic.conf.bak /etc/dnf/automatic.conf
 set -e

@@ -25,7 +25,12 @@ endif
 
 if executable('rg')
   let g:ackprg = 'rg --no-heading --vimgrep'
+  set grepprg=rg\ --vimgrep
 endif
+
+" fzf
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+nmap <C-n> :Find 
 
 " appearance
 set number
