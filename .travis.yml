@@ -9,6 +9,7 @@ env:
     - DETECTED_OS=debian:jessie DOCKER_IMAGE=cyplo/jessie_base
     - DETECTED_OS=ubuntu:trusty DOCKER_IMAGE=cyplo/trusty_base
     - DETECTED_OS=ubuntu:xenial DOCKER_IMAGE=cyplo/xenial_base
+    - DETECTED_OS=ubuntu:yakkety
 
 sudo: required
 
