@@ -118,9 +118,13 @@ if [[ -z $NOVIM ]]; then
         git pull
         git submodule update --init --recursive
     fi
+    echo "Installing fzf"
     ~/.fzf/install --64 --all
+    echo "Installing Vim plugins"
     echo "\n" | vim +PluginInstall +qa
+
     if [[ -z $NOYCM ]]; then
+        "Echo configuring YouCompleteMe"
         cd ~/.vim/bundle/YouCompleteMe
 
         if [[ -z $NOPYTHON3 ]]; then
@@ -139,8 +143,10 @@ if [[ -z $NO_GO ]]; then
     go get -u github.com/exercism/cli/exercism
 fi
 
+echo "Installing Reveal-md"
 # talks: reveal-md
 $SUDO npm install -g reveal-md
+echo "Installing fancy differ"
 $SUDO npm install -g diff-so-fancy
 
 if [[ -z $NOPYTHON3 ]]; then
@@ -149,6 +155,7 @@ else
     PIP=pip
 fi
 
+echo "Installing Nikola"
 $SUDO $PIP install pygments-style-solarized ws4py watchdog webassets Nikola
 
 if [[ -z $USER ]]; then

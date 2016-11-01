@@ -9,7 +9,11 @@ set t_Co=256
 syntax enable
 set background=dark
 highlight clear SignColumn
-colorscheme solarized
+try
+    colorscheme solarized
+catch /^Vim\%((\a\+)\)\=:E185/
+    colorscheme desert
+endtry
 
 " plugins: airline
 let g:bufferline_echo = 0

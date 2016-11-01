@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 DOTFILES_PATH="$HOME/dev/dotfiles"
 mkdir -pv $HOME/dev/
 rm -fr $DOTFILES_PATH
@@ -26,5 +28,6 @@ ln -vfs $DIR/.gitconfig.cygwin $HOME/.gitconfig
 ln -vfs $DIR/.vimrc.cygwin $HOME/.vimrc
 
 # reinstall plugins with the new vimrc
+echo "Reinstalling Vim plugins with the correct plugin list"
 echo "\n" | vim +PluginInstall +qa
 
