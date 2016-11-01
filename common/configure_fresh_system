@@ -140,7 +140,7 @@ if [[ -z $NOVIM ]]; then
     echo "\n" | vim +PluginInstall +qa
 
     if [[ -z $NOYCM ]]; then
-        "Echo configuring YouCompleteMe"
+        echo "configuring YouCompleteMe"
         cd ~/.vim/bundle/YouCompleteMe
 
         if [[ -z $NOPYTHON3 ]]; then
