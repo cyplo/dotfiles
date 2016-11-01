@@ -10,9 +10,16 @@ if [[ ! -d $DOTFILES_PATH ]]; then
 fi
 
 cd "$DOTFILES_PATH"
-git remote set-url origin git@github.com:cyplo/dotfiles.git
 git checkout $branch
+
+git remote set-url origin https://github.com/cyplo/dotfiles.git
 git pull
+
+git remote set-url origin git@github.com:cyplo/dotfiles.git
+# might fail on CI where there are no secret keys
+set +e
+git pull
+set -e
 
 export NOSUDO=true
 export DONT_CHANGE_SHELL=true
