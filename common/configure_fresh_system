@@ -109,7 +109,7 @@ set +e
 echo "Querying for gpg2 path"
 gpg2_path=`which gpg2`
 echo "Got $gpg2_path for gpg2 path"
-echo set -e
+set -e
 if [[ -x gpg2_path ]]; then 
     echo "Using gpg2"
     GPG=gpg2
