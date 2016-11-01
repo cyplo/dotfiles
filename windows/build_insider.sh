@@ -31,6 +31,9 @@ export NOYCM=true
 curl https://bootstrap.pypa.io/get-pip.py > /tmp/get-pip.py
 python /tmp/get-pip.py
 
+# expose all the binaries fetched during the outer build
+export PATH="$OUTER_CLONE:$PATH"
+
 $DIR/common/configure_fresh_system
 ln -vfs $DIR/windows_cygwin/.minttyrc $HOME/
 ln -vfs $DIR/.gitconfig.cygwin $HOME/.gitconfig
