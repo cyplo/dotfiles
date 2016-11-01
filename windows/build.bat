@@ -1,5 +1,5 @@
 @echo on
-choco install -y --allowEmptyChecksum firefox googlechrome wget notepadplusplus sublimetext3 mono monodevelop gtksharp visualstudiocode microsoft-build-tools visualstudio2015community p4merge dotnet4.5 ruby nodejs.install stylecop conemu dejavufonts
+choco install -y --allowEmptyChecksum firefox googlechrome wget notepadplusplus sublimetext3 mono monodevelop gtksharp visualstudiocode p4merge dotnet4.5 ruby nodejs.install stylecop conemu dejavufonts ag
 call refreshenv
 
 wget -c https://cygwin.com/setup-x86_64.exe
