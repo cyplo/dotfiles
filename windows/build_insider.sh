@@ -4,17 +4,19 @@ set -e
 
 DOTFILES_PATH="$HOME/dev/dotfiles"
 mkdir -pv $HOME/dev/
-rm -fr $DOTFILES_PATH
 
-git clone "$OUTER_CLONE" "$DOTFILES_PATH"
+if [[ ! -d $DOTFILES_PATH ]]; then
+    git clone "$OUTER_CLONE" "$DOTFILES_PATH"
+fi
+
 cd "$DOTFILES_PATH"
 git remote set-url origin git@github.com:cyplo/dotfiles.git
 git checkout $branch
+git pull
 
 export NOSUDO=true
 export DONT_CHANGE_SHELL=true
 export NORUST=true
-export NORUBY=true
 export NO_GO=true
 export DIR=$DOTFILES_PATH 
 export NOYCM=true
