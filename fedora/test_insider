@@ -3,7 +3,8 @@
 set -e
 
 export DONT_CHANGE_SHELL=true
-export DONT_START_TOR=true
+export NO_SYSTEMCTL=true
+export NO_COMPILE_VIM=true
 
 dnf -y install sudo
 

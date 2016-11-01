@@ -1,0 +1,50 @@
+call vundle#end()
+filetype plugin indent on
+
+" line ending
+set fileformats=unix,dos
+
+" colours
+set t_Co=256
+syntax enable
+set background=dark
+highlight clear SignColumn
+colorscheme solarized
+
+" plugins: airline
+let g:bufferline_echo = 0
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
+" plugins: rust
+let g:rustfmt_autosave = 1
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+if executable('rg')
+  let g:ackprg = 'rg --no-heading --vimgrep'
+  set grepprg=rg\ --vimgrep
+endif
+
+" fzf
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+nmap <C-n> :Find 
+
+" appearance
+set number
+set relativenumber
+set laststatus=2
+set noshowmode
+set showtabline=1 "only show tabline when more than 1 tab
+
+" exclude quickfix from the buffers list
+augroup qf
+    autocmd!
+    autocmd FileType qf set nobuflisted
+augroup END
+
+" vimdiff
+set diffopt+=iwhite
+set diffexpr=""

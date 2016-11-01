@@ -4,7 +4,8 @@ set -e
 
 export DEBIAN_FRONTEND=noninteractive
 export DONT_CHANGE_SHELL=true
-export DONT_START_TOR=true
+export NO_SYSTEMCTL=true
+export NO_COMPILE_VIM=true
 
 echo "APT::Acquire::Retries=16;" >> /etc/apt/apt.conf.d/99_retries
 
@@ -15,5 +16,5 @@ cd $HOME
 mkdir -p dev/
 cp -rv temp/dotfiles dev/
 
-./dev/dotfiles/bunsen/configure_fresh_system
+./dev/dotfiles/debian/configure_fresh_system
 

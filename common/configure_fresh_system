@@ -19,6 +19,7 @@ if [[ -z $DONT_CHANGE_SHELL ]]; then
 fi
 
 CURL="curl -sSf"
+jobs_count=`nproc`
 
 if [[ -z $DIR ]]; then
     echo "please set DIR"
@@ -32,7 +33,7 @@ git submodule update --init --recursive
 
 #configs
 ln -vfs "$DIR/.vim" ~/.
-ln -vfs "$DIR/.vimrc" ~/.
+ln -vfs "$DIR/.vimrc.linux" ~/.vimrc
 ln -vfs "$DIR/.tmux.conf" ~/.
 rm -f "~/.zshrc"
 ln -vfs "$DIR/.zshrc" ~/.
@@ -96,33 +97,59 @@ if [[ -z $NORUST ]]; then
         git pull
         git submodule update --init --recursive
     fi
-    cargo install -f rustfmt
+set +e
+    cargo install rustfmt
+    cargo install racer
+    cargo install rustsym
+    cargo install ripgrep
+set -e
 fi
 
-echo "\n" | vim +PluginInstall +qa
-
-cd "$DIR/.vim/bundle/YouCompleteMe/"
-git submodule update --init --recursive
-if [[ -z $NORUST ]]; then
-    ./install.py --racer-completer --clang-completer
-else
-    ./install.py --clang-completer
+if [[ -z $NORUBY ]]; then
+    gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+    curl -sSL https://get.rvm.io | bash -s stable --ruby
 fi
 
-# go
-export GOPATH="$HOME/go"
-mkdir -p "$GOPATH"
+if [[ -z $NOVIM ]]; then
+    if [[ ! -d ~/.fzf ]]; then
+        git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    else
+        cd ~/.fzf
+        git pull
+        git submodule update --init --recursive
+    fi
+    ~/.fzf/install --64 --all
+    echo "\n" | vim +PluginInstall +qa
+    if [[ -z $NOYCM ]]; then
+        cd ~/.vim/bundle/YouCompleteMe
 
-# excercism
-go get -u github.com/exercism/cli/exercism
+        if [[ -z $NOPYTHON3 ]]; then
+            python3 ./install.py --clang-completer --racer-completer --tern-completer
+        else
+            python ./install.py --clang-completer --racer-completer --tern-completer
+        fi
+    fi
+fi
+
+if [[ -z $NO_GO ]]; then
+    export GOPATH="$HOME/go"
+    mkdir -p "$GOPATH"
+
+    # excercism
+    go get -u github.com/exercism/cli/exercism
+fi
 
 # talks: reveal-md
 $SUDO npm install -g reveal-md
 $SUDO npm install -g diff-so-fancy
 
-# vdir syncer
-echo "installing vdirsyncer"
-$SUDO pip install vdirsyncer
+if [[ -z $NOPYTHON3 ]]; then
+    PIP=pip3
+else
+    PIP=pip
+fi
+
+$SUDO $PIP install pygments-style-solarized ws4py watchdog webassets Nikola
 
 if [[ -z $USER ]]; then
     USER=`whoami`

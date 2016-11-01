@@ -1,0 +1,3 @@
+" YCM
+nnoremap <Leader>g :YcmCompleter GoTo<CR>
+

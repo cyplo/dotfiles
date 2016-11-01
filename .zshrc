@@ -47,7 +47,21 @@ fi
 
 alias benice="ionice -c3 nice -n20"
 
-# env vars
+# stuff that checks if it's added to the .zshrc exipliclty
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# other common env vars
 source ~/.setenv
 
+# TMUX
+if which tmux >/dev/null 2>&1; then
+    # if no session is started, start a new session
+    test -z ${TMUX} && tmux
+
+    # when quitting tmux, try to attach
+    while test -z ${TMUX}; do
+        tmux attach || break
+    done
+fi
 
