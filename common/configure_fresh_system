@@ -187,7 +187,6 @@ if [[ -z $NOPYTHON3 ]]; then
     fi
     echo "Installing Nikola"
     $SUDO $PIP install pygments-style-solarized ws4py watchdog webassets Nikola
-    fi
 fi
 
 if [[ -z $USER ]]; then
