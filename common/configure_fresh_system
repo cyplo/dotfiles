@@ -18,7 +18,7 @@ if [[ -z $DONT_CHANGE_SHELL ]]; then
     chsh -s `which zsh` $USER 
 fi
 
-CURL="curl -sSf"
+CURL="curl -sSfL"
 jobs_count=`nproc`
 
 if [[ -z $DIR ]]; then
