@@ -4,7 +4,7 @@ set -e
 
 DOTFILES_PATH="$HOME/dev/dotfiles"
 mkdir -pv $HOME/dev/
-
+ln -vfs "$OUTER_CLONE/.gitconfig.cygwin" $HOME/.gitconfig
 if [[ ! -d $DOTFILES_PATH ]]; then
     git clone "$OUTER_CLONE" "$DOTFILES_PATH"
 fi
@@ -36,7 +36,7 @@ export PATH="$OUTER_CLONE:$PATH"
 
 $DIR/common/configure_fresh_system
 ln -vfs $DIR/windows_cygwin/.minttyrc $HOME/
-ln -vfs $DIR/.gitconfig.cygwin $HOME/.gitconfig
+ln -vfs "$DOTFILES_PATH/.gitconfig.cygwin" $HOME/.gitconfig
 ln -vfs $DIR/.vimrc.cygwin $HOME/.vimrc
 
 # reinstall plugins with the new vimrc
