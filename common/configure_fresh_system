@@ -123,11 +123,14 @@ if [[ -z $NORUBY ]]; then
     $GPG --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
     set -e
     $GPG --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+    echo "Downloading RVM..."
     curl -sSL https://get.rvm.io | bash
     set +e
+    echo "Sourcing RVM..."
     source /usr/local/rvm/scripts/rvm
     source ~/.rvm/scripts/rvm
     set -e
+    echo "Installing Ruby..."
     rvm install 2.3.1 --disable-binary
 fi
 
