@@ -19,6 +19,7 @@ git remote set-url origin git@github.com:cyplo/dotfiles.git
 set +e
 git pull
 set -e
+unset branch
 
 export NOSUDO=true
 export DONT_CHANGE_SHELL=true
