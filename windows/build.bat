@@ -3,7 +3,7 @@ choco install -y --allowEmptyChecksum firefox googlechrome wget notepadplusplus 
 call refreshenv
 
 wget -c https://cygwin.com/setup-x86_64.exe
-setup-x86_64.exe -R "C:\cygwin64" -s http://mirror.switch.ch/ftp/mirror/cygwin/ -q -g -P curl,zsh,git,vim,wget,xz,tar,gawk,bzip2,subversion,zlib,fontconfig,clang,cmake,lua,perl,the_silver_searcher,gnupg,patch,zlib-devel,openssl-devel,libyaml-devel,libyaml0_2,sqlite3,make,libtool,autoconf,automake,bison,m4,mingw64-i686-gcc-core,mingw64-x86_64-gcc-core,patch,cygwin32-readline,libcrypt-devel,libcrypt0,ncurses,libncurses-devel
+setup-x86_64.exe -R "C:\cygwin64" -s http://mirror.switch.ch/ftp/mirror/cygwin/ -q -g -P curl,zsh,git,vim,wget,xz,tar,gawk,bzip2,subversion,zlib,fontconfig,clang,cmake,lua,perl,the_silver_searcher,gnupg,patch,zlib-devel,openssl-devel,libyaml-devel,libyaml0_2,sqlite3,make,libtool,autoconf,automake,bison,m4,mingw64-i686-gcc-core,mingw64-x86_64-gcc-core,patch,cygwin32-readline,libcrypt-devel,libcrypt0,ncurses,libncurses-devel,python-devel
 
 set script_path=%~dp0
 set repo_path=%script_path%\..\
