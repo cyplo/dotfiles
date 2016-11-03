@@ -170,7 +170,8 @@ $SUDO npm install -g reveal-md
 echo "Installing fancy differ"
 $SUDO npm install -g diff-so-fancy
 
-if [[ -z $NOPYTHON3 ]]; then
+pip3_path=`which pip3`
+if [[ -z $NOPYTHON3 && -x pip3_path ]]; then
     PIP=pip3
 else
     PIP=pip
