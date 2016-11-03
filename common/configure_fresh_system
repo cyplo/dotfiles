@@ -124,7 +124,7 @@ if [[ -z $NORUBY ]]; then
     set -e
     $GPG --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
     echo "Downloading RVM..."
-    curl -sSL https://get.rvm.io | bash
+    $CURL https://get.rvm.io | bash
     set +e
     echo "Sourcing RVM..."
     source /usr/local/rvm/scripts/rvm
