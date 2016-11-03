@@ -110,7 +110,7 @@ echo "Querying for gpg2 path"
 gpg2_path=`which gpg2`
 echo "Got $gpg2_path for gpg2 path"
 set -e
-if [[ -x gpg2_path ]]; then 
+if [[ -x "$gpg2_path" ]]; then 
     echo "Using gpg2"
     GPG=gpg2
 else
@@ -176,7 +176,7 @@ $SUDO npm install -g diff-so-fancy
 if [[ -z $NOPYTHON3 ]]; then
     pip3_path=`which pip3`
     echo "pip3 path is $pip3_path"
-    if [[ -x pip3_path ]]; then
+    if [[ -x "$pip3_path" ]]; then
         echo "Choosing pip3 for pip"
         PIP=pip3
     else
