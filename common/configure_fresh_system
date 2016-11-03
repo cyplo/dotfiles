@@ -127,7 +127,10 @@ if [[ -z $NORUBY ]]; then
     set +e
     source /usr/local/rvm/scripts/rvm
     source ~/.rvm/scripts/rvm
+    rvm remove 2.3.1
     set -e
+    rvm get branch /bugfix/issue-3519
+    rvm install 2.3.1 --disable-binary
 fi
 
 if [[ -z $NOVIM ]]; then
