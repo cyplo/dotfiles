@@ -1,6 +1,6 @@
 Bootstrap from cmd.exe running as Administrator:
 
-    @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/cyplo/dotfiles/master/windows_cygwin/bootstrap.ps1'))"
+    @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/cyplo/dotfiles/master/windows/bootstrap.ps1'))"
 
 launch a normal user's cmd.exe and:
 
@@ -15,5 +15,5 @@ launch a normal user's cmd.exe and:
 launch new cmd.exe as Administrator and:
     
     cd %HOMEPATH%\dev\dotfiles
-    windows_cygwin\build.bat
+    windows\build.bat
 

@@ -18,7 +18,7 @@ if [[ -z $DONT_CHANGE_SHELL ]]; then
     chsh -s `which zsh` $USER 
 fi
 
-CURL="curl -sSf"
+CURL="curl -sSfL"
 jobs_count=`nproc`
 
 if [[ -z $DIR ]]; then
@@ -105,9 +105,33 @@ set +e
 set -e
 fi
 
+set +e
+echo "Querying for gpg2 path"
+gpg2_path=`which gpg2`
+echo "Got $gpg2_path for gpg2 path"
+set -e
+if [[ -x "$gpg2_path" ]]; then 
+    echo "Using gpg2"
+    GPG=gpg2
+else
+    echo "WARNING using gpg instead of gpg2"
+    GPG=gpg
+fi
+
 if [[ -z $NORUBY ]]; then
-    gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-    curl -sSL https://get.rvm.io | bash -s stable --ruby
+    set +e
+    $GPG --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+    set -e
+    $GPG --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+    echo "Downloading RVM..."
+    $CURL https://get.rvm.io | bash
+    set +e
+    echo "Sourcing RVM..."
+    source /usr/local/rvm/scripts/rvm
+    source ~/.rvm/scripts/rvm
+    set -e
+    echo "Installing Ruby..."
+    rvm install 2.3.1 --disable-binary
 fi
 
 if [[ -z $NOVIM ]]; then
@@ -118,9 +142,13 @@ if [[ -z $NOVIM ]]; then
         git pull
         git submodule update --init --recursive
     fi
+    echo "Installing fzf"
     ~/.fzf/install --64 --all
+    echo "Installing Vim plugins"
     echo "\n" | vim +PluginInstall +qa
+
     if [[ -z $NOYCM ]]; then
+        echo "configuring YouCompleteMe"
         cd ~/.vim/bundle/YouCompleteMe
 
         if [[ -z $NOPYTHON3 ]]; then
@@ -139,17 +167,27 @@ if [[ -z $NO_GO ]]; then
     go get -u github.com/exercism/cli/exercism
 fi
 
+echo "Installing Reveal-md"
 # talks: reveal-md
 $SUDO npm install -g reveal-md
+echo "Installing fancy differ"
 $SUDO npm install -g diff-so-fancy
 
 if [[ -z $NOPYTHON3 ]]; then
-    PIP=pip3
-else
-    PIP=pip
+    set +e
+    pip3_path=`which pip3`
+    set -e
+    echo "pip3 path is $pip3_path"
+    if [[ -x "$pip3_path" ]]; then
+        echo "Choosing pip3 for pip"
+        PIP=pip3
+    else
+        echo "Choosing pip"
+        PIP=pip
+    fi
+    echo "Installing Nikola"
+    $SUDO $PIP install pygments-style-solarized ws4py watchdog webassets Nikola
 fi
-
-$SUDO $PIP install pygments-style-solarized ws4py watchdog webassets Nikola
 
 if [[ -z $USER ]]; then
     USER=`whoami`
