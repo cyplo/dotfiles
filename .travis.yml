@@ -8,7 +8,6 @@ env:
     - DETECTED_OS=fedora:24      DOCKER_IMAGE=cyplo/fedora24_base
     - DETECTED_OS=fedora:25      DOCKER_IMAGE=cyplo/fedora25_base
     - DETECTED_OS=debian:jessie  DOCKER_IMAGE=cyplo/jessie_base
-    - DETECTED_OS=ubuntu:trusty  DOCKER_IMAGE=cyplo/trusty_base
     - DETECTED_OS=ubuntu:xenial  DOCKER_IMAGE=cyplo/xenial_base
     - DETECTED_OS=ubuntu:yakkety DOCKER_IMAGE=cyplo/yakkety_base
 
