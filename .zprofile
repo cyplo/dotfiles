@@ -74,9 +74,7 @@ fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
 
-# stuff that checks if it's added to the .zshrc exipliclty
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # other common env vars
 source ~/.setenv
