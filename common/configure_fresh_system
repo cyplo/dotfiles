@@ -36,7 +36,12 @@ ln -vfs "$DIR/.vim" ~/.
 ln -vfs "$DIR/.vimrc.linux" ~/.vimrc
 ln -vfs "$DIR/.tmux.conf" ~/.
 rm -f "~/.zshrc"
-ln -vfs "$DIR/.zshrc" ~/.
+ln -vfs "$DIR/.zprezto" ~/.
+ln -vfs "$DIR/.zprezto/runcoms/zpreztorc" ~/.zpreztorc
+ln -vfs "$DIR/.zprezto/runcoms/zprofile" ~/.zprofile
+ln -vfs "$DIR/.zprezto/runcoms/zshenv" ~/.zshenv
+ln -vfs "$DIR/.zprezto/runcoms/zshrc" ~/.zshrc
+
 ln -vfs "$DIR/.setenv" ~/.
 ln -vfs "$DIR/.Slic3r" ~/.
 ln -vfs "$DIR/.ghci" ~/.
