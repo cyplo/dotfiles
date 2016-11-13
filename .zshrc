@@ -47,12 +47,6 @@ fi
 
 alias benice="ionice -c3 nice -n20"
 
-# stuff that checks if it's added to the .zshrc exipliclty
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# other common env vars
-source ~/.setenv
 
 # TMUX
 if which tmux >/dev/null 2>&1; then

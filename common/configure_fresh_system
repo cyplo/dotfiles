@@ -38,7 +38,7 @@ ln -vfs "$DIR/.tmux.conf" ~/.
 rm -f "~/.zshrc"
 ln -vfs "$DIR/.zprezto" ~/.
 ln -vfs "$DIR/.zprezto/runcoms/zpreztorc" ~/.zpreztorc
-ln -vfs "$DIR/.zprezto/runcoms/zprofile" ~/.zprofile
+ln -vfs "$DIR/.zprofile" ~/.zprofile
 ln -vfs "$DIR/.zprezto/runcoms/zshenv" ~/.zshenv
 ln -vfs "$DIR/.zprezto/runcoms/zshrc" ~/.zshrc
 
