@@ -41,3 +41,5 @@ if [[ `uname` =~ 'CYGWIN.*' ]]; then
 fi
 
 alias benice="ionice -c3 nice -n20"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

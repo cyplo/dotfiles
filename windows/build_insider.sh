@@ -2,6 +2,8 @@
 
 set -e
 
+chmod ao-rwx ~/.ssh/id_rsa
+
 DOTFILES_PATH="$HOME/dev/dotfiles"
 mkdir -pv $HOME/dev/
 ln -vfs "$OUTER_CLONE/.gitconfig.cygwin" $HOME/.gitconfig
