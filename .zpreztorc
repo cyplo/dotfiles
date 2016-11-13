@@ -25,7 +25,17 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
-  'prompt'
+  'prompt' \
+  'archive' \
+  'autosuggestions' \
+  'fasd' \
+  'git' \
+  'history-substring-search' \
+  'node' \
+  'python' \
+  'ssh' \
+  'tmux'
+
 
 #
 # Autosuggestions
