@@ -26,12 +26,6 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 bindkey "^R" history-incremental-search-backward
 
-# override prompt builder for the dir part
-# render just the last dir name
-prompt_dir() {
-    prompt_segment blue black '%1~'
-}
-
 # aliases
 if [[ `uname` == 'Darwin' ]]; then
 	alias vim=/usr/local/Cellar/vim/7.4/bin/vim
