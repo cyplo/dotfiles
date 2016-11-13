@@ -26,6 +26,11 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 bindkey "^R" history-incremental-search-backward
 
+
+prompt_dir() {
+  prompt_segment blue $PRIMARY_FG ' %1~ '
+}
+
 # aliases
 if [[ `uname` == 'Darwin' ]]; then
 	alias vim=/usr/local/Cellar/vim/7.4/bin/vim
