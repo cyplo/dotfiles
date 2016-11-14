@@ -1,5 +1,9 @@
 #!/bin/bash
 
+set +e
+
+chmod ao-rwx ~/.ssh/id_rsa
+
 set -e
 
 DOTFILES_PATH="$HOME/dev/dotfiles"

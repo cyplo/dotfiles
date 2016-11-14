@@ -36,10 +36,13 @@ ln -vfs "$DIR/.vim" ~/.
 ln -vfs "$DIR/.vimrc.linux" ~/.vimrc
 ln -vfs "$DIR/.tmux.conf" ~/.
 rm -f "~/.zshrc"
-ln -vfs "$DIR/.zshrc" ~/.
+ln -vfs "$DIR/.zprezto" ~/.
+ln -vfs "$DIR/.zpreztorc" ~/.zpreztorc
+ln -vfs "$DIR/.zprofile" ~/.zprofile
+ln -vfs "$DIR/.zprezto/runcoms/zshenv" ~/.zshenv
+ln -vfs "$DIR/.zshrc" ~/.zshrc
+
 ln -vfs "$DIR/.setenv" ~/.
-ln -vfs "$DIR/.oh-my-zsh" ~/.
-ln -vfs "$DIR/.oh-my-zsh-plugins/zsh-syntax-highlighting" ~/.oh-my-zsh/custom/plugins/
 ln -vfs "$DIR/.Slic3r" ~/.
 ln -vfs "$DIR/.ghci" ~/.
 ln -vfs "$DIR/.conkyrc" ~/.
