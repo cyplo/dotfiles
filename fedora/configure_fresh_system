@@ -29,6 +29,17 @@ if [[ -z $NO_SYSTEMCTL ]]; then
     sudo systemctl list-timers "*dnf-*"
 fi
 
+cd ~/Downloads
+rm -f "*code*.rpm"
+aria2c "https://go.microsoft.com/fwlink/?LinkID=760867"
+sudo dnf install "*code*.rpm"
+code --install-extension cssho.vscode-svgviewer
+code --install-extension donjayamanne.python
+code --install-extension saviorisdead.RustyCode
+code --install-extension seanmcbreen.Spell
+code --install-extension searKing.preview-vscode
+code --install-extension vscodevim.vim
+
 if [[ -z $NO_COMPILE_VIM ]]; then
     VIM_BUILD_DIR=/tmp
     cd "$VIM_BUILD_DIR"
