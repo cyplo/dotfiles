@@ -34,12 +34,15 @@ cd ~/Downloads
 rm -fv *code*.rpm
 aria2c "https://go.microsoft.com/fwlink/?LinkID=760867"
 sudo dnf -y install code*.rpm
-code --install-extension cssho.vscode-svgviewer
-code --install-extension donjayamanne.python
-code --install-extension saviorisdead.RustyCode
-code --install-extension seanmcbreen.Spell
-code --install-extension searKing.preview-vscode
-code --install-extension vscodevim.vim
+
+if [ "$(id -u)" != "0" ]; then
+    code --install-extension cssho.vscode-svgviewer 
+    code --install-extension donjayamanne.python
+    code --install-extension saviorisdead.RustyCode
+    code --install-extension seanmcbreen.Spell
+    code --install-extension searKing.preview-vscode
+    code --install-extension vscodevim.vim
+fi
 
 if [[ -z $NO_COMPILE_VIM ]]; then
     VIM_BUILD_DIR=/tmp
