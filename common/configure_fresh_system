@@ -55,6 +55,7 @@ ln -vfs "$DIR/.config/autostart/redshift-gtk.desktop" ~/.config/autostart/
 mkdir -p ~/.config/vdirsyncer/
 ln -vfs "$DIR/.config/vdirsyncer/config" ~/.config/vdirsyncer/
 ln -vfs "$DIR/.config/redshift.conf" ~/.config/redshift.conf
+ln -vfs "$DIR/.config/Code/User/settings.json" ~/.config/Code/User/settings.json
 
 source ~/.setenv
 
