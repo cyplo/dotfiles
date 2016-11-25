@@ -33,7 +33,7 @@ mkdir -p ~/Downloads
 cd ~/Downloads
 rm -f "*code*.rpm"
 aria2c "https://go.microsoft.com/fwlink/?LinkID=760867"
-sudo dnf -y install "*code*.rpm"
+sudo dnf -y install code*.rpm
 code --install-extension cssho.vscode-svgviewer
 code --install-extension donjayamanne.python
 code --install-extension saviorisdead.RustyCode
