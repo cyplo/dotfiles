@@ -1,6 +1,6 @@
 #!/bin/bash
 USERNAME=`whoami`
-MOUNT_PATH="/home/$USERNAME"
+MOUNT_PATH="/mnt"
 CURRENT_DIRECTORY=`pwd -P` # untangle symbolic links if needed - SELinux needs the real path
 IMAGE="debian:jessie"
 
