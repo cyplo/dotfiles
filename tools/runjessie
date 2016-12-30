@@ -1,7 +1,7 @@
 #!/bin/bash
-MOUNT_PATH="/tmp/data"
-CURRENT_DIRECTORY=`pwd -P` # untangle symbolic links if needed
 USERNAME=`whoami`
+MOUNT_PATH="/home/$USERNAME"
+CURRENT_DIRECTORY=`pwd -P` # untangle symbolic links if needed - SELinux needs the real path
 IMAGE="debian:jessie"
 
 if [[ -z $1 ]]; then
@@ -10,7 +10,7 @@ if [[ -z $1 ]]; then
 fi
 
 RESOLVED_ARGUMENTS="$@"
-docker run -i -t -v "$CURRENT_DIRECTORY":"$MOUNT_PATH":Z $IMAGE bash -c "useradd -M -d $MOUNT_PATH $USERNAME 2>&1 > /dev/null && bash -c '$RESOLVED_ARGUMENTS'"
+docker run -i -t -v "$CURRENT_DIRECTORY":"$MOUNT_PATH":Z $IMAGE bash -c "useradd -M -d '$MOUNT_PATH' $USERNAME && cd '$MOUNT_PATH' && bash -c '$RESOLVED_ARGUMENTS'"
 
 # restore SELinux context for the current directory
 restorecon -R "$CURRENT_DIRECTORY"
