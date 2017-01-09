@@ -2,21 +2,15 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-brew install aria2
-#!/bin/bash
-
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" </dev/null
 export PATH="/usr/local/bin:$PATH"
-
-command -v brew >/dev/null 2>&1 || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 set -e
 set -x
 
 brew update
 
-# Shell
+brew install aria2
 brew install \
   autojump \
   bash \
@@ -27,7 +21,6 @@ brew install \
   watch \
   zsh
 
-# Core Tools
 brew install \
   coreutils \
   curl \
@@ -35,7 +28,6 @@ brew install \
   findutils \
   gawk \
   gnu-sed \
-  gnupg \
   gnupg2 \
   gpg-agent \
   htop-osx \
@@ -51,14 +43,13 @@ brew install \
 
 brew cask install gimp
 
-# Development
 brew install \
   carthage \
   cmake \
   elm \
   git \
   haskell-stack \
-  heroku-toolbelt \
+  heroku \
   mercurial \
   node \
   python \
@@ -66,6 +57,7 @@ brew install \
   ruby \
   sqlite \
   tidy-html5
+brew install go
 
 if ! fgrep /usr/local/bin/zsh /etc/shells; then
   sudo bash -c "echo /usr/local/bin/zsh >> /etc/shells"
@@ -76,4 +68,6 @@ fi
 
 brew linkapps
 brew cleanup
+DIR="$DIR/../"
+DIR="$DIR" $DIR/common/configure_fresh_system
 
