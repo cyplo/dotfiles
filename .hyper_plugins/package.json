@@ -6,5 +6,7 @@
   "repository": "zeit/hyper",
   "license": "MIT",
   "homepage": "https://hyper.is",
-  "dependencies": {}
+  "dependencies": {
+    "hyper-solarized-dark": "latest"
+  }
 }
