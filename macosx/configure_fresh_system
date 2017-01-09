@@ -42,6 +42,7 @@ brew install \
   wget
 
 brew cask install gimp
+brew cask install iterm2
 
 brew install \
   carthage \
