@@ -58,7 +58,14 @@ fi
 if [[ -z $NO_COMPILE_VIM ]]; then
     VIM_BUILD_DIR=/tmp
     cd "$VIM_BUILD_DIR"
-    git clone https://github.com/vim/vim.git
+    if [[ ! -d vim ]]; then
+        git clone https://github.com/vim/vim.git --recursive
+    else
+        cd vim
+        git pull
+        git submodule update --init --recursive
+        cd ..
+    fi
     cd vim
     ./configure --with-features=huge \
                 --enable-multibyte \
