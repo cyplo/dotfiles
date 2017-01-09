@@ -1,18 +1,19 @@
 language: 
     - bash
 
-os:
-    - linux
-    - osx
-
+matrix:
+    include:
+        - os: osx
+        - os: linux
+          env: DETECTED_OS=fedora:24      DOCKER_IMAGE=cyplo/fedora24_base
+        - os: linux
+          env: DETECTED_OS=debian:jessie  DOCKER_IMAGE=cyplo/jessie_base
+        - os: linux
+          env: DETECTED_OS=ubuntu:xenial  DOCKER_IMAGE=cyplo/xenial_base
+        - os: linux
+        - env: DETECTED_OS=ubuntu:yakkety DOCKER_IMAGE=cyplo/yakkety_base
 script: 
     - ./test 
-
-env:
-    - DETECTED_OS=fedora:24      DOCKER_IMAGE=cyplo/fedora24_base
-    - DETECTED_OS=debian:jessie  DOCKER_IMAGE=cyplo/jessie_base
-    - DETECTED_OS=ubuntu:xenial  DOCKER_IMAGE=cyplo/xenial_base
-    - DETECTED_OS=ubuntu:yakkety DOCKER_IMAGE=cyplo/yakkety_base
 
 sudo: required
 
