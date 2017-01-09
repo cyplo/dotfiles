@@ -1,6 +1,10 @@
 language: 
     - bash
 
+os:
+    - linux
+    - osx
+
 script: 
     - ./test 
 
