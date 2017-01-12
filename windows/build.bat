@@ -1,5 +1,5 @@
 @echo on
-choco install -y --allowEmptyChecksum firefox googlechrome wget notepadplusplus sublimetext3 mono monodevelop gtksharp visualstudiocode p4merge dotnet4.5 nodejs.install conemu dejavufonts ag golang windows-adk-all wireshark procexp procmon drmemory.install
+choco install -y --allowEmptyChecksum firefox googlechrome wget notepadplusplus sublimetext3 mono monodevelop gtksharp visualstudiocode p4merge dotnet4.5 nodejs.install conemu dejavufonts ag golang windows-adk-all wireshark procexp procmon drmemory.install WinPcap
 call refreshenv
 
 wget -c https://cygwin.com/setup-x86_64.exe
