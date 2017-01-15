@@ -1,5 +1,9 @@
-language: 
-    - bash
+language: bash
+
+sudo: required
+
+services:
+      - docker
 
 matrix:
     include:
@@ -15,10 +19,6 @@ matrix:
 script: 
     - ./test 
 
-sudo: required
-
-services:
-      - docker
 git:
     submodules: false
 
