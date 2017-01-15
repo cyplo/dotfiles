@@ -9,6 +9,7 @@ set -e
 set -x
 
 brew update
+brew upgrade
 
 echo "Installing basic console utils"
 brew install vim
