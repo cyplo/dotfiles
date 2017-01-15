@@ -67,6 +67,7 @@ brew install \
 echo "Installing GUI tools"
 brew cask install gimp
 brew cask install iterm2
+brew cask install docker
 
 echo "Settings up zsh"
 if ! fgrep /usr/local/bin/zsh /etc/shells; then
