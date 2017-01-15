@@ -4,3 +4,5 @@
 !.vim/bundle/Vundle.vim
 setup*.exe
 *mirror*cygwin*/
+.DS_Store
+
