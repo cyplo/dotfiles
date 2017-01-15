@@ -7,11 +7,10 @@ services:
 
 dist: trusty
 
-osx_image: xcode8.2
-
 matrix:
     include:
         - os: osx
+          osx_image: xcode8.2
         - os: linux
           env: DETECTED_OS=fedora:24      DOCKER_IMAGE=cyplo/fedora24_base
         - os: linux
