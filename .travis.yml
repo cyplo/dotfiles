@@ -5,6 +5,8 @@ sudo: required
 services:
       - docker
 
+osx_image: xcode8.2
+
 matrix:
     include:
         - os: osx
