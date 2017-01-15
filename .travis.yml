@@ -1,9 +1,11 @@
-l--anguage: bash
+language: bash
 
 sudo: required
 
 services:
       - docker
+
+dist: trusty
 
 osx_image: xcode8.2
 
