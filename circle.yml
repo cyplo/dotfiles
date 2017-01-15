@@ -1,19 +1,14 @@
-language: 
-    - bash
-
-script: 
-    - ./test 
-
-env:
+machine:
+  environment:
     - DETECTED_OS=fedora:24      DOCKER_IMAGE=cyplo/fedora24_base
     - DETECTED_OS=debian:jessie  DOCKER_IMAGE=cyplo/jessie_base
     - DETECTED_OS=ubuntu:xenial  DOCKER_IMAGE=cyplo/xenial_base
     - DETECTED_OS=ubuntu:yakkety DOCKER_IMAGE=cyplo/yakkety_base
 
-sudo: required
+language: 
+    - bash
 
-services:
-      - docker
-git:
-    submodules: false
+compile:
+  override:
+    - ./test 
 
