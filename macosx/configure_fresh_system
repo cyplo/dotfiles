@@ -9,6 +9,8 @@ set -e
 set -x
 
 brew update
+
+echo "Installing basic console utils"
 brew install vim
 brew install aria2
 brew install \
@@ -20,6 +22,8 @@ brew install \
   tree \
   watch \
   zsh
+
+echo "Installing networking tools"
 
 brew install \
   coreutils \
@@ -41,9 +45,7 @@ brew install \
   unrar \
   wget
 
-brew cask install gimp
-brew cask install iterm2
-
+echo "Installing programmming tools"
 brew install \
   carthage \
   cmake \
@@ -58,10 +60,14 @@ brew install \
   ruby \
   sqlite \
   tidy-html5 \
-  doxygen
+  doxygen \
+  go
 
-brew install go
+echo "Installing GUI tools"
+brew cask install gimp
+brew cask install iterm2
 
+echo "Settings up zsh"
 if ! fgrep /usr/local/bin/zsh /etc/shells; then
   sudo bash -c "echo /usr/local/bin/zsh >> /etc/shells"
 fi
@@ -69,11 +75,13 @@ if [[ $(dscl . -read /Users/$USER UserShell | field 2) != '/usr/local/bin/zsh' ]
   sudo chsh -s /usr/local/bin/zsh $USER
 fi
 
+echo "Brew cleanup"
 brew linkapps
 brew cleanup
 brew prune
 brew doctor
 
+echo "Invoking common configuration scripts"
 DIR="$DIR/../"
 DIR="$DIR" $DIR/common/configure_fresh_system
 
