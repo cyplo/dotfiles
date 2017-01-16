@@ -1,4 +1,4 @@
 *.sh -crlf
-configure_fresh-system -crlf
+configure_fresh_system -crlf
 
 
