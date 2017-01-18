@@ -11,5 +11,5 @@ eval ${INSTALL_COMMAND}
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DIR="$DIR/../"
-DONT_CHANGE_SHELL=TRUE DIR="$DIR" $DIR/common/configure_fresh_system
+DONT_CHANGE_SHELL=TRUE DIR="$DIR" $DIR/common/configure_fresh_system.sh
 
