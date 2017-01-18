@@ -12,9 +12,8 @@ matrix:
         - os: osx
           osx_image: xcode8.2
           cache:
-              - .cargo
-              - .rustup
-              - .cache
+              - cargo
+              - $HOME/.rustup
         - os: linux
           env: DETECTED_OS=fedora:24      DOCKER_IMAGE=cyplo/fedora24_base
         - os: linux
