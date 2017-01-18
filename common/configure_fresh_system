@@ -120,6 +120,7 @@ set +e
         git pull
         git submodule update --init --recursive
     fi
+    rustup override set `cat rustc-version`
     cargo install
 set -e
 fi
