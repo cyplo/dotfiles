@@ -20,6 +20,7 @@ brew install \
   mobile-shell \
   the_silver_searcher \
   tmux \
+  reattach-to-user-namespace --with-wrap-pbcopy-and-pbpaste \
   tree \
   watch \
   zsh
