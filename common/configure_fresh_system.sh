@@ -43,7 +43,7 @@ ln -vfs "$DIR/.zshrc" ~/.zshrc
 ln -vfs "$DIR/.hyper.js" ~/.hyper.js
 ln -vfs "$DIR/.hyper_plugins" ~/.hyper_plugins
 
-ln -vfs "$DIR/.setenv" ~/.
+ln -vfs "$DIR/.setenv.sh" ~/.setenv
 ln -vfs "$DIR/.Slic3r" ~/.
 ln -vfs "$DIR/.ghci" ~/.
 ln -vfs "$DIR/.conkyrc" ~/.

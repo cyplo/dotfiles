@@ -23,7 +23,7 @@ matrix:
         - os: linux
           env: DETECTED_OS=ubuntu:yakkety DOCKER_IMAGE=cyplo/yakkety_base
 script: 
-    - ./test 
+    - ./test.sh
 
 git:
     submodules: false

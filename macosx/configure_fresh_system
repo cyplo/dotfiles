@@ -68,6 +68,7 @@ echo "Installing GUI tools"
 brew cask install gimp
 brew cask install iterm2
 brew cask install docker
+brew cask install p4merge
 
 echo "Settings up zsh"
 if ! fgrep /usr/local/bin/zsh /etc/shells; then
@@ -83,4 +84,5 @@ brew doctor
 echo "Invoking common configuration scripts"
 DIR="$DIR/../"
 DIR="$DIR" $DIR/common/configure_fresh_system
+ln -vfs "$DIR/.gitconfig.mac" ~/.gitconfig
 

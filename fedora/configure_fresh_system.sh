@@ -75,5 +75,5 @@ if [[ -z $NO_COMPILE_VIM ]]; then
 fi
 
 DIR="$DIR/../"
-DIR="$DIR" $DIR/common/configure_fresh_system
+DIR="$DIR" $DIR/common/configure_fresh_system.sh
 
