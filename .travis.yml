@@ -12,12 +12,12 @@ matrix:
         - os: osx
           osx_image: xcode8.2
           cache:
-            - cargo
             directories:
-              - $HOME/Library/Caches/Homebrew
               - /usr/local/Cellar
               - /usr/local/Caskroom
+              - $HOME/Library/Caches/Homebrew
               - $HOME/.rustup
+              - $HOME/.cargo
         - os: linux
           env: DETECTED_OS=fedora:24      DOCKER_IMAGE=cyplo/fedora24_base
         - os: linux
