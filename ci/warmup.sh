@@ -33,15 +33,6 @@ rm -f "$RUSTUP_TEMP"
 rustup update
 rustup default stable
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
-cd "$DIR/../"
-echo "getting rust sources..."
-if [[ ! -d rust ]]; then
-    git clone https://github.com/rust-lang/rust.git --recursive
-else
-    cd rust 
-    git pull
-    git submodule update --init --recursive
-fi
 
 cd "$DIR/../"
 if [[ ! -d alacritty ]]; then

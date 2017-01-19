@@ -77,6 +77,6 @@ brew prune
 brew doctor
 
 echo "Invoking common configuration scripts"
-DIR="$DIR/../"
+DIR="$DIR/../../"
 DIR="$DIR" $DIR/ci/warmup.sh
 
