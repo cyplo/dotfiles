@@ -17,7 +17,7 @@ install:
     cd ~/dev
     git clone git@github.com:cyplo/dotfiles.git
     cd dotfiles
-    ./ubuntu/configure_fresh_system
+    ./ubuntu/configure_fresh_system.sh
     # or /debian/.. or /fedora/..
 
 GNOME extensions list:
