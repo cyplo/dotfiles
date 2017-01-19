@@ -44,9 +44,8 @@ else
     git submodule update --init --recursive
 fi
 rustup override set `cat rustc-version`
-cargo install
-
 set +e
+cargo install
 echo "Querying for gpg2 path"
 gpg2_path=`which gpg2`
 echo "Got $gpg2_path for gpg2 path"
