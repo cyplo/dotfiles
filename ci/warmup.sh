@@ -1,4 +1,5 @@
 #!/bin/bash
+ln -vfs "$DIR/.setenv.sh" ~/.setenv
 
 SUDO=""
 if [[ -z $NOSUDO ]]; then
