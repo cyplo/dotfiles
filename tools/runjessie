@@ -1,0 +1,17 @@
+#!/bin/bash
+USERNAME=`whoami`
+MOUNT_PATH="/mnt"
+CURRENT_DIRECTORY=`pwd -P` # untangle symbolic links if needed - SELinux needs the real path
+IMAGE="debian:jessie"
+
+if [[ -z $1 ]]; then
+    echo "usage: `basename $0` command_to_run_inside_a_container"
+    exit 1
+fi
+
+RESOLVED_ARGUMENTS="$@"
+docker run -i -t -v "$CURRENT_DIRECTORY":"$MOUNT_PATH":Z $IMAGE bash -c "useradd -M -d '$MOUNT_PATH' $USERNAME && cd '$MOUNT_PATH' && bash -c '$RESOLVED_ARGUMENTS'"
+
+# restore SELinux context for the current directory
+restorecon -R "$CURRENT_DIRECTORY"
+

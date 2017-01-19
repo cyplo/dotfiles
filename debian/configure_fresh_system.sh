@@ -50,5 +50,5 @@ fi
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DIR="$DIR/../"
-DIR="$DIR" $DIR/common/configure_fresh_system
+DIR="$DIR" $DIR/common/configure_fresh_system.sh
 

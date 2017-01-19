@@ -2,7 +2,7 @@ language:
     - bash
 
 script: 
-    - ./test 
+    - ./test.sh
 
 env:
     - DETECTED_OS=fedora:24      DOCKER_IMAGE=cyplo/fedora24_base
