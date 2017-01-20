@@ -22,7 +22,7 @@ DIR=`realpath $DIR`
 echo "using $DIR as the top level directory"
 cd $DIR
 
-source ~/.setenv.sh
+source ~/.setenv
 
 #rust
 echo "installing rust"
