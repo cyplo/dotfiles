@@ -6,7 +6,6 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 export PATH="/usr/local/bin:$PATH"
 
 set -e
-set -x
 
 brew update
 brew upgrade
@@ -81,6 +80,9 @@ brew linkapps
 brew cleanup
 brew prune
 brew doctor
+
+echo "Configuring NVRAM"
+sudo nvram SystemAudioVolume=%80
 
 echo "Invoking common configuration scripts"
 DIR="$DIR/../"
