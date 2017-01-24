@@ -6,8 +6,6 @@ services:
 
 dist: trusty
 
-cache: cargo
-
 matrix:
     include:
         - os: osx

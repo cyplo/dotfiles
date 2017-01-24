@@ -85,8 +85,10 @@ brew doctor
 echo "Configuring NVRAM"
 sudo nvram SystemAudioVolume=%80
 
-echo "Invoking common configuration scripts"
 DIR="$DIR/../"
-DIR="$DIR" $DIR/common/configure_fresh_system.sh
+if [[ -z $CONTINUOUS_INTEGRATION ]]; then
+    echo "Invoking common configuration scripts"
+    DIR="$DIR" $DIR/common/configure_fresh_system.sh
+fi
 ln -vfs "$DIR/.gitconfig.mac" ~/.gitconfig
 
