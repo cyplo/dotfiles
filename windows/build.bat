@@ -1,6 +1,6 @@
 @echo on
 choco install -y --allowEmptyChecksum firefox googlechrome wget notepadplusplus sublimetext3 mono monodevelop gtksharp visualstudiocode p4merge dotnet4.5 nodejs.install conemu dejavufonts ag golang wireshark procexp procmon drmemory.install WinPcap keepass.install nextcloud-client f.lux
-choco upgrade all
+choco upgrade -y all
 call refreshenv
 
 wget -c https://cygwin.com/setup-x86_64.exe
