@@ -3,13 +3,7 @@ set -e
 
 if [[ $TRAVIS_OS_NAME == "osx" ]]; then
     export DONT_CHANGE_SHELL=true
-    if [[ -d $/.cargo ]]; then
-        echo "Cache warmed up, real build proceeding"
-        ./macosx/configure_fresh_system.sh
-    else
-        echo "Pre-warming cache"
-        ./ci/mac/warmup.sh
-    fi
+    ./macosx/configure_fresh_system.sh
     exit 0
 fi
 
