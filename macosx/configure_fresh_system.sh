@@ -69,6 +69,7 @@ brew cask install gimp
 brew cask install iterm2
 brew cask install docker
 brew cask install p4merge
+brew cask install appcode
 
 echo "Settings up zsh"
 if ! fgrep /usr/local/bin/zsh /etc/shells; then
@@ -86,6 +87,6 @@ sudo nvram SystemAudioVolume=%80
 
 echo "Invoking common configuration scripts"
 DIR="$DIR/../"
-DIR="$DIR" $DIR/common/configure_fresh_system
+DIR="$DIR" $DIR/common/configure_fresh_system.sh
 ln -vfs "$DIR/.gitconfig.mac" ~/.gitconfig
 
