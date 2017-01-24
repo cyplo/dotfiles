@@ -1,8 +1,5 @@
 [core]
 	autocrlf = false
-[user]
-	name = Cyryl Płotnicki
-	email = cyplo@cyplo.net
 [merge]
 	tool = p4merge
 [mergetool "p4merge"]

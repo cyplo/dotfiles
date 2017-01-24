@@ -1,3 +1,5 @@
+[core]
+	autocrlf = false
 [difftool "winmerge"]
     cmd = 'C:/Program Files (x86)/WinMerge/WinMergeU.exe' "$(cygpath -wla $LOCAL)" "$(cygpath -wla $REMOTE)"
     trustExitCode = false
