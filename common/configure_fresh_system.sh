@@ -42,7 +42,7 @@ ln -vfs "$DIR/.zprofile" ~/.zprofile
 ln -vfs "$DIR/.zprezto/runcoms/zshenv" ~/.zshenv
 ln -vfs "$DIR/.zshrc" ~/.zshrc
 
-ln -vfs "$DIR/.setenv" ~/.
+ln -vfs "$DIR/.setenv.sh" ~/.setenv
 ln -vfs "$DIR/.Slic3r" ~/.
 ln -vfs "$DIR/.ghci" ~/.
 ln -vfs "$DIR/.conkyrc" ~/.
@@ -55,6 +55,8 @@ ln -vfs "$DIR/.config/autostart/redshift-gtk.desktop" ~/.config/autostart/
 mkdir -p ~/.config/vdirsyncer/
 ln -vfs "$DIR/.config/vdirsyncer/config" ~/.config/vdirsyncer/
 ln -vfs "$DIR/.config/redshift.conf" ~/.config/redshift.conf
+mkdir -p ~/.config/Code/User
+ln -vfs "$DIR/.config/Code/User/settings.json" ~/.config/Code/User/settings.json
 
 source ~/.setenv
 
