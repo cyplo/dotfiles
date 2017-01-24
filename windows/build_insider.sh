@@ -1,5 +1,9 @@
 #!/bin/bash
 
+set +e
+
+chmod ao-rwx ~/.ssh/id_rsa
+
 set -e
 
 DOTFILES_PATH="$HOME/dev/dotfiles"
@@ -36,7 +40,7 @@ python /tmp/get-pip.py
 # expose all the binaries fetched during the outer build
 export PATH="$OUTER_CLONE:$PATH"
 
-$DIR/common/configure_fresh_system
+$DIR/common/configure_fresh_system.sh
 ln -vfs $DIR/windows_cygwin/.minttyrc $HOME/
 ln -vfs "$DOTFILES_PATH/.gitconfig.cygwin" $HOME/.gitconfig
 ln -vfs $DIR/.vimrc.cygwin $HOME/.vimrc
