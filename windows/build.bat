@@ -8,6 +8,10 @@ setup-x86_64.exe -R "C:\cygwin64" -s http://mirror.switch.ch/ftp/mirror/cygwin/ 
 
 set script_path=%~dp0
 set repo_path=%script_path%\..\
+pushd %repo_path%
+set repo_path=%CD%
+popd
+
 set bash=c:\cygwin64\bin\bash.exe --login -c
 
 for /f "delims=" %%A in ('%bash% "cd `cygpath $HOMEPATH`/dev/dotfiles && git rev-parse --abbrev-ref HEAD"') do set "branch=%%A" 
@@ -16,6 +20,12 @@ for /f "delims=" %%A in ('%bash% "cd `cygpath $HOMEPATH`/dev/dotfiles && git rev
 %bash% "export OUTER_CLONE=`cygpath $repo_path` && $script_path/build_insider.sh"
 
 echo "Configuring Windows-specific settings"
-copy /Y %repo_path%\conemu.xml %appdata%\Roaming\ConEmu.xml
-IF EXIST %HOMEPATH%\.gitconfig del /F %HOMEPATH%\.gitconfig
-mklink /h %repo_path%\.gitconfig.windows %HOMEPATH%\.gitconfig
+echo "%repo_path% is repo path"
+dir %repo_path%
+
+if not exist "%appdata%\Roaming\" mkdir "%appdata%\Roaming\"
+IF EXIST "%appdata%\Roaming\ConEmu.xml" del /F "%appdata%\Roaming\ConEmu.xml"
+mklink /h "%appdata%\Roaming\ConEmu.xml" "%repo_path%\conemu.xml"
+
+IF EXIST "%HOMEPATH%\.gitconfig" del /F "%HOMEPATH%\.gitconfig"
+mklink /h "%HOMEPATH%\.gitconfig" "%repo_path%\.gitconfig.windows
