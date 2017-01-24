@@ -151,7 +151,7 @@ if [[ -z $NORUBY ]]; then
     source ~/.rvm/scripts/rvm
     set -e
     echo "Installing Ruby..."
-    rvm install 2.3.1 --disable-binary
+    rvm install ruby --disable-binary
 fi
 
 if [[ -z $NOVIM ]]; then
