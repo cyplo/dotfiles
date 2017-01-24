@@ -16,6 +16,6 @@ for /f "delims=" %%A in ('%bash% "cd `cygpath $HOMEPATH`/dev/dotfiles && git rev
 %bash% "export OUTER_CLONE=`cygpath $repo_path` && $script_path/build_insider.sh"
 
 echo "Configuring Windows-specific settings"
-copy /Y conemu.xml %appdata%\Roaming\ConEmu.xml
+copy /Y %repo_path%\conemu.xml %appdata%\Roaming\ConEmu.xml
 IF EXIST %HOMEPATH%\.gitconfig del /F %HOMEPATH%\.gitconfig
 mklink /h %repo_path%\.gitconfig.windows %HOMEPATH%\.gitconfig
