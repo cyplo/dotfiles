@@ -19,9 +19,8 @@ for /f "delims=" %%A in ('%bash% "cd `cygpath $HOMEPATH`/dev/dotfiles && git rev
 %bash% "cp -vr `cygpath $HOMEPATH`/.ssh $HOME/"
 %bash% "export OUTER_CLONE=`cygpath $repo_path` && $script_path/build_insider.sh"
 
-echo "Configuring Windows-specific settings"
-echo "%repo_path% is repo path"
-dir %repo_path%
+echo Configuring Windows-specific settings
+echo %repo_path% is repo path
 
 if not exist "%appdata%\Roaming\" mkdir "%appdata%\Roaming\"
 IF EXIST "%appdata%\Roaming\ConEmu.xml" del /F "%appdata%\Roaming\ConEmu.xml"
