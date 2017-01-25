@@ -190,6 +190,9 @@ if [[ -z $NOPYTHON3 ]]; then
         echo "Choosing pip"
         PIP=pip
     fi
+    echo "Upgrading pip"
+    $SUDO $PIP install --upgrade pip
+    $SUDO $PIP install packaging
     echo "Installing Nikola"
     $SUDO $PIP install pygments-style-solarized ws4py watchdog webassets Nikola
 fi
