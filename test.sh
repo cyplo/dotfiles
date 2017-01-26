@@ -1,4 +1,11 @@
 #!/bin/bash
+set -e
+
+if [[ $TRAVIS_OS_NAME == "osx" ]]; then
+    export DONT_CHANGE_SHELL=true
+    ./macosx/configure_fresh_system.sh
+    exit 0
+fi
 
 if [[ -z $DETECTED_OS ]]; then
     echo "cannot detect OS, please set DETECTED_OS manually"

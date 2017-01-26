@@ -1,9 +1,6 @@
 [submodule "tools/icdiff.git"]
 	path = tools/icdiff.git
 	url = https://github.com/jeffkaufman/icdiff.git
-[submodule "tools/subuser"]
-	path = tools/subuser
-	url = https://github.com/subuser-security/subuser
 [submodule ".vim/bundle/Vundle.vim"]
 	path = .vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
