@@ -19,7 +19,6 @@ if [[ -z $DONT_CHANGE_SHELL ]]; then
 fi
 
 CURL="curl -sSfL"
-jobs_count=`nproc`
 
 if [[ -z $DIR ]]; then
     echo "please set DIR"
@@ -41,6 +40,8 @@ ln -vfs "$DIR/.zpreztorc" ~/.zpreztorc
 ln -vfs "$DIR/.zprofile" ~/.zprofile
 ln -vfs "$DIR/.zprezto/runcoms/zshenv" ~/.zshenv
 ln -vfs "$DIR/.zshrc" ~/.zshrc
+ln -vfs "$DIR/.hyper.js" ~/.hyper.js
+ln -vfs "$DIR/.hyper_plugins" ~/.hyper_plugins
 
 ln -vfs "$DIR/.setenv.sh" ~/.setenv
 ln -vfs "$DIR/.Slic3r" ~/.
@@ -63,7 +64,9 @@ source ~/.setenv
 # symlink 'nodejs' as node on some systems
 # will replace symlink if it exists, but won't replace regular file
 if [[ ! -f /usr/bin/node ]]; then
-    $SUDO ln -vfs /usr/bin/nodejs /usr/bin/node
+    if [[ -f /usr/bin/nodejs ]]; then
+        $SUDO ln -vfs /usr/bin/nodejs /usr/bin/node
+    fi
 fi
 
 # tools
@@ -107,6 +110,18 @@ set +e
     cargo install racer
     cargo install rustsym
     cargo install ripgrep
+
+    cd "$DIR/../"
+    if [[ ! -d alacritty ]]; then
+        git clone https://github.com/jwilm/alacritty.git --recursive
+        cd alacritty
+    else
+        cd alacritty 
+        git pull
+        git submodule update --init --recursive
+    fi
+    rustup override set `cat rustc-version`
+    cargo install
 set -e
 fi
 
@@ -203,7 +218,7 @@ fi
 
 # normalize npm permissions
 mkdir -p $HOME/.npm
-$SUDO chown $USER $HOME/.npm -R
+$SUDO chown -R $USER $HOME/.npm
 
 echo
 echo "now go ahead and restart"
