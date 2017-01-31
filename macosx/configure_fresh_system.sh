@@ -89,5 +89,5 @@ if [[ -z $CONTINUOUS_INTEGRATION ]]; then
     DIR="$DIR" $DIR/common/configure_fresh_system.sh
 fi
 ln -vfs "$DIR/.gitconfig.mac" $HOME/.gitconfig
-ln -vfs "$DIR/.config/Code/User/settings.json" "$HOME/Library/Application Support/Code/settings.json"
+ln -vfs "$DIR/.config/Code/User/settings.json" "$HOME/Library/Application Support/Code/User/settings.json"
 
