@@ -10,7 +10,6 @@ set -e
 brew update
 brew upgrade
 
-echo "Installing basic console utils"
 brew install vim
 brew install aria2
 brew install \
@@ -23,8 +22,6 @@ brew install \
   tree \
   watch \
   zsh
-
-echo "Installing networking tools"
 
 brew install \
   coreutils \
@@ -44,9 +41,9 @@ brew install \
   pinentry-mac \
   socat \
   unrar \
-  wget
+  wget \
+  fontconfig
 
-echo "Installing programmming tools"
 brew install \
   carthage \
   cmake \
@@ -86,9 +83,11 @@ echo "Configuring NVRAM"
 sudo nvram SystemAudioVolume=%80
 
 DIR="$DIR/../"
+DIR=`realpath "$DIR"`
 if [[ -z $CONTINUOUS_INTEGRATION ]]; then
     echo "Invoking common configuration scripts"
     DIR="$DIR" $DIR/common/configure_fresh_system.sh
 fi
-ln -vfs "$DIR/.gitconfig.mac" ~/.gitconfig
+ln -vfs "$DIR/.gitconfig.mac" $HOME/.gitconfig
+ln -vfs "$DIR/.config/Code/User/settings.json" "$HOME/Library/Application Support/Code/settings.json"
 
