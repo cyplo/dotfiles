@@ -31,11 +31,6 @@ prompt_dir() {
   prompt_segment blue $PRIMARY_FG ' %1~ '
 }
 
-# aliases
-if [[ `uname` == 'Darwin' ]]; then
-	alias vim=/usr/local/Cellar/vim/7.4/bin/vim
-fi
-
 if [[ `uname` =~ 'CYGWIN.*' ]]; then
     export DISPLAY=:0.0
 fi

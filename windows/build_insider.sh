@@ -40,7 +40,10 @@ python /tmp/get-pip.py
 # expose all the binaries fetched during the outer build
 export PATH="$OUTER_CLONE:$PATH"
 
-$DIR/common/configure_fresh_system
+echo "Invoking common configuration script"
+$DIR/common/configure_fresh_system.sh
+
+echo "Making symlinks"
 ln -vfs $DIR/windows_cygwin/.minttyrc $HOME/
 ln -vfs "$DOTFILES_PATH/.gitconfig.cygwin" $HOME/.gitconfig
 ln -vfs $DIR/.vimrc.cygwin $HOME/.vimrc
