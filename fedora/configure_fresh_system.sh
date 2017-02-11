@@ -56,7 +56,7 @@ fi
 
 # vim
 if [[ -z $NO_COMPILE_VIM ]]; then
-    VIM_BUILD_DIR=/tmp
+    VIM_BUILD_DIR=`realpath "$DIR/../../"`
     cd "$VIM_BUILD_DIR"
     if [[ ! -d vim ]]; then
         git clone https://github.com/vim/vim.git --recursive
@@ -74,10 +74,9 @@ if [[ -z $NO_COMPILE_VIM ]]; then
                 --enable-luainterp \
                 --enable-gui=no \
                 --enable-cscope 
-    make -j2
+    make -j`nproc`
     sudo make install
     cd
-    rm -fvr "$VIM_BUILD_DIR/vim"
 fi
 
 DIR="$DIR/../"
