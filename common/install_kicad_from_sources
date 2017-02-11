@@ -2,37 +2,43 @@
 
 set -e
 
-bzr launchpad-login "saipeloan" 
-bzr whoami "Cyryl Plotnicki-Chudyk <bzr@cyplo.net>" 
+mkdir -p ~/build/
+cd ~/build/
 
-mkdir -p ~/build/kicad
-cd ~/build/kicad
-
-echo "add the following pubkey to launchpad:"
-cat ~/.ssh/id_rsa.pub
-echo "press [enter] when the key is added"
-read
 echo "checking out sources..."
 
-bzr checkout lp:kicad kicad.bzr
-cd kicad.bzr
-mkdir build
+if [[ ! -d kicad ]]; then
+    git clone https://github.com/KiCad/kicad-source-mirror.git kicad --recursive
+    cd kicad
+else
+    cd kicad
+    git pull
+    git submodule update --init --recursive
+fi
+
+mkdir -p  build
 cd build
 echo "compiling...."
 cmake -DKICAD_STABLE_VERSION=ON ../
 make clean
-make -j8
+benice make -j`nproc`
 echo "installing..."
 sudo make install
 
 # install component libraries
 cd ~/build/kicad
 echo "checking out libraries..."
-bzr checkout lp:~kicad-product-committers/kicad/library kicad-library.bzr
-cd kicad-library.bzr
+if [[ ! -d kicad-library ]]; then
+    git clone https://github.com/KiCad/kicad-library.git --recursive
+    cd kicad-library
+else
+    cd kicad-library
+    git pull
+    git submodule update --init --recursive
+fi
 mkdir build 
 cd build/ 
 echo "installing libraries"
 cmake ../ 
-sudo make install
+sudo make install -j`nproc`
 
