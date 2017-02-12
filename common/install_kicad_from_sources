@@ -2,8 +2,7 @@
 
 set -e
 
-mkdir -p ~/build/
-cd ~/build/
+cd ~/dev/
 
 echo "checking out sources..."
 
@@ -26,7 +25,7 @@ echo "installing..."
 sudo make install
 
 # install component libraries
-cd ~/build/kicad
+cd ~/dev/
 echo "checking out libraries..."
 if [[ ! -d kicad-library ]]; then
     git clone https://github.com/KiCad/kicad-library.git --recursive
