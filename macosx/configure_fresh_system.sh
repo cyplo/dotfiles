@@ -70,6 +70,7 @@ brew cask install iterm2
 brew cask install docker
 brew cask install p4merge
 brew cask install appcode
+brew cask install kicad
 
 echo "Settings up zsh"
 if ! fgrep /usr/local/bin/zsh /etc/shells; then
