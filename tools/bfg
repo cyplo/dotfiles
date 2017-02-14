@@ -1,0 +1,2 @@
+#!/bin/sh
+java -jar ~/tools/bfg-1.12.14.jar

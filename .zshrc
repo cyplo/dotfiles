@@ -1,11 +1,10 @@
-ZSH=$HOME/.oh-my-zsh
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
 
-ZSH_THEME="agnoster"
 COMPLETION_WAITING_DOTS="true"
 
 plugins=(vi-mode svn git python zsh-syntax-highlighting history-substring-search)
-
-source $ZSH/oh-my-zsh.sh
 
 HISTFILE=~/.histfile
 HISTSIZE=10240
@@ -27,41 +26,13 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 bindkey "^R" history-incremental-search-backward
 
-# override prompt builder for the dir part
-# render just the last dir name
-prompt_dir() {
-    prompt_segment blue black '%1~'
-}
 
-# aliases
-if [[ `uname` == 'Darwin' ]]; then
-	alias vim=/usr/local/Cellar/vim/7.4/bin/vim
-fi
+prompt_dir() {
+  prompt_segment blue $PRIMARY_FG ' %1~ '
+}
 
 if [[ `uname` =~ 'CYGWIN.*' ]]; then
     export DISPLAY=:0.0
-else
-    alias tssh="torsocks ssh"
-    alias tscp="torsocks scp"
 fi
 
-alias benice="ionice -c3 nice -n20"
-
-# stuff that checks if it's added to the .zshrc exipliclty
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# other common env vars
-source ~/.setenv
-
-# TMUX
-if which tmux >/dev/null 2>&1; then
-    # if no session is started, start a new session
-    test -z ${TMUX} && tmux
-
-    # when quitting tmux, try to attach
-    while test -z ${TMUX}; do
-        tmux attach || break
-    done
-fi
-
