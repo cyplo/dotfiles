@@ -35,6 +35,4 @@ if [[ `uname` =~ 'CYGWIN.*' ]]; then
     export DISPLAY=:0.0
 fi
 
-alias benice="ionice -c3 nice -n20"
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -34,6 +34,7 @@ git submodule update --init --recursive
 ln -vfs "$DIR/.vim" ~/.
 ln -vfs "$DIR/.vimrc.linux" ~/.vimrc
 ln -vfs "$DIR/.tmux.conf" ~/.
+ln -vfs "$DIR/.tmux.macosx" ~/.
 rm -f "~/.zshrc"
 ln -vfs "$DIR/.zprezto" ~/.
 ln -vfs "$DIR/.zpreztorc" ~/.zpreztorc
@@ -120,7 +121,7 @@ set +e
         git pull
         git submodule update --init --recursive
     fi
-    rustup override set `cat rustc-version`
+    rustup override set stable
     cargo install
 set -e
 fi
@@ -165,12 +166,12 @@ if [[ -z $NOVIM ]]; then
     echo "Installing fzf"
     ~/.fzf/install --64 --all
     echo "Installing Vim plugins"
-    echo "\n" | vim +PluginInstall +qa
+    echo "\n" | vim +PluginInstall! +qa
 
     if [[ -z $NOYCM ]]; then
         echo "configuring YouCompleteMe"
         cd ~/.vim/bundle/YouCompleteMe
-
+        git submodule update --init --recursive
         if [[ -z $NOPYTHON3 ]]; then
             python3 ./install.py --clang-completer --racer-completer --tern-completer
         else

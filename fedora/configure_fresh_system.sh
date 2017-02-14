@@ -42,8 +42,7 @@ sudo usermod -aG docker $USER
 # vscode
 mkdir -p ~/Downloads
 cd ~/Downloads
-rm -fv *code*.rpm
-aria2c "https://go.microsoft.com/fwlink/?LinkID=760867"
+aria2c -c "https://go.microsoft.com/fwlink/?LinkID=760867"
 sudo dnf -y install code*.rpm
 
 if [ "$(id -u)" != "0" ]; then
@@ -57,9 +56,16 @@ fi
 
 # vim
 if [[ -z $NO_COMPILE_VIM ]]; then
-    VIM_BUILD_DIR=/tmp
+    VIM_BUILD_DIR=`realpath "$DIR/../../"`
     cd "$VIM_BUILD_DIR"
-    git clone https://github.com/vim/vim.git
+    if [[ ! -d vim ]]; then
+        git clone https://github.com/vim/vim.git --recursive
+    else
+        cd vim
+        git pull
+        git submodule update --init --recursive
+        cd ..
+    fi
     cd vim
     ./configure --with-features=huge \
                 --enable-multibyte \
@@ -68,10 +74,9 @@ if [[ -z $NO_COMPILE_VIM ]]; then
                 --enable-luainterp \
                 --enable-gui=no \
                 --enable-cscope 
-    make -j2
+    make -j`nproc`
     sudo make install
     cd
-    rm -fvr "$VIM_BUILD_DIR/vim"
 fi
 
 DIR="$DIR/../"
