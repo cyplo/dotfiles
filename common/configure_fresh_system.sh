@@ -211,6 +211,8 @@ if [[ -z $NOPYTHON3 ]]; then
     $SUDO $PIP install packaging
     echo "Installing Nikola"
     $SUDO $PIP install pygments-style-solarized ws4py watchdog webassets Nikola
+    echo "Installing Jupyter"
+    $SUDO $PIP install install jupyter
 fi
 
 if [[ -z $USER ]]; then
