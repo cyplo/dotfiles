@@ -207,10 +207,10 @@ if [[ -z $NOPYTHON3 ]]; then
         PIP=pip
     fi
     echo "Upgrading pip"
-    $SUDO $PIP install --upgrade pip
-    $SUDO $PIP install packaging
+    $SUDO $PIP install --upgrade pip setuptools
+    $SUDO $PIP install --upgrade packaging
     echo "Installing Nikola"
-    $SUDO $PIP install pygments-style-solarized ws4py watchdog webassets Nikola
+    $SUDO $PIP install --upgrade pygments-style-solarized ws4py watchdog webassets Nikola
 fi
 
 if [[ -z $USER ]]; then
