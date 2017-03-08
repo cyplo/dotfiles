@@ -36,3 +36,6 @@ if [[ `uname` =~ 'CYGWIN.*' ]]; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# added by travis gem
+[ -f /home/cyryl/.travis/travis.sh ] && source /home/cyryl/.travis/travis.sh
