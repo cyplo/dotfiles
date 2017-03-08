@@ -43,7 +43,8 @@ sudo usermod -aG docker $USER
 mkdir -p ~/Downloads
 cd ~/Downloads
 aria2c -c "https://go.microsoft.com/fwlink/?LinkID=760867"
-sudo dnf -y install code*.rpm
+ls -1tr *code* | head -n -1 | xargs -d '\n' rm -fv --
+sudo dnf -y --best --allowerasing install code*.rpm
 
 if [ "$(id -u)" != "0" ]; then
     code --install-extension cssho.vscode-svgviewer 
