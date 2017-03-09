@@ -17,6 +17,7 @@ sudo cp -v /etc/dnf/automatic.conf /etc/dnf/automatic.conf.bak
 sudo cp -v $DIR/etc/dnf/automatic.conf /etc/dnf/automatic.conf
 sudo cp -v $DIR/etc/ld.so.conf.d/nextcloud.conf /etc/ld.so.conf.d/nextcloud.conf
 sudo cp -v $DIR/etc/sysctl.d/90_swapiness.conf /etc/sysctl.d/
+sudo cp -v $DIR/etc/sysctl.d/91_inotify_limit.conf /etc/sysctl.d/
 sudo ldconfig
 
 set +e
@@ -42,8 +43,9 @@ sudo usermod -aG docker $USER
 # vscode
 mkdir -p ~/Downloads
 cd ~/Downloads
-aria2c -c "https://go.microsoft.com/fwlink/?LinkID=760867"
-sudo dnf -y install code*.rpm
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+sudo dnf -y install --best --allowerasing code
 
 if [ "$(id -u)" != "0" ]; then
     code --install-extension cssho.vscode-svgviewer 
