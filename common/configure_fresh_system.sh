@@ -182,7 +182,7 @@ fi
 
 if [[ -z $NO_GO ]]; then
     GOPATH="$HOME/go"
-    export GOPATH=`realpath "$GOTPATH"`
+    export GOPATH=`realpath "$GOPATH"`
     mkdir -p "$GOPATH"
 
     # excercism
