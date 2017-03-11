@@ -181,7 +181,8 @@ if [[ -z $NOVIM ]]; then
 fi
 
 if [[ -z $NO_GO ]]; then
-    export GOPATH="$HOME/go"
+    GOPATH="$HOME/go"
+    export GOPATH=`realpath "$GOTPATH"`
     mkdir -p "$GOPATH"
 
     # excercism
