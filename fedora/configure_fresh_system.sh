@@ -54,6 +54,7 @@ if [ "$(id -u)" != "0" ]; then
     code --install-extension seanmcbreen.Spell
     code --install-extension searKing.preview-vscode
     code --install-extension vscodevim.vim
+    code --install-extension webfreak.debug
 fi
 
 # vim
