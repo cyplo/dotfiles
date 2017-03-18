@@ -1,5 +1,5 @@
 
-export GOPATH=~/go
+export GOPATH=`realpath "$HOME/go"`
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$HOME/tools:$PATH
 export PATH=$GOPATH/bin:$PATH
