@@ -57,6 +57,10 @@ if [ "$(id -u)" != "0" ]; then
     code --install-extension webfreak.debug
 fi
 
+# dotnet
+sudo dnf -y copr enable nmilosev/dotnet-sig
+sudo dnf -y install dotnetcore
+
 # vim
 if [[ -z $NO_COMPILE_VIM ]]; then
     VIM_BUILD_DIR=`realpath "$DIR/../../"`
