@@ -107,6 +107,7 @@ if [[ -z $NORUST ]]; then
         git submodule update --init --recursive
     fi
 set +e
+    cargo install cargo-update
     cargo install rustfmt
     cargo install racer
     cargo install rustsym
