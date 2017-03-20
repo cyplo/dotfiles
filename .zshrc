@@ -1,11 +1,10 @@
-ZSH=$HOME/.oh-my-zsh
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
 
-ZSH_THEME="agnoster"
 COMPLETION_WAITING_DOTS="true"
 
 plugins=(vi-mode svn git python zsh-syntax-highlighting history-substring-search)
-
-source $ZSH/oh-my-zsh.sh
 
 HISTFILE=~/.histfile
 HISTSIZE=10240
@@ -27,29 +26,16 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 bindkey "^R" history-incremental-search-backward
 
-# override prompt builder for the dir part
-# render just the last dir name
-prompt_dir() {
-    prompt_segment blue black '%1~'
-}
 
-# aliases
-if [[ `uname` == 'Darwin' ]]; then
-	alias vim=/usr/local/Cellar/vim/7.4/bin/vim
-fi
+prompt_dir() {
+  prompt_segment blue $PRIMARY_FG ' %1~ '
+}
 
 if [[ `uname` =~ 'CYGWIN.*' ]]; then
     export DISPLAY=:0.0
-else
-    alias tssh="torsocks ssh"
-    alias tscp="torsocks scp"
 fi
 
-alias benice="ionice -c3 nice -n20"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# env vars
-source ~/.setenv
-
-
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+# added by travis gem
+[ -f /home/cyryl/.travis/travis.sh ] && source /home/cyryl/.travis/travis.sh

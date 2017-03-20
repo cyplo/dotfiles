@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -e
+sudo umount ~/.vault
+sudo cryptsetup luksClose vault
+
