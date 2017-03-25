@@ -33,6 +33,7 @@ export NORUST=true
 export NO_GO=true
 export DIR=$DOTFILES_PATH 
 export NOYCM=true
+export NOFZF=true
 
 curl https://bootstrap.pypa.io/get-pip.py > /tmp/get-pip.py
 python /tmp/get-pip.py
