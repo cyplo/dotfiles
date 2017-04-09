@@ -47,6 +47,8 @@ brew install \
   unrar \
   wget
 
+brew link gnupg2
+
 echo "Installing programmming tools"
 brew install \
   carthage \
