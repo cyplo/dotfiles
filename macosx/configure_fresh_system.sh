@@ -5,7 +5,6 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" </dev/null
 export PATH="/usr/local/bin:$PATH"
 
-brew unlink gnupg2
 set -e
 
 brew update
@@ -27,7 +26,7 @@ brew install \
 
 echo "Installing networking tools"
 
-brew install \
+brew install --force \
   coreutils \
   curl \
   dos2unix \
@@ -46,9 +45,6 @@ brew install \
   socat \
   unrar \
   wget
-
-brew unlink gnupg && brew link gnupg
-brew unlink gnupg2 && brew link gnupg2
 
 echo "Installing programmming tools"
 brew install \
