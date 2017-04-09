@@ -26,8 +26,8 @@ brew install \
 
 echo "Installing networking tools"
 
-brew unlink gnupg gnupg2
-brew uninstall gnupg gnupg2
+brew unlink gnupg2
+brew uninstall gnupg2
 
 brew install --force \
   coreutils \
