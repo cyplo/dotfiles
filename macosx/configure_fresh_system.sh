@@ -47,7 +47,8 @@ brew install \
   unrar \
   wget
 
-brew link gnupg2
+brew unlink gnupg && brew link gnupg
+brew unlink gnupg2 && brew link gnupg2
 
 echo "Installing programmming tools"
 brew install \
