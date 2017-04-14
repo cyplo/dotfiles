@@ -16,15 +16,15 @@
 [plugins]
 [profiles]
   [[default]]
-    background_color = "#002b36"
+    background_color = "#282828"
     background_darkness = 0.93
     background_type = transparent
     cursor_color = "#eee8d5"
     font = DejaVu Sans Mono for Powerline Bold 12
-    foreground_color = "#eee8d5"
+    foreground_color = "#ebdbb2"
     icon_bell = False
     login_shell = True
-    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    palette = "#282828:#cc241d:#98971a:#d79921:#458588:#b16286:#689d6a:#a89984:#928374:#fb4934:#b8bb26:#fabd2f:#83a598:#d3869b:#8ec07c:#ebdbb2"
     scrollback_infinite = True
     scrollback_lines = 8192
     show_titlebar = False
