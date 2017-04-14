@@ -37,7 +37,7 @@ else
     echo "No crypttab..."
 fi
 
-if [[ -f /boot/efi/EFI/fedora/grub.cfg ]]; then
+if sudo test -f /boot/efi/EFI/fedora/grub.cfg; then
     echo "generating grub config..."
     sudo grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
     echo "generating initramfs..."
