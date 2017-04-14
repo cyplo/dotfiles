@@ -25,17 +25,26 @@ sudo diff /etc/dnf/automatic.conf.bak /etc/dnf/automatic.conf
 set -e
 
  # SSD TRIM
-sudo cp -v /etc/crypttab /etc/crypttab.bak
-sudo sed -i 's/none.*$/none luks,discard/g' /etc/crypttab
-echo "crypttab:"
-set +e
-sudo cat /etc/crypttab
-sudo diff /etc/crypttab.bak /etc/crypttab
-set -e
-echo "generating grub config..."
-sudo grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
-echo "generating initramfs..."
-sudo dracut -f
+if [[ -f /etc/crypttab ]]; then
+    sudo cp -v /etc/crypttab /etc/crypttab.bak
+    sudo sed -i 's/none.*$/none luks,discard/g' /etc/crypttab
+    echo "crypttab:"
+    set +e
+    sudo cat /etc/crypttab
+    sudo diff /etc/crypttab.bak /etc/crypttab
+    set -e
+else
+    echo "No crypttab..."
+fi
+
+if [[ -f /boot/efi/EFI/fedora/grub.cfg ]]; then
+    echo "generating grub config..."
+    sudo grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
+    echo "generating initramfs..."
+    sudo dracut -f
+else
+    echo "No grub.cfg ..."
+fi
 
 if [[ -z $NO_SYSTEMCTL ]]; then
     sudo systemctl enable dnf-automatic.timer
