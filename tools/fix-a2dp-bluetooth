@@ -1,0 +1,24 @@
+#!/bin/bash
+set -e
+
+card_index=`pacmd list-cards | grep bluez_card -B1 | grep index | awk '{print $2}'`
+card_address=`pacmd list-cards | grep bluez_card -A8 | grep 'device\.string' | awk '{print $3}'`
+card_address=${card_address//\"/}
+
+if [[ -z $card_index ]]; then
+    echo "cannot determine card index, please make sure the headset is on and paired"
+    exit 1
+fi
+
+echo "switching card number $card_index off"
+pacmd set-card-profile $index off;
+sleep 2
+echo "reconnecting $card_address"
+echo "disconnect $card_address" | bluetoothctl
+sleep 3
+echo "connect $card_address" | bluetoothctl
+sleep 5
+card_index=`pacmd list-cards | grep bluez_card -B1 | grep index | awk '{print $2}'`
+echo "new index is $card_index"
+echo "changing the card profile"
+pacmd set-card-profile $card_index a2dp_sink
