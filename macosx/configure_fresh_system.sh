@@ -23,7 +23,12 @@ brew install \
   watch \
   zsh
 
-brew install \
+echo "Installing networking tools"
+
+brew unlink gnupg2
+brew uninstall gnupg2
+
+brew install --force \
   coreutils \
   curl \
   dos2unix \
