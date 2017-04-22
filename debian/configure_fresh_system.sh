@@ -51,7 +51,9 @@ if [[ -z $NO_COMPILE_VIM ]]; then
                 --enable-python3interp=yes \
                 --enable-luainterp \
                 --enable-gui=no \
-                --enable-cscope 
+                --enable-cscope \
+                --enable-pythoninterp \
+                --enable-python3interp
     make -j`nproc`
     sudo make install
     cd
