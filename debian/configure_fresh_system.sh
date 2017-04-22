@@ -2,6 +2,8 @@
 
 set -e
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 sudo apt-get update
 
 if [[ -z $NOUPGRADE ]]; then
@@ -30,10 +32,18 @@ echo "deb http://download.mono-project.com/repo/debian wheezy-libjpeg62-compat m
 sudo apt-get update
 sudo apt-get -y install mono-devel mono-complete 
 
+# vim
 if [[ -z $NO_COMPILE_VIM ]]; then
-    VIM_BUILD_DIR=/tmp
+    VIM_BUILD_DIR=`realpath "$DIR/../../"`
     cd "$VIM_BUILD_DIR"
-    git clone https://github.com/vim/vim.git
+    if [[ ! -d vim ]]; then
+        git clone https://github.com/vim/vim.git --recursive
+    else
+        cd vim
+        git pull
+        git submodule update --init --recursive
+        cd ..
+    fi
     cd vim
     ./configure --with-features=huge \
                 --enable-multibyte \
@@ -42,13 +52,11 @@ if [[ -z $NO_COMPILE_VIM ]]; then
                 --enable-luainterp \
                 --enable-gui=no \
                 --enable-cscope 
-    make -j2
+    make -j`nproc`
     sudo make install
     cd
-    rm -fvr "$VIM_BUILD_DIR/vim"
 fi
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DIR="$DIR/../"
 DIR="$DIR" $DIR/common/configure_fresh_system.sh
 
