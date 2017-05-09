@@ -16,8 +16,11 @@ set bash=c:\cygwin64\bin\bash.exe --login -c
 
 for /f "delims=" %%A in ('%bash% "cd `cygpath $HOMEPATH`/dev/dotfiles && git rev-parse --abbrev-ref HEAD"') do set "branch=%%A" 
 %bash% 'echo "branch is $branch"'
+if %errorlevel% neq 0 exit /b %errorlevel%
 %bash% "cp -vr `cygpath $HOMEPATH`/.ssh $HOME/"
+if %errorlevel% neq 0 exit /b %errorlevel%
 %bash% "export OUTER_CLONE=`cygpath $repo_path` && $script_path/build_insider.sh"
+if %errorlevel% neq 0 exit /b %errorlevel%
 
 echo Configuring Windows-specific settings
 echo %repo_path% is repo path
