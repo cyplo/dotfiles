@@ -1,0 +1,11 @@
+{
+    "window.zoomLevel": 1,
+    "extensions.autoUpdate": true,
+    "editor.cursorStyle": "block",
+    "rust.rustLangSrcPath": "/Users/cyryl/dev/rust/src",
+    "rust.racerPath":       "/Users/cyryl/.cargo/bin/racer",
+    "rust.rustfmtPath":     "/Users/cyryl/.cargo/bin/rustfmt",
+    "rust.rustsymPath":     "/Users/cyryl/.cargo/bin/rustsym",
+    "rust.cargoPath":       "/Users/cyryl/.cargo/bin/cargo",
+    "rust.cargoHome":       "/Users/cyryl/.cargo/"
+}
