@@ -51,10 +51,8 @@ ln -vfs "$DIR/.kdiff3rc" ~/.kde/share/config/kdiff3rc
 ln -vfs "$DIR/.gitconfig.linux.private" ~/.gitconfig
 mkdir -p ~/.config/autostart/
 # autostart apps
-ln -vfs "$DIR/.config/autostart/redshift-gtk.desktop" ~/.config/autostart/
 mkdir -p ~/.config/vdirsyncer/
 ln -vfs "$DIR/.config/vdirsyncer/config" ~/.config/vdirsyncer/
-ln -vfs "$DIR/.config/redshift.conf" ~/.config/redshift.conf
 mkdir -p ~/.config/Code/User
 ln -vfs "$DIR/.config/Code/User/settings.json" ~/.config/Code/User/settings.json
 
@@ -148,7 +146,7 @@ if [[ -z $NOVIM ]]; then
         git pull
         git submodule update --init --recursive
     fi
-    if [[ -z $NOFZF ]]; then
+    if [[ -z $NO_GO ]]; then
         echo "Installing fzf"
         ~/.fzf/install --64 --all
     fi

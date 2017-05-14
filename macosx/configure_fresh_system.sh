@@ -26,7 +26,10 @@ brew install \
 
 echo "Installing networking tools"
 
-brew install \
+brew unlink gnupg2
+brew uninstall gnupg2
+
+brew install --force \
   coreutils \
   curl \
   dos2unix \
@@ -68,9 +71,7 @@ echo "Installing GUI tools"
 brew cask install gimp
 brew cask install iterm2
 brew cask install docker
-brew cask install p4merge
 brew cask install appcode
-brew cask install kicad
 
 echo "Settings up zsh"
 if ! fgrep /usr/local/bin/zsh /etc/shells; then
