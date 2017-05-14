@@ -19,6 +19,7 @@ if [[ -z $DONT_CHANGE_SHELL ]]; then
 fi
 
 CURL="curl -sSfL"
+jobs_count=`nproc`
 
 if [[ -z $DIR ]]; then
     echo "please set DIR"
@@ -34,15 +35,12 @@ git submodule update --init --recursive
 ln -vfs "$DIR/.vim" ~/.
 ln -vfs "$DIR/.vimrc.linux" ~/.vimrc
 ln -vfs "$DIR/.tmux.conf" ~/.
-ln -vfs "$DIR/.tmux.macosx" ~/.
 rm -f "~/.zshrc"
 ln -vfs "$DIR/.zprezto" ~/.
 ln -vfs "$DIR/.zpreztorc" ~/.zpreztorc
 ln -vfs "$DIR/.zprofile" ~/.zprofile
 ln -vfs "$DIR/.zprezto/runcoms/zshenv" ~/.zshenv
 ln -vfs "$DIR/.zshrc" ~/.zshrc
-ln -vfs "$DIR/.hyper.js" ~/.hyper.js
-ln -vfs "$DIR/.hyper_plugins" ~/.hyper_plugins
 
 ln -vfs "$DIR/.setenv.sh" ~/.setenv
 ln -vfs "$DIR/.Slic3r" ~/.
@@ -63,9 +61,7 @@ source ~/.setenv
 # symlink 'nodejs' as node on some systems
 # will replace symlink if it exists, but won't replace regular file
 if [[ ! -f /usr/bin/node ]]; then
-    if [[ -f /usr/bin/nodejs ]]; then
-        $SUDO ln -vfs /usr/bin/nodejs /usr/bin/node
-    fi
+    $SUDO ln -vfs /usr/bin/nodejs /usr/bin/node
 fi
 
 # tools
@@ -105,23 +101,10 @@ if [[ -z $NORUST ]]; then
         git submodule update --init --recursive
     fi
 set +e
-    cargo install cargo-update
     cargo install rustfmt
     cargo install racer
     cargo install rustsym
     cargo install ripgrep
-
-    cd "$DIR/../"
-    if [[ ! -d alacritty ]]; then
-        git clone https://github.com/jwilm/alacritty.git --recursive
-        cd alacritty
-    else
-        cd alacritty 
-        git pull
-        git submodule update --init --recursive
-    fi
-    rustup override set stable
-    cargo install
 set -e
 fi
 
@@ -151,6 +134,7 @@ if [[ -z $NORUBY ]]; then
     source ~/.rvm/scripts/rvm
     set -e
     echo "Installing Ruby..."
+    rvm rubygems 
     rvm install ruby --disable-binary
 fi
 
@@ -167,12 +151,12 @@ if [[ -z $NOVIM ]]; then
         ~/.fzf/install --64 --all
     fi
     echo "Installing Vim plugins"
-    echo "\n" | vim +PluginInstall! +qa
+    echo "\n" | vim +PluginInstall +qa
 
     if [[ -z $NOYCM ]]; then
         echo "configuring YouCompleteMe"
         cd ~/.vim/bundle/YouCompleteMe
-        git submodule update --init --recursive
+
         if [[ -z $NOPYTHON3 ]]; then
             python3 ./install.py --clang-completer --racer-completer --tern-completer
         else
@@ -182,8 +166,7 @@ if [[ -z $NOVIM ]]; then
 fi
 
 if [[ -z $NO_GO ]]; then
-    GOPATH="$HOME/go"
-    export GOPATH=`realpath "$GOPATH"`
+    export GOPATH="$HOME/go"
     mkdir -p "$GOPATH"
 
     # excercism
@@ -208,11 +191,8 @@ if [[ -z $NOPYTHON3 ]]; then
         echo "Choosing pip"
         PIP=pip
     fi
-    echo "Upgrading pip"
-    $SUDO $PIP install --upgrade pip setuptools
-    $SUDO $PIP install --upgrade packaging
     echo "Installing Nikola"
-    $SUDO $PIP install --upgrade pygments-style-solarized ws4py watchdog webassets Nikola
+    $SUDO $PIP install pygments-style-solarized ws4py watchdog webassets Nikola
 fi
 
 if [[ -z $USER ]]; then
@@ -221,7 +201,7 @@ fi
 
 # normalize npm permissions
 mkdir -p $HOME/.npm
-$SUDO chown -R $USER $HOME/.npm
+$SUDO chown $USER $HOME/.npm -R
 
 echo
 echo "now go ahead and restart"
