@@ -8,7 +8,6 @@ export PATH="/usr/local/bin:$PATH"
 set -e
 
 brew update
-brew upgrade
 
 brew install vim
 brew install aria2
@@ -76,6 +75,8 @@ if ! fgrep /usr/local/bin/zsh /etc/shells; then
   sudo bash -c "echo /usr/local/bin/zsh >> /etc/shells"
 fi
 
+brew upgrade
+brew cask outdated | cut -f 1 | xargs brew cask install -f
 brew linkapps
 brew cleanup
 brew prune
