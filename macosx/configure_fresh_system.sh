@@ -23,8 +23,6 @@ brew install \
   watch \
   zsh
 
-echo "Installing networking tools"
-
 brew unlink gnupg2
 brew uninstall gnupg2
 
@@ -47,7 +45,8 @@ brew install --force \
   socat \
   unrar \
   wget \
-  fontconfig
+  fontconfig \
+  syncthing
 
 brew install \
   carthage \
@@ -66,18 +65,17 @@ brew install \
   doxygen \
   go
 
-echo "Installing GUI tools"
 brew cask install gimp
 brew cask install iterm2
 brew cask install docker
 brew cask install appcode
 
-echo "Settings up zsh"
+brew services start syncthing
+
 if ! fgrep /usr/local/bin/zsh /etc/shells; then
   sudo bash -c "echo /usr/local/bin/zsh >> /etc/shells"
 fi
 
-echo "Brew cleanup"
 brew linkapps
 brew cleanup
 brew prune
@@ -85,6 +83,7 @@ brew doctor
 
 echo "Configuring NVRAM"
 sudo nvram SystemAudioVolume=%80
+defaults write com.google.Keystone.Agent checkInterval 4233600
 
 DIR="$DIR/../"
 DIR=`realpath "$DIR"`
