@@ -10,7 +10,6 @@ set -e
 brew update
 brew upgrade
 
-echo "Installing basic console utils"
 brew install vim
 brew install aria2
 brew install \
@@ -23,8 +22,6 @@ brew install \
   tree \
   watch \
   zsh
-
-echo "Installing networking tools"
 
 brew unlink gnupg2
 brew uninstall gnupg2
@@ -47,9 +44,10 @@ brew install --force \
   pinentry-mac \
   socat \
   unrar \
-  wget
+  wget \
+  fontconfig \
+  syncthing
 
-echo "Installing programmming tools"
 brew install \
   carthage \
   cmake \
@@ -67,18 +65,17 @@ brew install \
   doxygen \
   go
 
-echo "Installing GUI tools"
 brew cask install gimp
 brew cask install iterm2
 brew cask install docker
 brew cask install appcode
 
-echo "Settings up zsh"
+brew services start syncthing
+
 if ! fgrep /usr/local/bin/zsh /etc/shells; then
   sudo bash -c "echo /usr/local/bin/zsh >> /etc/shells"
 fi
 
-echo "Brew cleanup"
 brew linkapps
 brew cleanup
 brew prune
@@ -86,11 +83,16 @@ brew doctor
 
 echo "Configuring NVRAM"
 sudo nvram SystemAudioVolume=%80
+defaults write com.google.Keystone.Agent checkInterval 4233600
 
 DIR="$DIR/../"
+DIR=`realpath "$DIR"`
 if [[ -z $CONTINUOUS_INTEGRATION ]]; then
     echo "Invoking common configuration scripts"
     DIR="$DIR" $DIR/common/configure_fresh_system.sh
 fi
-ln -vfs "$DIR/.gitconfig.mac" ~/.gitconfig
+ln -vfs "$DIR/.gitconfig.mac" $HOME/.gitconfig
+
+mkdir -p "$HOME/Library/Application Support/Code/User/"
+ln -vfs "$DIR/.config/Code/User/settings.json.mac" "$HOME/Library/Application Support/Code/User/settings.json"
 

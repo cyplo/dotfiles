@@ -162,8 +162,10 @@ if [[ -z $NOVIM ]]; then
         git pull
         git submodule update --init --recursive
     fi
-    echo "Installing fzf"
-    ~/.fzf/install --64 --all
+    if [[ -z $NO_GO ]]; then
+        echo "Installing fzf"
+        ~/.fzf/install --64 --all
+    fi
     echo "Installing Vim plugins"
     echo "\n" | vim +PluginInstall! +qa
 
