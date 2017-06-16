@@ -140,9 +140,9 @@ fi
 
 if [[ -z $NORUBY ]]; then
     set +e
-    $GPG --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+    $GPG --keyserver hkps://hkps.pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
     set -e
-    $GPG --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+    $GPG --keyserver hkps://hkps.pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
     echo "Downloading RVM..."
     $CURL https://get.rvm.io | bash
     set +e

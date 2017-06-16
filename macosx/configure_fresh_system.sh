@@ -70,7 +70,7 @@ brew cask install iterm2
 brew cask install docker
 brew cask install appcode
 
-brew services start syncthing
+reattach-to-user-namespace brew services start syncthing
 
 if ! fgrep /usr/local/bin/zsh /etc/shells; then
   sudo bash -c "echo /usr/local/bin/zsh >> /etc/shells"
