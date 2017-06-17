@@ -132,17 +132,19 @@ echo "Got $gpg2_path for gpg2 path"
 set -e
 if [[ -x "$gpg2_path" ]]; then 
     echo "Using gpg2"
+    KEYSERVER="hkps://hkps.pool.sks-keyservers.net"
     GPG=gpg2
 else
     echo "WARNING using gpg instead of gpg2"
+    KEYSERVER="hkp://pool.sks-keyservers.net"
     GPG=gpg
 fi
-
 if [[ -z $NORUBY ]]; then
+    RVM_SIGNING_KEY="409B6B1796C275462A1703113804BB82D39DC0E3"
     set +e
-    $GPG --keyserver hkps://hkps.pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+    $GPG --keyserver $KEYSERVER --recv-keys $RVM_SIGNING_KEY
     set -e
-    $GPG --keyserver hkps://hkps.pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+    $GPG --keyserver $KEYSERVER --recv-keys $RVM_SIGNING_KEY
     echo "Downloading RVM..."
     $CURL https://get.rvm.io | bash
     set +e
