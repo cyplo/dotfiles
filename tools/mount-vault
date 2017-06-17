@@ -2,6 +2,6 @@
 
 set -e
 mkdir -p ~/.vault
-sudo cryptsetup luksOpen ~/Nextcloud/vault.img vault
+sudo cryptsetup luksOpen ~/vaults/vault.img vault
 sudo mount /dev/mapper/vault ~/.vault
 sudo chown $USER ~/.vault
