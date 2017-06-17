@@ -45,7 +45,10 @@ brew install --force \
   unrar \
   wget \
   fontconfig \
-  syncthing
+
+set +e
+brew install syncthing
+set -e
 
 brew install \
   carthage \
