@@ -72,11 +72,12 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 sudo dnf -y install --best --allowerasing code
 
 if [ "$(id -u)" != "0" ]; then
-    code --install-extension cssho.vscode-svgviewer 
+    code --install-extension Compulim.compulim-vscode-dictionary
+    code --install-extension cssho.vscode-svgviewer
     code --install-extension donjayamanne.python
     code --install-extension saviorisdead.RustyCode
-    code --install-extension seanmcbreen.Spell
     code --install-extension searKing.preview-vscode
+    code --install-extension streetsidesoftware.code-spell-checker
     code --install-extension vscodevim.vim
     code --install-extension webfreak.debug
 fi
