@@ -47,8 +47,8 @@ else
 fi
 
 if [[ -z $NO_SYSTEMCTL ]]; then
-    sudo systemctl enable dnf-automatic.timer
-    sudo systemctl start  dnf-automatic.timer
+    sudo systemctl enable dnf-automatic-install.timer
+    sudo systemctl start  dnf-automatic-install.timer
     sudo systemctl enable docker
     sudo systemctl restart docker
     sudo systemctl enable fstrim.timer
@@ -81,10 +81,6 @@ if [ "$(id -u)" != "0" ]; then
     code --install-extension vscodevim.vim
     code --install-extension webfreak.debug
 fi
-
-# dotnet
-sudo dnf -y copr enable nmilosev/dotnet-sig
-sudo dnf -y install dotnetcore
 
 # vim
 if [[ -z $NO_COMPILE_VIM ]]; then
