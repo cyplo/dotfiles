@@ -2,6 +2,7 @@
 export GOPATH=`realpath "$HOME/go"`
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$HOME/tools:$PATH
+export PATH=$HOME/bin:$PATH
 export PATH=$GOPATH/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=/usr/local/heroku/bin:$PATH
