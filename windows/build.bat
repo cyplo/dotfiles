@@ -1,5 +1,5 @@
 @echo on
-choco install -y --allowEmptyChecksum firefox googlechrome wget notepadplusplus sublimetext3 mono monodevelop gtksharp visualstudiocode p4merge dotnet4.5 nodejs.install conemu dejavufonts ag golang wireshark procexp procmon drmemory.install WinPcap keepass.install nextcloud-client f.lux
+choco install -y --allowEmptyChecksum firefox googlechrome wget notepadplusplus sublimetext3 mono monodevelop visualstudiocode p4merge dotnet4.5 nodejs.install conemu dejavufonts ag golang wireshark procexp procmon drmemory.install WinPcap keepass.install nextcloud-client f.lux
 choco upgrade -y all
 call refreshenv
 
