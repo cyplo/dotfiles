@@ -80,3 +80,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # other common env vars
 source ~/.setenv
 
+# aliases
+vacuum-repo() {
+    git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -d
+}
