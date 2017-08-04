@@ -5,9 +5,9 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" </dev/null
 export PATH="/usr/local/bin:$PATH"
 
-set -e
 set -x
 
+set +e
 brew unlink gnupg
 brew unlink gnupg2
 brew uninstall gnupg
@@ -15,6 +15,7 @@ brew uninstall gnupg2
 brew unlink dirmngr
 brew uninstall dirmngr
 set -e
+
 brew install --force gnupg2
 brew update
 brew upgrade
