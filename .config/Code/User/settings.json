@@ -8,6 +8,5 @@
     "rust.rustsymPath": "/home/cyryl/.cargo/bin/rustsym",
     "rust.cargoPath":   "/home/cyryl/.cargo/bin/cargo",
     "rust.cargoHome": "/home/cyryl/.cargo/",
-    "editor.wordWrap": true,
-    "vim.disableAnnoyingNeovimMessage": true
+    "editor.wordWrap": true
 }
