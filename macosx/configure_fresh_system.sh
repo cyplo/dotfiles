@@ -48,6 +48,9 @@ brew install --force \
   fontconfig \
   syncthing
 
+brew link --overwrite gnupg
+brew link --overwrite gnupg2
+
 brew install \
   carthage \
   cmake \
