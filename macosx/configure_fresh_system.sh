@@ -26,15 +26,15 @@ brew install \
 brew unlink gnupg2
 brew uninstall gnupg2
 brew unlink dirmngr
+brew install --force --overwrite gnupg2
 
-brew install --force \
+brew install \
   coreutils \
   curl \
   dos2unix \
   findutils \
   gawk \
   gnu-sed \
-  gnupg2 \
   gpg-agent \
   htop-osx \
   httpie \
