@@ -14,6 +14,8 @@ brew uninstall gnupg
 brew uninstall gnupg2
 brew unlink dirmngr
 brew uninstall dirmngr
+brew unlink gpg-agent
+brew uninstall gpg-agent
 set -e
 
 brew install --force gnupg2
