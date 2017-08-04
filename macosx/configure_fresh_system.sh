@@ -25,6 +25,7 @@ brew install \
 
 brew unlink gnupg2
 brew uninstall gnupg2
+brew unlink dirmngr
 
 brew install --force \
   coreutils \
