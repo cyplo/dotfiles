@@ -6,6 +6,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 export PATH="/usr/local/bin:$PATH"
 
 set -e
+set -x
 
 brew update
 brew upgrade
@@ -23,10 +24,15 @@ brew install \
   watch \
   zsh
 
+set +e
+brew unlink gnupg
 brew unlink gnupg2
+brew uninstall gnupg
 brew uninstall gnupg2
 brew unlink dirmngr
-brew install --force --overwrite gnupg2
+brew uninstall dirmngr
+set -e
+brew install --force gnupg2
 
 brew install \
   coreutils \
@@ -48,9 +54,6 @@ brew install \
   wget \
   fontconfig \
   syncthing
-
-brew link --overwrite gnupg
-brew link --overwrite gnupg2
 
 brew install \
   carthage \
