@@ -18,6 +18,7 @@ sudo cp -v $DIR/etc/dnf/automatic.conf /etc/dnf/automatic.conf
 sudo cp -v $DIR/etc/ld.so.conf.d/nextcloud.conf /etc/ld.so.conf.d/nextcloud.conf
 sudo cp -v $DIR/etc/sysctl.d/90_swapiness.conf /etc/sysctl.d/
 sudo cp -v $DIR/etc/sysctl.d/91_inotify_limit.conf /etc/sysctl.d/
+sudo cp -v $DIR/etc/fail2ban/jail.d/01-sshd.conf /etc/fail2ban/jail.d/
 sudo ldconfig
 
 set +e
