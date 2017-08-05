@@ -18,7 +18,6 @@ set -e
 
 brew install --force gnupg2
 brew update
-brew upgrade
 
 brew install vim
 brew install aria2
@@ -53,7 +52,10 @@ brew install \
   unrar \
   wget \
   fontconfig \
-  syncthing
+
+set +e
+brew install syncthing
+set -e
 
 brew install \
   carthage \
@@ -77,12 +79,16 @@ brew cask install iterm2
 brew cask install docker
 brew cask install appcode
 
-brew services start syncthing
+if [[ -z $CONTINUOUS_INTEGRATION ]]; then
+    reattach-to-user-namespace brew services start syncthing
+fi
 
 if ! fgrep /usr/local/bin/zsh /etc/shells; then
   sudo bash -c "echo /usr/local/bin/zsh >> /etc/shells"
 fi
 
+brew upgrade
+brew cask outdated | cut -f 1 | xargs brew cask install -f
 brew linkapps
 brew cleanup
 brew prune
