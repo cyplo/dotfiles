@@ -6,7 +6,7 @@ if [[ -z $NOUPGRADE ]]; then
     sudo dnf -y upgrade 
 fi
 
-sudo dnf -y --best --allowerasing install tmux atop zsh thunderbird thunderbird-enigmail thunderbird-lightning firefox aria2 gajim lm_sensors freecad python3-pip qt5-qtbase-devel qt5-qtwebkit-devel meld whois curl pv nodejs npm terminator gsmartcontrol python-pip mercurial python3-devel libxslt-devel libjpeg-turbo-devel conky conky-manager cmake gtk2-devel intltool gparted wine solaar glances the_silver_searcher dkms kernel-devel gimp transmission-gtk git xz util-linux-user powertop dnf-automatic kdiff3 yum-utils util-linux-user ncurses-devel zeal qt5-linguist qtkeychain-qt5-devel archivemount keepass splix gutenprint-cups cups-bjnp golang redhat-rpm-config docker pcsc-lite-devel pcsc-tools pcsc-lite yubico-piv-tool yubikey-personalization-gui xloadimage yp-tools closure-compiler optipng jpegoptim grub2 grub2-efi dracut dracut-tools openssl-devel
+sudo dnf -y --best --allowerasing install tmux atop zsh thunderbird thunderbird-enigmail thunderbird-lightning firefox aria2 gajim lm_sensors freecad python3-pip qt5-qtbase-devel qt5-qtwebkit-devel meld whois curl pv nodejs npm terminator gsmartcontrol python-pip mercurial python3-devel libxslt-devel libjpeg-turbo-devel conky conky-manager cmake gtk2-devel intltool gparted wine solaar glances the_silver_searcher dkms kernel-devel gimp transmission-gtk git xz util-linux-user powertop dnf-automatic kdiff3 yum-utils util-linux-user ncurses-devel zeal qt5-linguist qtkeychain-qt5-devel archivemount keepass splix gutenprint-cups cups-bjnp golang redhat-rpm-config docker pcsc-lite-devel pcsc-tools pcsc-lite yubico-piv-tool yubikey-personalization-gui xloadimage yp-tools closure-compiler optipng jpegoptim grub2 grub2-efi dracut dracut-tools openssl-devel fail2ban
 
 sudo dnf -y groupinstall "C Development Tools and Libraries"
 sudo dnf -y groupinstall "Development Tools"
@@ -47,10 +47,12 @@ else
 fi
 
 if [[ -z $NO_SYSTEMCTL ]]; then
-    sudo systemctl enable dnf-automatic-install.timer
-    sudo systemctl start  dnf-automatic-install.timer
     sudo systemctl enable docker
     sudo systemctl restart docker
+    sudo systemctl enable fail2ban
+    sudo systemctl restart fail2ban
+    sudo systemctl enable dnf-automatic-install.timer
+    sudo systemctl restart dnf-automatic-install.timer
     sudo systemctl enable fstrim.timer
     sudo systemctl restart fstrim.timer
     sudo systemctl list-timers
