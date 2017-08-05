@@ -5,8 +5,18 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" </dev/null
 export PATH="/usr/local/bin:$PATH"
 
+set +e
+brew unlink gnupg
+brew unlink gnupg2
+brew uninstall gnupg
+brew uninstall gnupg2
+brew unlink dirmngr
+brew uninstall dirmngr
+brew unlink gpg-agent
+brew uninstall gpg-agent
 set -e
 
+brew install --force gnupg2
 brew update
 brew upgrade
 
@@ -23,17 +33,14 @@ brew install \
   watch \
   zsh
 
-brew unlink gnupg2
-brew uninstall gnupg2
 
-brew install --force \
+brew install \
   coreutils \
   curl \
   dos2unix \
   findutils \
   gawk \
   gnu-sed \
-  gnupg2 \
   gpg-agent \
   htop-osx \
   httpie \
