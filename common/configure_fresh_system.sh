@@ -84,6 +84,8 @@ fc-cache -rv
 $SUDO fc-cache -rv
 set -e
 
+source "$DIR/common/install_vim_from_sources.sh"
+
 if [[ -z $NORUST ]]; then
     #rust
     echo "installing rust"
