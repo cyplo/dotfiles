@@ -32,33 +32,6 @@ echo "deb http://download.mono-project.com/repo/debian wheezy-libjpeg62-compat m
 sudo apt-get update
 sudo apt-get -y install mono-devel mono-complete 
 
-# vim
-if [[ -z $NO_COMPILE_VIM ]]; then
-    VIM_BUILD_DIR=`realpath "$DIR/../../"`
-    cd "$VIM_BUILD_DIR"
-    if [[ ! -d vim ]]; then
-        git clone https://github.com/vim/vim.git --recursive
-    else
-        cd vim
-        git pull
-        git submodule update --init --recursive
-        cd ..
-    fi
-    cd vim
-    ./configure --with-features=huge \
-                --enable-multibyte \
-                --enable-rubyinterp \
-                --enable-python3interp=yes \
-                --enable-luainterp \
-                --enable-gui=no \
-                --enable-cscope \
-                --enable-pythoninterp \
-                --enable-python3interp
-    make -j`nproc`
-    sudo make install
-    cd
-fi
-
 DIR="$DIR/../"
 DIR="$DIR" $DIR/common/configure_fresh_system.sh
 

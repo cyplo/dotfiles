@@ -85,31 +85,6 @@ if [ "$(id -u)" != "0" ]; then
     code --install-extension webfreak.debug
 fi
 
-# vim
-if [[ -z $NO_COMPILE_VIM ]]; then
-    VIM_BUILD_DIR=`realpath "$DIR/../../"`
-    cd "$VIM_BUILD_DIR"
-    if [[ ! -d vim ]]; then
-        git clone https://github.com/vim/vim.git --recursive
-    else
-        cd vim
-        git pull
-        git submodule update --init --recursive
-        cd ..
-    fi
-    cd vim
-    ./configure --with-features=huge \
-                --enable-multibyte \
-                --enable-rubyinterp \
-                --enable-python3interp=yes \
-                --enable-luainterp \
-                --enable-gui=no \
-                --enable-cscope 
-    make -j`nproc`
-    sudo make install
-    cd
-fi
-
 DIR="$DIR/../"
 DIR="$DIR" $DIR/common/configure_fresh_system.sh
 
