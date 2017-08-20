@@ -38933,9 +38933,11 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>330 304 620 392 0 0 1280 777 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>223 527 796 473 0 0 1680 1027 </string>
+	<string>695 473 796 473 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 68 1680 959 0 0 1680 1027 </string>
+	<string>0 82 1674 945 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>0 82 1674 945 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -39123,12 +39125,16 @@
 			<real>1.207301682692308</real>
 			<key>Bold Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.56363654136657715</real>
+				<real>0.75951981544494629</real>
+				<key>Color Space</key>
+				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.56485837697982788</real>
+				<real>0.76119351387023926</real>
 				<key>Red Component</key>
-				<real>0.50599193572998047</real>
+				<real>0.68050599098205566</real>
 			</dict>
 			<key>Character Encoding</key>
 			<integer>4</integer>
@@ -39562,7 +39568,7 @@
 			<key>Thin Strokes</key>
 			<integer>1</integer>
 			<key>Transparency</key>
-			<real>0.080401719674556227</real>
+			<real>0.062199519230769239</real>
 			<key>Unlimited Scrollback</key>
 			<true/>
 			<key>Use Bold Font</key>
