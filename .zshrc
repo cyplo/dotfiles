@@ -4,7 +4,7 @@ fi
 
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(vi-mode svn git python zsh-syntax-highlighting history-substring-search)
+plugins=(vi-mode svn git python syntax-highlighting history-substring-search spectrum sshi prompt gpg autosuggestions)
 
 HISTFILE=~/.histfile
 HISTSIZE=10240
