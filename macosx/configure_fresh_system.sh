@@ -20,7 +20,6 @@ brew install --force gnupg2
 brew update
 brew upgrade
 
-brew install vim
 brew install aria2
 brew install \
   autojump \
@@ -86,7 +85,13 @@ fi
 brew linkapps
 brew cleanup
 brew prune
+set +e
+mv "$HOME/.cargo/bin/cargo-install-update-config" "$HOME/.cargo/bin/cargo-install-update-cfg" 
+set -e
 brew doctor
+set +e
+mv "$HOME/.cargo/bin/cargo-install-update-cfg" "$HOME/.cargo/bin/cargo-install-update-config" 
+set -e
 
 echo "Configuring NVRAM"
 sudo nvram SystemAudioVolume=%80

@@ -26,7 +26,6 @@ if [[ -z $NO_COMPILE_VIM ]]; then
                 --enable-multibyte \
                 --enable-rubyinterp \
                 --enable-python3interp=yes \
-                --enable-pythoninterp=yes \
                 --enable-luainterp \
                 --enable-gui=no \
                 --enable-cscope 
