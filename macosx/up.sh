@@ -19,6 +19,7 @@ set -e
 brew install --force gnupg2
 brew update
 brew upgrade
+brew cask list | xargs brew cask install --force
 
 brew install aria2
 brew install \
