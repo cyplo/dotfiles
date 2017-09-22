@@ -33,7 +33,6 @@ brew install \
   watch \
   zsh
 
-
 brew install \
   coreutils \
   curl \
@@ -70,13 +69,16 @@ brew install \
   sqlite \
   tidy-html5 \
   doxygen \
-  go
+  go \
+  optipng \
+  jpegoptim
 
 brew cask install gimp
 brew cask install iterm2
 brew cask install docker
 brew cask install appcode
 brew cask install adium
+brew cask install kdiff3
 
 brew services start syncthing
 

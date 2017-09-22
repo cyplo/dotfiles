@@ -192,11 +192,9 @@ if [[ -z $NO_GO ]]; then
     go get -u github.com/exercism/cli/exercism
 fi
 
-echo "Installing Reveal-md"
-# talks: reveal-md
 $SUDO npm install -g reveal-md
-echo "Installing fancy differ"
 $SUDO npm install -g diff-so-fancy
+$SUDO npm install -g cssnano
 
 if [[ -z $NOPYTHON3 ]]; then
     set +e
