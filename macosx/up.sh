@@ -76,6 +76,7 @@ brew cask install gimp
 brew cask install iterm2
 brew cask install docker
 brew cask install appcode
+brew cask install adium
 
 brew services start syncthing
 
