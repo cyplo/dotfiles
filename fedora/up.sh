@@ -78,11 +78,11 @@ if [ "$(id -u)" != "0" ]; then
     code --install-extension Compulim.compulim-vscode-dictionary
     code --install-extension cssho.vscode-svgviewer
     code --install-extension donjayamanne.python
-    code --install-extension saviorisdead.RustyCode
     code --install-extension searKing.preview-vscode
     code --install-extension streetsidesoftware.code-spell-checker
     code --install-extension vscodevim.vim
     code --install-extension webfreak.debug
+    code --install-extension kalitaalexey.vscode-rust
 fi
 
 DIR="$DIR/../"
