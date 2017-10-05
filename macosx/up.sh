@@ -81,7 +81,7 @@ brew cask install appcode
 brew cask install adium
 brew cask install kdiff3
 
-reattach-to-user-namespace brew services start syncthing
+reattach-to-user-namespace brew services restart syncthing
 
 if ! fgrep /usr/local/bin/zsh /etc/shells; then
   sudo bash -c "echo /usr/local/bin/zsh >> /etc/shells"
