@@ -13,5 +13,5 @@ cd $HOME
 mkdir -p dev/
 cp -rv temp/dotfiles dev/
 
-./dev/dotfiles/fedora/configure_fresh_system.sh
+./dev/dotfiles/fedora/up.sh
 
