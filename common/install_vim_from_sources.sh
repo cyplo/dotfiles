@@ -21,7 +21,7 @@ if [[ -z $NO_COMPILE_VIM ]]; then
     cd vim
     set +e
     sudo make uninstall
-    sudo make clean
+    sudo make distclean
     ./configure --with-features=huge \
                 --enable-multibyte \
                 --enable-rubyinterp \
