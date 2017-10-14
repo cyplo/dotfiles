@@ -106,12 +106,9 @@ if [[ -z $NORUST ]]; then
         git pull
         git submodule update --init --recursive
     fi
-set +e
-    cargo install cargo-update
-    cargo install rustfmt
-    cargo install racer
-    cargo install rustsym
-    cargo install ripgrep
+
+    set +e
+    cargo install cargo-update rustfmt racer rustsym ripgrep
 
     cd "$DIR/../"
     if [[ ! -d alacritty ]]; then
