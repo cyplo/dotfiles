@@ -15,8 +15,6 @@ matrix:
         - os: linux
           env: DETECTED_OS=debian:jessie  DOCKER_IMAGE=cyplo/jessie_base
         - os: linux
-          env: DETECTED_OS=ubuntu:yakkety DOCKER_IMAGE=cyplo/yakkety_base
-        - os: linux
           env: DETECTED_OS=ubuntu:zesty DOCKER_IMAGE=cyplo/zesty_base
 script: 
     - ./test.sh
