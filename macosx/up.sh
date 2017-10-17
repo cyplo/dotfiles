@@ -21,6 +21,7 @@ brew upgrade
 brew cask list | xargs brew cask install --force
 
 brew install --force gnupg2
+brew install --force dirmngr
 brew install reattach-to-user-namespace --with-wrap-pbcopy-and-pbpaste
 
 brew install aria2
