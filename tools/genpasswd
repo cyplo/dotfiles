@@ -1,4 +1,4 @@
 #!/bin/bash
 l=$1
 [ "$l" == "" ] && l=32
-openssl rand -base64 $l
+openssl rand -base64 $l | cut -c-$l
