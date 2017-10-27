@@ -3,5 +3,16 @@
     "extensions.autoUpdate": true,
     "editor.cursorStyle": "block",
     "vim.disableAnnoyingNeovimMessage": true,
-    "terminal.integrated.shell.osx": "/usr/local/bin/bash"
+    "terminal.integrated.shell.osx": "/usr/local/bin/bash",
+    "rust.cargoPath": "/Users/cyplo/.cargo/bin/cargo",
+    "rust.cargoHomePath": "/Users/cyplo/.cargo",
+    "rust.racerPath": "/Users/cyplo/.cargo/bin/racer",
+    "rust.rustfmtPath": "/Users/cyplo/.cargo/bin/rustfmt",
+    "rust.rustsymPath": "/Users/cyplo/.cargo/bin/rustsym",
+    "rust.rustLangSrcPath": "/Users/cyplo/dev/rust/src",
+    "rust.mode": "rls",
+    "rust.rls": {
+        "executable": "/Users/cyplo/.cargo/bin/rls",
+        "useRustfmt": true
+    }
 }
