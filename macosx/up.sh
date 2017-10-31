@@ -81,6 +81,7 @@ brew cask install docker
 brew cask install appcode
 brew cask install adium
 brew cask install kdiff3
+brew cask install istat-menus
 
 reattach-to-user-namespace brew services restart syncthing
 
