@@ -2,10 +2,17 @@
     "window.zoomLevel": 1,
     "extensions.autoUpdate": true,
     "editor.cursorStyle": "block",
-    "rust.rustLangSrcPath": "/Users/cyryl/dev/rust/src",
-    "rust.racerPath":       "/Users/cyryl/.cargo/bin/racer",
-    "rust.rustfmtPath":     "/Users/cyryl/.cargo/bin/rustfmt",
-    "rust.rustsymPath":     "/Users/cyryl/.cargo/bin/rustsym",
-    "rust.cargoPath":       "/Users/cyryl/.cargo/bin/cargo",
-    "rust.cargoHome":       "/Users/cyryl/.cargo/"
+    "vim.disableAnnoyingNeovimMessage": true,
+    "terminal.integrated.shell.osx": "/usr/local/bin/bash",
+    "rust.cargoPath": "/Users/cyplo/.cargo/bin/cargo",
+    "rust.cargoHomePath": "/Users/cyplo/.cargo",
+    "rust.racerPath": "/Users/cyplo/.cargo/bin/racer",
+    "rust.rustfmtPath": "/Users/cyplo/.cargo/bin/rustfmt",
+    "rust.rustsymPath": "/Users/cyplo/.cargo/bin/rustsym",
+    "rust.rustLangSrcPath": "/Users/cyplo/dev/rust/src",
+    "rust.mode": "rls",
+    "rust.rls": {
+        "executable": "/Users/cyplo/.cargo/bin/rls",
+        "useRustfmt": true
+    }
 }
