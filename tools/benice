@@ -1,3 +1,8 @@
 #!/bin/bash
-ionice -c3 nice -n20 "$@"
+set -e
+IONICE="ionice -c3"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    IONICE=""
+fi
+$IONICE nice -n20 "$@"
 
