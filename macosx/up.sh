@@ -106,12 +106,14 @@ defaults write com.google.Keystone.Agent checkInterval 4233600
 
 DIR="$DIR/../"
 DIR=`realpath "$DIR"`
+
+ln -vfs "$DIR/.gitconfig.mac" $HOME/.gitconfig
+mkdir -p "$HOME/Library/Application Support/Code/User/"
+ln -vfs "$DIR/.config/Code/User/settings.json.mac" "$HOME/Library/Application Support/Code/User/settings.json"
+ln -vfs "$DIR/.config/Code/User/keybindings.json.mac" "$HOME/Library/Application Support/Code/User/keybindings.json"
+
 if [[ -z $CONTINUOUS_INTEGRATION ]]; then
     echo "Invoking common configuration scripts"
     DIR="$DIR" $DIR/common/configure_fresh_system.sh
 fi
-ln -vfs "$DIR/.gitconfig.mac" $HOME/.gitconfig
-
-mkdir -p "$HOME/Library/Application Support/Code/User/"
-ln -vfs "$DIR/.config/Code/User/settings.json.mac" "$HOME/Library/Application Support/Code/User/settings.json"
 
