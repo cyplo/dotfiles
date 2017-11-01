@@ -1,6 +1,8 @@
 #!/bin/bash
 
 set -e
-sudo umount ~/.vault
-sudo cryptsetup luksClose vault
-
+VERACRYPT="veracrypt"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    VERACRYPT="/Applications/VeraCrypt.app/Contents/MacOS/VeraCrypt"
+fi
+$VERACRYPT -t -d

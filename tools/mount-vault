@@ -2,6 +2,9 @@
 
 set -e
 mkdir -p ~/.vault
-sudo cryptsetup luksOpen ~/vaults/vault.img vault
-sudo mount /dev/mapper/vault ~/.vault
+VERACRYPT="veracrypt"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    VERACRYPT="/Applications/VeraCrypt.app/Contents/MacOS/VeraCrypt"
+fi
+$VERACRYPT -t --mount ~/vaults/vault.vera ~/.vault
 sudo chown $USER ~/.vault

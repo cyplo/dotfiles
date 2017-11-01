@@ -206,8 +206,10 @@ if [[ -z $NOPYTHON3 ]]; then
         PIP=pip
     fi
     echo "Upgrading pip"
+    set +e
     $SUDO $PIP install --upgrade pip setuptools
     $SUDO $PIP install --upgrade packaging
+    set -e
     echo "Installing Nikola"
     $SUDO $PIP install --upgrade pygments-style-solarized ws4py watchdog webassets Nikola
 fi
