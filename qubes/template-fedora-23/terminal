@@ -1,0 +1,7 @@
+#!/bin/bash
+sudo dnf install -y terminator zsh
+
+
+echo "changing shell to zsh"
+$SUDO chsh -s `which zsh` $USER 
+

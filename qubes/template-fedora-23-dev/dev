@@ -1,0 +1,7 @@
+#!/bin/bash
+
+sudo dnf groupinstall -y "C Development Tools and Libraries"
+sudo dnf install -y ncurses-devel
+sudo dnf remove -y vim
+
+
