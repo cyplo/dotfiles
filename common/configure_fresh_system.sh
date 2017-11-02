@@ -110,19 +110,8 @@ if [[ -z $NORUST ]]; then
 
     set +e
     cargo install cargo-update rustfmt racer rustsym ripgrep
-
-    cd "$DIR/../"
-    if [[ ! -d alacritty ]]; then
-        git clone https://github.com/jwilm/alacritty.git --recursive
-        cd alacritty
-    else
-        cd alacritty 
-        git pull
-        git submodule update --init --recursive
-    fi
-    rustup override set stable
-    cargo install
-set -e
+    rustup run nightly cargo install clippy
+    set -e
 fi
 
 set +e
