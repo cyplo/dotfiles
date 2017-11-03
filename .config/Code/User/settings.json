@@ -9,5 +9,13 @@
     "rust.cargoPath":   "/home/cyryl/.cargo/bin/cargo",
     "rust.cargoHome": "/home/cyryl/.cargo/",
     "editor.wordWrap": true,
-    "vim.disableAnnoyingNeovimMessage": true
+    "vim.disableAnnoyingNeovimMessage": true,
+    "rust.rustup": {
+        "toolchain": "nightly-x86_64-unknown-linux-gnu",
+        "nightlyToolchain": "nightly-x86_64-unknown-linux-gnu"
+    },
+    "rust.mode": "rls",
+    "rust.rls": {
+        "useRustfmt": true
+    }
 }
