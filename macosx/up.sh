@@ -75,6 +75,8 @@ brew install \
   optipng \
   jpegoptim
 
+brew postinstall python3
+
 brew cask install gimp
 brew cask install iterm2
 brew cask install docker
