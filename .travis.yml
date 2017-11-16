@@ -11,6 +11,8 @@ matrix:
         - os: osx
           osx_image: xcode9.1
         - os: linux
+          env: DETECTED_OS=fedora:27      DOCKER_IMAGE=cyplo/fedora27_base
+        - os: linux
           env: DETECTED_OS=fedora:26      DOCKER_IMAGE=cyplo/fedora26_base
         - os: linux
           env: DETECTED_OS=debian:jessie  DOCKER_IMAGE=cyplo/jessie_base
