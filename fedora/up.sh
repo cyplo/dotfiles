@@ -58,6 +58,8 @@ if [[ -z $NO_SYSTEMCTL ]]; then
     sudo systemctl restart dnf-automatic-install.timer
     sudo systemctl enable fstrim.timer
     sudo systemctl restart fstrim.timer
+    systemctl enable syncthing@cyryl.service
+    systemctl restart syncthing@cyryl.service
     sudo systemctl list-timers
 fi
 
