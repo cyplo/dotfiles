@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for file in *.jpg; do convert $file -resize 1000x1000 -quality 95 $file > /dev/null 2>&1; done
+for file in *.JPG; do convert $file -resize 1000x1000 -quality 95 $file > /dev/null 2>&1; done
+for file in *.png; do convert $file -resize 1000x1000 -quality 95 $file > /dev/null 2>&1; done
+exit 0
+
