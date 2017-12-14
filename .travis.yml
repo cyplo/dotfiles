@@ -1,6 +1,5 @@
 language: bash
 sudo: required
-dist: precise
 
 services:
       - docker
