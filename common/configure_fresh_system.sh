@@ -95,6 +95,8 @@ if [[ -z $NORUST ]]; then
     chmod a+x "$RUSTUP_TEMP"
     "$RUSTUP_TEMP" -y
     rm -f "$RUSTUP_TEMP"
+    rustup install stable
+    rustup install nightly
     rustup update
     rustup default stable
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
