@@ -17,6 +17,10 @@ curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
 echo "deb https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
 sudo apt-get -y install syncthing
 
+sudo add-apt-repository -y ppa:wireguard/wireguard
+sudo apt-get update
+sudo apt-get install -y wireguard-dkms wireguard-tools
+
 if [[ -z $NO_SYSTEMCTL ]]; then
     sudo systemctl enable docker
     sudo systemctl restart docker
