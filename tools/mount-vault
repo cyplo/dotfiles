@@ -1,10 +1,27 @@
 #!/bin/bash
 
 set -e
-mkdir -p ~/.vault
 VERACRYPT="veracrypt"
 if [[ "$OSTYPE" == "darwin"* ]]; then
     VERACRYPT="/Applications/VeraCrypt.app/Contents/MacOS/VeraCrypt"
 fi
-$VERACRYPT -t --mount ~/vaults/vault.vera ~/.vault
-sudo chown $USER ~/.vault
+
+MOUNT_TARGET=$2
+if [[ -z "$MOUNT_TARGET" ]]; then
+    MOUNT_TARGET=~/.vault
+fi
+mkdir -p "$MOUNT_TARGET"
+
+MOUNT_SOURCE=$1
+if [[ -z "$MOUNT_SOURCE" ]]; then
+    MOUNT_SOURCE="~/vaults/vault.vera"
+fi
+
+if [[ -z "$VAULT_PASSWORD" ]]; then
+    $VERACRYPT -t --mount "$MOUNT_SOURCE" "$MOUNT_TARGET"
+else
+    $VERACRYPT -t --non-interactive -p $VAULT_PASSWORD --mount "$MOUNT_SOURCE" "$MOUNT_TARGET"
+fi
+sudo chown $USER "$MOUNT_TARGET"
+
+echo "$MOUNT_SOURCE -> $MOUNT_TARGET"
