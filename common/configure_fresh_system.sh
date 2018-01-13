@@ -96,6 +96,8 @@ if [[ -z $NORUST ]]; then
     "$RUSTUP_TEMP" -y
     rm -f "$RUSTUP_TEMP"
     rustup update
+    rustup install stable
+    rustup install nightly
     rustup default stable
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
     cd "$DIR/../"
