@@ -8,13 +8,13 @@ fi
 
 MOUNT_TARGET=$2
 if [[ -z "$MOUNT_TARGET" ]]; then
-    MOUNT_TARGET=~/.vault
+    MOUNT_TARGET=$HOME/.vault
 fi
 mkdir -p "$MOUNT_TARGET"
 
 MOUNT_SOURCE=$1
 if [[ -z "$MOUNT_SOURCE" ]]; then
-    MOUNT_SOURCE="~/vaults/vault.vera"
+    MOUNT_SOURCE="$HOME/vaults/vault.vera"
 fi
 
 if [[ -z "$VAULT_PASSWORD" ]]; then
