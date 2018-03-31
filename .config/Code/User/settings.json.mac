@@ -14,5 +14,7 @@
     "rust.rls": {
         "executable": "/Users/cyplo/.cargo/bin/rls",
         "useRustfmt": true
-    }
+    },
+    "explorer.confirmDelete": false,
+    "files.autoSave": "onFocusChange"
 }
