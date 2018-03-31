@@ -14,6 +14,8 @@ brew unlink dirmngr
 brew uninstall dirmngr
 brew unlink gpg-agent
 brew uninstall gpg-agent
+brew unlink python
+brew uninstall python
 set -e
 
 brew update
