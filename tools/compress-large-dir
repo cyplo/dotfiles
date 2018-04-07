@@ -13,4 +13,4 @@ if [ ! -e $dir ]; then
   exit 1
 fi
 
-benice tar -cf - $dir | pv -ptabI -s $(du -sb $dir | awk '{print $1}') | pixz -9 > $dir.tar.xz
+tar -cf - $dir | pv -ptabI -s $(du -sb $dir | awk '{print $1}') | pixz -9 -f 3 -p $((`nproc`-1)) > $dir.tar.xz
