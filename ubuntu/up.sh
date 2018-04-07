@@ -26,9 +26,6 @@ if [[ -z $NO_SYSTEMCTL ]]; then
     sudo systemctl restart docker
     sudo systemctl enable fail2ban
     sudo systemctl restart fail2ban
-    echo "Enabling Syncthing for $USER"
-    sudo systemctl enable syncthing@$USER.service
-    sudo systemctl restart syncthing@$USER.service
 fi
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
