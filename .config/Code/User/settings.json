@@ -4,4 +4,5 @@
     "editor.cursorStyle": "block",
     "editor.wordWrap": true,
     "vim.disableAnnoyingNeovimMessage": true,
+    "files.autoSave": "onFocusChange",
 }
