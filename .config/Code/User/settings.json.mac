@@ -16,5 +16,6 @@
         "useRustfmt": true
     },
     "explorer.confirmDelete": false,
-    "files.autoSave": "onFocusChange"
+    "files.autoSave": "onFocusChange",
+    "workbench.colorTheme": "Solarized Dark"
 }
