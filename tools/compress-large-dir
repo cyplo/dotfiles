@@ -1,0 +1,16 @@
+#!/bin/bash
+set -eo pipefail
+
+if [ -z $1 ]; then
+    echo "Usage: $0 dir"
+    exit 1
+fi
+
+dir="${1%/*}"
+
+if [ ! -e $dir ]; then
+  echo "$dir doesn't exist"
+  exit 1
+fi
+
+tar -cf - $dir | pv -ptabI -s $(du -sb $dir | awk '{print $1}') | pixz -9 -f 3 -p $((`nproc`-1)) > $dir.tar.xz

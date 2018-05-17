@@ -1,0 +1,21 @@
+#!/bin/bash
+set -e
+
+if [ -z $1 ]; then
+    echo "Usage: $0 file-to-decompress [target-directory]"
+    exit 1
+fi
+
+file=$1
+target=$2
+
+if [ -z $2 ]; then
+    target=`pwd`
+fi
+
+target=`realpath $target`
+
+mkdir -p "$target"
+
+echo "unpacking $file to $target"
+pv -erp "$file" | tar vJx - -C "$target"
