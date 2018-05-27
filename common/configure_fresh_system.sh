@@ -100,6 +100,13 @@ if [[ -z $NORUST ]]; then
     rustup install stable
     rustup install nightly
     rustup default stable
+    rustup component add rls-preview --toolchain stable
+    rustup component add rust-analysis --toolchain stable
+    rustup component add rust-src --toolchain stable
+    rustup component add rls-preview --toolchain nightly
+    rustup component add rust-analysis --toolchain nightly 
+    rustup component add rust-src --toolchain nightly
+
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
     cd "$DIR/../"
     echo "getting rust sources..."
