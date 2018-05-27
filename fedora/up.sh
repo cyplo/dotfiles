@@ -6,7 +6,7 @@ if [[ -z $NOUPGRADE ]]; then
     sudo dnf -y upgrade --best --allowerasing
 fi
 
-sudo dnf -y --best --allowerasing install tmux atop zsh thunderbird thunderbird-enigmail thunderbird-lightning firefox aria2 gajim lm_sensors freecad python3-pip qt5-qtbase-devel qt5-qtwebkit-devel meld whois curl pv nodejs npm terminator gsmartcontrol python-pip mercurial python3-devel libxslt-devel libjpeg-turbo-devel conky conky-manager cmake gtk2-devel intltool gparted wine solaar glances the_silver_searcher dkms kernel-devel gimp transmission-gtk git xz util-linux-user powertop dnf-automatic kdiff3 yum-utils util-linux-user ncurses-devel zeal qt5-linguist qtkeychain-qt5-devel archivemount keepass splix gutenprint-cups cups-bjnp golang redhat-rpm-config pcsc-lite-devel pcsc-tools pcsc-lite yubico-piv-tool yubikey-personalization-gui xloadimage yp-tools closure-compiler optipng jpegoptim grub2 grub2-efi dracut dracut-tools openssl-devel fail2ban
+sudo dnf -y --best --allowerasing install tmux atop zsh firefox aria2 gajim lm_sensors freecad python3-pip qt5-qtbase-devel qt5-qtwebkit-devel meld whois curl pv nodejs npm terminator gsmartcontrol python-pip mercurial python3-devel libxslt-devel libjpeg-turbo-devel conky conky-manager cmake gtk2-devel intltool gparted wine solaar glances the_silver_searcher dkms kernel-devel gimp transmission-gtk git xz util-linux-user powertop dnf-automatic kdiff3 yum-utils util-linux-user ncurses-devel zeal qt5-linguist qtkeychain-qt5-devel archivemount keepass splix gutenprint-cups cups-bjnp golang redhat-rpm-config pcsc-lite-devel pcsc-tools pcsc-lite yubico-piv-tool yubikey-personalization-gui xloadimage yp-tools closure-compiler optipng jpegoptim grub2 grub2-efi dracut dracut-tools openssl-devel fail2ban syncthing
 
 sudo dnf -y install docker
 
@@ -17,7 +17,6 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 sudo cp -v /etc/dnf/automatic.conf /etc/dnf/automatic.conf.bak
 sudo cp -v $DIR/etc/dnf/automatic.conf /etc/dnf/automatic.conf
-sudo cp -v $DIR/etc/ld.so.conf.d/nextcloud.conf /etc/ld.so.conf.d/nextcloud.conf
 sudo cp -v $DIR/etc/sysctl.d/90_swapiness.conf /etc/sysctl.d/
 sudo cp -v $DIR/etc/sysctl.d/91_inotify_limit.conf /etc/sysctl.d/
 sudo cp -v $DIR/etc/fail2ban/jail.d/01-sshd.conf /etc/fail2ban/jail.d/
@@ -58,8 +57,7 @@ if [[ -z $NO_SYSTEMCTL ]]; then
     sudo systemctl restart dnf-automatic-install.timer
     sudo systemctl enable fstrim.timer
     sudo systemctl restart fstrim.timer
-    systemctl enable syncthing@cyryl.service
-    systemctl restart syncthing@cyryl.service
+    sudo systemctl enable --now syncthing@cyryl.service
     sudo systemctl list-timers
 fi
 
@@ -79,14 +77,7 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 sudo dnf -y install --best --allowerasing code
 
 if [ "$(id -u)" != "0" ]; then
-    code --install-extension Compulim.compulim-vscode-dictionary
-    code --install-extension cssho.vscode-svgviewer
-    code --install-extension donjayamanne.python
-    code --install-extension searKing.preview-vscode
-    code --install-extension streetsidesoftware.code-spell-checker
     code --install-extension vscodevim.vim
-    code --install-extension webfreak.debug
-    code --install-extension kalitaalexey.vscode-rust
 fi
 
 DIR="$DIR/../"
