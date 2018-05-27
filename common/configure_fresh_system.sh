@@ -205,6 +205,8 @@ if [[ -z $NOPYTHON3 ]]; then
     set -e
     echo "Installing Nikola"
     $SUDO $PIP install --upgrade pygments-style-solarized ws4py watchdog webassets Nikola
+    echo "Installing vim dependencies"
+    $SUDO $PIP install neovim
 fi
 
 if [[ -z $USER ]]; then

@@ -1,5 +1,7 @@
 call plug#end()
 
+let g:deoplete#enable_at_startup = 1
+
 " line ending
 set fileformats=unix,dos
 
@@ -28,7 +30,11 @@ endif
 
 if executable('rg')
   let g:ackprg = 'rg --no-heading --vimgrep'
-  set grepprg=rg\ --vimgrep
+  set grepprg=rg\ -i\ --vimgrep
+
+  " Ripgrep on /
+  command! -nargs=+ -complete=file -bar Rg silent! grep! <args>|cwindow|redraw!
+  nnoremap <leader>/ :Rg<SPACE>
 endif
 
 if executable('rls')
@@ -40,8 +46,26 @@ if executable('rls')
 endif 
 
 " fzf
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
-nmap <C-n> :Find 
+if executable('rg')
+  let $FZF_DEFAULT_COMMAND = 'rg --files --no-messages "" .'
+  set grepprg=rg\ --vimgrep
+endif
+
+let g:fzf_command_prefix = 'Fzf'
+if executable('fzf')
+  nnoremap <leader>v :FzfFiles<cr>
+  nnoremap <leader>u :FzfTags<cr>
+  nnoremap <leader>j :call fzf#vim#tags("'".expand('<cword>'))<cr>
+
+  if executable('rg')
+    " :Find <term> runs `rg <term>` and passes it to fzf
+    command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+    nnoremap <leader>/ :Find 
+    nnoremap <leader>' :execute "Find " . expand("<cword>")<cr>
+  endif
+else
+  nnoremap <leader>v :CtrlP<Space><cr>
+endif
 
 " appearance
 set number
@@ -49,6 +73,23 @@ set relativenumber
 set laststatus=2
 set noshowmode
 set showtabline=1 "only show tabline when more than 1 tab
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+" syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_rust_checkers=['cargo']
+
+" language server
+let g:LanguageClient_autoStart = 1
+let g:LanguageClient_serverCommands = { 'rust': ['rustup', 'run', 'nightly', 'rls'] }
 
 " exclude quickfix from the buffers list
 augroup qf
