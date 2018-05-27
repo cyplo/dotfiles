@@ -159,6 +159,7 @@ if [[ -z $NOVIM ]]; then
         ~/.fzf/install --64 --all
     fi
     echo "Installing Vim plugins"
+    echo "\n" | vim +PlugClean! +qa
     echo "\n" | vim +PlugInstall! +qa
 
     if [[ -z $NOYCM ]]; then
