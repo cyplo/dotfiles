@@ -1,5 +1,4 @@
-call vundle#end()
-filetype plugin indent on
+call plug#end()
 
 " line ending
 set fileformats=unix,dos
