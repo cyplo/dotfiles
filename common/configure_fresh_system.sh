@@ -159,7 +159,7 @@ if [[ -z $NOVIM ]]; then
         ~/.fzf/install --64 --all
     fi
     echo "Installing Vim plugins"
-    echo "\n" | vim +PluginInstall! +qa
+    echo "\n" | vim +PlugInstall! +qa
 
     if [[ -z $NOYCM ]]; then
         echo "configuring YouCompleteMe"
