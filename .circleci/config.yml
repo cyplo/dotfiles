@@ -1,10 +1,20 @@
 version: 2
 jobs:
-  build:
+  fedora:
     machine: true
     environment:
           DETECTED_OS: fedora:27
           DOCKER_IMAGE: cyplo/fedora27_base
+
+    steps:
+      - checkout
+      - run: ./test.sh
+
+  ubuntu:
+    machine: true
+    environment:
+          DETECTED_OS: ubuntu:artful
+          DOCKER_IMAGE: cyplo/artful_base
 
     steps:
       - checkout
