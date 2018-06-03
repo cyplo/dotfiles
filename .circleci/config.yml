@@ -14,8 +14,8 @@ jobs:
   ubuntu:
     machine: true
     environment:
-          DETECTED_OS: ubuntu:artful
-          DOCKER_IMAGE: cyplo/artful_base
+          DETECTED_OS: ubuntu:bionic
+          DOCKER_IMAGE: cyplo/bionic_base
 
     steps:
       - checkout
