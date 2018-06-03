@@ -14,16 +14,20 @@ brew unlink dirmngr
 brew uninstall dirmngr
 brew unlink gpg-agent
 brew uninstall gpg-agent
+brew unlink mercurial
+brew uninstall --force mercurial
 brew unlink python
-brew uninstall python
+brew uninstall --ignore-dependencies python
 set -e
 
 brew update
+brew install --force gnupg2
+brew install --force dirmngr
+brew install python3
+brew install mercurial
 brew upgrade
 brew cask list | xargs brew cask install --force
 
-brew install --force gnupg2
-brew install --force dirmngr
 brew install reattach-to-user-namespace --with-wrap-pbcopy-and-pbpaste
 
 brew install aria2
