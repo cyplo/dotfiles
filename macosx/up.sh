@@ -27,6 +27,7 @@ brew install --force gnupg2
 brew install --force dirmngr
 brew install python3
 brew install mercurial
+brew install numpy
 brew upgrade
 brew cask upgrade
 
