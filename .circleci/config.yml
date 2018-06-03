@@ -23,6 +23,7 @@ jobs:
 
 workflows:
     version: 2
-    jobs:
-        - fedora
-        - ubuntu
+    linux:
+        jobs:
+            - fedora
+            - ubuntu
