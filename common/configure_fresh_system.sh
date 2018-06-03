@@ -100,26 +100,19 @@ if [[ -z $NORUST ]]; then
     rustup install stable
     rustup install nightly
     rustup default stable
+
     rustup component add rls-preview --toolchain stable
     rustup component add rust-analysis --toolchain stable
     rustup component add rust-src --toolchain stable
+    
     rustup component add rls-preview --toolchain nightly
     rustup component add rust-analysis --toolchain nightly 
     rustup component add rust-src --toolchain nightly
 
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
-    cd "$DIR/../"
-    echo "getting rust sources..."
-    if [[ ! -d rust ]]; then
-        git clone https://github.com/rust-lang/rust.git --recursive
-    else
-        cd rust 
-        git pull
-        git submodule update --init --recursive
-    fi
 
     set +e
-    cargo install cargo-update rustfmt racer rustsym ripgrep
+    cargo install cargo-update racer rustsym ripgrep
     rustup run nightly cargo install clippy
     set -e
 fi
@@ -168,17 +161,6 @@ if [[ -z $NOVIM ]]; then
     echo "Installing Vim plugins"
     echo "\n" | vim +PlugClean! +qa
     echo "\n" | vim +PlugInstall! +qa
-
-    if [[ -z $NOYCM ]]; then
-        echo "configuring YouCompleteMe"
-        cd ~/.vim/bundle/YouCompleteMe
-        git submodule update --init --recursive
-        if [[ -z $NOPYTHON3 ]]; then
-            python3 ./install.py --clang-completer --racer-completer --tern-completer
-        else
-            python ./install.py --clang-completer --racer-completer --tern-completer
-        fi
-    fi
 fi
 
 if [[ -z $NO_GO ]]; then
