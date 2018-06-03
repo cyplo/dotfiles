@@ -1,8 +1,7 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: debian:stretch
+    machine: true
     environment:
           DETECTED_OS: fedora:27
           DOCKER_IMAGE: cyplo/fedora27_base
