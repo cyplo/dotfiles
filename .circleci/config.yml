@@ -1,4 +1,9 @@
-version: 2
+workflows:
+    version: 2
+    jobs:
+        - fedora
+        - ubuntu
+
 jobs:
   fedora:
     machine: true
