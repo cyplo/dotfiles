@@ -16,6 +16,8 @@ brew unlink gpg-agent
 brew uninstall gpg-agent
 brew unlink mercurial
 brew uninstall --force mercurial
+brew unlink numpy
+brew uninstall --ignore-dependencies numpy
 brew unlink python
 brew uninstall --ignore-dependencies python
 set -e
