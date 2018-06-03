@@ -26,7 +26,7 @@ brew install --force dirmngr
 brew install python3
 brew install mercurial
 brew upgrade
-brew cask list | xargs brew cask install --force
+brew cask upgrade
 
 brew install reattach-to-user-namespace --with-wrap-pbcopy-and-pbpaste
 
@@ -95,7 +95,6 @@ if ! fgrep /usr/local/bin/zsh /etc/shells; then
   sudo bash -c "echo /usr/local/bin/zsh >> /etc/shells"
 fi
 
-brew linkapps
 brew cleanup
 brew prune
 set +e
