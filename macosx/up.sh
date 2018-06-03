@@ -20,6 +20,10 @@ brew unlink numpy
 brew uninstall --ignore-dependencies numpy
 brew unlink python
 brew uninstall --ignore-dependencies python
+brew unlink python@2
+brew uninstall --ignore-dependencies python@2
+brew install numpy
+brew link --overwrite numpy
 set -e
 
 brew update
@@ -27,7 +31,6 @@ brew install --force gnupg2
 brew install --force dirmngr
 brew install python3
 brew install mercurial
-brew install numpy
 brew upgrade
 brew cask upgrade
 
