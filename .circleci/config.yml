@@ -1,8 +1,4 @@
-workflows:
-    version: 2
-    jobs:
-        - fedora
-        - ubuntu
+version: 2
 
 jobs:
   fedora:
@@ -25,3 +21,8 @@ jobs:
       - checkout
       - run: ./test.sh
 
+workflows:
+    version: 2
+    jobs:
+        - fedora
+        - ubuntu
