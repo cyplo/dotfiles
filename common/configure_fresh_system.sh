@@ -112,9 +112,9 @@ if [[ -z $NORUST ]]; then
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
     set +e
-    cargo install cargo-update racer rustsym ripgrep
-    rustup run nightly cargo install clippy
+    cargo install cargo-update racer rustsym ripgrep fd-find genpass
     set -e
+    cargo install-update -a
 fi
 
 set +e
