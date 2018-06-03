@@ -4,8 +4,8 @@ jobs:
   fedora:
     machine: true
     environment:
-          DETECTED_OS: fedora:27
-          DOCKER_IMAGE: cyplo/fedora27_base
+          DETECTED_OS: fedora:28
+          DOCKER_IMAGE: cyplo/fedora28_base
 
     steps:
       - checkout
