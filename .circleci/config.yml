@@ -3,12 +3,11 @@ jobs:
   build:
     docker:
       - image: debian:stretch
+    environment:
+          DETECTED_OS: fedora:27
+          DOCKER_IMAGE: cyplo/fedora27_base
+
     steps:
       - checkout
-      - run:
-          name: Greeting
-          command: echo Hello, world.
-      - run:
-          name: Print the Current Time
-          command: date
+      - run: ./test.sh
 
