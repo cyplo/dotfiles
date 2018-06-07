@@ -1,0 +1,2 @@
+git log --pretty=oneline -- terraform.tfstate | cut -f 1 -d ' ' | xargs git show | ~/tools/find-aws-keys.sh | xargs python ~/tools/find-iam-user-for-access-key.py
+
