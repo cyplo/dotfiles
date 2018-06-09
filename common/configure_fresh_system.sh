@@ -113,8 +113,9 @@ if [[ -z $NORUST ]]; then
 
     set +e
     cargo install cargo-update racer rustsym ripgrep fd-find genpass
-    set -e
     cargo install-update -a
+    set -e
+    rustup run nightly cargo install-update -a
 fi
 
 set +e
