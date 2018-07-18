@@ -5,4 +5,5 @@
     "editor.wordWrap": true,
     "vim.disableAnnoyingNeovimMessage": true,
     "files.autoSave": "onFocusChange",
+    "cSpell.language": "en,en-GB",
 }
