@@ -59,6 +59,7 @@ ln -vfs "$DIR/.config/vdirsyncer/config" ~/.config/vdirsyncer/
 mkdir -p ~/.config/Code/User
 ln -vfs "$DIR/.config/Code/User/settings.json" ~/.config/Code/User/settings.json
 ln -vfs "$DIR/.config/Code/User/keybindings.json" ~/.config/Code/User/keybindings.json
+mkdir -p ~/.cargo/
 
 source ~/.setenv
 
@@ -101,8 +102,9 @@ if [[ -z $NORUST ]]; then
     rustup install nightly
     rustup default stable
 
-    rustup component add rustfmt-preview --toolchain stable
     rustup component add rls-preview --toolchain stable
+    rustup component add clippy-preview --toolchain stable 
+    rustup component add rustfmt-preview --toolchain stable
     rustup component add rust-analysis --toolchain stable
     rustup component add rust-src --toolchain stable
     
