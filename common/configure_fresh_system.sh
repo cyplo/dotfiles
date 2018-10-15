@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e 
+set -o pipefail
 
 SUDO=""
 if [[ -z $NOSUDO ]]; then
@@ -60,7 +62,12 @@ mkdir -p ~/.config/Code/User
 ln -vfs "$DIR/.config/Code/User/settings.json" ~/.config/Code/User/settings.json
 ln -vfs "$DIR/.config/Code/User/keybindings.json" ~/.config/Code/User/keybindings.json
 mkdir -p ~/.cargo/
+echo "all links done"
 
+echo "adding NVM"
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+
+echo "sourcing env"
 source ~/.setenv
 
 # symlink 'nodejs' as node on some systems
