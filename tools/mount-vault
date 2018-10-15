@@ -25,3 +25,5 @@ fi
 sudo chown $USER "$MOUNT_TARGET"
 
 echo "$MOUNT_SOURCE -> $MOUNT_TARGET"
+
+$HOME/.vault/install
