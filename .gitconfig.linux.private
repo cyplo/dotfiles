@@ -2,14 +2,13 @@
 	path = dev/dotfiles/.gitconfig_includes.common
 	path = dev/dotfiles/.gitconfig_includes.linux
 
-[user]
-	signingkey = B5D5BFAF
-
 [alias]
 	signedcommit = !git commit -S
+
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
+
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
