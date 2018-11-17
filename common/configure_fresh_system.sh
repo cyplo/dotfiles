@@ -61,6 +61,8 @@ ln -vfs "$DIR/.config/vdirsyncer/config" ~/.config/vdirsyncer/
 mkdir -p ~/.config/Code/User
 ln -vfs "$DIR/.config/Code/User/settings.json" ~/.config/Code/User/settings.json
 ln -vfs "$DIR/.config/Code/User/keybindings.json" ~/.config/Code/User/keybindings.json
+cp -v "$DIR/keeweb.desktop" ~/.local/share/applications/
+
 mkdir -p ~/.cargo/
 echo "all links done"
 
