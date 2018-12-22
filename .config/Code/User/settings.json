@@ -6,4 +6,6 @@
     "vim.disableAnnoyingNeovimMessage": true,
     "files.autoSave": "onFocusChange",
     "cSpell.language": "en,en-GB",
+    "editor.formatOnSave": true,
+    "files.trimTrailingWhitespace": true,
 }
