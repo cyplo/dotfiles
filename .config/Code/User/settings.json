@@ -2,20 +2,12 @@
     "window.zoomLevel": 1,
     "extensions.autoUpdate": true,
     "editor.cursorStyle": "block",
-    "editor.wordWrap": true,
-    "vim.disableAnnoyingNeovimMessage": true,
+    "editor.wordWrap": "on",
     "files.autoSave": "onFocusChange",
-    "cSpell.language": "en,en-GB",
     "editor.formatOnSave": true,
     "files.trimTrailingWhitespace": true,
     "better-comments.highlightPlainText": true,
     "rust-client.updateOnStartup": true,
     "rust.all_features": true,
-    "rust.goto_def_racer_fallback": true,
-    "vim.statusBarColorControl": true,
-    "workbench.colorCustomizations": {
-        "statusBar.background": "#005f5f",
-        "statusBar.noFolderBackground": "#005f5f",
-        "statusBar.debuggingBackground": "#005f5f"
-    },
+    "rust.goto_def_racer_fallback": true
 }
