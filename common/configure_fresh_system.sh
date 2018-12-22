@@ -209,7 +209,7 @@ if [[ -z $NOPYTHON3 ]]; then
     $SUDO $PIP install --upgrade packaging
     set -e
     echo "Installing Nikola"
-    $SUDO $PIP install --upgrade pygments-style-solarized ws4py watchdog webassets Nikola
+    $SUDO $PIP install --upgrade pygments-style-solarized ws4py watchdog webassets Nikola aiohttp
     echo "Installing vim dependencies"
     $SUDO $PIP install neovim
 fi
