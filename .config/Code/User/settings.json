@@ -9,5 +9,6 @@
     "better-comments.highlightPlainText": true,
     "rust-client.updateOnStartup": true,
     "rust.all_features": true,
-    "rust.goto_def_racer_fallback": true
+    "rust.goto_def_racer_fallback": true,
+    "explorer.confirmDelete": false
 }
