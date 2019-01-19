@@ -24,11 +24,11 @@ brew unlink python@2
 brew uninstall --ignore-dependencies python@2
 brew install numpy
 brew link --overwrite numpy
+brew install --force dirmngr
 set -e
 
 brew update
 brew install --force gnupg2
-brew install --force dirmngr
 brew install python3
 brew install mercurial
 brew upgrade
@@ -104,11 +104,11 @@ fi
 brew cleanup
 brew prune
 set +e
-mv "$HOME/.cargo/bin/cargo-install-update-config" "$HOME/.cargo/bin/cargo-install-update-cfg" 
+mv "$HOME/.cargo/bin/cargo-install-update-config" "$HOME/.cargo/bin/cargo-install-update-cfg"
 set -e
 brew doctor
 set +e
-mv "$HOME/.cargo/bin/cargo-install-update-cfg" "$HOME/.cargo/bin/cargo-install-update-config" 
+mv "$HOME/.cargo/bin/cargo-install-update-cfg" "$HOME/.cargo/bin/cargo-install-update-config"
 set -e
 
 echo "Configuring NVRAM"
