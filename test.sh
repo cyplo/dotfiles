@@ -13,8 +13,8 @@ if [[ -z $DETECTED_OS ]]; then
 fi
 
 if [[ $DETECTED_OS =~ .*:.* ]]; then
-   SYSTEM_NAME=`echo $DETECTED_OS | cut -d':' -f1` 
-   SYSTEM_VERSION=`echo $DETECTED_OS | cut -d':' -f2` 
+   SYSTEM_NAME=`echo $DETECTED_OS | cut -d':' -f1`
+   SYSTEM_VERSION=`echo $DETECTED_OS | cut -d':' -f2`
 else
     echo "please set DETECTED_OS to system:version"
     exit 1
@@ -36,5 +36,5 @@ if [[ -z $DOCKER_IMAGE ]]; then
     DOCKER_IMAGE="$DETECTED_OS"
 fi
 
-docker run -v $CURRENT_DIR:$INSIDER_ROOT_DIR $DOCKER_IMAGE $INSIDER_ROOT_DIR/$DIR/test_insider
+docker run -v $CURRENT_DIR:$INSIDER_ROOT_DIR:Z $DOCKER_IMAGE $INSIDER_ROOT_DIR/$DIR/test_insider
 
