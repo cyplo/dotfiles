@@ -14,8 +14,8 @@ jobs:
   ubuntu:
     machine: true
     environment:
-          DETECTED_OS: ubuntu:bionic
-          DOCKER_IMAGE: cyplo/bionic_base
+          DETECTED_OS: ubuntu:cosmic
+          DOCKER_IMAGE: cyplo/cosmic_base
 
     steps:
       - checkout
