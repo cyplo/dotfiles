@@ -1,6 +1,7 @@
 .vim/undo/
 .vim/.netrwhist
 .vim/bundle/*
+.vim/view/
 !.vim/bundle/Vundle.vim
 setup*.exe
 *mirror*cygwin*/
