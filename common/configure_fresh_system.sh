@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e 
+set -e
 set -o pipefail
 
 SUDO=""
@@ -17,7 +17,7 @@ $SUDO true
 #zsh
 if [[ -z $DONT_CHANGE_SHELL ]]; then
     echo "changing shell to zsh"
-    chsh -s `which zsh` $USER 
+    chsh -s `which zsh` $USER
 fi
 
 CURL="curl -sSfL"
@@ -61,6 +61,7 @@ ln -vfs "$DIR/.config/vdirsyncer/config" ~/.config/vdirsyncer/
 mkdir -p ~/.config/Code/User
 ln -vfs "$DIR/.config/Code/User/settings.json" ~/.config/Code/User/settings.json
 ln -vfs "$DIR/.config/Code/User/keybindings.json" ~/.config/Code/User/keybindings.json
+mkdir -p ~/.local/share/applications
 cp -v "$DIR/keeweb.desktop" ~/.local/share/applications/
 
 mkdir -p ~/.cargo/
@@ -112,15 +113,15 @@ if [[ -z $NORUST ]]; then
     rustup default stable
 
     rustup component add rls-preview --toolchain stable
-    rustup component add clippy-preview --toolchain stable 
+    rustup component add clippy-preview --toolchain stable
     rustup component add rustfmt-preview --toolchain stable
     rustup component add rust-analysis --toolchain stable
     rustup component add rust-src --toolchain stable
-    
+
     rustup component add rls-preview --toolchain nightly
     rustup component add clippy-preview --toolchain nightly
     rustup component add rustfmt-preview --toolchain nightly
-    rustup component add rust-analysis --toolchain nightly 
+    rustup component add rust-analysis --toolchain nightly
     rustup component add rust-src --toolchain nightly
 
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
@@ -137,7 +138,7 @@ echo "Querying for gpg2 path"
 gpg2_path=`which gpg2`
 echo "Got $gpg2_path for gpg2 path"
 set -e
-if [[ -x "$gpg2_path" ]]; then 
+if [[ -x "$gpg2_path" ]]; then
     echo "Using gpg2"
     GPG=gpg2
 else
