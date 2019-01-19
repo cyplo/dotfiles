@@ -15,4 +15,4 @@ export VAGRANT_DEFAULT_PROVIDER=virtualbox
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export NVM_DIR="$HOME/.nvm"
 
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+source "$NVM_DIR/nvm.sh"
