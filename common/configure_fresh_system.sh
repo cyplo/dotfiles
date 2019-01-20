@@ -73,7 +73,11 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | b
 echo "sourcing env"
 source ~/.setenv
 
+echo "using NVM"
+set +e
 \. "$NVM_DIR/nvm.sh"
+set -e
+nvm install node
 nvm use node
 
 # tools
