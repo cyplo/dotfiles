@@ -92,14 +92,19 @@ brew cask install adium
 brew cask install kdiff3
 brew cask install istat-menus
 
+echo "finsihed installing"
+
+echo "restart syncthing"
 reattach-to-user-namespace brew services restart syncthing
 
 if ! fgrep /usr/local/bin/zsh /etc/shells; then
+  echo "add shell"
   sudo bash -c "echo /usr/local/bin/zsh >> /etc/shells"
 fi
 
+echo "cleanup"
 brew cleanup
-brew prune
+
 set +e
 mv "$HOME/.cargo/bin/cargo-install-update-config" "$HOME/.cargo/bin/cargo-install-update-cfg"
 set -e
