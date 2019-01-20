@@ -1,6 +1,7 @@
 image:fedora:
   stage: build
   script:
+    - docker info
     - docker login registry.gitlab.com
 
 image:ubuntu:
