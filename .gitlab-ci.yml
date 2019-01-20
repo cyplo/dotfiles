@@ -1,8 +1,4 @@
 .image:
-  stage: build
-  image: docker:stable
-  services:
-    - docker:dind
   before_script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
   script:
@@ -10,6 +6,10 @@
     - docker build --cache-from $CONTAINER_IMAGE:latest --tag $CONTAINER_IMAGE:$CI_COMMIT_SHA --tag $CONTAINER_IMAGE:latest ./$OS_NAME/
     - docker push $CONTAINER_IMAGE:$CI_COMMIT_SHA
     - docker push $CONTAINER_IMAGE:latest
+  stage: build
+  image: docker:stable
+  services:
+    - docker:dind
   variables:
     DOCKER_HOST: tcp://docker:2375/
     DOCKER_DRIVER: overlay2
@@ -30,16 +30,14 @@ image:ubuntu:
     - apk add bash
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
   script: ./test.sh
+  stage: test
   image: docker:stable
   services:
     - docker:dind
   variables:
-    DETECTED_OS: fedora:29
     DOCKER_IMAGE: registry.gitlab.com/$CI_PROJECT_PATH/$OS_NAME:$CI_COMMIT_SHA
     DOCKER_HOST: tcp://docker:2375/
     DOCKER_DRIVER: overlay2
-  dependencies:
-    - image:fedora
 
 fedora:
   extends: .test
