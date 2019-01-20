@@ -1,4 +1,4 @@
-image:fedora:
+.image:
   stage: build
   image: docker:stable
   services:
@@ -7,32 +7,25 @@ image:fedora:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
   script:
     - docker pull $CONTAINER_IMAGE:latest || true
-    - docker build --cache-from $CONTAINER_IMAGE:latest --tag $CONTAINER_IMAGE:$CI_COMMIT_SHA --tag $CONTAINER_IMAGE:latest ./fedora/
+    - docker build --cache-from $CONTAINER_IMAGE:latest --tag $CONTAINER_IMAGE:$CI_COMMIT_SHA --tag $CONTAINER_IMAGE:latest ./$OS_NAME/
     - docker push $CONTAINER_IMAGE:$CI_COMMIT_SHA
     - docker push $CONTAINER_IMAGE:latest
   variables:
     DOCKER_HOST: tcp://docker:2375/
     DOCKER_DRIVER: overlay2
-    CONTAINER_IMAGE: registry.gitlab.com/$CI_PROJECT_PATH/fedora
+    CONTAINER_IMAGE: registry.gitlab.com/$CI_PROJECT_PATH/$OS_NAME
+
+image:fedora:
+  extends: .image
+  variables:
+    OS_NAME: fedora
 
 image:ubuntu:
-  stage: build
-  image: docker:stable
-  services:
-    - docker:dind
-  before_script:
-    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
-  script:
-    - docker pull $CONTAINER_IMAGE:latest || true
-    - docker build --cache-from $CONTAINER_IMAGE:latest --tag $CONTAINER_IMAGE:$CI_COMMIT_SHA --tag $CONTAINER_IMAGE:latest ./ubuntu/
-    - docker push $CONTAINER_IMAGE:$CI_COMMIT_SHA
-    - docker push $CONTAINER_IMAGE:latest
+  extends: .image
   variables:
-    DOCKER_HOST: tcp://docker:2375/
-    DOCKER_DRIVER: overlay2
-    CONTAINER_IMAGE: registry.gitlab.com/$CI_PROJECT_PATH/ubuntu
+    OS_NAME: ubuntu
 
-fedora:
+.test:
   before_script:
     - apk add bash
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
@@ -42,24 +35,24 @@ fedora:
     - docker:dind
   variables:
     DETECTED_OS: fedora:29
-    DOCKER_IMAGE: registry.gitlab.com/$CI_PROJECT_PATH/fedora:latest
+    DOCKER_IMAGE: registry.gitlab.com/$CI_PROJECT_PATH/$OS_NAME:$CI_COMMIT_SHA
     DOCKER_HOST: tcp://docker:2375/
     DOCKER_DRIVER: overlay2
   dependencies:
     - image:fedora
 
+fedora:
+  extends: .test
+  variables:
+    DETECTED_OS: fedora:29
+    OS_NAME: fedora
+  dependencies:
+    - image:fedora
+
 ubuntu:
-  before_script:
-    - apk add bash
-    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
-  script: ./test.sh
-  image: docker:stable
-  services:
-    - docker:dind
+  extends: .test
   variables:
     DETECTED_OS: ubuntu:cosmic
-    DOCKER_IMAGE: registry.gitlab.com/$CI_PROJECT_PATH/ubuntu:latest
-    DOCKER_HOST: tcp://docker:2375/
-    DOCKER_DRIVER: overlay2
+    OS_NAME: ubuntu
   dependencies:
     - image:ubuntu
