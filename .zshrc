@@ -36,5 +36,5 @@ if [[ `uname` =~ 'CYGWIN.*' ]]; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 [ -f /home/cyryl/.travis/travis.sh ] && source /home/cyryl/.travis/travis.sh
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"

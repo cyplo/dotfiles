@@ -30,11 +30,6 @@ fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/programs:$PATH"
-
-# other common env vars
 source ~/.setenv
 
 vacuum-repo() {

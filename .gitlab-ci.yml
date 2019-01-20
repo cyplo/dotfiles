@@ -1,10 +1,7 @@
 fedora:
   before_script:
     - apk add bash
-  script:
-    - pwd
-    - ls
-    - bash -c $CI_PROJECT_DIR/test.sh
+  script: ./test.sh
   image: docker:stable
   services:
     - docker:dind
@@ -17,10 +14,7 @@ fedora:
 ubuntu:
   before_script:
     - apk add bash
-  script:
-    - pwd
-    - ls
-    - bash -c $CI_PROJECT_DIR/test.sh
+  script: ./test.sh
   image: docker:stable
   services:
     - docker:dind
