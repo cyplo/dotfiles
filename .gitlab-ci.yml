@@ -1,0 +1,12 @@
+fedora:
+  variables:
+        DETECTED_OS: fedora:29
+        DOCKER_IMAGE: cyplo/fedora29_base
+
+  script: ./test.sh
+
+ubuntu:
+  script: ./test.sh
+  variables:
+        DETECTED_OS: ubuntu:cosmic
+        DOCKER_IMAGE: cyplo/cosmic_base
