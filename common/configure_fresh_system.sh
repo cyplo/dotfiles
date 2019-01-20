@@ -12,7 +12,8 @@ echo "configuring settings common among OSes"
 echo "using '$SUDO' as sudo"
 $SUDO true
 
-echo "sourcing env"
+echo "linking and sourcing env"
+ln -vfs "$DIR/.setenv.sh" ~/.setenv
 source ~/.setenv
 
 #zsh
@@ -48,7 +49,6 @@ ln -vfs "$DIR/.zshrc" ~/.zshrc
 ln -vfs "$DIR/.hyper.js" ~/.hyper.js
 ln -vfs "$DIR/.hyper_plugins" ~/.hyper_plugins
 
-ln -vfs "$DIR/.setenv.sh" ~/.setenv
 ln -vfs "$DIR/.Slic3r" ~/.
 ln -vfs "$DIR/.ghci" ~/.
 ln -vfs "$DIR/.conkyrc" ~/.
