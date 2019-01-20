@@ -39,3 +39,5 @@ vacuum-repo() {
 vacuum-repo-hard() {
     git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
 }
+
+export PATH="$HOME/.cargo/bin:$PATH"
