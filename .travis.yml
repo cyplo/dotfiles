@@ -2,16 +2,16 @@ language: bash
 sudo: required
 
 services:
-      - docker
+  - docker
 
 dist: trusty
 
 matrix:
-    include:
-        - os: osx
-          osx_image: xcode9.1
-script: 
-    - ./test.sh
+  include:
+    - os: osx
+      osx_image: xcode9.4
+script:
+  - ./test.sh
 
 git:
-    submodules: false
+  submodules: false
