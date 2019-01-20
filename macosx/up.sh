@@ -54,7 +54,6 @@ brew install \
   findutils \
   gawk \
   gnu-sed \
-  htop-osx \
   httpie \
   httping \
   jq \
