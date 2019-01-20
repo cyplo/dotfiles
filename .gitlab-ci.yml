@@ -1,5 +1,5 @@
 fedora:
-  script: ./test.sh
+  script: test.sh
   image: docker:stable
   services:
     - docker:dind
@@ -10,7 +10,7 @@ fedora:
     DOCKER_DRIVER: overlay2
 
 ubuntu:
-  script: ./test.sh
+  script: test.sh
   image: docker:stable
   services:
     - docker:dind
