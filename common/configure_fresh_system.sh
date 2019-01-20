@@ -72,6 +72,7 @@ mkdir -p ~/.cargo/
 echo "all links done"
 
 echo "adding NVM"
+mkdir -p "$NVM_DIR"
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 
 echo "using NVM"
