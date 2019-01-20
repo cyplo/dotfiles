@@ -1,4 +1,6 @@
 fedora:
+  before_script:
+    - apk add bash
   script:
     - pwd
     - ls
@@ -13,6 +15,8 @@ fedora:
     DOCKER_DRIVER: overlay2
 
 ubuntu:
+  before_script:
+    - apk add bash
   script:
     - pwd
     - ls
