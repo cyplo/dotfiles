@@ -2,7 +2,7 @@ fedora:
   script:
     - pwd
     - ls
-    - $CI_PROJECT_DIR/test.sh
+    - bash -c $CI_PROJECT_DIR/test.sh
   image: docker:stable
   services:
     - docker:dind
@@ -16,7 +16,7 @@ ubuntu:
   script:
     - pwd
     - ls
-    - $CI_PROJECT_DIR/test.sh
+    - bash -c $CI_PROJECT_DIR/test.sh
   image: docker:stable
   services:
     - docker:dind
