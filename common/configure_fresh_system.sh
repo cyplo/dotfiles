@@ -103,9 +103,14 @@ if [[ -z $NORUST ]]; then
     chmod a+x "$RUSTUP_TEMP"
     "$RUSTUP_TEMP" -y
     rm -f "$RUSTUP_TEMP"
+
+    set +e
     rustup update
+    set -e
     rustup install stable
+    set +e
     rustup install nightly
+    set -e
     rustup default stable
 
     rustup component add rls --toolchain stable
@@ -114,8 +119,13 @@ if [[ -z $NORUST ]]; then
     rustup component add rust-analysis --toolchain stable
     rustup component add rust-src --toolchain stable
 
+    set +e
+    rustup component add rls --toolchain nightly
+    rustup component add clippy --toolchain nightly
+    rustup component add rustfmt --toolchain nightly
     rustup component add rust-analysis --toolchain nightly
     rustup component add rust-src --toolchain nightly
+    set -e
 
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
