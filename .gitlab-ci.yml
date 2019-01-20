@@ -4,7 +4,6 @@ image:fedora:
   services:
     - docker:dind
   before_script:
-    - docker info
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
   script:
     - docker pull $CONTAINER_IMAGE:latest || true
@@ -22,7 +21,6 @@ image:ubuntu:
   services:
     - docker:dind
   before_script:
-    - docker info
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
   script:
     - docker pull $CONTAINER_IMAGE:latest || true
@@ -37,13 +35,14 @@ image:ubuntu:
 fedora:
   before_script:
     - apk add bash
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
   script: ./test.sh
   image: docker:stable
   services:
     - docker:dind
   variables:
     DETECTED_OS: fedora:29
-    DOCKER_IMAGE: cyplo/fedora29_base
+    DOCKER_IMAGE: registry.gitlab.com/$CI_PROJECT_PATH/fedora:latest
     DOCKER_HOST: tcp://docker:2375/
     DOCKER_DRIVER: overlay2
   dependencies:
@@ -52,13 +51,14 @@ fedora:
 ubuntu:
   before_script:
     - apk add bash
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
   script: ./test.sh
   image: docker:stable
   services:
     - docker:dind
   variables:
     DETECTED_OS: ubuntu:cosmic
-    DOCKER_IMAGE: cyplo/cosmic_base
+    DOCKER_IMAGE: registry.gitlab.com/$CI_PROJECT_PATH/ubuntu:latest
     DOCKER_HOST: tcp://docker:2375/
     DOCKER_DRIVER: overlay2
   dependencies:
