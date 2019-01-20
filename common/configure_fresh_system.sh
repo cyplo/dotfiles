@@ -7,12 +7,13 @@ if [[ -z $NOSUDO ]]; then
     SUDO="sudo"
 fi
 
-echo "using '$SUDO' as sudo"
-
-set -e
 echo
 echo "configuring settings common among OSes"
+echo "using '$SUDO' as sudo"
 $SUDO true
+
+echo "sourcing env"
+source ~/.setenv
 
 #zsh
 if [[ -z $DONT_CHANGE_SHELL ]]; then
@@ -63,15 +64,15 @@ ln -vfs "$DIR/.config/Code/User/settings.json" ~/.config/Code/User/settings.json
 ln -vfs "$DIR/.config/Code/User/keybindings.json" ~/.config/Code/User/keybindings.json
 mkdir -p ~/.local/share/applications
 cp -v "$DIR/keeweb.desktop" ~/.local/share/applications/
-
+ln -vfs "$DIR/tools" ~/
+mkdir -vp ~/.config/terminator
+rm -f ~/.config/terminator/config
+ln "$DIR/.config/terminator/config" ~/.config/terminator/config
 mkdir -p ~/.cargo/
 echo "all links done"
 
 echo "adding NVM"
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
-
-echo "sourcing env"
-source ~/.setenv
 
 echo "using NVM"
 set +e
@@ -80,15 +81,8 @@ set -e
 nvm install node
 nvm use node
 
-# tools
-ln -vfs "$DIR/tools" ~/
-
-# stuff that does not like symbolic links
-mkdir -vp ~/.config/terminator
-rm -f ~/.config/terminator/config
-ln "$DIR/.config/terminator/config" ~/.config/terminator/config
-
 #install fonts
+echo "installing fonts"
 mkdir -p ~/.fonts
 cp -rv "$DIR/fonts" ~/.fonts
 set +e
@@ -96,7 +90,9 @@ fc-cache -rv
 $SUDO fc-cache -rv
 set -e
 
-source "$DIR/common/install_vim_from_sources.sh"
+if [[ -z $NOVIM ]]; then
+    source "$DIR/common/install_vim_from_sources.sh"
+fi
 
 if [[ -z $NORUST ]]; then
     #rust
