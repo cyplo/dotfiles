@@ -129,7 +129,11 @@ if [[ -z $NORUST ]]; then
 
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
-    cargo install cargo-update rustsym ripgrep fd-find genpass
+    (test -x "${HOME}/.cargo/bin/cargo-install-update" || cargo install cargo-update)
+    (test -x "${HOME}/.cargo/bin/rg" || cargo install ripgrep)
+    (test -x "${HOME}/.cargo/bin/fd" || cargo install fd-find)
+    (test -x "${HOME}/.cargo/bin/genpass" || cargo install genpass)
+
     set +e
     cargo install-update -a
     set -e
