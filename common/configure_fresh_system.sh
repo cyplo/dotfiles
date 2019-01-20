@@ -107,15 +107,12 @@ if [[ -z $NORUST ]]; then
     rustup install nightly
     rustup default stable
 
-    rustup component add rls-preview --toolchain stable
-    rustup component add clippy-preview --toolchain stable
-    rustup component add rustfmt-preview --toolchain stable
+    rustup component add rls --toolchain stable
+    rustup component add clippy --toolchain stable
+    rustup component add rustfmt --toolchain stable
     rustup component add rust-analysis --toolchain stable
     rustup component add rust-src --toolchain stable
 
-    rustup component add rls-preview --toolchain nightly
-    rustup component add clippy-preview --toolchain nightly
-    rustup component add rustfmt-preview --toolchain nightly
     rustup component add rust-analysis --toolchain nightly
     rustup component add rust-src --toolchain nightly
 
