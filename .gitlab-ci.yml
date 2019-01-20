@@ -1,13 +1,26 @@
 image:fedora:
   stage: build
+  image: docker:stable
+  services:
+    - docker:dind
   script:
     - docker info
     - docker login registry.gitlab.com
+  variables:
+    DOCKER_HOST: tcp://docker:2375/
+    DOCKER_DRIVER: overlay2
 
 image:ubuntu:
   stage: build
+  image: docker:stable
+  services:
+    - docker:dind
   script:
+    - docker info
     - docker login registry.gitlab.com
+  variables:
+    DOCKER_HOST: tcp://docker:2375/
+    DOCKER_DRIVER: overlay2
 
 fedora:
   before_script:
