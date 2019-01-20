@@ -73,9 +73,7 @@ brew install \
   elm \
   git \
   haskell-stack \
-  heroku \
   mercurial \
-  node \
   python \
   python3 \
   ruby \
