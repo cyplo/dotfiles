@@ -54,7 +54,6 @@ brew install \
   findutils \
   gawk \
   gnu-sed \
-  gpg-agent \
   htop-osx \
   httpie \
   httping \
