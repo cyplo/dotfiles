@@ -1,3 +1,13 @@
+image:fedora:
+  stage: build
+  script:
+    - docker login registry.gitlab.com
+
+image:ubuntu:
+  stage: build
+  script:
+    - docker login registry.gitlab.com
+
 fedora:
   before_script:
     - apk add bash
@@ -10,6 +20,8 @@ fedora:
     DOCKER_IMAGE: cyplo/fedora29_base
     DOCKER_HOST: tcp://docker:2375/
     DOCKER_DRIVER: overlay2
+  dependencies:
+    - image:fedora
 
 ubuntu:
   before_script:
@@ -23,3 +35,5 @@ ubuntu:
     DOCKER_IMAGE: cyplo/cosmic_base
     DOCKER_HOST: tcp://docker:2375/
     DOCKER_DRIVER: overlay2
+  dependencies:
+    - image:ubuntu
