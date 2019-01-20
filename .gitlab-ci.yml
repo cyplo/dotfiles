@@ -35,11 +35,11 @@ image:ubuntu:
   services:
     - docker:dind
   variables:
-    DOCKER_IMAGE: registry.gitlab.com/$CI_PROJECT_PATH/$OS_NAME:$CI_COMMIT_SHA
     DOCKER_HOST: tcp://docker:2375/
     DOCKER_DRIVER: overlay2
+    DOCKER_IMAGE: registry.gitlab.com/$CI_PROJECT_PATH/$OS_NAME:$CI_COMMIT_SHA
 
-fedora:
+fedora:cached:
   extends: .test
   variables:
     DETECTED_OS: fedora:29
@@ -47,10 +47,22 @@ fedora:
   dependencies:
     - image:fedora
 
-ubuntu:
+ubuntu:cached:
   extends: .test
   variables:
     DETECTED_OS: ubuntu:cosmic
     OS_NAME: ubuntu
   dependencies:
     - image:ubuntu
+
+fedora:fresh:
+  extends: .test
+  variables:
+    DETECTED_OS: fedora:29
+    DOCKER_IMAGE: fedora:29
+
+ubuntu:fresh:
+  extends: .test
+  variables:
+    DETECTED_OS: ubuntu:cosmic
+    DOCKER_IMAGE: ubuntu:cosmic
