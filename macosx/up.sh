@@ -24,6 +24,7 @@ brew unlink python@2
 brew uninstall --ignore-dependencies python@2
 brew install numpy
 brew link --overwrite numpy
+brew link --overwrite gcc
 brew install --force dirmngr
 set -e
 
