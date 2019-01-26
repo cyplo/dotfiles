@@ -105,14 +105,6 @@ fi
 echo "cleanup"
 brew cleanup
 
-set +e
-mv "$HOME/.cargo/bin/cargo-install-update-config" "$HOME/.cargo/bin/cargo-install-update-cfg"
-set -e
-brew doctor
-set +e
-mv "$HOME/.cargo/bin/cargo-install-update-cfg" "$HOME/.cargo/bin/cargo-install-update-config"
-set -e
-
 echo "Configuring NVRAM"
 sudo nvram SystemAudioVolume=%80
 defaults write com.google.Keystone.Agent checkInterval 4233600
