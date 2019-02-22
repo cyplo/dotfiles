@@ -30,11 +30,7 @@ set t_Co=256
 syntax enable
 set background=dark
 highlight clear SignColumn
-try
-    colorscheme solarized
-catch /^Vim\%((\a\+)\)\=:E185/
-    colorscheme desert
-endtry
+colorscheme solarized
 
 " appearance
 set number

@@ -10,9 +10,8 @@ let g:rustfmt_autosave = 1
 let $FZF_DEFAULT_COMMAND = 'rg --files --no-messages "" .'
 set grepprg=rg\ --vimgrep
 let g:fzf_command_prefix = 'Fzf'
-
-" :Find <term> runs `rg <term>` and passes it to fzf
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+let g:ctrlp_show_hidden = 1
 
 " register rust rls
 if executable('rls')
@@ -22,3 +21,7 @@ if executable('rls')
         \ 'whitelist': ['rust'],
         \ })
 endif
+
+" nerdtree startup
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif

@@ -6,6 +6,7 @@ nmap <leader>t :wa <bar> :Make test<CR>
 
 " navigate buffers by ctrl-b
 nmap <C-b> :bprevious<CR>
+nmap <C-B> :bnext<CR>
 
 nnoremap ; :
 
@@ -28,3 +29,6 @@ nnoremap <leader>u :FzfTags<cr>
 nnoremap <leader>j :call fzf#vim#tags("'".expand('<cword>'))<cr>
 nnoremap <leader>/ :Find
 nnoremap <leader>' :execute "Find " . expand("<cword>")<cr>
+
+" tree
+map <leader>n :NERDTreeToggle<CR>
