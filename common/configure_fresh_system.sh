@@ -37,7 +37,8 @@ git submodule update --init --recursive
 #configs
 ln -vfs "$DIR/.vim" ~/.
 ln -vfs "$DIR/.ideavimrc" ~/.
-ln -vfs "$DIR/.vimrc.linux" ~/.vimrc
+ln -vfs "$DIR/.vimrc" ~/.vimrc
+ln -vfs "$DIR/.rvmrc" ~/.rvmrc
 ln -vfs "$DIR/.tmux.conf" ~/.
 ln -vfs "$DIR/.tmux.macosx" ~/.
 rm -f "~/.zshrc"

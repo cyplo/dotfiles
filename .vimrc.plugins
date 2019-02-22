@@ -1,3 +1,12 @@
+" plugins
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+
 Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
 Plug 'https://github.com/cyplo/vim-colors-solarized.git'
@@ -13,7 +22,6 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'rust-lang/rust.vim'
-Plug 'Shougo/deoplete.nvim'
 Plug 'timonv/vim-cargo'
 Plug 'tpope/vim-cucumber'
 Plug 'tpope/vim-dispatch'
@@ -22,5 +30,6 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-syntastic/syntastic'
 Plug 'will133/vim-dirdiff'
+
+call plug#end()
