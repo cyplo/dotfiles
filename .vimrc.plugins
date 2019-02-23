@@ -8,6 +8,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
+Plug 'cespare/vim-toml'
 Plug 'godlygeek/tabular'
 Plug 'https://github.com/cyplo/vim-colors-solarized.git'
 Plug 'junegunn/fzf.vim'
