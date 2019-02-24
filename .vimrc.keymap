@@ -29,6 +29,7 @@ nmap <leader>/ :LspWorkspaceSymbol<CR>
 nmap <leader>r :LspReferences<CR>
 nmap <leader>d :LspDeclaration<CR>
 nmap <leader>D :LspDefinition<CR>
+nmap <leader>e :LspNextError<CR>
 nmap <leader><CR> :LspCodeAction<CR>
 
 " tree
