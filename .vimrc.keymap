@@ -1,6 +1,6 @@
 " key mappings
 let mapleader = ","
-noremap <Leader>s :update<CR>
+nmap <Leader>s :update<CR>
 nmap <leader>p :set paste!<CR>
 nmap <leader>h :set hlsearch!<CR>
 nmap <leader>t :wa <bar> :Make test<CR>
@@ -24,22 +24,20 @@ imap <F1> <Esc>
 " special chars
 nmap <leader>l :set list!<CR>
 
-" search
-nnoremap <leader>v :FzfFiles<cr>
-nnoremap <leader>u :FzfTags<cr>
-nnoremap <leader>j :call fzf#vim#tags("'".expand('<cword>'))<cr>
-nnoremap <leader>/ :Find
-nnoremap <leader>' :execute "Find " . expand("<cword>")<cr>
+" search/navigate project structure
+nmap <leader>/ :LspWorkspaceSymbol<CR>
+nmap <leader>r :LspReferences<CR>
+nmap <leader>d :LspDeclaration<CR>
+nmap <leader>D :LspDefinition<CR>
+nmap <leader><CR> :LspCodeAction<CR>
 
 " tree
 map <leader>n :NERDTreeToggle<CR>
 
-" completion
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
-imap <c-space> <Plug>(asyncomplete_force_refresh)
+" quickfix
+nmap <leader>q <Plug>window:quickfix:toggle
 
+" completion
 function! s:check_back_space() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~ '\s'
@@ -49,4 +47,9 @@ inoremap <silent><expr> <TAB>
   \ pumvisible() ? "\<C-n>" :
   \ <SID>check_back_space() ? "\<TAB>" :
   \ asyncomplete#force_refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
+imap <c-space> <Plug>(asyncomplete_force_refresh)
