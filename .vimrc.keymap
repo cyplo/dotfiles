@@ -1,5 +1,6 @@
 " key mappings
 let mapleader = ","
+noremap <Leader>s :update<CR>
 nmap <leader>p :set paste!<CR>
 nmap <leader>h :set hlsearch!<CR>
 nmap <leader>t :wa <bar> :Make test<CR>
