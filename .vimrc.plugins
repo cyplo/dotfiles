@@ -14,6 +14,8 @@ Plug 'drmingdrmer/vim-toggle-quickfix'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'godlygeek/tabular'
 Plug 'https://github.com/cyplo/vim-colors-solarized.git'
+Plug 'jremmen/vim-ripgrep'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'mhinz/vim-startify'

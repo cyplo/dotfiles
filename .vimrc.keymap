@@ -31,7 +31,7 @@ nmap <leader>d :LspDeclaration<CR>
 nmap <leader>D :LspDefinition<CR>
 nmap <leader>e :LspNextError<CR>
 nmap <leader><CR> :LspCodeAction<CR>
-
+nmap <leader>f :Rg 
 " tree
 map <leader>n :NERDTreeToggle<CR>
 
