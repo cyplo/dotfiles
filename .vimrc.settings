@@ -1,4 +1,5 @@
 " global settings
+set autoread
 set nocompatible
 set noswapfile
 set undofile
