@@ -53,3 +53,17 @@ ubuntu:cached:
     OS_NAME: ubuntu
   dependencies:
     - image:ubuntu
+
+fedora:fresh:
+  extends: .test
+  variables:
+    DETECTED_OS: fedora:29
+    OS_NAME: fedora
+    DOCKER_IMAGE: fedora:29
+
+ubuntu:fresh:
+  extends: .test
+  variables:
+    DETECTED_OS: ubuntu:cosmic
+    OS_NAME: ubuntu
+    DOCKER_IMAGE: ubuntu:cosmic
