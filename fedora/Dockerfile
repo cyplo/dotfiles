@@ -63,7 +63,7 @@ RUN dnf -y --best --allowerasing install tmux atop zsh aria2 lm_sensors python3-
 RUN dnf -y --best --allowerasing install splix gutenprint-cups cups-bjnp
 
 # gui tools
-RUN dnf -y --best --allowerasing install firefox gajim freecad gparted glances gimp kdiff3 zeal qt5-linguist keepass -lite yubico-piv-tool yubikey-personalization-gui xloadimage gnome-tweaks xclip kdbg
+RUN dnf -y --best --allowerasing install firefox gajim freecad gparted glances gimp kdiff3 zeal qt5-linguist keepass yubico-piv-tool yubikey-personalization-gui xloadimage gnome-tweaks xclip kdbg
 
 # development
 RUN dnf -y --best --allowerasing install mercurial cmake intltool dkms git xz dnf-automatic golang redhat-rpm-config pcsc-tools pcsc-lite xloadimage yp-tools closure-compiler optipng jpegoptim ansible lldb python-lldb
