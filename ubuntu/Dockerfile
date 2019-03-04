@@ -43,22 +43,3 @@ RUN cd /root/dev/vim && make install
 RUN gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 RUN curl -sSL https://get.rvm.io | bash
 RUN bash -c "source /etc/profile.d/rvm.sh && rvm install ruby --disable-binary"
-
-RUN curl -sSf https://sh.rustup.rs > /tmp/blastoff.sh
-RUN chmod a+x /tmp/blastoff.sh
-RUN /tmp/blastoff.sh -y
-RUN rm -f /tmp/blastoff.sh
-
-RUN /root/.cargo/bin/rustup update
-RUN /root/.cargo/bin/rustup install stable
-RUN /root/.cargo/bin/rustup install nightly
-RUN /root/.cargo/bin/rustup default stable
-
-RUN /root/.cargo/bin/rustup component add rls --toolchain stable
-RUN /root/.cargo/bin/rustup component add clippy --toolchain stable
-RUN /root/.cargo/bin/rustup component add rustfmt --toolchain stable
-RUN /root/.cargo/bin/rustup component add rust-analysis --toolchain stable
-RUN /root/.cargo/bin/rustup component add rust-src --toolchain stable
-
-RUN /root/.cargo/bin/cargo install cargo-update rustsym ripgrep fd-find genpass
-RUN /root/.cargo/bin/cargo install-update -a
