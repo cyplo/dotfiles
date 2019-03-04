@@ -15,6 +15,9 @@ RUN dnf -y upgrade --best --allowerasing
 
 RUN dnf -y groupinstall gnome
 
+# requirements for early packages and crates
+RUN dnf -y --best --allowerasing install openssl-devel
+
 # rust
 RUN curl -sSf https://sh.rustup.rs > /tmp/blastoff.sh
 RUN chmod a+x /tmp/blastoff.sh
