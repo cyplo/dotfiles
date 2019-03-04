@@ -3,19 +3,19 @@ FROM fedora:29
 ENV LC_ALL en_GB.UTF-8
 ENV LANG en_GB.UTF-8
 
-RUN dnf -y upgrade --best --allowerasing
-
-RUN dnf -y --best --allowerasing install tmux atop zsh firefox aria2 gajim lm_sensors freecad python3-pip qt5-qtbase-devel qt5-qtwebkit-devel whois curl pv terminator gsmartcontrol python-pip mercurial python3-devel libxslt-devel libjpeg-turbo-devel cmake gtk2-devel intltool gparted glances dkms kernel-devel gimp git xz util-linux-user dnf-automatic kdiff3 yum-utils util-linux-user ncurses-devel zeal qt5-linguist qtkeychain-qt5-devel archivemount keepass splix gutenprint-cups cups-bjnp golang redhat-rpm-config pcsc-lite-devel pcsc-tools pcsc-lite yubico-piv-tool yubikey-personalization-gui xloadimage yp-tools closure-compiler optipng jpegoptim grub2 grub2-efi dracut dracut-tools openssl-devel fail2ban syncthing ansible gnome-tweaks xclip wget
-
-RUN dnf -y install docker
-
 RUN dnf -y groupinstall "C Development Tools and Libraries"
 RUN dnf -y groupinstall "Development Tools"
 
 RUN dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-RUN dnf -y groupupdate core
 
-RUN dnf -y install ffmpeg-libs
+RUN dnf -y copr enable jdoss/wireguard
+
+RUN dnf -y groupupdate core
+RUN dnf -y upgrade --best --allowerasing
+
+RUN dnf -y groupinstall gnome
+
+RUN dnf -y --best --allowerasing install tmux atop zsh firefox aria2 gajim lm_sensors freecad python3-pip qt5-qtbase-devel qt5-qtwebkit-devel whois curl pv terminator gsmartcontrol python-pip mercurial python3-devel libxslt-devel libjpeg-turbo-devel cmake gtk2-devel intltool gparted glances dkms kernel-devel gimp git xz util-linux-user dnf-automatic kdiff3 yum-utils util-linux-user ncurses-devel zeal qt5-linguist qtkeychain-qt5-devel archivemount keepass splix gutenprint-cups cups-bjnp golang redhat-rpm-config pcsc-lite-devel pcsc-tools pcsc-lite yubico-piv-tool yubikey-personalization-gui xloadimage yp-tools closure-compiler optipng jpegoptim grub2 grub2-efi dracut dracut-tools openssl-devel fail2ban syncthing ansible gnome-tweaks xclip wget wireguard-dkms wireguard-tools lldb python-lldb kdbg zlib-devel libuuid-devel libattr-devel libblkid-devel libselinux-devel libudev-devel parted lsscsi ksh openssl-devel elfutils-libelf-devel libtirpc-devel kernel-devel ffmpeg-libs dnf-plugins-core
 
 RUN mkdir -p /root/dev/
 # vim
