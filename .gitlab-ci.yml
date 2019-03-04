@@ -28,7 +28,6 @@ image:ubuntu:
 .test:
   before_script:
     - apk add bash
-    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
   script: ./test.sh
   stage: test
   image: docker:stable
