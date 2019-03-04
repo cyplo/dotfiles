@@ -1,0 +1,10 @@
+[Unit]
+Description=Timer for restic-backup
+
+[Timer]
+OnBootSec=2m
+OnUnitInactiveSec=1d
+Persistent=true
+
+[Install]
+WantedBy=basic.target

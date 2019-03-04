@@ -2,6 +2,8 @@
 
 set -e
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 sudo dnf -y groupinstall "C Development Tools and Libraries"
 sudo dnf -y groupinstall "Development Tools"
 
@@ -14,14 +16,9 @@ if [[ -z $NOUPGRADE ]]; then
     sudo dnf -y upgrade --best --allowerasing
 fi
 
-sudo dnf -y --best --allowerasing install tmux atop zsh firefox aria2 gajim lm_sensors freecad python3-pip qt5-qtbase-devel qt5-qtwebkit-devel whois curl pv terminator gsmartcontrol python-pip mercurial python3-devel libxslt-devel libjpeg-turbo-devel cmake gtk2-devel intltool gparted glances dkms kernel-devel gimp git xz util-linux-user dnf-automatic kdiff3 yum-utils util-linux-user ncurses-devel zeal qt5-linguist qtkeychain-qt5-devel archivemount keepass splix gutenprint-cups cups-bjnp golang redhat-rpm-config pcsc-lite-devel pcsc-tools pcsc-lite yubico-piv-tool yubikey-personalization-gui xloadimage yp-tools closure-compiler optipng jpegoptim grub2 grub2-efi dracut dracut-tools openssl-devel fail2ban syncthing ansible gnome-tweaks xclip wget wireguard-dkms wireguard-tools lldb python-lldb kdbg zlib-devel libuuid-devel libattr-devel libblkid-devel libselinux-devel libudev-devel parted lsscsi ksh openssl-devel elfutils-libelf-devel libtirpc-devel kernel-devel ffmpeg-libs dnf-plugins-core
-
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-sudo dnf remove -y docker docker-client docker-client-latest docker-common docker-latest docker-latest-logrotate docker-logrotate docker-selinux docker-engine-selinux docker-engine
+sudo dnf -y --best --allowerasing install tmux atop zsh firefox aria2 gajim lm_sensors freecad python3-pip qt5-qtbase-devel qt5-qtwebkit-devel whois curl pv terminator gsmartcontrol python-pip mercurial python3-devel libxslt-devel libjpeg-turbo-devel cmake gtk2-devel intltool gparted glances dkms kernel-devel gimp git xz util-linux-user dnf-automatic kdiff3 yum-utils util-linux-user ncurses-devel zeal qt5-linguist qtkeychain-qt5-devel archivemount keepass splix gutenprint-cups cups-bjnp golang redhat-rpm-config pcsc-lite-devel pcsc-tools pcsc-lite yubico-piv-tool yubikey-personalization-gui xloadimage yp-tools closure-compiler optipng jpegoptim grub2 grub2-efi dracut dracut-tools openssl-devel fail2ban syncthing ansible gnome-tweaks xclip wget wireguard-dkms wireguard-tools lldb python-lldb kdbg zlib-devel libuuid-devel libattr-devel libblkid-devel libselinux-devel libudev-devel parted lsscsi ksh openssl-devel elfutils-libelf-devel libtirpc-devel kernel-devel ffmpeg-libs dnf-plugins-core restic duply
 
 sudo dnf config-manager -y --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
-
 sudo dnf install -y docker-ce docker-ce-cli containerd.io
 
 sudo cp -v /etc/dnf/automatic.conf /etc/dnf/automatic.conf.bak
@@ -57,6 +54,12 @@ else
     echo "No grub.cfg ..."
 fi
 
+mkdir -p "$HOME/.config/systemd/"
+rm -frv "$HOME/.config/systemd/user"
+
+DIR=`realpath "$DIR/../"`
+ln -vfs "$DIR/.config/systemd/user" "$HOME/.config/systemd/"
+
 if [[ -z $NO_SYSTEMCTL ]]; then
     sudo systemctl enable docker
     sudo systemctl restart docker
@@ -67,6 +70,10 @@ if [[ -z $NO_SYSTEMCTL ]]; then
     sudo systemctl enable fstrim.timer
     sudo systemctl restart fstrim.timer
     sudo systemctl enable --now syncthing@cyryl.service
+    systemctl --user daemon-reload
+    systemctl --user enable restic-backup.timer
+    systemctl --user enable restic-backup.service
+    systemctl --user list-timers
     sudo systemctl list-timers
 fi
 
@@ -89,6 +96,5 @@ if [ "$(id -u)" != "0" ]; then
     code --install-extension vscodevim.vim
 fi
 
-DIR="$DIR/../"
 DIR="$DIR" $DIR/common/configure_fresh_system.sh
 
