@@ -16,7 +16,7 @@ RUN dnf -y upgrade --best --allowerasing
 RUN dnf -y groupinstall gnome
 
 # requirements for early packages and crates
-RUN dnf -y --best --allowerasing install openssl-devel
+RUN dnf -y --best --allowerasing install openssl-devel ncurses-devel
 
 # rust
 RUN curl -sSf https://sh.rustup.rs > /tmp/blastoff.sh
@@ -51,6 +51,7 @@ RUN cd /root/dev/vim && ./configure --with-features=huge \
 RUN cd /root/dev/vim && make -j`nproc`
 RUN cd /root/dev/vim && make install
 
+# ruby
 RUN gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 RUN curl -sSL https://get.rvm.io | bash
 RUN bash -c "source /etc/profile.d/rvm.sh && rvm install ruby --disable-binary"
@@ -68,4 +69,4 @@ RUN dnf -y --best --allowerasing install firefox gajim freecad gparted glances g
 RUN dnf -y --best --allowerasing install mercurial cmake intltool dkms git xz dnf-automatic golang redhat-rpm-config pcsc-tools pcsc-lite xloadimage yp-tools closure-compiler optipng jpegoptim ansible lldb python-lldb
 
 # devel versions of packages
-RUN dnf -y --best --allowerasing install qt5-qtbase-devel qt5-qtwebkit-devel python3-devel libxslt-devel libjpeg-turbo-devel gtk2-devel kernel-devel ncurses-devel qtkeychain-qt5-devel pcsc-lite-devel openssl-devel zlib-devel libuuid-devel libattr-devel libblkid-devel libselinux-devel libudev-devel openssl-devel elfutils-libelf-devel libtirpc-devel ffmpeg-libs dnf-plugins-core
+RUN dnf -y --best --allowerasing install qt5-qtbase-devel qt5-qtwebkit-devel python3-devel libxslt-devel libjpeg-turbo-devel gtk2-devel kernel-devel qtkeychain-qt5-devel pcsc-lite-devel openssl-devel zlib-devel libuuid-devel libattr-devel libblkid-devel libselinux-devel libudev-devel openssl-devel elfutils-libelf-devel libtirpc-devel ffmpeg-libs dnf-plugins-core
