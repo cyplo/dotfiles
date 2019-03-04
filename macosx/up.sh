@@ -35,7 +35,7 @@ brew install mercurial
 brew upgrade
 brew cask upgrade
 
-brew install reattach-to-user-namespace --with-wrap-pbcopy-and-pbpaste
+brew install reattach-to-user-namespace
 
 brew install aria2
 brew install \
