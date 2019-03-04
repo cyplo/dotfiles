@@ -96,5 +96,4 @@ if [ "$(id -u)" != "0" ]; then
     code --install-extension vscodevim.vim
 fi
 
-DIR="$DIR" $DIR/common/configure_fresh_system.sh
-
+DIR="$DIR" "$DIR/common/configure_fresh_system.sh"
