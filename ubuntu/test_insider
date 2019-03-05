@@ -8,8 +8,12 @@ export NO_SYSTEMCTL=true
 
 echo "APT::Acquire::Retries=16;" >> /etc/apt/apt.conf.d/99_retries
 
+echo "Europe/London" > /etc/timezone
+
 apt-get update
-apt-get install sudo
+apt-get install -y sudo nullmailer tzdata
+dpkg-reconfigure -f noninteractive tzdata
+
 cd $HOME
 
 mkdir -p dev/
