@@ -2,9 +2,9 @@
 Description=Timer for restic-backup
 
 [Timer]
-OnBootSec=2m
-OnUnitInactiveSec=1d
+OnUnitInactiveSec=1h
 Persistent=true
 
 [Install]
-WantedBy=basic.target
+WantedBy=timers.target
+
