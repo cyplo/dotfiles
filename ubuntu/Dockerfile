@@ -8,7 +8,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN echo "APT::Acquire::Retries=16;" >> /etc/apt/apt.conf.d/99_retries
 RUN apt-get update
 RUN apt-get install -y --fix-missing sudo apt-utils aptitude dirmngr locales nullmailer
-RUN apt-get -y upgrade
+RUN apt-get -y --fix-missing upgrade
 
 RUN sudo locale-gen en_GB.UTF-8
 RUN dpkg-reconfigure locales
