@@ -51,11 +51,6 @@ RUN cd /root/dev/vim && ./configure --with-features=huge \
 RUN cd /root/dev/vim && make -j`nproc`
 RUN cd /root/dev/vim && make install
 
-# ruby
-RUN gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-RUN curl -sSL https://get.rvm.io | bash
-RUN bash -c "source /etc/profile.d/rvm.sh && rvm install ruby --disable-binary"
-
 # basic packages
 RUN dnf -y --best --allowerasing install tmux atop zsh aria2 lm_sensors python3-pip whois curl pv terminator gsmartcontrol python-pip mercurial cmake glances dkms git xz util-linux-user dnf-automatic yum-utils util-linux-user archivemount  redhat-rpm-config grub2 grub2-efi dracut dracut-tools fail2ban syncthing wget wireguard-dkms wireguard-tools parted lsscsi ksh dnf-plugins-core restic duply
 

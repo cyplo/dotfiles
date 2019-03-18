@@ -49,6 +49,3 @@ RUN cd /root/dev/vim && ./configure --with-features=huge \
 RUN cd /root/dev/vim && make -j`nproc`
 RUN cd /root/dev/vim && make install
 
-RUN gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-RUN curl -sSL https://get.rvm.io | bash
-RUN bash -c "source /etc/profile.d/rvm.sh && rvm install ruby --disable-binary"
