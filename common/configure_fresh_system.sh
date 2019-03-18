@@ -161,11 +161,12 @@ echo "Getting GPG keys.."
 for key in \
     409B6B1796C275462A1703113804BB82D39DC0E3 \
     7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-; do \
+do 
     $GPG --keyserver hkp://keys.gnupg.net --recv-keys "$key" || \
     $GPG --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" || \
     $GPG --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" || \
-    $GPG --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ; \
+    $GPG --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" \
+    ;
 done
 
 if [[ -z $NORUBY ]]; then
