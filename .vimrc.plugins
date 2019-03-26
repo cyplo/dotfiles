@@ -42,5 +42,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'will133/vim-dirdiff'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'LnL7/vim-nix'
 
 call plug#end()

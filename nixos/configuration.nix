@@ -1,10 +1,23 @@
 { config, pkgs, ... }:
 
+let
+  unstableTarball =
+    fetchTarball
+      https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
+in
 {
   imports =
-    [ 
+    [
       /etc/nixos/hardware-configuration.nix
     ];
+
+  nixpkgs.config = {
+    packageOverrides = pkgs: {
+      unstable = import unstableTarball {
+        config = config.nixpkgs.config;
+      };
+    };
+  };
 
   environment.systemPackages = with pkgs; [
     wget vim git zsh gnupg curl tmux
@@ -15,12 +28,14 @@
   users.users.cyryl = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
-    packages = with pkgs; [
-     firefox terminator zsh keepass fontconfig go nodejs rustup gcc gdb binutils xclip pkgconfig veracrypt gitAndTools.diff-so-fancy
-    ];
+      packages = with pkgs; [
+       firefox chromium terminator zsh keepass fontconfig go nodejs rustup gcc gdb binutils xclip pkgconfig veracrypt gitAndTools.diff-so-fancy gnome3.gnome-shell-extensions chrome-gnome-shell gnomeExtensions.clipboard-indicator gnomeExtensions.caffeine gnomeExtensions.no-title-bar unstable.gnomeExtensions.gsconnect
+      ];
     uid = 1000;
     shell = pkgs.zsh;
   };
+
+  services.gnome3.chrome-gnome-shell.enable = true;
 
   services.syncthing = {
     enable = true;
@@ -30,18 +45,17 @@
   };
 
   services.xserver = {
-        enable = true;
-        layout = "pl";
-	libinput.enable = true;
-  
-        desktopManager = {
-	  gnome3.enable = true;
-	  default="gnome3";
-          xterm.enable=false;
-	};
-	displayManager.gdm.enable = true;
+    enable = true;
+    layout = "pl";
+    libinput.enable = true;
+
+    desktopManager = {
+      gnome3.enable = true;
+      xterm.enable = false;
+    };
+    displayManager.gdm.enable = true;
   };
-  
+
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
@@ -65,3 +79,4 @@
 
   system.stateVersion = "18.09";
 }
+
