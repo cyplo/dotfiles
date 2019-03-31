@@ -35,49 +35,55 @@ in
     shell = pkgs.zsh;
   };
 
-  services.gnome3.chrome-gnome-shell.enable = true;
+  services = {
+    gnome3.chrome-gnome-shell.enable = true;
 
-  services.fwupd.enable = true;
+    fwupd.enable = true;
 
-  services.syncthing = {
-    enable = true;
-    user = "cyryl";
-    dataDir = "/home/cyryl/.syncthing";
-    openDefaultPorts = true;
-  };
-
-  services.xserver = {
-    enable = true;
-    layout = "pl";
-    libinput.enable = true;
-
-    desktopManager = {
-      gnome3.enable = true;
-      xterm.enable = false;
+    syncthing = {
+      enable = true;
+      user = "cyryl";
+      dataDir = "/home/cyryl/.syncthing";
+      openDefaultPorts = true;
     };
-    displayManager.gdm.enable = true;
+
+    xserver = {
+      enable = true;
+      layout = "pl";
+      libinput.enable = true;
+
+      desktopManager = {
+        gnome3.enable = true;
+        xterm.enable = false;
+      };
+      displayManager.gdm.enable = true;
+    };
   };
+
+  time.timeZone = "Europe/London";
 
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
-  time.timeZone = "Europe/London";
   fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
 
-  boot.loader.grub.enable = true;
-  boot.loader.grub.version = 2;
-  boot.loader.grub.device = "nodev";
-  boot.loader.grub.efiSupport = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  boot.initrd.luks.devices = [
-    {
-      name = "root";
-      device = "/dev/disk/by-uuid/8c76bf01-59b3-4c60-b853-e9cb77f3ca14";
-      preLVM = true;
-      allowDiscards = true;
-    }
-  ];
+  boot = {
+    initrd.luks.devices = [
+      {
+        name = "root";
+        device = "/dev/disk/by-uuid/8c76bf01-59b3-4c60-b853-e9cb77f3ca14";
+        preLVM = true;
+        allowDiscards = true;
+      }
+    ];
+    loader.grub = {
+      enable = true;
+      version = 2;
+      device = "nodev";
+      efiSupport = true;
+    };
+    loader.efi.canTouchEfiVariables = true;
+  };
 
   system.stateVersion = "18.09";
 }
