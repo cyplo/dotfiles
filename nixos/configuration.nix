@@ -4,6 +4,19 @@ let
   unstableTarball =
     fetchTarball
       https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
+  myVim = pkgs.vim_configurable.override {
+    features = "huge"; # one of  tiny, small, normal, big or huge
+    cfg = {
+      luaSupport = true;
+      pythonSupport = true;
+      python3Support = true;
+      multibyteSupport = true;
+    };
+    flags = {
+      xim.enable = true;
+    };
+  };
+
 in
 {
   imports =
@@ -20,7 +33,7 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-    wget vim git zsh gnupg curl tmux microcodeIntel
+    wget myVim git zsh gnupg curl tmux microcodeIntel
   ];
 
   networking.hostName = "skinnyv";
@@ -29,7 +42,7 @@ in
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
       packages = with pkgs; [
-       firefox chromium terminator zsh keepass fontconfig go nodejs unstable.rustup gcc gdb binutils xclip pkgconfig veracrypt gitAndTools.diff-so-fancy gnome3.gnome-shell-extensions chrome-gnome-shell gnomeExtensions.clipboard-indicator gnomeExtensions.caffeine gnomeExtensions.no-title-bar unstable.gnomeExtensions.gsconnect unstable.appimage-run openjdk10 
+       firefox chromium terminator zsh keepass fontconfig go nodejs unstable.rustup gcc gdb binutils xclip pkgconfig veracrypt gitAndTools.diff-so-fancy gnome3.gnome-shell-extensions chrome-gnome-shell gnomeExtensions.clipboard-indicator gnomeExtensions.caffeine gnomeExtensions.no-title-bar unstable.gnomeExtensions.gsconnect unstable.appimage-run openjdk10 pdftk pdfshuffler gimp
       ];
     uid = 1000;
     shell = pkgs.zsh;

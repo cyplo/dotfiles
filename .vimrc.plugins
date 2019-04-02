@@ -12,6 +12,7 @@ Plug 'cespare/vim-toml'
 Plug 'Chiel92/vim-autoformat'
 Plug 'drmingdrmer/vim-toggle-quickfix'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'godlygeek/tabular'
 Plug 'https://github.com/cyplo/vim-colors-solarized.git'
 Plug 'jremmen/vim-ripgrep'
@@ -19,6 +20,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'leafgarland/typescript-vim'
+Plug 'LnL7/vim-nix'
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
 Plug 'plasticboy/vim-markdown'
@@ -42,6 +44,5 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'will133/vim-dirdiff'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'LnL7/vim-nix'
 
 call plug#end()
