@@ -33,7 +33,7 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-    wget myVim git zsh gnupg curl tmux
+    wget myVim git zsh gnupg curl tmux python36Packages.glances
   ];
 
   networking.hostName = "skinnyv";
