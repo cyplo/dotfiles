@@ -4,18 +4,6 @@ let
   unstableTarball =
     fetchTarball
       https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
-  myVim = pkgs.vim_configurable.override {
-    features = "huge"; # one of  tiny, small, normal, big or huge
-    cfg = {
-      luaSupport = true;
-      pythonSupport = true;
-      python3Support = true;
-      multibyteSupport = true;
-    };
-    flags = {
-      xim.enable = true;
-    };
-  };
 
 in
 {
@@ -33,7 +21,12 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-    wget myVim git zsh gnupg curl tmux python36Packages.glances
+    wget git zsh gnupg curl tmux python36Packages.glances 
+    (
+      vim_configurable.override {
+        python = python3;
+      }
+    )
   ];
 
   networking.hostName = "skinnyv";
