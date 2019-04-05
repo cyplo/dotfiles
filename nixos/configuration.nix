@@ -13,6 +13,7 @@ in
     ];
 
   nixpkgs.config = {
+    allowUnfree = true;
     packageOverrides = pkgs: {
       unstable = import unstableTarball {
         config = config.nixpkgs.config;
@@ -33,12 +34,17 @@ in
 
   users.users.cyryl = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "video" "scanner" "lp" "docker" ]; 
+    extraGroups = [ "wheel" "networkmanager" "video" "scanner" "lp" "docker" "vboxusers"]; 
       packages = with pkgs; [
-       firefox chromium terminator zsh keepass fontconfig go nodejs unstable.rustup gcc gdb binutils xclip pkgconfig veracrypt gitAndTools.diff-so-fancy gnome3.gnome-shell-extensions chrome-gnome-shell gnomeExtensions.clipboard-indicator gnomeExtensions.caffeine gnomeExtensions.no-title-bar unstable.gnomeExtensions.gsconnect unstable.appimage-run openjdk10 pdftk pdfshuffler gimp restic
+       firefox chromium terminator zsh keepass fontconfig go nodejs unstable.rustup gcc gdb binutils xclip pkgconfig veracrypt gitAndTools.diff-so-fancy gnome3.gnome-shell-extensions chrome-gnome-shell gnomeExtensions.clipboard-indicator gnomeExtensions.caffeine gnomeExtensions.no-title-bar unstable.gnomeExtensions.gsconnect unstable.appimage-run openjdk10 pdftk pdfshuffler gimp restic 
       ];
     uid = 1000;
     shell = pkgs.zsh;
+  };
+
+  virtualisation.virtualbox.host = {
+    enable = true;
+    enableExtensionPack = true;
   };
 
   virtualisation.docker = {
@@ -108,6 +114,7 @@ in
     loader.efi.canTouchEfiVariables = true;
   };
 
+  system.autoUpgrade.enable = true;
   system.stateVersion = "18.09";
 }
 
