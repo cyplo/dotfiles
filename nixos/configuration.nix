@@ -15,6 +15,7 @@ in
   nixpkgs.config = {
     allowUnfree = true;
     packageOverrides = pkgs: {
+      vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
       unstable = import unstableTarball {
         config = config.nixpkgs.config;
       };
@@ -36,7 +37,7 @@ in
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "video" "scanner" "lp" "docker" "vboxusers"]; 
       packages = with pkgs; [
-       firefox chromium terminator zsh keepass fontconfig go nodejs unstable.rustup gcc gdb binutils xclip pkgconfig veracrypt gitAndTools.diff-so-fancy gnome3.gnome-shell-extensions chrome-gnome-shell gnomeExtensions.clipboard-indicator gnomeExtensions.caffeine gnomeExtensions.no-title-bar unstable.gnomeExtensions.gsconnect unstable.appimage-run openjdk10 pdftk pdfshuffler gimp restic 
+       firefox chromium terminator zsh keepass fontconfig go nodejs unstable.rustup gcc gdb binutils xclip pkgconfig veracrypt gitAndTools.diff-so-fancy gnome3.gnome-shell-extensions chrome-gnome-shell gnomeExtensions.clipboard-indicator gnomeExtensions.caffeine gnomeExtensions.no-title-bar unstable.gnomeExtensions.gsconnect unstable.appimage-run openjdk10 pdftk pdfshuffler gimp restic glxinfo
       ];
     uid = 1000;
     shell = pkgs.zsh;
@@ -45,6 +46,7 @@ in
   virtualisation.virtualbox.host = {
     enable = true;
     enableExtensionPack = true;
+    enableHardening = false; #needed for 3D acceleration
   };
 
   virtualisation.docker = {
@@ -91,7 +93,15 @@ in
   hardware.u2f.enable = true;
   hardware.brightnessctl.enable = true;
   hardware.cpu.intel.updateMicrocode = true;
-  hardware.opengl.enable = true;
+  hardware.opengl = {
+    enable = true;
+    extraPackages = with pkgs; [
+      vaapiIntel
+      vaapiVdpau
+      libvdpau-va-gl
+      unstable.intel-media-driver
+    ];
+  };
   hardware.sane.enable = true;
 
   fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
@@ -112,7 +122,11 @@ in
       efiSupport = true;
     };
     loader.efi.canTouchEfiVariables = true;
+    kernelParams = [
+      "i915.enable_rc6=7"
+    ];
   };
+
 
   system.autoUpgrade.enable = true;
   system.stateVersion = "18.09";
