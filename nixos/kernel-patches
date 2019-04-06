@@ -1,0 +1,21 @@
+
+    kernelPatches = [ {
+      name = "native";
+      patch = null;
+      extraConfig = ''
+            SLAB_FREELIST_RANDOM y
+            SLAB_FREELIST_HARDENED y
+            CC_STACKPROTECTOR_REGULAR n
+            CC_STACKPROTECTOR_STRONG y
+            REFCOUNT_FULL y
+            MODVERSIONS y
+            GENERIC_CPU n
+            MCORE2 y
+            INTEL_RDT y
+            X86_INTEL_USERCOPY y
+            X86_USE_PPRO_CHECKSUM y
+            X86_P6_NOP y
+            X86_INTEL_MPX y
+            KEXEC n
+            '';
+          } ];
