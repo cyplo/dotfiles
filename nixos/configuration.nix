@@ -38,7 +38,7 @@ in
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "video" "scanner" "lp" "docker" "vboxusers"]; 
       packages = with pkgs; [
-       firefox chromium terminator zsh keepass fontconfig go nodejs unstable.rustup gcc gdb binutils xclip pkgconfig veracrypt gitAndTools.diff-so-fancy gnome3.gnome-shell-extensions chrome-gnome-shell gnomeExtensions.clipboard-indicator gnomeExtensions.caffeine gnomeExtensions.no-title-bar unstable.gnomeExtensions.gsconnect unstable.appimage-run openjdk10 pdftk pdfshuffler gimp restic glxinfo unstable.discord steam vscode unstable.zoom-us python36Packages.pylint nodejs-10_x unstable.hugo
+       firefox chromium terminator zsh keepass fontconfig go nodejs unstable.rustup gcc gdb binutils xclip pkgconfig veracrypt gitAndTools.diff-so-fancy gnome3.gnome-shell-extensions chrome-gnome-shell gnomeExtensions.clipboard-indicator gnomeExtensions.caffeine gnomeExtensions.no-title-bar unstable.gnomeExtensions.gsconnect unstable.appimage-run openjdk10 pdftk pdfshuffler gimp restic glxinfo unstable.discord steam vscode unstable.zoom-us python36Packages.pylint nodejs-10_x unstable.hugo mercurial
       ];
     uid = 1000;
     shell = pkgs.zsh;
@@ -130,7 +130,7 @@ in
     ];
   };
 
-
+  nix.gc.automatic = true;
   system.autoUpgrade.enable = true;
   system.stateVersion = "18.09";
 }
