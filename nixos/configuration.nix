@@ -32,13 +32,23 @@ in
   ];
 
   networking.hostName = "skinnyv";
+  # gsconnect
+  networking.firewall.allowedTCPPortRanges = [ { from = 1716; to = 1764; }  ];
+  networking.firewall.allowedUDPPortRanges = [ { from = 1716; to = 1764; }  ];
+  
   i18n.defaultLocale = "en_GB.UTF-8";
 
   users.users.cyryl = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "video" "scanner" "lp" "docker" "vboxusers"]; 
       packages = with pkgs; [
-       firefox chromium terminator zsh keepass fontconfig go nodejs unstable.rustup gcc gdb binutils xclip pkgconfig veracrypt gitAndTools.diff-so-fancy gnome3.gnome-shell-extensions chrome-gnome-shell gnomeExtensions.clipboard-indicator gnomeExtensions.caffeine gnomeExtensions.no-title-bar unstable.gnomeExtensions.gsconnect unstable.appimage-run openjdk10 pdftk pdfshuffler gimp restic glxinfo unstable.discord steam vscode unstable.zoom-us python36Packages.pylint nodejs-10_x unstable.hugo mercurial unstable.terraform libreoffice
+        firefox chromium terminator zsh keepass fontconfig go nodejs rustup gcc gdb 
+        binutils xclip pkgconfig veracrypt gitAndTools.diff-so-fancy
+        gnome3.gnome-shell-extensions chrome-gnome-shell gnomeExtensions.clipboard-indicator 
+        gnomeExtensions.caffeine gnomeExtensions.no-title-bar gnomeExtensions.gsconnect
+        openjdk11 gimp restic glxinfo discord steam vscode 
+        zoom-us
+        nodejs-10_x hugo mercurial terraform libreoffice
       ];
     uid = 1000;
     shell = pkgs.zsh;
@@ -49,6 +59,7 @@ in
     enableExtensionPack = true;
     enableHardening = false; #needed for 3D acceleration
   };
+
 
   virtualisation.docker = {
     enable = true;
@@ -90,9 +101,7 @@ in
 
       desktopManager = {
         gnome3.enable = true;
-        xterm.enable = false;
       };
-      displayManager.gdm.enable = true;
     };
   };
 
@@ -111,7 +120,7 @@ in
       vaapiIntel
       vaapiVdpau
       libvdpau-va-gl
-      unstable.intel-media-driver
+      intel-media-driver
     ];
   };
   hardware.sane.enable = true;
