@@ -15,5 +15,6 @@
     "liveshare.audio.joinCallBehavior": "accept",
     "editor.formatOnPaste": true,
     "workbench.editor.highlightModifiedTabs": true,
-    "gitlens.codeLens.authors.enabled": false
+    "gitlens.codeLens.authors.enabled": false,
+    "explorer.confirmDragAndDrop": false
 }
