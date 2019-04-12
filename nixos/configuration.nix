@@ -46,7 +46,7 @@ in
         binutils xclip pkgconfig veracrypt gitAndTools.diff-so-fancy
         gnome3.gnome-shell-extensions chrome-gnome-shell gnomeExtensions.clipboard-indicator 
         gnomeExtensions.caffeine gnomeExtensions.no-title-bar gnomeExtensions.gsconnect
-        openjdk11 gimp restic glxinfo discord steam vscode 
+        openjdk11 gimp restic glxinfo discord steam unstable.vscode 
         zoom-us
         nodejs-10_x hugo mercurial terraform libreoffice
       ];
