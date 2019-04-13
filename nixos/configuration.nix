@@ -50,7 +50,7 @@ in
         openjdk11 gimp restic glxinfo discord steam unstable.vscode
         zoom-us
         nodejs-10_x hugo mercurial terraform libreoffice
-        unzip tor-browser-bundle-bin aria
+        unzip tor-browser-bundle-bin aria vlc
       ];
     uid = 1000;
     shell = pkgs.zsh;
