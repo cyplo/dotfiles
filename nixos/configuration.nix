@@ -23,7 +23,7 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-    wget git zsh gnupg curl tmux python36Packages.glances 
+    wget git zsh gnupg curl tmux python36Packages.glances
     (
       vim_configurable.override {
         python = python3;
@@ -35,21 +35,22 @@ in
   # gsconnect
   networking.firewall.allowedTCPPortRanges = [ { from = 1716; to = 1764; }  ];
   networking.firewall.allowedUDPPortRanges = [ { from = 1716; to = 1764; }  ];
-  
+
+
   i18n.defaultLocale = "en_GB.UTF-8";
 
   users.users.cyryl = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "video" "scanner" "lp" "docker" "vboxusers"]; 
+    extraGroups = [ "wheel" "networkmanager" "video" "scanner" "lp" "docker" "vboxusers"];
       packages = with pkgs; [
-        firefox chromium alacritty zsh keepass fontconfig go nodejs rustup gcc gdb 
+        firefox chromium alacritty zsh keepass fontconfig go nodejs rustup gcc gdb
         binutils xclip pkgconfig veracrypt gitAndTools.diff-so-fancy
-        gnome3.gnome-shell-extensions chrome-gnome-shell gnomeExtensions.clipboard-indicator 
+        gnome3.gnome-shell-extensions chrome-gnome-shell gnomeExtensions.clipboard-indicator
         gnomeExtensions.caffeine gnomeExtensions.no-title-bar gnomeExtensions.gsconnect
-        openjdk11 gimp restic glxinfo discord steam unstable.vscode 
+        openjdk11 gimp restic glxinfo discord steam unstable.vscode
         zoom-us
         nodejs-10_x hugo mercurial terraform libreoffice
-        unzip
+        unzip tor-browser-bundle-bin aria
       ];
     uid = 1000;
     shell = pkgs.zsh;
@@ -72,7 +73,7 @@ in
 
     fwupd.enable = true;
 
-    printing = { 
+    printing = {
       enable = true;
       drivers = [ pkgs.epson-escpr ];
     };
