@@ -49,6 +49,7 @@ in
         openjdk11 gimp restic glxinfo discord steam unstable.vscode 
         zoom-us
         nodejs-10_x hugo mercurial terraform libreoffice
+        unzip
       ];
     uid = 1000;
     shell = pkgs.zsh;
