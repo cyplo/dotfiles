@@ -51,6 +51,7 @@ in
         zoom-us
         nodejs-10_x hugo mercurial terraform libreoffice
         unzip tor-browser-bundle-bin aria vlc
+        jetbrains.goland jetbrains.clion
       ];
     uid = 1000;
     shell = pkgs.zsh;
