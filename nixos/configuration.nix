@@ -52,6 +52,7 @@ in
         nodejs-10_x hugo mercurial terraform libreoffice
         unzip tor-browser-bundle-bin aria vlc
         jetbrains.goland jetbrains.clion
+        (wine.override { wineBuild = "wineWow"; })
       ];
     uid = 1000;
     shell = pkgs.zsh;
