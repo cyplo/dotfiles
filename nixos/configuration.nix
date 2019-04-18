@@ -53,6 +53,7 @@ in
         unzip tor-browser-bundle-bin aria vlc
         jetbrains.goland jetbrains.clion
         (wine.override { wineBuild = "wineWow"; })
+        yubico-piv-tool yubikey-personalization yubikey-personalization-gui yubikey-manager-qt
       ];
     uid = 1000;
     shell = pkgs.zsh;
@@ -72,7 +73,7 @@ in
 
   services = {
     gnome3.chrome-gnome-shell.enable = true;
-
+    physlock.enable = true;
     fwupd.enable = true;
 
     printing = {
