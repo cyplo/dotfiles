@@ -1,10 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  unstableTarball =
-    fetchTarball
-      https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
-
+  unstableTarball = fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
 in
 {
   imports =
@@ -12,11 +9,16 @@ in
       /etc/nixos/hardware-configuration.nix
     ];
 
+
+
   nixpkgs.config = {
     allowUnfree = true;
     packageOverrides = pkgs: {
       vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
       unstable = import unstableTarball {
+        config = config.nixpkgs.config;
+      };
+      cyplo = import "/home/cyryl/dev/nixpkgs/" {
         config = config.nixpkgs.config;
       };
     };
@@ -72,7 +74,6 @@ in
   };
 
   services = {
-    gnome3.chrome-gnome-shell.enable = true;
     physlock.enable = true;
     fwupd.enable = true;
 
@@ -99,6 +100,8 @@ in
       timerConfig = { OnCalendar = "hourly"; };
     };
 
+    gnome3.chrome-gnome-shell.enable = true;
+    gnome3.gnome-keyring.enable = true;
     xserver = {
       enable = true;
       layout = "pl";
@@ -109,6 +112,8 @@ in
       };
     };
   };
+
+  security.pam.services.lightdm.enableGnomeKeyring = true;
 
   time.timeZone = "Europe/London";
 
