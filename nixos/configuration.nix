@@ -26,6 +26,7 @@ in
 
   environment.systemPackages = with pkgs; [
     wget git zsh gnupg curl tmux python36Packages.glances
+    gnomeExtensions.gsconnect
     (
       vim_configurable.override {
         python = python3;
@@ -38,7 +39,6 @@ in
   networking.firewall.allowedTCPPortRanges = [ { from = 1716; to = 1764; }  ];
   networking.firewall.allowedUDPPortRanges = [ { from = 1716; to = 1764; }  ];
 
-
   i18n.defaultLocale = "en_GB.UTF-8";
 
   users.users.cyryl = {
@@ -48,7 +48,7 @@ in
         firefox chromium alacritty zsh keepass fontconfig go nodejs rustup gcc gdb
         binutils xclip pkgconfig veracrypt gitAndTools.diff-so-fancy
         gnome3.gnome-shell-extensions chrome-gnome-shell gnomeExtensions.clipboard-indicator
-        gnomeExtensions.caffeine gnomeExtensions.no-title-bar gnomeExtensions.gsconnect
+        gnomeExtensions.caffeine gnomeExtensions.no-title-bar
         openjdk11 gimp restic glxinfo discord steam unstable.vscode
         zoom-us
         nodejs-10_x hugo mercurial terraform libreoffice
@@ -74,7 +74,6 @@ in
   };
 
   services = {
-    physlock.enable = true;
     fwupd.enable = true;
 
     printing = {
@@ -110,10 +109,14 @@ in
       desktopManager = {
         gnome3.enable = true;
       };
+      displayManager.gdm= {
+        enable = true;
+        wayland = false;
+      };
     };
   };
 
-  security.pam.services.lightdm.enableGnomeKeyring = true;
+  security.pam.services.gdm.enableGnomeKeyring = true;
 
   time.timeZone = "Europe/London";
 
