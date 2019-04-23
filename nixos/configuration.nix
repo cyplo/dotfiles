@@ -47,8 +47,10 @@ in
         nodejs-10_x hugo mercurial terraform libreoffice
         unzip tor-browser-bundle-bin aria vlc
         jetbrains.goland jetbrains.clion
-        (wine.override { wineBuild = "wineWow"; })
+        (wine.override { wineBuild = "wineWow"; }) winetricks
         yubico-piv-tool yubikey-personalization yubikey-personalization-gui yubikey-manager-qt
+        mono
+        calcurse unstable.pypi2nix
       ];
     uid = 1000;
     shell = pkgs.zsh;
