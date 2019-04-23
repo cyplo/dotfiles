@@ -2,6 +2,7 @@
 
 let
   unstableTarball = fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
+  etesync-dav = import "/home/cyryl/dev/dotfiles/nixos/packages/etesync-dav/default.nix";
 in
 {
   imports =
@@ -50,7 +51,7 @@ in
         (wine.override { wineBuild = "wineWow"; }) winetricks
         yubico-piv-tool yubikey-personalization yubikey-personalization-gui yubikey-manager-qt
         mono
-        calcurse unstable.pypi2nix
+        calcurse unstable.pypi2nix etesync-dav
       ];
     uid = 1000;
     shell = pkgs.zsh;
