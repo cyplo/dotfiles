@@ -51,7 +51,8 @@ in
         (wine.override { wineBuild = "wineWow"; }) winetricks
         yubico-piv-tool yubikey-personalization yubikey-personalization-gui yubikey-manager-qt
         mono
-        calcurse unstable.pypi2nix etesync-dav
+        calcurse unstable.pypi2nix
+        etesync-dav
       ];
     uid = 1000;
     shell = pkgs.zsh;
