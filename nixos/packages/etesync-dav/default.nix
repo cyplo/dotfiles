@@ -143,7 +143,8 @@ python37.pkgs.buildPythonPackage rec {
       sha256 = "18ykgi3gqy6p7wj7n9d88rsn0y566ypl5ixpb3v7l3f6w5fffwh1";
     };
     propagatedBuildInputs = [
-      python37Packages.pytz python37Packages.pytzdata python37Packages.appdirs
+      python37Packages.pytz
+      python37Packages.pytzdata
       python37Packages.appdirs
       python37Packages.asn1crypto
       python37Packages.certifi
