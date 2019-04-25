@@ -50,9 +50,7 @@ in
         jetbrains.goland jetbrains.clion
         (wine.override { wineBuild = "wineWow"; }) winetricks
         yubico-piv-tool yubikey-personalization yubikey-personalization-gui yubikey-manager-qt
-        mono
-        calcurse unstable.pypi2nix
-        etesync-dav
+        mono calcurse unstable.pypi2nix etesync-dav calibre fbreader unstable.hopper file python37Packages.binwalk-full
       ];
     uid = 1000;
     shell = pkgs.zsh;
