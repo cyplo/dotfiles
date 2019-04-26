@@ -19,5 +19,12 @@
     loader.efi.canTouchEfiVariables = true;
   };
   time.timeZone = "Europe/London";
+
+  virtualisation.virtualbox.host = {
+    enable = true;
+    enableExtensionPack = true;
+    enableHardening = false; #needed for 3D acceleration
+  };
+
   imports = [ ../common.nix ];
 }

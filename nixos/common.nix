@@ -54,11 +54,6 @@ in
     shell = pkgs.zsh;
   };
 
-  virtualisation.virtualbox.host = {
-    enable = true;
-    enableExtensionPack = true;
-    enableHardening = false; #needed for 3D acceleration
-  };
 
   virtualisation.docker = {
     enable = true;
