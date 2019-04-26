@@ -13,8 +13,6 @@ in
       ./gsconnect.nix
       ./gfx.nix
       ./boot.nix
-
-      ./boxes/skinnyv.nix # TODO: invert relationship
     ];
 
   nixpkgs.config = {
@@ -23,7 +21,7 @@ in
       unstable = import unstableTarball {
         config = config.nixpkgs.config;
       };
-      cyplo = import "/home/cyryl/dev/nixpkgs/" {
+      cyplo = import ./nixpkgs {
         config = config.nixpkgs.config;
       };
     };
