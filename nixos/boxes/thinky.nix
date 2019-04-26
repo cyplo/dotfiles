@@ -10,6 +10,9 @@
         preLVM = true;
         allowDiscards = true;
       }];
+    loader.grub = {
+      device = "nodev";
+    };
   };
   time.timeZone = "Europe/Warsaw";
   imports = [ ../common.nix ];

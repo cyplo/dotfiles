@@ -12,6 +12,11 @@
         preLVM = true;
         allowDiscards = true;
       }];
+    loader.grub = {
+      device = "nodev";
+      efiSupport = true;
+    };
+    loader.efi.canTouchEfiVariables = true;
   };
   time.timeZone = "Europe/London";
   imports = [ ../common.nix ];

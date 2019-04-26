@@ -2,7 +2,7 @@
 
 let
   unstableTarball = fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
-  etesync-dav = import "/home/cyryl/dev/dotfiles/nixos/packages/etesync-dav/default.nix";
+  etesync-dav = import ./packages/etesync-dav/default.nix;
 in
 {
   imports =
@@ -102,7 +102,6 @@ in
   };
 
   security.pam.services.gdm.enableGnomeKeyring = true;
-
 
   sound.enable = true;
   hardware.pulseaudio.enable = true;
