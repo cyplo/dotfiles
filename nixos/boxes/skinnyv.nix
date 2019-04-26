@@ -13,5 +13,6 @@
         allowDiscards = true;
       }];
   };
+  time.timeZone = "Europe/London";
   imports = [ ../common.nix ];
 }

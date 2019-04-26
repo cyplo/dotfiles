@@ -103,7 +103,6 @@ in
 
   security.pam.services.gdm.enableGnomeKeyring = true;
 
-  time.timeZone = "Europe/London";
 
   sound.enable = true;
   hardware.pulseaudio.enable = true;
