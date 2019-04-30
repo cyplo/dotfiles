@@ -29,6 +29,7 @@ in
 
   environment.systemPackages = with pkgs; [
     wget git zsh gnupg curl tmux python36Packages.glances
+
   ];
 
   i18n.defaultLocale = "en_GB.UTF-8";
@@ -65,7 +66,7 @@ in
 
     printing = {
       enable = true;
-      drivers = [ pkgs.epson-escpr ];
+      drivers = [ pkgs.epson-escpr pkgs.samsung-unified-linux-driver pkgs.splix ];
     };
     avahi = {
       enable = true;
