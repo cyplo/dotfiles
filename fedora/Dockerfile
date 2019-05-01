@@ -1,4 +1,4 @@
-FROM fedora:29
+FROM fedora:30
 
 ENV LC_ALL en_GB.UTF-8
 ENV LANG en_GB.UTF-8
