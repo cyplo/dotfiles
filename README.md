@@ -11,15 +11,15 @@ install:
     sudo apt-get update
     sudo apt-get install git # or yum install git
 
-    ssh-keygen -b 8192
-    cat ~/.ssh/id_rsa.pub
+    ssh-keygen -t ed2551    
+    cat .ssh/id_ed25519.pub 
     #add the above key to github
     mkdir ~/dev
     cd ~/dev
     git clone git@github.com:cyplo/dotfiles.git
     cd dotfiles
-    ./ubuntu/up.sh
-    # or /debian/.. or /fedora/..
+    ./fedora/up.sh
+    # or ./ubuntu/up.sh
 
 GNOME extensions list:
 * Clipboard Indicator
