@@ -70,6 +70,8 @@ ln -vfs "$DIR/tools" ~/
 mkdir -vp ~/.config/terminator
 rm -f ~/.config/terminator/config
 ln "$DIR/.config/terminator/config" ~/.config/terminator/config
+mkdir -vp "$HOME/.config/alacritty/"
+ln -vfs "$DIR/.alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
 mkdir -p ~/.cargo/
 echo "all links done"
 
@@ -162,7 +164,7 @@ echo "Getting GPG keys.."
 for key in \
     409B6B1796C275462A1703113804BB82D39DC0E3 \
     7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-do 
+do
     $GPG --keyserver hkp://keys.gnupg.net --recv-keys "$key" || \
     $GPG --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" || \
     $GPG --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" || \
