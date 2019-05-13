@@ -50,13 +50,19 @@ ln -vfs "$DIR/.zprezto/runcoms/zshenv" ~/.zshenv
 ln -vfs "$DIR/.zshrc" ~/.zshrc
 ln -vfs "$DIR/.hyper.js" ~/.hyper.js
 ln -vfs "$DIR/.hyper_plugins" ~/.hyper_plugins
+ln -vfs "$DIR/.hyper_plugins" ~/.hyper_plugins
 
 ln -vfs "$DIR/.Slic3r" ~/.
 ln -vfs "$DIR/.ghci" ~/.
 ln -vfs "$DIR/.conkyrc" ~/.
 mkdir -p ~/.kde/share/config/
 ln -vfs "$DIR/.kdiff3rc" ~/.kde/share/config/kdiff3rc
+
 ln -vfs "$DIR/.gitconfig.linux.private" ~/.gitconfig
+if [[ `hostname` == "xps15" ]]; then
+    ln -vfs "$DIR/.gitconfig.linux.form3" ~/.gitconfig
+fi
+
 mkdir -p ~/.config/autostart/
 # autostart apps
 mkdir -p ~/.config/vdirsyncer/
