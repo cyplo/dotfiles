@@ -162,8 +162,6 @@ font:
   # effect.
   use_thin_strokes: true
 
-# Display the time it takes to redraw each frame.
-render_timer: false
 
 # Keep the log file after quitting Alacritty.
 persistent_logging: false
