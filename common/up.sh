@@ -104,10 +104,6 @@ fc-cache -rv
 $SUDO fc-cache -rv
 set -e
 
-if [[ -z $NOVIM ]]; then
-    source "$DIR/common/install_vim_from_sources.sh"
-fi
-
 if [[ -z $NORUST ]]; then
     #rust
     echo "installing rust"

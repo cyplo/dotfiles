@@ -114,7 +114,7 @@ DIR=`realpath "$DIR"`
 
 if [[ -z $CONTINUOUS_INTEGRATION ]]; then
     echo "Invoking common configuration scripts"
-    DIR="$DIR" $DIR/common/configure_fresh_system.sh
+    DIR="$DIR" $DIR/common/up.sh
 fi
 
 ln -vfs "$DIR/.gitconfig.mac" $HOME/.gitconfig

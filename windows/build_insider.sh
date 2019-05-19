@@ -31,7 +31,7 @@ export NOSUDO=true
 export DONT_CHANGE_SHELL=true
 export NORUST=true
 export NO_GO=true
-export DIR=$DOTFILES_PATH 
+export DIR=$DOTFILES_PATH
 export NOYCM=true
 
 curl https://bootstrap.pypa.io/get-pip.py > /tmp/get-pip.py
@@ -41,7 +41,7 @@ python /tmp/get-pip.py
 export PATH="$OUTER_CLONE:$PATH"
 
 echo "Invoking common configuration script"
-$DIR/common/configure_fresh_system.sh
+$DIR/common/up.sh
 
 echo "Making symlinks"
 ln -vfs $DIR/windows_cygwin/.minttyrc $HOME/
