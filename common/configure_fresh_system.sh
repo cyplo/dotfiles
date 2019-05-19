@@ -59,7 +59,7 @@ mkdir -p ~/.kde/share/config/
 ln -vfs "$DIR/.kdiff3rc" ~/.kde/share/config/kdiff3rc
 
 ln -vfs "$DIR/.gitconfig.linux.private" ~/.gitconfig
-if [[ `hostname` == "xps15" ]]; then
+if [[ `hostname` =~ .*form3.* ]]; then
     ln -vfs "$DIR/.gitconfig.linux.form3" ~/.gitconfig
 fi
 
