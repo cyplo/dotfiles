@@ -49,7 +49,7 @@ fedora:cached:
 ubuntu:cached:
   extends: .test
   variables:
-    DETECTED_OS: ubuntu:cosmic
+    DETECTED_OS: ubuntu:disco
     OS_NAME: ubuntu
   dependencies:
     - image:ubuntu
@@ -64,6 +64,6 @@ fedora:fresh:
 ubuntu:fresh:
   extends: .test
   variables:
-    DETECTED_OS: ubuntu:cosmic
+    DETECTED_OS: ubuntu:disco
     OS_NAME: ubuntu
-    DOCKER_IMAGE: ubuntu:cosmic
+    DOCKER_IMAGE: ubuntu:disco
