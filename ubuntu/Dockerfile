@@ -1,4 +1,4 @@
-FROM ubuntu:cosmic
+FROM ubuntu:disco
 
 ENV LC_ALL en_GB.UTF-8
 ENV LANG en_GB.UTF-8
@@ -7,12 +7,12 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN echo "APT::Acquire::Retries=16;" >> /etc/apt/apt.conf.d/99_retries
 RUN echo '\
-deb mirror://mirrors.ubuntu.com/NL.txt cosmic main restricted \n\
-deb mirror://mirrors.ubuntu.com/NL.txt cosmic-updates main restricted \n\
-deb mirror://mirrors.ubuntu.com/NL.txt cosmic-security main restricted \n\
-deb mirror://mirrors.ubuntu.com/NL.txt cosmic universe \n\
-deb mirror://mirrors.ubuntu.com/NL.txt cosmic-updates universe\n\
-deb mirror://mirrors.ubuntu.com/NL.txt cosmic-security universe\n\
+deb mirror://mirrors.ubuntu.com/NL.txt disco main restricted \n\
+deb mirror://mirrors.ubuntu.com/NL.txt disco-updates main restricted \n\
+deb mirror://mirrors.ubuntu.com/NL.txt disco-security main restricted \n\
+deb mirror://mirrors.ubuntu.com/NL.txt disco universe \n\
+deb mirror://mirrors.ubuntu.com/NL.txt disco-updates universe\n\
+deb mirror://mirrors.ubuntu.com/NL.txt disco-security universe\n\
 ' > /etc/apt/sources.list 
 
 RUN apt-get update
