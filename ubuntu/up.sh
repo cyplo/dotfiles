@@ -5,7 +5,7 @@ set -v
 
 sudo apt-get update
 sudo apt-get -y upgrade
-sudo apt-get -y --fix-missing install apt-file aptitude aria2 atop cmake curl dkms freecad gajim git glances gnupg2 golang gparted gsmartcontrol intltool kdiff3 keepass2 libatk1.0-dev libbonoboui2-dev libcairo2-dev libgnome2-dev libgnomeui-dev libgtk2.0-dev libncurses5-dev libx11-dev libxpm-dev libxt-dev linux-kernel-headers lm-sensors meld mercurial nodejs npm pv python-dev python-pip python3-pip retext ruby-dev terminator tmux vim whois zsh dirmngr fail2ban glances atop syncthing evolution docker.io yasm libfuse-dev libwxgtk3.0-dev net-tools software-properties-common coreutils xclip wget
+sudo apt-get -y --fix-missing install apt-file aptitude aria2 atop cmake curl dkms gajim git glances gnupg2 golang gparted gsmartcontrol intltool kdiff3 keepass2 libatk1.0-dev libbonoboui2-dev libcairo2-dev libgnome2-dev libgnomeui-dev libgtk2.0-dev libncurses5-dev libx11-dev libxpm-dev libxt-dev linux-kernel-headers lm-sensors meld mercurial nodejs npm pv python-dev python-pip python3-pip retext ruby-dev terminator tmux vim whois zsh dirmngr fail2ban glances atop syncthing evolution docker.io yasm libfuse-dev libwxgtk3.0-dev net-tools software-properties-common coreutils xclip wget
 
 if [[ -z $USER ]]; then
     USER=`whoami`
