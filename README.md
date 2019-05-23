@@ -11,7 +11,7 @@ install:
     sudo apt-get update
     sudo apt-get install git # or yum install git
 
-    ssh-keygen -t ed2551    
+    ssh-keygen -t ed25519
     cat .ssh/id_ed25519.pub 
     #add the above key to github
     mkdir ~/dev
