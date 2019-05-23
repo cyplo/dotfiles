@@ -3,9 +3,9 @@
 set -e
 set -v
 
-sudo apt-get update
-sudo apt-get -y upgrade
-sudo apt-get -y --fix-missing install apt-file aptitude aria2 atop cmake curl dkms gajim git glances gnupg2 golang gparted gsmartcontrol intltool kdiff3 keepass2 libatk1.0-dev libbonoboui2-dev libcairo2-dev libgnome2-dev libgnomeui-dev libgtk2.0-dev libncurses5-dev libx11-dev libxpm-dev libxt-dev linux-kernel-headers lm-sensors meld mercurial nodejs npm pv python-dev python-pip python3-pip retext ruby-dev terminator tmux vim whois zsh dirmngr fail2ban glances atop syncthing evolution docker.io yasm libfuse-dev libwxgtk3.0-dev net-tools software-properties-common coreutils xclip wget
+sudo apt update
+sudo apt -y upgrade
+sudo apt -y --fix-missing install apt-file aptitude aria2 atop cmake curl git glances gnupg2 keepass2 mercurial pv python-dev python-pip python3-pip ruby-dev tmux vim whois zsh dirmngr fail2ban syncthing net-tools coreutils xclip wget
 
 if [[ -z $USER ]]; then
     USER=`whoami`
@@ -17,15 +17,9 @@ curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
 echo "deb https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
 sudo apt-get -y install syncthing
 
-sudo add-apt-repository -y ppa:wireguard/wireguard
-sudo apt-get update
-sudo apt-get install -y wireguard-dkms wireguard-tools
-
 if [[ -z $NO_SYSTEMCTL ]]; then
     sudo systemctl enable docker
     sudo systemctl restart docker
-    sudo systemctl enable fail2ban
-    sudo systemctl restart fail2ban
     sudo systemctl enable --now syncthing@$USER.service
 fi
 
