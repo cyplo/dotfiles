@@ -5,7 +5,12 @@ set -v
 
 sudo apt update
 sudo apt -y upgrade
-sudo apt -y --fix-missing install apt-file aptitude aria2 atop cmake curl git glances gnupg2 keepass2 mercurial pv python-dev python-pip python3-pip ruby-dev tmux vim whois zsh dirmngr syncthing net-tools coreutils xclip wget
+sudo apt -y --fix-missing install apt-file aptitude aria2 atop cmake curl git glances gnupg2 keepass2 mercurial pv python-dev python-pip python3-pip ruby-dev tmux vim whois zsh dirmngr syncthing net-tools coreutils xclip wget scdaemon
+
+# gsconnect
+sudo ufw allow 1714:1764/udp
+sudo ufw allow 1714:1764/tcp
+sudo ufw reload
 
 if [[ -z $USER ]]; then
     USER=`whoami`

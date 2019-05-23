@@ -8,3 +8,5 @@
 	email = cyryl.plotnicki@form3.tech
 [commit]
 	gpgsign = true
+[url "git@github.com:"]
+	insteadOf = https://github.com/
