@@ -16,5 +16,9 @@
     "editor.formatOnPaste": true,
     "workbench.editor.highlightModifiedTabs": true,
     "gitlens.codeLens.authors.enabled": false,
-    "explorer.confirmDragAndDrop": false
+    "explorer.confirmDragAndDrop": false,
+    "lua.format.linebreakMultipleAssignments": true,
+    "[lua]": {
+        "editor.formatOnSave": false
+    }
 }
