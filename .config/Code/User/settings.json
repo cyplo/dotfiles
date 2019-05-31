@@ -20,5 +20,8 @@
     "lua.format.linebreakMultipleAssignments": true,
     "[lua]": {
         "editor.formatOnSave": false
+    },
+    "[makefile]": {
+        "editor.insertSpaces": false
     }
 }
