@@ -216,9 +216,9 @@ if [[ -z $NOVIM ]]; then
         ~/.fzf/install --64 --all
     fi
     echo "Installing Vim plugins"
-    vim +PlugUpgrade +qa
-    vim +PlugUpdate +qa
-    vim +PlugClean! +qa
+    echo "\n" | vim +PlugUpgrade +qa
+    echo "\n" | vim +PlugUpdate +qa
+    echo "\n" | vim +PlugClean! +qa
 fi
 
 nvm use node
