@@ -82,6 +82,7 @@ mkdir -p ~/.cargo/
 echo "all links done"
 
 echo "adding GDB dashboard"
+rm -fr ~/.gdbinit*
 wget -P ~ git.io/.gdbinit
 
 echo "adding NVM"
@@ -213,40 +214,9 @@ if [[ -z $NO_GO ]]; then
 fi
 
 nvm use node
-npm install -g reveal-md
-npm install -g diff-so-fancy
-npm install -g cssnano
-
-if [[ -z $NOPYTHON3 ]]; then
-    set +e
-    pip3_path=`which pip3`
-    set -e
-    echo "pip3 path is $pip3_path"
-    if [[ -x "$pip3_path" ]]; then
-        echo "Choosing pip3 for pip"
-        PIP=pip3
-    else
-        echo "Choosing pip"
-        PIP=pip
-    fi
-    echo "Upgrading pip"
-    set +e
-    $SUDO $PIP install --upgrade pip setuptools
-    $SUDO $PIP install --upgrade packaging
-    set -e
-    echo "Installing Nikola"
-    $SUDO $PIP install --upgrade pygments-style-solarized ws4py watchdog webassets Nikola aiohttp
-    echo "Installing vim dependencies"
-    $SUDO $PIP install neovim
-fi
-
-if [[ -z $USER ]]; then
-    USER=`whoami`
-fi
-
-# normalize npm permissions
-mkdir -p $HOME/.npm
-$SUDO chown -R $USER $HOME/.npm
+npx npm install -g reveal-md
+npx npm install -g diff-so-fancy
+npx npm install -g cssnano
 
 echo
 echo "now go ahead and restart"
