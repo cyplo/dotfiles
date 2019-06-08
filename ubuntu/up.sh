@@ -18,6 +18,7 @@ if [[ -z $USER ]]; then
     USER=`whoami`
 fi
 
+sudo groupadd docker | true
 sudo usermod -aG docker $USER
 
 if [[ -z $NO_SYSTEMCTL ]]; then
