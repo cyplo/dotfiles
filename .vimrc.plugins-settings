@@ -13,33 +13,6 @@ let g:fzf_command_prefix = 'Fzf'
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 let g:ctrlp_show_hidden = 1
 
-" code smarts - completion, navigation
-let g:asyncomplete_remove_duplicates = 1
-let g:asyncomplete_smart_completion = 1
-let g:asyncomplete_auto_popup = 1
-
-au User lsp_setup call lsp#register_server({
-    \ 'name': 'rls',
-    \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
-    \ 'whitelist': ['rust'],
-    \ })
-
-if executable('gopls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'gopls',
-        \ 'cmd': {server_info->['gopls', '-mode', 'stdio']},
-        \ 'whitelist': ['go'],
-        \ })
-endif
-
-if executable('go-langserver')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'go-langserver',
-        \ 'cmd': {server_info->['go-langserver', '-gocodecompletion']},
-        \ 'whitelist': ['go'],
-        \ })
-endif
-
 let g:lsp_signs_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
 

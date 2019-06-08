@@ -17,6 +17,7 @@ Plug 'godlygeek/tabular'
 Plug 'https://github.com/cyplo/vim-colors-solarized.git'
 Plug 'jremmen/vim-ripgrep'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+Plug 'neoclide/coc-rls'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'kien/ctrlp.vim'
