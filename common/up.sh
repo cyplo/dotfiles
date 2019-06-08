@@ -142,6 +142,7 @@ if [[ -z $NORUST ]]; then
     (test -x "${HOME}/.cargo/bin/cargo-install-update" || cargo install cargo-update)
     (test -x "${HOME}/.cargo/bin/rg" || cargo install ripgrep)
     (test -x "${HOME}/.cargo/bin/fd" || cargo install fd-find)
+    (test -x "${HOME}/.cargo/bin/bat" || cargo install bat)
     (test -x "${HOME}/.cargo/bin/genpass" || cargo install genpass)
 
     set +e
@@ -200,8 +201,9 @@ if [[ -z $NOVIM ]]; then
         ~/.fzf/install --64 --all
     fi
     echo "Installing Vim plugins"
-    echo "\n" | vim +PlugClean! +qa
-    echo "\n" | vim +PlugInstall! +qa
+    vim +PlugUpgrade +qa
+    vim +PlugUpdate +qa
+    vim +PlugClean! +qa
 fi
 
 if [[ -z $NO_GO ]]; then
