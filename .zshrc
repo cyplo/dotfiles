@@ -45,4 +45,3 @@ export PATH="$PATH:$HOME/.rvm/bin"
 alias tmate="tmux detach-client -E 'tmate;tmux'"
 
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

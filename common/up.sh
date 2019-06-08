@@ -188,6 +188,7 @@ if [[ -z $NORUBY ]]; then
     rvm install ruby --disable-binary
 fi
 
+# go
 if [[ -z $NO_GO ]]; then
     GOPATH="$HOME/go"
     export GOPATH=`realpath "$GOPATH"`
@@ -197,6 +198,10 @@ if [[ -z $NO_GO ]]; then
     go get -u -t github.com/exercism/cli/exercism
     go get -u -t golang.org/x/tools/cmd/gopls
 fi
+
+# lua
+luarocks install --local --server=http://luarocks.org/dev lua-lsp
+luarocks install --local luacheck
 
 if [[ -z $NOVIM ]]; then
     if [[ ! -d ~/.fzf ]]; then
