@@ -12,7 +12,6 @@ Plug 'cespare/vim-toml'
 Plug 'Chiel92/vim-autoformat'
 Plug 'drmingdrmer/vim-toggle-quickfix'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'godlygeek/tabular'
 Plug 'https://github.com/cyplo/vim-colors-solarized.git'
 Plug 'jremmen/vim-ripgrep'

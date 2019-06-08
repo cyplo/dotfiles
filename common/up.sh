@@ -188,6 +188,16 @@ if [[ -z $NORUBY ]]; then
     rvm install ruby --disable-binary
 fi
 
+if [[ -z $NO_GO ]]; then
+    GOPATH="$HOME/go"
+    export GOPATH=`realpath "$GOPATH"`
+    mkdir -p "$GOPATH"
+
+    # excercism
+    go get -u -t github.com/exercism/cli/exercism
+    go get -u -t golang.org/x/tools/cmd/gopls
+fi
+
 if [[ -z $NOVIM ]]; then
     if [[ ! -d ~/.fzf ]]; then
         git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -206,16 +216,8 @@ if [[ -z $NOVIM ]]; then
     vim +PlugClean! +qa
 fi
 
-if [[ -z $NO_GO ]]; then
-    GOPATH="$HOME/go"
-    export GOPATH=`realpath "$GOPATH"`
-    mkdir -p "$GOPATH"
-
-    # excercism
-    go get -u github.com/exercism/cli/exercism
-fi
-
 nvm use node
+npx npm install -g yarn
 npx npm install -g reveal-md
 npx npm install -g diff-so-fancy
 npx npm install -g cssnano
@@ -223,5 +225,4 @@ npx npm install -g cssnano
 echo
 echo "now go ahead and restart"
 echo
-
 
