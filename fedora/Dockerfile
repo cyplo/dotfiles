@@ -18,39 +18,6 @@ RUN dnf -y groupinstall gnome
 # requirements for early packages and crates
 RUN dnf -y --best --allowerasing install openssl-devel ncurses-devel
 
-# rust
-RUN curl -sSf https://sh.rustup.rs > /tmp/blastoff.sh
-RUN chmod a+x /tmp/blastoff.sh
-RUN /tmp/blastoff.sh -y
-RUN rm -f /tmp/blastoff.sh
-
-RUN /root/.cargo/bin/rustup update
-RUN /root/.cargo/bin/rustup install stable
-RUN /root/.cargo/bin/rustup install nightly
-RUN /root/.cargo/bin/rustup default stable
-
-RUN /root/.cargo/bin/rustup component add rls --toolchain stable
-RUN /root/.cargo/bin/rustup component add clippy --toolchain stable
-RUN /root/.cargo/bin/rustup component add rustfmt --toolchain stable
-RUN /root/.cargo/bin/rustup component add rust-analysis --toolchain stable
-RUN /root/.cargo/bin/rustup component add rust-src --toolchain stable
-
-RUN /root/.cargo/bin/cargo install cargo-update rustsym ripgrep fd-find genpass
-RUN /root/.cargo/bin/cargo install-update -a
-
-# vim
-RUN mkdir -p /root/dev/
-RUN git clone https://github.com/vim/vim.git --recursive /root/dev/vim
-RUN cd /root/dev/vim && ./configure --with-features=huge \
-    --enable-multibyte \
-    --enable-rubyinterp \
-    --enable-python3interp=yes \
-    --enable-luainterp \
-    --enable-gui=no \
-    --enable-cscope
-RUN cd /root/dev/vim && make -j`nproc`
-RUN cd /root/dev/vim && make install
-
 # basic packages
 RUN dnf -y --best --allowerasing install tmux atop zsh aria2 lm_sensors python3-pip whois curl pv terminator gsmartcontrol python-pip mercurial cmake glances dkms git xz util-linux-user dnf-automatic yum-utils util-linux-user archivemount  redhat-rpm-config grub2 grub2-efi dracut dracut-tools fail2ban syncthing wget wireguard-dkms wireguard-tools parted lsscsi ksh dnf-plugins-core restic duply
 

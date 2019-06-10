@@ -82,6 +82,7 @@ mkdir -p ~/.cargo/
 echo "all links done"
 
 echo "adding GDB dashboard"
+rm -fr ~/.gdbinit*
 wget -P ~ git.io/.gdbinit
 
 echo "adding NVM"
@@ -141,6 +142,7 @@ if [[ -z $NORUST ]]; then
     (test -x "${HOME}/.cargo/bin/cargo-install-update" || cargo install cargo-update)
     (test -x "${HOME}/.cargo/bin/rg" || cargo install ripgrep)
     (test -x "${HOME}/.cargo/bin/fd" || cargo install fd-find)
+    (test -x "${HOME}/.cargo/bin/bat" || cargo install bat)
     (test -x "${HOME}/.cargo/bin/genpass" || cargo install genpass)
 
     set +e
@@ -186,6 +188,21 @@ if [[ -z $NORUBY ]]; then
     rvm install ruby --disable-binary
 fi
 
+# go
+if [[ -z $NO_GO ]]; then
+    GOPATH="$HOME/go"
+    export GOPATH=`realpath "$GOPATH"`
+    mkdir -p "$GOPATH"
+
+    # excercism
+    go get -u -t github.com/exercism/cli/exercism
+    go get -u -t golang.org/x/tools/cmd/gopls
+fi
+
+# lua
+luarocks install --local --server=http://luarocks.org/dev lua-lsp
+luarocks install --local luacheck
+
 if [[ -z $NOVIM ]]; then
     if [[ ! -d ~/.fzf ]]; then
         git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -199,57 +216,18 @@ if [[ -z $NOVIM ]]; then
         ~/.fzf/install --64 --all
     fi
     echo "Installing Vim plugins"
+    echo "\n" | vim +PlugUpgrade +qa
+    echo "\n" | vim +PlugUpdate +qa
     echo "\n" | vim +PlugClean! +qa
-    echo "\n" | vim +PlugInstall! +qa
-fi
-
-if [[ -z $NO_GO ]]; then
-    GOPATH="$HOME/go"
-    export GOPATH=`realpath "$GOPATH"`
-    mkdir -p "$GOPATH"
-
-    # excercism
-    go get -u github.com/exercism/cli/exercism
 fi
 
 nvm use node
-npm install -g reveal-md
-npm install -g diff-so-fancy
-npm install -g cssnano
-
-if [[ -z $NOPYTHON3 ]]; then
-    set +e
-    pip3_path=`which pip3`
-    set -e
-    echo "pip3 path is $pip3_path"
-    if [[ -x "$pip3_path" ]]; then
-        echo "Choosing pip3 for pip"
-        PIP=pip3
-    else
-        echo "Choosing pip"
-        PIP=pip
-    fi
-    echo "Upgrading pip"
-    set +e
-    $SUDO $PIP install --upgrade pip setuptools
-    $SUDO $PIP install --upgrade packaging
-    set -e
-    echo "Installing Nikola"
-    $SUDO $PIP install --upgrade pygments-style-solarized ws4py watchdog webassets Nikola aiohttp
-    echo "Installing vim dependencies"
-    $SUDO $PIP install neovim
-fi
-
-if [[ -z $USER ]]; then
-    USER=`whoami`
-fi
-
-# normalize npm permissions
-mkdir -p $HOME/.npm
-$SUDO chown -R $USER $HOME/.npm
+npx npm install -g yarn
+npx npm install -g reveal-md
+npx npm install -g diff-so-fancy
+npx npm install -g cssnano
 
 echo
 echo "now go ahead and restart"
 echo
-
 
