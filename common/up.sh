@@ -39,7 +39,6 @@ git submodule update --init --recursive
 ln -vfs "$DIR/.vim" ~/.
 ln -vfs "$DIR/.ideavimrc" ~/.
 ln -vfs "$DIR/.vimrc" ~/.vimrc
-ln -vfs "$DIR/rvmrc" ~/.rvmrc
 ln -vfs "$DIR/.tmux.conf" ~/.
 ln -vfs "$DIR/.tmux.macosx" ~/.
 rm -f "~/.zshrc"
@@ -175,18 +174,6 @@ do
     $GPG --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" \
     ;
 done
-
-if [[ -z $NORUBY ]]; then
-    echo "Downloading RVM..."
-    $CURL https://get.rvm.io | bash
-    set +e
-    echo "Sourcing RVM..."
-    source /usr/local/rvm/scripts/rvm
-    source ~/.rvm/scripts/rvm
-    set -e
-    echo "Installing Ruby..."
-    rvm install ruby --disable-binary
-fi
 
 # go
 if [[ -z $NO_GO ]]; then
