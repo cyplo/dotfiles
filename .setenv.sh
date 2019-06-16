@@ -17,5 +17,8 @@ export KEYTIMEOUT=1
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export NVM_DIR="$HOME/.nvm"
-eval $(luarocks path --bin)
 
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+eval $(luarocks path --bin)

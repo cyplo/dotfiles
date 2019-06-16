@@ -113,13 +113,9 @@ if [[ -z $NORUST ]]; then
     "$RUSTUP_TEMP" -y
     rm -f "$RUSTUP_TEMP"
 
-    set +e
     rustup update
-    set -e
     rustup install stable
-    set +e
     rustup install nightly
-    set -e
     rustup default stable
 
     rustup component add rls --toolchain stable
@@ -146,8 +142,8 @@ if [[ -z $NORUST ]]; then
 
     set +e
     cargo install-update -a
-    set -e
     rustup run nightly cargo install-update -a
+    set -e
 fi
 
 set +e
