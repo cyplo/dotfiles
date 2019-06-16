@@ -22,5 +22,4 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 eval $(luarocks path --bin)
-source $HOME/.nix-profile/etc/profile.d/nix.sh
 
