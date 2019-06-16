@@ -37,6 +37,8 @@ git submodule update --init --recursive
 
 #configs
 ln -vfs "$DIR/.vim" ~/.
+rm -fr ~/.config/sway
+ln -vfs "$DIR/.config/sway" ~/.config/sway
 ln -vfs "$DIR/.ideavimrc" ~/.
 ln -vfs "$DIR/.vimrc" ~/.vimrc
 ln -vfs "$DIR/.tmux.conf" ~/.
