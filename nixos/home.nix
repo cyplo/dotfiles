@@ -25,9 +25,11 @@
 			  sha256 = "0habry3r6wfbd9xbhw10qfdar3h5chjffr5pib4bx7j4iqcl8lw8";
 			};
 	  }];
-	  profileExtra = ''
-		source $HOME/.setenv.sh
-		'';
+      initExtra = ''
+        SPACESHIP_TIME_SHOW=true
+        SPACESHIP_EXIT_CODE_SHOW=true
+        SPACESHIP_BATTERY_THRESHOLD=30
+        '';
       sessionVariables = { TERM="xterm-256color"; EDITOR="vim"; VISUAL="vim"; PAGER="less"; };
       shellAliases = { tmate = "tmux detach-client -E 'tmate;tmux'"; };
     };
