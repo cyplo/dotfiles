@@ -36,18 +36,7 @@ in
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "video" "scanner" "lp" "docker" "vboxusers"];
       packages = with pkgs; [
-        keepass fontconfig nodejs rustup gcc gdb
-        binutils xclip pkgconfig veracrypt gitAndTools.diff-so-fancy
-        gnome3.gnome-shell-extensions chrome-gnome-shell gnomeExtensions.clipboard-indicator
-        gnomeExtensions.caffeine gnomeExtensions.no-title-bar
-        openjdk11 gimp restic glxinfo discord steam
-        zoom-us
-        nodejs-10_x hugo mercurial terraform libreoffice
-        unzip tor-browser-bundle-bin aria vlc
-        jetbrains.goland jetbrains.clion
-        (wine.override { wineBuild = "wineWow"; }) winetricks
-        yubico-piv-tool yubikey-personalization yubikey-personalization-gui yubikey-manager-qt
-        mono calcurse unstable.pypi2nix etesync-dav calibre fbreader unstable.hopper file python37Packages.binwalk-full
+        unstable.pypi2nix etesync-dav unstable.hopper
       ];
     shell = pkgs.zsh;
   };

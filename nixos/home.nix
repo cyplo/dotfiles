@@ -1,6 +1,23 @@
 { config, pkgs, ... }:
 
 {
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
+  home.packages = with pkgs; [
+      keepass fontconfig nodejs rustup gcc gdb
+      binutils xclip pkgconfig veracrypt gitAndTools.diff-so-fancy
+      gnome3.gnome-shell-extensions chrome-gnome-shell gnomeExtensions.clipboard-indicator
+      gnomeExtensions.caffeine gnomeExtensions.no-title-bar
+      openjdk11 gimp restic glxinfo discord steam
+      zoom-us
+      nodejs-10_x hugo mercurial terraform libreoffice
+      unzip tor-browser-bundle-bin aria vlc
+      jetbrains.goland jetbrains.clion
+      (wine.override { wineBuild = "wineWow"; }) winetricks
+      yubico-piv-tool yubikey-personalization yubikey-personalization-gui yubikey-manager-qt
+      mono calcurse calibre fbreader file python37Packages.binwalk-full
+    ];
   programs = {
     home-manager.enable = true;
 
@@ -36,7 +53,24 @@
         SPACESHIP_BATTERY_THRESHOLD=30
         setopt HIST_IGNORE_ALL_DUPS
         '';
-      sessionVariables = { TERM="xterm-256color"; EDITOR="vim"; VISUAL="vim"; PAGER="less"; ZSH_TMUX_AUTOSTART=true; };
+      profileExtra = ''
+        export PATH="$HOME/programs:$PATH";
+        export PATH="$HOME/tools:$PATH";
+        export PATH="$HOME/bin:$PATH";
+        export PATH="$HOME/.local/bin:$PATH";
+        export PATH="$GOPATH/bin:$PATH";
+        export PATH="$HOME/.rvm/bin:$PATH";
+        export PATH="$HOME/.cargo/bin:$PATH";
+        export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH";
+        '';
+      sessionVariables = { 
+        TERM="xterm-256color"; 
+        EDITOR="vim";
+        VISUAL="vim";
+        PAGER="less";
+        ZSH_TMUX_AUTOSTART=true;
+        GOPATH="$HOME/go";
+      };
       shellAliases = { tmate = "tmux detach-client -E 'tmate;tmux'"; cat = "bat"; };
     };
 
