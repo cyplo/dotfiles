@@ -11,11 +11,14 @@
         save = 102400;
         ignoreDups = true;
         expireDuplicatesFirst = true;
-        extended = true;
         share = true; 
       };
       enableAutosuggestions = true;
       enableCompletion = true;
+      oh-my-zsh = {
+        enable = true;
+        plugins = [ "vi-mode" "git" "python" "syntax-highlighting" "history-substring-search" "spectrum" "sshi" "prompt" "gpg" "autosuggestions" "tmux" ];
+      };
 	  plugins = [
 		  {
 			name = "spaceship";
@@ -29,9 +32,10 @@
       initExtra = ''
         SPACESHIP_TIME_SHOW=true
         SPACESHIP_EXIT_CODE_SHOW=true
+        SPACESHIP_VI_MODE_SHOW=false
         SPACESHIP_BATTERY_THRESHOLD=30
         '';
-      sessionVariables = { TERM="xterm-256color"; EDITOR="vim"; VISUAL="vim"; PAGER="less"; };
+      sessionVariables = { TERM="xterm-256color"; EDITOR="vim"; VISUAL="vim"; PAGER="less"; ZSH_TMUX_AUTOSTART=true; };
       shellAliases = { tmate = "tmux detach-client -E 'tmate;tmux'"; };
     };
 
