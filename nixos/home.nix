@@ -1,8 +1,16 @@
 { config, pkgs, ... }:
 
+let
+  unstableTarball = fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
+in
 {
   nixpkgs.config = {
     allowUnfree = true;
+    packageOverrides = pkgs: {
+      unstable = import unstableTarball {
+        config = config.nixpkgs.config;
+      };
+    };
   };
   home.packages = with pkgs; [
       keepass fontconfig nodejs rustup gcc gdb
@@ -94,7 +102,7 @@
         "rust-vim"
         "nerdtree"
         "vim-dispatch"
-        "deoplete-rust"
+        "deoplete-nvim"
         "deoplete-go"
         "vim-fugitive"
         "vim-sensible"
