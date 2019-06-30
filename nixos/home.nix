@@ -34,6 +34,7 @@
         SPACESHIP_EXIT_CODE_SHOW=true
         SPACESHIP_VI_MODE_SHOW=false
         SPACESHIP_BATTERY_THRESHOLD=30
+        setopt HIST_IGNORE_ALL_DUPS
         '';
       sessionVariables = { TERM="xterm-256color"; EDITOR="vim"; VISUAL="vim"; PAGER="less"; ZSH_TMUX_AUTOSTART=true; };
       shellAliases = { tmate = "tmux detach-client -E 'tmate;tmux'"; };
