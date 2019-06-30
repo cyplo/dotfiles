@@ -97,6 +97,14 @@
       };
     };
 
+    fzf.enable = true;
+    tmux = {
+      enable = true;
+      shortcut = "a";
+      extraConfig = ''
+        set -g status off
+        '';
+    };
     firefox.enable = true;
     chromium.enable = true;
     go.enable = true;

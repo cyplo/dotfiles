@@ -26,8 +26,6 @@ ln -vfs "$DIR/.vim" ~/.
 ln -vfs "$DIR/.ideavimrc" ~/.
 ln -vfs "$DIR/.vimrc" ~/.vimrc
 ln -vfs "$DIR/rvmrc" ~/.rvmrc
-ln -vfs "$DIR/.tmux.conf" ~/.
-ln -vfs "$DIR/.tmux.macosx" ~/.
 ln -vfs "$DIR/.hyper.js" ~/.hyper.js
 ln -vfs "$DIR/.hyper_plugins" ~/.hyper_plugins
 
