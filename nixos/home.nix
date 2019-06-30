@@ -142,6 +142,7 @@
       shortcut = "a";
       extraConfig = ''
         set -g status off
+        set -g mouse on
         '';
     };
     firefox.enable = true;
