@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  # Let Home Manager install and manage itself.
   programs = {
     home-manager.enable = true;
     zsh = { 
@@ -16,11 +15,20 @@
       };
       enableAutosuggestions = true;
       enableCompletion = true;
-      oh-my-zsh = {
-        enable = true;
-        theme = "agnoster";
-      };
-      sessionVariables = { EDITOR="vim"; VISUAL="vim"; PAGER="less"; };
+	  plugins = [
+		  {
+			name = "spaceship";
+			file = "spaceship.zsh";
+			src = pkgs.fetchgit {
+			  url = "https://github.com/denysdovhan/spaceship-prompt";
+			  rev = "v3.11.1";
+			  sha256 = "0habry3r6wfbd9xbhw10qfdar3h5chjffr5pib4bx7j4iqcl8lw8";
+			};
+	  }];
+	  profileExtra = ''
+		source $HOME/.setenv.sh
+		'';
+      sessionVariables = { TERM="xterm-256color"; EDITOR="vim"; VISUAL="vim"; PAGER="less"; };
       shellAliases = { tmate = "tmux detach-client -E 'tmate;tmux'"; };
     };
     firefox.enable = true;
