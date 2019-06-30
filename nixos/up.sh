@@ -48,8 +48,6 @@ ln -vfs "$DIR/tools" ~/
 mkdir -vp ~/.config/terminator
 rm -f ~/.config/terminator/config
 ln "$DIR/.config/terminator/config" ~/.config/terminator/config
-mkdir -vp "$HOME/.config/alacritty/"
-ln -vfs "$DIR/.alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
 mkdir -p ~/.cargo/
 echo "all links done"
 
