@@ -28,12 +28,6 @@ ln -vfs "$DIR/.vimrc" ~/.vimrc
 ln -vfs "$DIR/rvmrc" ~/.rvmrc
 ln -vfs "$DIR/.tmux.conf" ~/.
 ln -vfs "$DIR/.tmux.macosx" ~/.
-rm -f "~/.zshrc"
-ln -vfs "$DIR/.zprezto" ~/.
-ln -vfs "$DIR/.zpreztorc" ~/.zpreztorc
-ln -vfs "$DIR/.zprofile" ~/.zprofile
-ln -vfs "$DIR/.zprezto/runcoms/zshenv" ~/.zshenv
-ln -vfs "$DIR/.zshrc" ~/.zshrc
 ln -vfs "$DIR/.hyper.js" ~/.hyper.js
 ln -vfs "$DIR/.hyper_plugins" ~/.hyper_plugins
 
