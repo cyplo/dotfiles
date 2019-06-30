@@ -15,5 +15,9 @@
     };
   };
   time.timeZone = "Europe/Warsaw";
-  imports = [ ../common.nix ];
+  imports = [
+    /etc/nixos/hardware-configuration.nix
+    ../boot.nix
+    ../common.nix 
+  ];
 }

@@ -26,5 +26,9 @@
     enableHardening = false; #needed for 3D acceleration
   };
 
-  imports = [ ../common.nix ];
+  imports = [
+    /etc/nixos/hardware-configuration.nix
+    ../boot.nix
+    ../common.nix 
+  ];
 }

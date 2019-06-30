@@ -127,12 +127,6 @@ in
             sha256 = "1lccsyhj3mgbacw76hikgml85hi82zipaza1194nqnj1inhci80b";
             }
             {
-            publisher = "PeterJausovec";
-            name = "vscode-docker";
-            version = "0.6.1";
-            sha256 = "0clxy66qi5c3k5di5xsjm3vjib525xq89z1q2h3a5x5qwvbvd0mj";
-            }
-            {
             publisher = "ritwickdey";
             name = "LiveServer";
             version = "5.6.1";
