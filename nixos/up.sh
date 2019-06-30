@@ -22,9 +22,6 @@ cd $DIR
 git submodule update --init --recursive
 
 #configs
-ln -vfs "$DIR/.vim" ~/.
-ln -vfs "$DIR/.ideavimrc" ~/.
-ln -vfs "$DIR/.vimrc" ~/.vimrc
 ln -vfs "$DIR/rvmrc" ~/.rvmrc
 ln -vfs "$DIR/.hyper.js" ~/.hyper.js
 ln -vfs "$DIR/.hyper_plugins" ~/.hyper_plugins
@@ -117,9 +114,6 @@ if [[ -z $NO_GO ]]; then
     echo "Installing fzf"
     ~/.fzf/install --64 --all
 fi
-echo "Installing Vim plugins"
-echo "\n" | vim +PlugClean! +qa
-echo "\n" | vim +PlugInstall! +qa
 
 GOPATH="$HOME/go"
 export GOPATH=`realpath "$GOPATH"`
