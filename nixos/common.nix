@@ -36,7 +36,7 @@ in
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "video" "scanner" "lp" "docker" "vboxusers"];
       packages = with pkgs; [
-        firefox chromium alacritty zsh keepass fontconfig go nodejs rustup gcc gdb
+        keepass fontconfig nodejs rustup gcc gdb
         binutils xclip pkgconfig veracrypt gitAndTools.diff-so-fancy
         gnome3.gnome-shell-extensions chrome-gnome-shell gnomeExtensions.clipboard-indicator
         gnomeExtensions.caffeine gnomeExtensions.no-title-bar
