@@ -37,7 +37,7 @@
         setopt HIST_IGNORE_ALL_DUPS
         '';
       sessionVariables = { TERM="xterm-256color"; EDITOR="vim"; VISUAL="vim"; PAGER="less"; ZSH_TMUX_AUTOSTART=true; };
-      shellAliases = { tmate = "tmux detach-client -E 'tmate;tmux'"; };
+      shellAliases = { tmate = "tmux detach-client -E 'tmate;tmux'"; cat = "bat"; };
     };
 
     alacritty = {
