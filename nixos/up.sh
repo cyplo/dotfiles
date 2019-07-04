@@ -5,10 +5,6 @@ set -e
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DIR=`realpath "$DIR/../"`
 
-echo "linking and sourcing env"
-ln -vfs "$DIR/.setenv.sh" ~/.setenv
-source ~/.setenv
-
 CURL="curl -sSfL"
 
 if [[ -z $DIR ]]; then
@@ -21,33 +17,13 @@ echo "using $DIR as the top level directory"
 cd $DIR
 git submodule update --init --recursive
 
-#configs
-ln -vfs "$DIR/rvmrc" ~/.rvmrc
-ln -vfs "$DIR/.hyper.js" ~/.hyper.js
-ln -vfs "$DIR/.hyper_plugins" ~/.hyper_plugins
-
-ln -vfs "$DIR/.Slic3r" ~/.
-ln -vfs "$DIR/.ghci" ~/.
-ln -vfs "$DIR/.conkyrc" ~/.
-mkdir -p ~/.kde/share/config/
-ln -vfs "$DIR/.kdiff3rc" ~/.kde/share/config/kdiff3rc
-ln -vfs "$DIR/.gitconfig.linux.private" ~/.gitconfig
-mkdir -p ~/.config/autostart/
-
 mkdir -p ~/.config/Code/User
 ln -vfs "$DIR/.config/Code/User/settings.json" ~/.config/Code/User/settings.json
 ln -vfs "$DIR/.config/Code/User/keybindings.json" ~/.config/Code/User/keybindings.json
 mkdir -p ~/.local/share/applications
 cp -v "$DIR/keeweb.desktop" ~/.local/share/applications/
 ln -vfs "$DIR/tools" ~/
-mkdir -vp ~/.config/terminator
-rm -f ~/.config/terminator/config
-ln "$DIR/.config/terminator/config" ~/.config/terminator/config
-mkdir -p ~/.cargo/
 echo "all links done"
-
-echo "adding GDB dashboard"
-wget -P ~ git.io/.gdbinit
 
 #install fonts
 echo "installing fonts"
@@ -78,47 +54,7 @@ nix-shell -p gcc pkgconfig zlib openssl --run "cargo install-update -a"
 set -e
 nix-shell -p gcc pkgconfig zlib openssl --run "rustup run nightly cargo install-update -a"
 
-set +e
-echo "Querying for gpg2 path"
-gpg2_path=`which gpg2`
-echo "Got $gpg2_path for gpg2 path"
-set -e
-if [[ -x "$gpg2_path" ]]; then
-    echo "Using gpg2"
-    GPG=gpg2
-else
-    echo "WARNING using gpg instead of gpg2"
-    GPG=gpg
-fi
-
-echo "Getting GPG keys.."
-for key in \
-    409B6B1796C275462A1703113804BB82D39DC0E3 \
-    7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-do
-    $GPG --keyserver hkp://keys.gnupg.net --recv-keys "$key" || \
-    $GPG --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" || \
-    $GPG --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" || \
-    $GPG --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" \
-    ;
-done
-
-if [[ ! -d ~/.fzf ]]; then
-    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-else
-    cd ~/.fzf
-    git pull
-    git submodule update --init --recursive
-fi
-if [[ -z $NO_GO ]]; then
-    echo "Installing fzf"
-    ~/.fzf/install --64 --all
-fi
-
-GOPATH="$HOME/go"
-export GOPATH=`realpath "$GOPATH"`
-mkdir -p "$GOPATH"
-
-# excercism
-go get -u github.com/exercism/cli/exercism
+nix-channel --add https://github.com/rycee/home-manager/archive/release-19.03.tar.gz home-manager
+nix-channel --update
+nix-shell '<home-manager>' -A install
 
