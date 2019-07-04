@@ -26,8 +26,7 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-    wget git zsh gnupg curl tmux python36Packages.glances
-
+    wget git zsh gnupg curl tmux python36Packages.glances vim htop atop
   ];
 
   i18n.defaultLocale = "en_GB.UTF-8";
