@@ -26,7 +26,7 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-    wget git zsh gnupg curl tmux python36Packages.glances vim htop atop
+    wget git zsh gnupg curl tmux python36Packages.glances vim htop atop firefox
   ];
 
   i18n.defaultLocale = "en_GB.UTF-8";
@@ -85,6 +85,7 @@ in
   security.pam.services.gdm.enableGnomeKeyring = true;
 
   sound.enable = true;
+  networking.networkmanager.enable = true;
   hardware.pulseaudio.enable = true;
   hardware.u2f.enable = true;
   hardware.brightnessctl.enable = true;
@@ -93,6 +94,6 @@ in
 
   nix.gc.automatic = true;
   system.autoUpgrade.enable = true;
-  system.stateVersion = "18.09";
+  system.stateVersion = "19.03";
 }
 
