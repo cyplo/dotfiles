@@ -10,7 +10,6 @@ in
       ./vscode.nix
       ./syncthing.nix
       ./gsconnect.nix
-      ./gfx.nix
     ];
 
   nixpkgs.config = {

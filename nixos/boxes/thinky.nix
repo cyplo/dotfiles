@@ -19,5 +19,6 @@
     /etc/nixos/hardware-configuration.nix
     ../boot.nix
     ../common.nix 
+    ../gfx-intel.nix
   ];
 }
