@@ -85,10 +85,11 @@ in
 
   sound.enable = true;
   networking.networkmanager.enable = true;
+  hardware.enableRedistributableFirmware = true;
+  hardware.cpu.intel.updateMicrocode = true;
   hardware.pulseaudio.enable = true;
   hardware.u2f.enable = true;
   hardware.brightnessctl.enable = true;
-  hardware.cpu.intel.updateMicrocode = true;
   hardware.sane.enable = true;
 
   nix.gc.automatic = true;
