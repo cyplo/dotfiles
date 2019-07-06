@@ -25,7 +25,7 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-    wget git zsh gnupg curl tmux python36Packages.glances vim htop atop firefox
+    wget git zsh gnupg curl tmux python36Packages.glances vim htop atop firefox home-manager
   ];
 
   i18n.defaultLocale = "en_GB.UTF-8";
@@ -72,7 +72,11 @@ in
     xserver = {
       enable = true;
       layout = "pl";
-      libinput.enable = true;
+      libinput = {
+        enable = true;
+        naturalScrolling = false;
+        clickMethod = "clickfinger";
+      };
 
       desktopManager = {
         gnome3 = {
