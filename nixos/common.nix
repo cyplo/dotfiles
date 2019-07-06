@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib , ... }:
 
 let
   unstableTarball = fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
@@ -47,6 +47,7 @@ in
 
   services = {
     fwupd.enable = true;
+    tlp.enable = true;
 
     printing = {
       enable = true;
@@ -64,15 +65,19 @@ in
       timerConfig = { OnCalendar = "hourly"; };
     };
 
-    gnome3.chrome-gnome-shell.enable = true;
-    gnome3.gnome-keyring.enable = true;
+    gnome3 = {
+      chrome-gnome-shell.enable = true;
+      gnome-keyring.enable = true;
+    };
     xserver = {
       enable = true;
       layout = "pl";
       libinput.enable = true;
 
       desktopManager = {
-        gnome3.enable = true;
+        gnome3 = {
+          enable = true;
+        };
       };
       displayManager.gdm= {
         enable = true;
@@ -91,6 +96,8 @@ in
   hardware.u2f.enable = true;
   hardware.brightnessctl.enable = true;
   hardware.sane.enable = true;
+  powerManagement.cpuFreqGovernor = (lib.mkForce null);
+
 
   nix.gc.automatic = true;
   system.autoUpgrade.enable = true;
