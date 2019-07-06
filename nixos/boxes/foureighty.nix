@@ -4,7 +4,15 @@
 
  networking.hostName = "foureighty";
  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    extraModulePackages = with config.boot.kernelPackages; [ wireguard ];
     initrd.kernelModules = [ "i915" ];
+    initrd.availableKernelModules = [
+      "aes_x86_64"
+      "crypto_simd"
+      "aesni_intel"
+      "cryptd"
+    ];
     kernelParams = [
       "i915.enable_fbc=1"
       "i915.enable_psr=2"
@@ -63,6 +71,12 @@
     wantedBy = [
       "timers.target"
     ];
+  };
+
+  virtualisation.virtualbox.host = {
+    enable = true;
+    enableExtensionPack = true;
+    enableHardening = false; #needed for 3D acceleration
   };
 
   imports = [
