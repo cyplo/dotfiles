@@ -10,15 +10,15 @@
         preLVM = true;
         allowDiscards = true;
       }];
-    loader.grub = {
-      device = "/dev/sda";
+      loader.grub = {
+        device = "/dev/sda";
+      };
     };
-  };
-  time.timeZone = "Europe/Warsaw";
-  imports = [
-    /etc/nixos/hardware-configuration.nix
-    ../boot.nix
-    ../common.nix 
-    ../gfx-intel.nix
-  ];
-}
+    time.timeZone = "Europe/Warsaw";
+    imports = [
+      /etc/nixos/hardware-configuration.nix
+      ../boot.nix
+      ../common.nix
+      ../gfx-intel.nix
+    ];
+  }

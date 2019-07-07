@@ -12,19 +12,19 @@
         preLVM = true;
         allowDiscards = true;
       }];
-    loader.grub = {
-      device = "nodev";
-      efiSupport = true;
+      loader.grub = {
+        device = "nodev";
+        efiSupport = true;
+      };
+      loader.efi.canTouchEfiVariables = true;
     };
-    loader.efi.canTouchEfiVariables = true;
-  };
-  time.timeZone = "Europe/London";
+    time.timeZone = "Europe/London";
 
-  imports = [
-    /etc/nixos/hardware-configuration.nix
-    ../boot.nix
-    ../common.nix 
-    ../gfx-intel.nix
-    ../virtualbox.nix
-  ];
-}
+    imports = [
+      /etc/nixos/hardware-configuration.nix
+      ../boot.nix
+      ../common.nix
+      ../gfx-intel.nix
+      ../virtualbox.nix
+    ];
+  }

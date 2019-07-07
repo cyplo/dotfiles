@@ -6,7 +6,7 @@
   services.xserver.desktopManager.plasma5.enable = lib.mkForce false;
   services.xserver.displayManager.sddm.enable = lib.mkForce false;
 
-  imports = [ 
+  imports = [
     <nixpkgs/nixos/modules/installer/virtualbox-demo.nix>
     ../common.nix
   ];

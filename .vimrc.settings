@@ -50,4 +50,3 @@ augroup END
 " vimdiff
 set diffopt+=iwhite
 set diffexpr=""
-
