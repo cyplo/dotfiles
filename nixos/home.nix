@@ -18,7 +18,7 @@ in
       gnome3.gnome-shell-extensions chrome-gnome-shell gnomeExtensions.clipboard-indicator
       gnomeExtensions.caffeine gnomeExtensions.no-title-bar
       openjdk11 gimp restic glxinfo discord steam
-      zoom-us
+      zoom-us unstable.notable
       nodejs-10_x hugo mercurial terraform libreoffice
       unzip tor-browser-bundle-bin aria vlc
       jetbrains.goland jetbrains.clion
