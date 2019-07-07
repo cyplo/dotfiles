@@ -32,6 +32,7 @@
     loader.efi.canTouchEfiVariables = true;
   };
 
+  time.hardwareClockInLocalTime = true;
   time.timeZone = "Europe/London";
 
   hardware.bumblebee.enable = true;
@@ -73,16 +74,11 @@
     ];
   };
 
-  virtualisation.virtualbox.host = {
-    enable = true;
-    enableExtensionPack = true;
-    enableHardening = false; #needed for 3D acceleration
-  };
-
   imports = [
     /etc/nixos/hardware-configuration.nix
     ../boot.nix
     ../common.nix 
     ../gfx-intel.nix
+    ../virtualbox.nix
   ];
 }
