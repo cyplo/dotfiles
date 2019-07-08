@@ -4,7 +4,6 @@
 
   networking.hostName = "foureighty";
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
     extraModulePackages = with config.boot.kernelPackages; [ wireguard ];
     initrd.kernelModules = [ "i915" ];
     initrd.availableKernelModules = [
@@ -55,30 +54,30 @@
       };
       wantedBy = [
         "timers.target"
-        ];
-        };
+      ];
+    };
 
-        systemd.timers.cpu-throttling = {
-        enable = true;
-        description = "CPU Throttling Fix";
-        documentation = [
-          "https://wiki.archlinux.org/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_6)#Power_management.2FThrottling_issues"
-        ];
-        timerConfig = {
-          OnActiveSec = 60;
-          OnUnitActiveSec = 60;
-          Unit = "cpu-throttling.service";
-        };
-        wantedBy = [
-          "timers.target"
-          ];
-          };
+    systemd.timers.cpu-throttling = {
+      enable = true;
+      description = "CPU Throttling Fix";
+      documentation = [
+        "https://wiki.archlinux.org/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_6)#Power_management.2FThrottling_issues"
+      ];
+      timerConfig = {
+        OnActiveSec = 60;
+        OnUnitActiveSec = 60;
+        Unit = "cpu-throttling.service";
+      };
+      wantedBy = [
+        "timers.target"
+      ];
+    };
 
-          imports = [
-          /etc/nixos/hardware-configuration.nix
-          ../boot.nix
-          ../common.nix
-          ../gfx-intel.nix
-          ../virtualbox.nix
-          ];
-          }
+    imports = [
+      /etc/nixos/hardware-configuration.nix
+      ../boot.nix
+      ../common.nix
+      ../gfx-intel.nix
+      ../virtualbox.nix
+    ];
+  }
