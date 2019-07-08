@@ -93,6 +93,8 @@ in
 
       security.pam.services.gdm.enableGnomeKeyring = true;
 
+      fonts.fonts = [ pkgs.powerline-fonts ];
+
       sound.enable = true;
       networking.networkmanager.enable = true;
       hardware.enableRedistributableFirmware = true;
@@ -102,7 +104,6 @@ in
       hardware.brightnessctl.enable = true;
       hardware.sane.enable = true;
       powerManagement.cpuFreqGovernor = (lib.mkForce null);
-
 
       nix.gc.automatic = true;
       system.autoUpgrade.enable = true;

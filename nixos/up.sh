@@ -27,16 +27,6 @@ cp -v "$DIR/keeweb.desktop" ~/.local/share/applications/
 ln -vfs "$DIR/tools" ~/
 echo "all links done"
 
-#install fonts
-echo "installing fonts"
-mkdir -p ~/.local/share/fonts
-cp -rv "$DIR/fonts" ~/.local/share/fonts
-
-set +e
-fc-cache -rv
-$SUDO fc-cache -rv
-set -e
-
 set +e
 rustup update
 set -e
