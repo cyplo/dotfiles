@@ -48,6 +48,7 @@ in
       services = {
         fwupd.enable = true;
         tlp.enable = true;
+        fstrim.enable = true;
 
         printing = {
           enable = true;
