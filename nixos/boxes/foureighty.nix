@@ -35,9 +35,6 @@
     time.hardwareClockInLocalTime = true;
     time.timeZone = "Europe/London";
 
-    hardware.bumblebee.enable = true;
-    hardware.bumblebee.connectDisplay = true;
-
     hardware.trackpoint.enable = true;
 
     services.fprintd.enable = true;
