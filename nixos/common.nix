@@ -105,7 +105,6 @@ in
       hardware.sane.enable = true;
       powerManagement.cpuFreqGovernor = (lib.mkForce null);
 
-      boot.kernelPackages = pkgs.linuxPackages_latest_hardened;
 
       nix.gc.automatic = true;
       nix.autoOptimiseStore = true;
