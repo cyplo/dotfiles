@@ -16,7 +16,7 @@ in
           startup = [
             { command = "exec i3-sensible-terminal"; always = true; notification = false; }
           ];
-
+          workspaceLayout = "stacked";
           bars = [];
           gaps = {
             inner = 8;
@@ -27,13 +27,18 @@ in
 
           modifier = mod;
           keybindings = {
-            "${mod}+Return" = "exec i3-sensible-terminal";
-            "${mod}+Shift+q" = "kill";
-            "${mod}+r" = "exec ${pkgs.rofi}/bin/rofi -show combi -combi-modi window#run#ssh -modi combi";
-            "${mod}+f" = "fullscreen toggle";
-            "${mod}+l" = "exec loginctl lock-session";
             "${mod}+Shift+e" = "exec i3-msg exit";
+            "${mod}+Shift+c" = "reload";
             "${mod}+Shift+r" = "restart";
+
+            "${mod}+r" = "exec ${pkgs.rofi}/bin/rofi -show combi -combi-modi window#run#ssh -modi combi";
+            "${mod}+q" = "kill";
+            "${mod}+f" = "fullscreen toggle";
+
+            "${mod}+h"   = "focus left";
+            "${mod}+j"   = "focus down";
+            "${mod}+k"   = "focus up";
+            "${mod}+l"   = "focus right";
           };
         };
       };
