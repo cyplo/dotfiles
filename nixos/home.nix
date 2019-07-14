@@ -26,6 +26,12 @@ in
       yubico-piv-tool yubikey-personalization yubikey-personalization-gui yubikey-manager-qt
       mono calcurse calibre fbreader file python37Packages.binwalk-full
     ];
+    xsession = {
+      enable = true;
+      windowManager.i3 = {
+        enable = true;
+      };
+    };
     imports = [
       ./programs/zsh.nix
       ./programs/vim.nix
