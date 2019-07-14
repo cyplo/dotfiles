@@ -23,9 +23,9 @@
         padding-right = "1%";
         module-margin-left = 1;
         module-margin-right = 1;
-        modules-left = "xwindow";
+        modules-left = "i3";
         modules-center = "date";
-        modules-right = "backlight volume memory cpu battery-label battery1 battery0";
+        modules-right = "memory cpu battery-label battery1 battery0";
       };
 
       "module/date" = {
@@ -36,10 +36,8 @@
         label = "%date% %time%";
       };
 
-      "module/xwindow" = {
-        type = "internal/xwindow";
-        label = "%title:0:30:...%";
-        label-padding = 10;
+      "module/i3" = {
+        type = "internal/i3";
       };
 
       "module/cpu" = {
@@ -52,12 +50,6 @@
         type = "internal/memory";
         interval = 3;
         label = "MEM: %percentage_used%%";
-      };
-
-      "module/volume" = {
-        type = "internal/pulseaudio";
-        use-ui-max = true;
-        format-volume = "<bar-volume>";
       };
 
       "module/battery-label" = {
@@ -83,15 +75,6 @@
         label-discharging = "%percentage%%|%time%";
       };
 
-      "module/backlight" = {
-        type = "internal/backlight";
-        format = "LIGHT: <bar>";
-        card = "intel_backlight";
-        bar-width = 6;
-        bar-indicator = "|";
-        bar-fill = "─";
-        bar-empty = "─";
-      };
     };
   };
 
