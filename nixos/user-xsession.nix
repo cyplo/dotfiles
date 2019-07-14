@@ -36,6 +36,7 @@ in
             "${mod}+Shift+e" = "exec i3-msg exit";
             "${mod}+Shift+c" = "reload";
             "${mod}+Shift+r" = "restart";
+            "${mod}+Shift+l" = "exec physlock -d";
 
             "XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume 0 +5%";
             "XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume 0 -5%";
