@@ -15,10 +15,8 @@ in
     home.packages = with pkgs; [
       keepass fontconfig nodejs rustup gcc gdb
       binutils xclip pkgconfig veracrypt gitAndTools.diff-so-fancy
-      gnome3.gnome-shell-extensions chrome-gnome-shell gnomeExtensions.clipboard-indicator
-      gnomeExtensions.caffeine gnomeExtensions.no-title-bar
-      openjdk11 gimp restic glxinfo discord steam
-      zoom-us unstable.notable
+      openjdk11 gimp restic glxinfo discord
+      unstable.notable
       nodejs-10_x hugo mercurial terraform libreoffice
       unzip tor-browser-bundle-bin aria vlc
       jetbrains.goland jetbrains.clion
@@ -37,7 +35,6 @@ in
       ./programs/alacritty.nix
       ./user-xsession.nix
     ];
-
 
     programs = {
       home-manager.enable = true;
