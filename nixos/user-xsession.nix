@@ -16,7 +16,13 @@ in
           startup = [
             { command = "exec i3-sensible-terminal"; always = true; notification = false; }
           ];
-          workspaceLayout = "stacked";
+          window = {
+            hideEdgeBorders = "horizontal";
+            titlebar = false;
+            border = 0;
+          };
+
+          workspaceLayout = "tabbed";
           bars = [];
           gaps = {
             inner = 8;
@@ -30,6 +36,13 @@ in
             "${mod}+Shift+e" = "exec i3-msg exit";
             "${mod}+Shift+c" = "reload";
             "${mod}+Shift+r" = "restart";
+
+            "XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume 0 +5%";
+            "XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume 0 -5%";
+            "XF86AudioMute" = "exec --no-startup-id pactl set-sink-mute 0 toggle";
+
+            "XF86MonBrightnessUp" = "exec light -s sysfs/backlight/intel_backlight -A 5";
+            "XF86MonBrightnessDown" = "exec light -s sysfs/backlight/intel_backlight -U 5";
 
             "${mod}+r" = "exec ${pkgs.rofi}/bin/rofi -show combi -combi-modi window#run#ssh -modi combi";
             "${mod}+q" = "kill";

@@ -3,13 +3,21 @@
   services.polybar = {
     enable = true;
     script = "polybar -r main_bar &";
+    package = pkgs.polybar.override {
+      i3GapsSupport = true;
+      alsaSupport = true;
+      iwSupport = true;
+      nlSupport = false;
+      githubSupport = true;
+    };
     config = {
+      "settings" = {screenchange-reload = "true";};
       "bar/main_bar" = {
-        font-0 = "DejaVu Sans Mono for Powerline:size=10.0;weight=bold";
+        font-0 = "DejaVu Sans Mono for Powerline:size=12.0;weight=bold";
         background = "#002b36";
         foreground = "#839496";
         bottom = "false";
-        height = 50;
+        height = 32;
         fixed-center = "true";
         line-size = 6;
         padding-right = "1%";
@@ -17,8 +25,9 @@
         module-margin-right = 1;
         modules-left = "xwindow";
         modules-center = "date";
-        modules-right = "org-clock volume backlight filesystem memory cpu network";
+        modules-right = "backlight volume memory cpu battery-label battery1 battery0";
       };
+
       "module/date" = {
         type = "internal/date";
         interval = 5;
@@ -26,48 +35,62 @@
         time = "%H:%M";
         label = "%date% %time%";
       };
-      "settings" = {screenchange-reload = "true";};
+
       "module/xwindow" = {
         type = "internal/xwindow";
         label = "%title:0:30:...%";
         label-padding = 10;
       };
-      "module/network" = {
-        type = "internal/network";
-        interface = "wlp1s0";
-        interval = "3.0";
-        format-connected = "<label-connected>";
-        label-connected = " %essid%";
-      };
+
       "module/cpu" = {
         type = "internal/cpu";
-        label = " %percentage:2%%";
+        interval = 3;
+        format = "CPU: <label>";
       };
+
       "module/memory" = {
         type = "internal/memory";
-        label = " %percentage_used%%";
+        interval = 3;
+        label = "MEM: %percentage_used%%";
       };
-      "module/filesystem" = {
-        type = "internal/fs";
-        mount-0 = "/";
-        mount-1 = "/home";
-        label-mounted = " %percentage_used%%";
-      };
+
       "module/volume" = {
-        type = "internal/alsa";
-        label-volume = " %percentage%";
-        label-muted = "";
-        click-left = "pactl set-sink-mute 0 toggle";
+        type = "internal/pulseaudio";
+        use-ui-max = true;
+        format-volume = "<bar-volume>";
       };
+
+      "module/battery-label" = {
+        type = "custom/text";
+        content = "BAT:";
+      };
+
+      "module/battery0" = {
+        type = "internal/battery";
+        battery = "BAT0";
+        adapter = "AC";
+        poll-interval = "5";
+        format-discharging = "<label-discharging>";
+        label-discharging = "%percentage%%|%time%";
+      };
+
+      "module/battery1" = {
+        type = "internal/battery";
+        battery = "BAT1";
+        adapter = "AC";
+        poll-interval = "5";
+        format-discharging = "<label-discharging>";
+        label-discharging = "%percentage%%|%time%";
+      };
+
       "module/backlight" = {
         type = "internal/backlight";
-        format = "<ramp>";
+        format = "LIGHT: <bar>";
         card = "intel_backlight";
-        ramp-0 = "🌕";
-        ramp-1 = "🌔";
-        ramp-2 = "🌓";
-        ramp-3 = "🌒";
-        ramp-4 = "🌑";
+        bar-width = 6;
+        bar-indicator = "|";
+        bar-fill = "─";
+        bar-empty = "─";
       };
     };
   };
