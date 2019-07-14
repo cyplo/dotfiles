@@ -76,7 +76,7 @@ in
             clickMethod = "clickfinger";
           };
 
-          displayManager.lightdm = {
+          displayManager.slim = {
             enable = true;
           };
         };
@@ -104,6 +104,10 @@ in
       };
       powerManagement.cpuFreqGovernor = (lib.mkForce null);
 
+      services.physlock = {
+        enable = true;
+        allowAnyUser = true;
+      };
 
       nix.gc.automatic = true;
       nix.autoOptimiseStore = true;

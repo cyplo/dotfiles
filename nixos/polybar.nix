@@ -25,7 +25,7 @@
         module-margin-right = 1;
         modules-left = "i3";
         modules-center = "date";
-        modules-right = "memory cpu battery-label battery1 battery0";
+        modules-right = "memory swap cpu battery1 battery0";
       };
 
       "module/date" = {
@@ -42,19 +42,20 @@
 
       "module/cpu" = {
         type = "internal/cpu";
-        interval = 3;
+        interval = 5;
         format = "CPU: <label>";
       };
 
       "module/memory" = {
         type = "internal/memory";
-        interval = 3;
+        interval = 5;
         label = "MEM: %percentage_used%%";
       };
 
-      "module/battery-label" = {
-        type = "custom/text";
-        content = "BAT:";
+      "module/swap" = {
+        type = "internal/memory";
+        interval = 15;
+        label = "SWAP: %percentage_swap_used%%";
       };
 
       "module/battery0" = {
@@ -62,7 +63,7 @@
         battery = "BAT0";
         adapter = "AC";
         poll-interval = "5";
-        format-discharging = "<label-discharging>";
+        format-discharging = "BAT0: <label-discharging>";
         label-discharging = "%percentage%%|%time%";
       };
 
@@ -71,7 +72,7 @@
         battery = "BAT1";
         adapter = "AC";
         poll-interval = "5";
-        format-discharging = "<label-discharging>";
+        format-discharging = "BAT1: <label-discharging>";
         label-discharging = "%percentage%%|%time%";
       };
 
