@@ -26,10 +26,14 @@ in
       yubico-piv-tool yubikey-personalization yubikey-personalization-gui yubikey-manager-qt
       mono calcurse calibre fbreader file python37Packages.binwalk-full
     ];
+    home.sessionVariables = {
+      TERMINAL="alacritty";
+    };
     xsession = {
       enable = true;
       windowManager.i3 = {
         enable = true;
+        config.modifier = "Mod4";
       };
     };
     imports = [

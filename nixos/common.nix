@@ -25,7 +25,7 @@ in
       };
 
       environment.systemPackages = with pkgs; [
-        wget git zsh gnupg curl tmux python36Packages.glances vim htop atop firefox home-manager
+        wget git zsh gnupg curl tmux python36Packages.glances vim htop atop firefox home-manager alacritty
       ];
 
       i18n.defaultLocale = "en_GB.UTF-8";
@@ -66,10 +66,6 @@ in
           timerConfig = { OnCalendar = "hourly"; };
         };
 
-        gnome3 = {
-          chrome-gnome-shell.enable = true;
-          gnome-keyring.enable = true;
-        };
         xserver = {
           enable = true;
           layout = "pl";
@@ -79,14 +75,8 @@ in
             clickMethod = "clickfinger";
           };
 
-          desktopManager = {
-            gnome3 = {
-              enable = true;
-            };
-          };
-          displayManager.gdm= {
+          displayManager.lightdm = {
             enable = true;
-            wayland = false;
           };
         };
       };
