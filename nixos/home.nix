@@ -26,6 +26,8 @@ in
     ];
     home.sessionVariables = {
       TERMINAL="alacritty";
+      GDK_SCALE="2";
+      QT_AUTO_SCREEN_SCALE_FACTOR="1";
     };
 
     imports = [
