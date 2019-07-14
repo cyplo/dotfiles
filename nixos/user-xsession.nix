@@ -8,77 +8,138 @@ in
 
       polybar = {
         enable = true;
-        package =
-          pkgs.polybar.override {
-            i3GapsSupport = true;
+        script = "polybar main_bar &";
+        config = {
+          "bar/main_bar" = {
+            bottom = "false";
+            height = 50;
+            fixed-center = "true";
+            line-size = 6;
+            padding-right = "1%";
+            module-margin-left = 1;
+            module-margin-right = 1;
+            wm-restack = "bspwm";
+            modules-left = "bspwm xwindow";
+            modules-center = "date";
+            modules-right = "org-clock volume backlight filesystem memory cpu battery network";
           };
-          config = {
-            "bar/top" = {
-              font-0 = "mononoki:size-10";
-              width = "100%";
-              height = "2%";
-              radius = 0;
-              background = "#fdf6e3"; # solarized base3
-              foreground = "#657b83"; # solarized base00
-              tray-position = "right";
-              tray-detached = false;
-              tray-maxsize = 16;
-              tray-transparent = false;
-              tray-background = "#fdf6e3";
-              tray-offset-x = 0;
-              tray-offset-y = 0;
-              tray-padding = 0;
-              tray-scale = "1.0";
-              module-margin = 4;
-              modules-center = "date";
-              modules-right = "battery";
-            };
-            "module/date" = {
-              type = "internal/date";
-              internal = 5;
-              date = "%Y.%m.%d";
-              time = "%H.%M";
-              label = "%date%..%time%";
-            };
-            "module/battery" = {
-              type = "internal/battery";
-              battery = "BAT0";
-              adapter = "AC";
-              full-at = 99;
-            };
+          "module/bspwm" = {
+            type = "internal/bspwm";
+            format = "<label-state> <label-mode>";
+            label-monocle = "M";
+            label-floating = "S";
+            fuzzy-match = "true";
+            ws-icon-0 = "1;";
+            ws-icon-1 = "2;";
+            ws-icon-2 = "3;";
+            ws-icon-3 = "4;";
+            ws-icon-4 = "5;♞";
+            ws-icon-default = "";
+            label-mode-padding = "2";
+            label-focused = "%icon%";
+            label-focused-padding = 2;
+            label-empty = '''';
+            label-occupied = "%icon%";
+            label-occupied-padding = 2;
+            label-urgent = "%icon%";
+            label-urgent-padding = 2;
           };
-          script = "polybar main_bar &";
+          "module/date" = {
+            type = "internal/date";
+            interval = 5;
+            date = "%m-%d %a";
+            time = "%H:%M";
+            label = "%date% %time%";
+          };
+          "module/battery" = {
+            type = "internal/battery";
+            battery = "BAT1";
+            adapter = "ADP1";
+            full-at = 96;
+            format-charging = " <label-charging>";
+            format-discharging = "<ramp-capacity> <label-discharging>";
+            format-full = " ";
+            ramp-capacity-0 = "";
+            ramp-capacity-1 = "";
+            ramp-capacity-2 = "";
+            ramp-capacity-3 = "";
+            ramp-capacity-4 = "";
+          };
+          "settings" = {screenchange-reload = "true";};
+          "module/xwindow" = {
+            type = "internal/xwindow";
+            label = "%title:0:30:...%";
+            label-padding = 10;
+          };
+          "module/network" = {
+            type = "internal/network";
+            interface = "wlp1s0";
+            interval = "3.0";
+            format-connected = "<label-connected>";
+            label-connected = " %essid%";
+          };
+          "module/cpu" = {
+            type = "internal/cpu";
+            label = " %percentage:2%%";
+          };
+          "module/memory" = {
+            type = "internal/memory";
+            label = " %percentage_used%%";
+          };
+          "module/filesystem" = {
+            type = "internal/fs";
+            mount-0 = "/";
+            mount-1 = "/home";
+            label-mounted = " %percentage_used%%";
+          };
+          "module/volume" = {
+            type = "internal/alsa";
+            label-volume = " %percentage%";
+            label-muted = "";
+            click-left = "pactl set-sink-mute 0 toggle";
+          };
+          "module/backlight" = {
+            type = "internal/backlight";
+            format = "<ramp>";
+            card = "intel_backlight";
+            ramp-0 = "🌕";
+            ramp-1 = "🌔";
+            ramp-2 = "🌓";
+            ramp-3 = "🌒";
+            ramp-4 = "🌑";
+          };
         };
       };
+    };
 
-      xsession = {
+    xsession = {
+      enable = true;
+      windowManager.i3 = {
         enable = true;
-        windowManager.i3 = {
-          enable = true;
-          package = pkgs.i3-gaps;
-          config = {
-            startup = [
-              { command = "exec i3-sensible-terminal"; always = true; notification = false; }
-            ];
+        package = pkgs.i3-gaps;
+        config = {
+          startup = [
+            { command = "exec i3-sensible-terminal"; always = true; notification = false; }
+          ];
 
-            bars = [];
-            gaps = {
-              inner = 12;
-              outer = 0;
-              smartGaps = true;
-              smartBorders = "on";
-            };
+          bars = [];
+          gaps = {
+            inner = 12;
+            outer = 0;
+            smartGaps = true;
+            smartBorders = "on";
+          };
 
-            modifier = mod;
-            keybindings = {
-              "${mod}+Return" = "exec i3-sensible-terminal";
-              "${mod}+Shift+q" = "kill";
-              "${mod}+d" = "exec ${pkgs.rofi}/bin/rofi -show combi -combi-modi window#run#ssh -modi combi";
-              "${mod}+f" = "fullscreen toggle";
-              "${mod}+l" = "exec loginctl lock-session";
-              "${mod}+Shift+e" = "exec i3-msg exit";
-            };
+          modifier = mod;
+          keybindings = {
+            "${mod}+Return" = "exec i3-sensible-terminal";
+            "${mod}+Shift+q" = "kill";
+            "${mod}+d" = "exec ${pkgs.rofi}/bin/rofi -show combi -combi-modi window#run#ssh -modi combi";
+            "${mod}+f" = "fullscreen toggle";
+            "${mod}+l" = "exec loginctl lock-session";
+            "${mod}+Shift+e" = "exec i3-msg exit";
           };
         };
       };
-    }
+    };
+  }
