@@ -13,7 +13,7 @@ in
       };
     };
     home.packages = with pkgs; [
-      wirelesstools pcmanfm
+      wirelesstools pcmanfm unstable.viu gthumb
       keepass fontconfig nodejs rustup gcc gdb
       binutils xclip pkgconfig veracrypt gitAndTools.diff-so-fancy
       openjdk11 gimp restic glxinfo discord
