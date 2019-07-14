@@ -37,6 +37,7 @@ in
       };
     };
     imports = [
+      ./programs/tmux.nix
       ./programs/zsh.nix
       ./programs/vim.nix
       ./programs/alacritty.nix
@@ -46,14 +47,6 @@ in
       home-manager.enable = true;
 
       fzf.enable = true;
-      tmux = {
-        enable = true;
-        shortcut = "a";
-        extraConfig = ''
-          set -g status off
-          set -g mouse on
-        '';
-      };
       firefox.enable = true;
       chromium.enable = true;
       go.enable = true;
