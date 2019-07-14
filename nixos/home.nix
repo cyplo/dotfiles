@@ -2,6 +2,7 @@
 
 let
   unstableTarball = fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
+  mod = "Mod4";
 in
   {
     nixpkgs.config = {
@@ -33,7 +34,14 @@ in
       enable = true;
       windowManager.i3 = {
         enable = true;
-        config.modifier = "Mod4";
+        config = {
+          modifier = mod;
+          keybindings = {
+            "${mod}+Return" = "exec i3-sensible-terminal";
+            "${mod}+Shift+q" = "kill";
+            "${mod}+d" = "exec ${pkgs.rofi}/bin/rofi -show combi -combi-modi window#run#ssh -modi combi";
+          };
+        };
       };
     };
     imports = [
@@ -46,6 +54,7 @@ in
     programs = {
       home-manager.enable = true;
 
+      rofi.enable = true;
       fzf.enable = true;
       firefox.enable = true;
       chromium.enable = true;
