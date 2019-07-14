@@ -2,7 +2,6 @@
 
 let
   unstableTarball = fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
-  mod = "Mod4";
 in
   {
     nixpkgs.config = {
@@ -30,25 +29,13 @@ in
     home.sessionVariables = {
       TERMINAL="alacritty";
     };
-    xsession = {
-      enable = true;
-      windowManager.i3 = {
-        enable = true;
-        config = {
-          modifier = mod;
-          keybindings = {
-            "${mod}+Return" = "exec i3-sensible-terminal";
-            "${mod}+Shift+q" = "kill";
-            "${mod}+d" = "exec ${pkgs.rofi}/bin/rofi -show combi -combi-modi window#run#ssh -modi combi";
-          };
-        };
-      };
-    };
+
     imports = [
       ./programs/tmux.nix
       ./programs/zsh.nix
       ./programs/vim.nix
       ./programs/alacritty.nix
+      ./user-xsession.nix
     ];
 
     programs = {
