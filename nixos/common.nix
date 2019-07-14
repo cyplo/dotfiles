@@ -90,10 +90,18 @@ in
       networking.networkmanager.enable = true;
       hardware.enableRedistributableFirmware = true;
       hardware.cpu.intel.updateMicrocode = true;
-      hardware.pulseaudio.enable = true;
+      hardware.pulseaudio = {
+        enable = true;
+        package = pkgs.pulseaudioFull;
+      };
       hardware.u2f.enable = true;
       hardware.brightnessctl.enable = true;
       hardware.sane.enable = true;
+      hardware.bluetooth = {
+        enable = true;
+        package = pkgs.bluezFull;
+        powerOnBoot = true;
+      };
       powerManagement.cpuFreqGovernor = (lib.mkForce null);
 
 
