@@ -14,6 +14,7 @@ in
             "${mod}+Shift+q" = "kill";
             "${mod}+d" = "exec ${pkgs.rofi}/bin/rofi -show combi -combi-modi window#run#ssh -modi combi";
             "${mod}+f" = "fullscreen toggle";
+            "${mod}+l" = "exec loginctl lock-session";
           };
         };
       };
