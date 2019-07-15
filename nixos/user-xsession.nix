@@ -62,9 +62,6 @@ in
 
     programs.autorandr = {
       enable = true;
-      hooks.postswitch = {
-        "notify-i3" = "''${pkgs.i3}/bin/i3-msg restart";
-      };
 
       profiles = {
         "foureighty-alone" = {
@@ -76,7 +73,7 @@ in
               enable = true;
               primary = true;
               mode = "2560x1440";
-              dpi = 192;
+              dpi = 144;
             };
           };
         };

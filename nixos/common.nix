@@ -105,6 +105,8 @@ in
       };
       powerManagement.cpuFreqGovernor = (lib.mkForce null);
 
+      hardware.nvidiaOptimus.disable = true;
+
       services.physlock = {
         enable = true;
         allowAnyUser = true;
