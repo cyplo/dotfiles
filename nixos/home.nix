@@ -13,7 +13,7 @@ in
       };
     };
     home.packages = with pkgs; [
-      wirelesstools ranger xpdf apvlv
+      wirelesstools ranger xpdf apvlv unstable.xidlehook
       keepass fontconfig nodejs rustup gcc gdb
       binutils xclip pkgconfig veracrypt gitAndTools.diff-so-fancy
       openjdk11 gimp restic glxinfo discord

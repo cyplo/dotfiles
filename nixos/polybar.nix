@@ -63,8 +63,8 @@
         battery = "BAT0";
         adapter = "AC";
         poll-interval = "5";
-        format-discharging = "BAT0: <label-discharging>";
-        label-discharging = "%percentage%%|%time%";
+        format-discharging = "<label-discharging>";
+        label-discharging = "%time%";
       };
 
       "module/battery1" = {
@@ -72,8 +72,8 @@
         battery = "BAT1";
         adapter = "AC";
         poll-interval = "5";
-        format-discharging = "BAT1: <label-discharging>";
-        label-discharging = "%percentage%%|%time%";
+        format-discharging = "<label-discharging>";
+        label-discharging = "%time%";
       };
 
     };
