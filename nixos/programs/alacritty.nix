@@ -17,7 +17,7 @@
 
       font = {
         family = "DejaVu Sans Mono for Powerline";
-        size = 12.0;
+        size = 8.0;
       };
 
       draw_bold_text_with_bright_colors = true;
@@ -50,7 +50,7 @@
           white=   "0xfdf6e3";
         };
 
-        background_opacity= 1.0;
+        background_opacity = 0.9;
         dynamic_title= true;
       };
       cursor= {

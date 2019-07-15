@@ -14,6 +14,7 @@ in
         package = pkgs.i3-gaps;
         config = {
           startup = [
+            { command = "exec autorandr -c"; always = true; notification = false; }
             { command = "exec i3-sensible-terminal"; always = false; notification = false; }
             { command = "exec $HOME/dev/dotfiles/lock.sh"; always = false; notification = false; }
           ];
@@ -61,6 +62,10 @@ in
 
     programs.autorandr = {
       enable = true;
+      hooks.postswitch = {
+        "notify-i3" = "''${pkgs.i3}/bin/i3-msg restart";
+      };
+
       profiles = {
         "foureighty-alone" = {
           fingerprint = {
@@ -70,10 +75,8 @@ in
             eDP1 = {
               enable = true;
               primary = true;
-              position = "0x0";
               mode = "2560x1440";
-              rate = "60.00";
-              scale = { x=1.25; y=1.25; };
+              dpi = 192;
             };
           };
         };

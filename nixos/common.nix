@@ -76,8 +76,9 @@ in
             clickMethod = "clickfinger";
           };
 
-          displayManager.slim = {
+          displayManager.sddm = {
             enable = true;
+            enableHidpi = true;
           };
         };
       };
