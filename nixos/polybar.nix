@@ -26,6 +26,7 @@
         modules-left = "i3";
         modules-center = "date";
         modules-right = "memory swap cpu battery1 battery0";
+        tray-position = "right";
       };
 
       "module/date" = {
