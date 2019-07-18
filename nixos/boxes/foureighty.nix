@@ -13,11 +13,29 @@
       "cryptd"
     ];
     kernelParams = [
-      "i915.enable_fbc=1"
-      "i915.enable_psr=2"
-      "i915.enable_rc6=7"
       "mds=full"
     ];
+
+    kernelPatches = [ {
+      name = "native";
+      patch = null;
+      extraConfig = ''
+        SLAB_FREELIST_RANDOM y
+        SLAB_FREELIST_HARDENED y
+        REFCOUNT_FULL y
+        MODVERSIONS y
+        GENERIC_CPU n
+        MCORE2 y
+        X86_INTEL_USERCOPY y
+        X86_USE_PPRO_CHECKSUM y
+        X86_P6_NOP y
+        X86_INTEL_MPX y
+        KEXEC n
+        IA32_EMULATION y
+        X86_X32 y
+      '';
+    } ];
+
     initrd.luks.devices = [
       {
         name = "root";
@@ -30,6 +48,7 @@
         efiSupport = true;
       };
       loader.efi.canTouchEfiVariables = true;
+
     };
 
     time.hardwareClockInLocalTime = true;
@@ -37,6 +56,8 @@
 
     hardware.trackpoint.enable = true;
     services.fprintd.enable = true;
+
+    hardware.bumblebee.enable = true;
 
     imports = [
       /etc/nixos/hardware-configuration.nix

@@ -20,7 +20,8 @@
             Enable=Source,Sink,Media,Socket
     '';
   };
-  powerManagement.cpuFreqGovernor = (lib.mkForce null);
 
-  hardware.nvidiaOptimus.disable = true;
+  powerManagement.cpuFreqGovernor = (lib.mkForce null);
+  powerManagement.powertop.enable = true;
+
 }
