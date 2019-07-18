@@ -6,5 +6,6 @@ xidlehook \
     --not-when-fullscreen \
     --not-when-audio \
     --timer normal 180 'xrandr --output "$PRIMARY_DISPLAY" --brightness .1' 'xrandr --output "$PRIMARY_DISPLAY" --brightness 1' \
-    --timer primary 10 'xrandr --output "$PRIMARY_DISPLAY" --brightness 1; physlock -d' \
-    --timer normal 600 'systemctl suspend'
+    --timer primary 10 'xrandr --output "$PRIMARY_DISPLAY" --brightness 1; physlock -d' '' \
+    --timer normal 600 'systemctl suspend' ''
+
