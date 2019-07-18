@@ -1,4 +1,4 @@
-{ config, pkgs, lib , ... }:
+{ config, pkgs, ... }:
 
 let
   unstableTarball = fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
@@ -10,6 +10,7 @@ in
         ./vscode.nix
         ./syncthing.nix
         ./gsconnect.nix
+        ./common-hardware.nix
       ];
 
       nixpkgs.config = {
@@ -51,10 +52,16 @@ in
         tlp.enable = true;
         fstrim.enable = true;
 
+        physlock = {
+          enable = true;
+          allowAnyUser = true;
+        };
+
         printing = {
           enable = true;
           drivers = [ pkgs.epson-escpr pkgs.samsung-unified-linux-driver pkgs.splix ];
         };
+
         avahi = {
           enable = true;
           nssmdns = true;
@@ -83,34 +90,7 @@ in
         };
       };
 
-      security.pam.services.gdm.enableGnomeKeyring = true;
-
       fonts.fonts = [ pkgs.powerline-fonts ];
-
-      sound.enable = true;
-      networking.networkmanager.enable = true;
-      hardware.enableRedistributableFirmware = true;
-      hardware.cpu.intel.updateMicrocode = true;
-      hardware.pulseaudio = {
-        enable = true;
-        package = pkgs.pulseaudioFull;
-      };
-      hardware.u2f.enable = true;
-      hardware.brightnessctl.enable = true;
-      hardware.sane.enable = true;
-      hardware.bluetooth = {
-        enable = true;
-        package = pkgs.bluezFull;
-        powerOnBoot = true;
-      };
-      powerManagement.cpuFreqGovernor = (lib.mkForce null);
-
-      hardware.nvidiaOptimus.disable = true;
-
-      services.physlock = {
-        enable = true;
-        allowAnyUser = true;
-      };
 
       nix.gc.automatic = true;
       nix.autoOptimiseStore = true;
@@ -120,4 +100,3 @@ in
       system.autoUpgrade.enable = true;
       system.stateVersion = "19.03";
     }
-
