@@ -51,6 +51,7 @@ in
         fwupd.enable = true;
         tlp.enable = true;
         fstrim.enable = true;
+        clipmenu.enable = true;
 
         physlock = {
           enable = true;

@@ -48,6 +48,7 @@ in
             "XF86MonBrightnessDown" = "exec light -s sysfs/backlight/intel_backlight -U 5";
 
             "${mod}+r" = "exec ${pkgs.rofi}/bin/rofi -show combi -combi-modi window#run#ssh -modi combi";
+            "${mod}+c" = "exec ${pkgs.clipmenu}/bin/clipmenu";
             "${mod}+q" = "kill";
             "${mod}+f" = "fullscreen toggle";
 

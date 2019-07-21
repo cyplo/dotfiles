@@ -27,6 +27,7 @@ in
     ];
     home.sessionVariables = {
       TERMINAL="alacritty";
+      CM_LAUNCHER="rofi";
     };
 
     imports = [
