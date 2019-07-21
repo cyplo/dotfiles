@@ -2,6 +2,7 @@
 
 let
   unstableTarball = fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
+  dotfiles = "/home/cyryl/dev/dotfiles";
 in
   {
     nixpkgs.config = {
@@ -24,10 +25,15 @@ in
       (wine.override { wineBuild = "wineWow"; }) winetricks
       yubico-piv-tool yubikey-personalization yubikey-personalization-gui yubikey-manager-qt
       mono calcurse calibre fbreader file python37Packages.binwalk-full
+      disk_indicator
     ];
     home.sessionVariables = {
       TERMINAL="alacritty";
       CM_LAUNCHER="rofi";
+    };
+
+    home.file = {
+      ".disk-indicator".source = "${dotfiles}/disk-indicator";
     };
 
     imports = [

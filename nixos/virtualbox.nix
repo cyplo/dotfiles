@@ -14,6 +14,5 @@ in
       enable = true;
       enableExtensionPack = true;
       enableHardening = false;
-      package = pkgs.virtualbox.override { enable32bitGuests = false; };
     };
   }

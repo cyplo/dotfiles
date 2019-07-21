@@ -17,6 +17,7 @@ in
             { command = "exec autorandr -c"; always = true; notification = false; }
             { command = "exec i3-sensible-terminal"; always = false; notification = false; }
             { command = "exec $HOME/dev/dotfiles/lock.sh"; always = false; notification = false; }
+            { command = "exec ${pkgs.disk_indicator}/bin/disk-indicator"; always = false; notification = false; }
           ];
           window = {
             hideEdgeBorders = "horizontal";

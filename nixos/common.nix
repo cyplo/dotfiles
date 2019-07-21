@@ -11,17 +11,8 @@ in
         ./syncthing.nix
         ./gsconnect.nix
         ./common-hardware.nix
+        ./common-services.nix
       ];
-
-      nix = {
-        binaryCaches = [
-          "https://cyplo.cachix.org"
-        ];
-        binaryCachePublicKeys = [
-          "cyplo.cachix.org-1:6cmlYl6tQ1eidsjU2tw6uGN2hmzQ+P5uiQhuo6d1P5o="
-        ];
-
-      };
 
       nixpkgs.config = {
         allowUnfree = true;
@@ -57,57 +48,18 @@ in
         autoPrune.enable = true;
       };
 
-      services = {
-        fwupd.enable = true;
-        tlp.enable = true;
-        fstrim.enable = true;
-        clipmenu.enable = true;
+      fonts.fonts = [ pkgs.powerline-fonts pkgs.weather-icons pkgs.material-icons ];
 
-        physlock = {
-          enable = true;
-          allowAnyUser = true;
-        };
-
-        printing = {
-          enable = true;
-          drivers = [ pkgs.epson-escpr pkgs.samsung-unified-linux-driver pkgs.splix ];
-        };
-
-        avahi = {
-          enable = true;
-          nssmdns = true;
-        };
-
-        restic.backups.home = {
-          passwordFile = "/etc/nixos/secrets/restic-password";
-          paths = [ "/home" ];
-          repository = "sftp:fetcher@brix:/mnt/data/backup-targets";
-          timerConfig = { OnCalendar = "hourly"; };
-        };
-
-        xserver = {
-          enable = true;
-          layout = "pl";
-          libinput = {
-            enable = true;
-            naturalScrolling = false;
-            clickMethod = "clickfinger";
-          };
-
-          displayManager.sddm = {
-            enable = true;
-            enableHidpi = true;
-          };
-        };
+      nix = {
+        autoOptimiseStore = true;
+        daemonIONiceLevel = 7;
+        daemonNiceLevel = 19;
+        gc.automatic = true;
+        optimise.automatic = true;
       };
 
-      fonts.fonts = [ pkgs.powerline-fonts ];
-
-      nix.gc.automatic = true;
-      nix.autoOptimiseStore = true;
-      nix.optimise.automatic = true;
-      nix.daemonIONiceLevel = 7;
-      nix.daemonNiceLevel = 19;
-      system.autoUpgrade.enable = true;
-      system.stateVersion = "19.03";
+      system = {
+        autoUpgrade.enable = true;
+        stateVersion = "19.03";
+      };
     }
