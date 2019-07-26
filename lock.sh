@@ -10,6 +10,6 @@ xset -dpms
 xidlehook \
     --not-when-fullscreen \
     --not-when-audio \
-    --timer normal 180 'xrandr --output "$PRIMARY_DISPLAY" --brightness .1' 'xrandr --output "$PRIMARY_DISPLAY" --brightness 1' \
-    --timer normal 600 'systemctl suspend' ''
+    --timer normal 120 'xrandr --output "$PRIMARY_DISPLAY" --brightness .1' 'xrandr --output "$PRIMARY_DISPLAY" --brightness 1' \
+    --timer normal 300 'xrandr --output "$PRIMARY_DISPLAY" --brightness 1; systemctl suspend' 'xrandr --output "$PRIMARY_DISPLAY" --brightness 1'
 
