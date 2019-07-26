@@ -27,14 +27,14 @@ in
       };
 
       environment.systemPackages = with pkgs; [
-        wget git gnupg curl tmux python36Packages.glances vim htop atop firefox home-manager alacritty pciutils
+        wget git gnupg curl tmux python36Packages.glances vim htop atop firefox home-manager alacritty pciutils powertop
       ];
 
       i18n.defaultLocale = "en_GB.UTF-8";
 
       users.users.cyryl = {
         isNormalUser = true;
-        extraGroups = [ "wheel" "networkmanager" "video" "scanner" "lp" "docker" "vboxusers"];
+        extraGroups = [ "wheel" "networkmanager" "video" "scanner" "lp" "docker" "vboxusers" "adbusers" ];
         packages = with pkgs; [
           unstable.pypi2nix etesync-dav unstable.hopper
         ];
@@ -42,6 +42,7 @@ in
       };
 
       programs.light.enable = true;
+      programs.adb.enable = true;
 
       virtualisation.docker = {
         enable = true;
