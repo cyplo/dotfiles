@@ -8,11 +8,12 @@ in
         enable = true;
         vSync = "opengl-oml";
       };
-      network-manager-applet.enable = true;
       kdeconnect = {
         enable = true;
         indicator = true;
       };
+      network-manager-applet.enable = true;
+      pasystray.enable = true;
     };
 
     xsession = {
@@ -52,6 +53,7 @@ in
             "XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume 0 +5%";
             "XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume 0 -5%";
             "XF86AudioMute" = "exec --no-startup-id pactl set-sink-mute 0 toggle";
+            "XF86AudioMicMute" = "exec --no-startup-id pactl set-source-mute 2 toggle";
 
             "XF86MonBrightnessUp" = "exec light -s sysfs/backlight/intel_backlight -A 5";
             "XF86MonBrightnessDown" = "exec light -s sysfs/backlight/intel_backlight -U 5";
