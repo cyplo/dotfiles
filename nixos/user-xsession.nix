@@ -5,6 +5,10 @@ in
   {
     services = {
       network-manager-applet.enable = true;
+      kdeconnect = {
+        enable = true;
+        indicator = true;
+      };
     };
 
     xsession = {
@@ -64,6 +68,13 @@ in
 
     programs.autorandr = {
       enable = true;
+
+      hooks = {
+        postswitch = {
+          "restart-polybar" = "systemctl --user restart polybar";
+          "restart-kde-connect-indicator" = "systemctl --user restart kdeconnect-indicator";
+        };
+      };
 
       profiles = {
         "foureighty-alone" = {
