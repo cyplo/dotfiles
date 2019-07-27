@@ -25,6 +25,7 @@ in
       (wine.override { wineBuild = "wineWow"; }) winetricks
       yubico-piv-tool yubikey-personalization yubikey-personalization-gui yubikey-manager-qt
       mono calcurse calibre fbreader file python37Packages.binwalk-full
+      slack discord obs-studio
     ];
     home.sessionVariables = {
       TERMINAL="alacritty";
