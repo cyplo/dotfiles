@@ -31,10 +31,6 @@ in
       CM_LAUNCHER="rofi";
     };
 
-    home.file = {
-      ".disk-indicator".source = "${dotfiles}/disk-indicator";
-    };
-
     imports = [
       ./programs/tmux.nix
       ./programs/zsh.nix

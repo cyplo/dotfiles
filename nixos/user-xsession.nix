@@ -26,7 +26,6 @@ in
             { command = "exec autorandr -c"; always = true; notification = false; }
             { command = "exec i3-sensible-terminal"; always = false; notification = false; }
             { command = "exec $HOME/dev/dotfiles/lock.sh"; always = false; notification = false; }
-            { command = "exec ${pkgs.disk_indicator}/bin/disk-indicator"; always = false; notification = false; }
           ];
           window = {
             hideEdgeBorders = "horizontal";
@@ -50,10 +49,10 @@ in
             "${mod}+Shift+r" = "restart";
             "${mod}+Shift+l" = "exec physlock -d";
 
-            "XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume 0 +5%";
-            "XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume 0 -5%";
-            "XF86AudioMute" = "exec --no-startup-id pactl set-sink-mute 0 toggle";
-            "XF86AudioMicMute" = "exec --no-startup-id pactl set-source-mute 2 toggle";
+            "XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%";
+            "XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@  -5%";
+            "XF86AudioMute" = "exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@  toggle";
+            "XF86AudioMicMute" = "exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@  toggle";
 
             "XF86MonBrightnessUp" = "exec light -s sysfs/backlight/intel_backlight -A 5";
             "XF86MonBrightnessDown" = "exec light -s sysfs/backlight/intel_backlight -U 5";

@@ -20,7 +20,7 @@ in
           unstable = import unstableTarball {
             config = config.nixpkgs.config;
           };
-          cyplo = import ./nixpkgs {
+          cyplo = import /home/cyryl/dev/nixpkgs {
             config = config.nixpkgs.config;
           };
         };
