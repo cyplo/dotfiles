@@ -4,6 +4,10 @@ let
 in
   {
     services = {
+      compton = {
+        enable = true;
+        vSync = "opengl-oml";
+      };
       network-manager-applet.enable = true;
       kdeconnect = {
         enable = true;
@@ -68,13 +72,6 @@ in
 
     programs.autorandr = {
       enable = true;
-
-      hooks = {
-        postswitch = {
-          "restart-polybar" = "systemctl --user restart polybar";
-          "restart-kde-connect-indicator" = "systemctl --user restart kdeconnect-indicator";
-        };
-      };
 
       profiles = {
         "foureighty-alone" = {
