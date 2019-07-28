@@ -18,10 +18,10 @@ in
       keepass fontconfig nodejs rustup gcc gdb
       binutils xclip pkgconfig veracrypt gitAndTools.diff-so-fancy
       openjdk11 gimp restic glxinfo discord
-      unstable.notable jq
+      unstable.notable jq awscli
       nodejs-10_x hugo mercurial terraform libreoffice
       unzip tor-browser-bundle-bin aria vlc
-      jetbrains.goland jetbrains.clion
+      jetbrains.goland jetbrains.clion jetbrains.idea-ultimate
       (wine.override { wineBuild = "wineWow"; }) winetricks
       yubico-piv-tool yubikey-personalization yubikey-personalization-gui yubikey-manager-qt
       mono calcurse calibre fbreader file python37Packages.binwalk-full
