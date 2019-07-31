@@ -18,7 +18,7 @@ in
       keepass fontconfig nodejs rustup gcc gdb
       binutils xclip pkgconfig veracrypt gitAndTools.diff-so-fancy
       openjdk gimp restic glxinfo discord
-      unstable.notable jq awscli evince
+      unstable.notable jq awscli evince signal-desktop
       nodejs-10_x hugo mercurial terraform libreoffice
       unzip tor-browser-bundle-bin aria vlc
       jetbrains.goland jetbrains.clion jetbrains.idea-ultimate
