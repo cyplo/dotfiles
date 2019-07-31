@@ -17,8 +17,8 @@ in
       wirelesstools ranger xpdf apvlv unstable.xidlehook blueman
       keepass fontconfig nodejs rustup gcc gdb
       binutils xclip pkgconfig veracrypt gitAndTools.diff-so-fancy
-      openjdk11 gimp restic glxinfo discord
-      unstable.notable jq awscli
+      openjdk gimp restic glxinfo discord
+      unstable.notable jq awscli evince
       nodejs-10_x hugo mercurial terraform libreoffice
       unzip tor-browser-bundle-bin aria vlc
       jetbrains.goland jetbrains.clion jetbrains.idea-ultimate
