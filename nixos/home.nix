@@ -15,9 +15,9 @@ in
     };
     home.packages = with pkgs; [
       wirelesstools ranger xpdf apvlv unstable.xidlehook blueman
-      keepass fontconfig nodejs rustup gcc gdb
+      fontconfig nodejs rustup gcc gdb
       binutils xclip pkgconfig veracrypt gitAndTools.diff-so-fancy
-      openjdk gimp restic glxinfo discord
+      openjdk gimp restic glxinfo discord ghc
       unstable.notable jq awscli evince signal-desktop
       nodejs-10_x hugo mercurial terraform libreoffice
       unzip tor-browser-bundle-bin aria vlc
@@ -25,7 +25,7 @@ in
       (wine.override { wineBuild = "wineWow"; }) winetricks
       yubico-piv-tool yubikey-personalization yubikey-personalization-gui yubikey-manager-qt
       mono calcurse calibre fbreader file python37Packages.binwalk-full
-      slack discord obs-studio
+      slack discord obs-studio kpcli
     ];
     home.sessionVariables = {
       TERMINAL="alacritty";
