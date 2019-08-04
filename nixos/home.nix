@@ -51,4 +51,11 @@ in
       go.enable = true;
       bat.enable = true;
     };
+
+    gtk = {
+      enable = true;
+    };
+    qt = {
+      enable = true;
+    };
   }
