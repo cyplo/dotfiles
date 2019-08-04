@@ -35,9 +35,6 @@ in
       users.users.cyryl = {
         isNormalUser = true;
         extraGroups = [ "wheel" "networkmanager" "video" "scanner" "lp" "docker" "vboxusers" "adbusers" ];
-        packages = with pkgs; [
-          unstable.pypi2nix etesync-dav unstable.hopper
-        ];
         shell = pkgs.zsh;
       };
 

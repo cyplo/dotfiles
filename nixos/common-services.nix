@@ -37,6 +37,13 @@
         clickMethod = "clickfinger";
       };
 
+      useGlamor = true;
+
+      deviceSection = ''
+        Option "TearFree" "true"
+        Option "AccelMethod" "sna"
+      '';
+
       displayManager.sddm = {
         enable = true;
         enableHidpi = true;

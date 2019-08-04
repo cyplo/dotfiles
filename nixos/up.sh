@@ -17,7 +17,6 @@ echo "using $DIR as the top level directory"
 cd $DIR
 git submodule update --init --recursive
 
-ln -vfs "$DIR/.gitconfig.linux.private" ~/.gitconfig
 
 mkdir -p ~/.config/Code/User
 ln -vfs "$DIR/.config/Code/User/settings.json" ~/.config/Code/User/settings.json

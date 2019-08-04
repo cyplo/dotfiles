@@ -37,6 +37,7 @@ in
       ./programs/zsh.nix
       ./programs/vim.nix
       ./programs/alacritty.nix
+      ./programs/git.nix
       ./user-xsession.nix
     ];
 
