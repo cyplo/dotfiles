@@ -7,6 +7,7 @@
   hardware.pulseaudio = {
     enable = true;
     package = pkgs.pulseaudioFull;
+    support32Bit = true;
     extraModules = [ pkgs.pulseaudio-modules-bt ];
   };
   hardware.u2f.enable = true;

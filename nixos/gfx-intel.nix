@@ -5,6 +5,7 @@
   hardware.opengl = {
     enable = true;
     driSupport = true;
+    driSupport32Bit = true;
     s3tcSupport = true;
     extraPackages = with pkgs; [
       vaapiIntel
