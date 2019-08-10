@@ -2,6 +2,7 @@
 {
   networking.hostName = "skinnyv";
   boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [
       "i915.enable_rc6=7"
     ];
