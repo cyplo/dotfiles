@@ -31,6 +31,7 @@
         SPACESHIP_EXIT_CODE_SHOW=true
         SPACESHIP_VI_MODE_SHOW=false
         SPACESHIP_BATTERY_THRESHOLD=30
+        ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=238'
         setopt HIST_IGNORE_ALL_DUPS
         '';
       profileExtra = ''
