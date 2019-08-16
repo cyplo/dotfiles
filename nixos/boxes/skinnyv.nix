@@ -2,13 +2,14 @@
 {
   networking.hostName = "skinnyv";
   boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [
       "i915.enable_rc6=7"
     ];
     initrd.luks.devices = [
       {
         name = "root";
-        device = "/dev/disk/by-uuid/8c76bf01-59b3-4c60-b853-e9cb77f3ca14";
+        device = "/dev/disk/by-uuid/ef6e91d9-c477-4ab7-ae39-4a0ee413cebe";
         preLVM = true;
         allowDiscards = true;
       }];
@@ -25,6 +26,5 @@
       ../boot.nix
       ../common.nix
       ../gfx-intel.nix
-      ../virtualbox.nix
     ];
   }
