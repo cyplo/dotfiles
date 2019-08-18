@@ -37,7 +37,9 @@
     hardware.trackpoint.enable = true;
     services.fprintd.enable = true;
 
-    hardware.bumblebee.enable = true;
+    hardware.nvidiaOptimus.disable = true;
+    hardware.opengl.extraPackages = [ pkgs.linuxPackages.nvidia_x11.out ];
+    hardware.opengl.extraPackages32 = [ pkgs.linuxPackages.nvidia_x11.lib32 ];
 
     imports = [
       /etc/nixos/hardware-configuration.nix
