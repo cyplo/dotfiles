@@ -25,7 +25,7 @@
         module-margin-right = 1;
         modules-left = "i3";
         modules-center = "date";
-        modules-right = "memory swap cpu battery1 battery0";
+        modules-right = "memory swap cpu temperature battery1 battery0";
         tray-position = "right";
       };
 
@@ -45,6 +45,13 @@
         type = "internal/cpu";
         interval = 5;
         format = "CPU: <label>";
+      };
+
+      "module/temperature" = {
+        type = "internal/temperature";
+        thermal-zone = 3;
+        interval = 5;
+        format = "TEMP: <label>";
       };
 
       "module/memory" = {
