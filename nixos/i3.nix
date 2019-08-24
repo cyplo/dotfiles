@@ -65,6 +65,16 @@ in
           "${mod}+8" = "workspace 8";
           "${mod}+9" = "workspace 9";
           "${mod}+0" = "workspace 10";
+          "${mod}+Shift+1" = "move container to workspace 1";
+          "${mod}+Shift+2" = "move container to workspace 2";
+          "${mod}+Shift+3" = "move container to workspace 3";
+          "${mod}+Shift+4" = "move container to workspace 4";
+          "${mod}+Shift+5" = "move container to workspace 5";
+          "${mod}+Shift+6" = "move container to workspace 6";
+          "${mod}+Shift+7" = "move container to workspace 7";
+          "${mod}+Shift+8" = "move container to workspace 8";
+          "${mod}+Shift+9" = "move container to workspace 9";
+          "${mod}+Shift+0" = "move container to workspace 10";
         };
       };
     };
