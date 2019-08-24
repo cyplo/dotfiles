@@ -9,56 +9,26 @@
     mouseAutohide = true;
     scrollOnKeystroke = false;
     font = "Fira Code 12";
-    optionsExtra = ''
-    [colors]
-# Base16 Solarized Dark
-# Author: Ethan Schoonover (modified by aramisgithub)
 
-foreground          = #93a1a1
-foreground_bold     = #eee8d5
-cursor              = #eee8d5
-cursor_foreground   = #002b36
-background          = rgba(0, 43, 54)
-
-# 16 color space
-
-# Black, Gray, Silver, White
-color0  = #002b36
-color8  = #657b83
-color7  = #93a1a1
-color15 = #fdf6e3
-
-# Red
-color1  = #dc322f
-color9  = #dc322f
-
-# Green
-color2  = #859900
-color10 = #859900
-
-# Yellow
-color3  = #b58900
-color11 = #b58900
-
-# Blue
-color4  = #268bd2
-color12 = #268bd2
-
-# Purple
-color5  = #6c71c4
-color13 = #6c71c4
-
-# Teal
-color6  = #2aa198
-color14 = #2aa198
-
-# Extra colors
-color16 = #cb4b16
-color17 = #d33682
-color18 = #073642
-color19 = #586e75
-color20 = #839496
-color21 = #eee8d5
+    backgroundColor = "#002b36";
+    foregroundColor = "#839496";
+    colorsExtra = ''
+      color1 = #073642
+      color1 = #dc322f
+      color2 = #859900
+      color3 = #b58900
+      color4 = #268bd2
+      color5 = #d33682
+      color6 = #2aa198
+      color7 = #eee8d5
+      color8 = #002b36
+      color9 = #cb4b16
+      color10 = #586e75
+      color11 = #657b83
+      color12 = #839496
+      color13 = #6c71c4
+      color14 = #93a1a1
+      color15 = #fdf6e3
     '';
   };
 }
