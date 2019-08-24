@@ -28,7 +28,7 @@ in
       slack discord obs-studio kpcli
     ];
     home.sessionVariables = {
-      TERMINAL="alacritty";
+      TERMINAL="termite";
       CM_LAUNCHER="rofi";
     };
 
@@ -36,7 +36,7 @@ in
       ./programs/tmux.nix
       ./programs/zsh.nix
       ./programs/vim.nix
-      ./programs/alacritty.nix
+      ./programs/termite.nix
       ./programs/git.nix
       ./user-xsession.nix
     ];
