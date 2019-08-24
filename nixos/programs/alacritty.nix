@@ -16,8 +16,8 @@
       tabspaces = 4;
 
       font = {
-        family = "Source Code Pro";
-        size = 7.0;
+        family = "Fira Code";
+        size = 7.5;
       };
 
       draw_bold_text_with_bright_colors = true;

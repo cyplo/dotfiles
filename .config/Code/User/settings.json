@@ -23,5 +23,7 @@
     },
     "[makefile]": {
         "editor.insertSpaces": false
-    }
+    },
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "\"Fira Code\""
 }
