@@ -35,7 +35,6 @@ in
     imports = [
       ./programs/tmux.nix
       ./programs/zsh.nix
-      ./programs/vim.nix
       ./programs/termite.nix
       ./programs/git.nix
       ./user-xsession.nix

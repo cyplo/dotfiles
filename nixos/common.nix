@@ -12,6 +12,7 @@ in
         ./gsconnect.nix
         ./common-hardware.nix
         ./common-services.nix
+        ./vim.nix
       ];
 
       nixpkgs.config = {
@@ -27,7 +28,8 @@ in
       };
 
       environment.systemPackages = with pkgs; [
-        wget git gnupg curl tmux python36Packages.glances vim htop atop firefox home-manager alacritty pciutils powertop
+        wget git gnupg curl tmux python36Packages.glances htop atop firefox home-manager alacritty pciutils powertop
+
       ];
 
       i18n.defaultLocale = "en_GB.UTF-8";
