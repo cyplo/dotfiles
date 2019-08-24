@@ -79,12 +79,6 @@ in
               sha256 = "1yf85hgvganxq5n5jff9ckn3smxd6xi79cgn6k53qi5w1r5rahy0";
             }
             {
-              publisher = "hbenl";
-              name = "vscode-test-explorer-liveshare";
-              version = "1.0.4";
-              sha256 = "0a57cm8bjfvz2whkr6krjv3whv9c7sdzlrjwdr5zaz78nxn9dfy7";
-            }
-            {
               publisher = "lextudio";
               name = "restructuredtext";
               version = "106.0.0";
