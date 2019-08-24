@@ -121,24 +121,6 @@ in
               sha256 = "0yxnsby8zz1dvnx8nqrhi4xx316mpjf2hs2c5r6fkzh8zhjccwqz";
             }
             {
-              publisher = "ms-vsliveshare";
-              name = "vsliveshare";
-              version = "1.0.67";
-              sha256 = "1shy9xaqz1wsyzzz5z8g409ma5h5kaic0y7bc1q2nxy60gbq828n";
-            }
-            {
-              publisher = "ms-vsliveshare";
-              name = "vsliveshare-audio";
-              version = "0.1.48";
-              sha256 = "1lccsyhj3mgbacw76hikgml85hi82zipaza1194nqnj1inhci80b";
-            }
-            {
-              publisher = "ritwickdey";
-              name = "LiveServer";
-              version = "5.6.1";
-              sha256 = "077arf3hsn1yb8xdhlrax5gf93ljww78irv4gm8ffmsqvcr1kws0";
-            }
-            {
               publisher = "ronnidc";
               name = "nunjucks";
               version = "0.2.3";
