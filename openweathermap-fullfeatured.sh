@@ -87,18 +87,5 @@ if [ -n "$current" ] && [ -n "$forecast" ]; then
         trend=""
     fi
 
-
-    sun_rise=$(echo "$current" | $JQ ".sys.sunrise")
-    sun_set=$(echo "$current" | $JQ ".sys.sunset")
-    now=$($DATE +%s)
-
-    if [ "$sun_rise" -gt "$now" ]; then
-        daytime=" $(get_duration "$((sun_rise-now))")"
-    elif [ "$sun_set" -gt "$now" ]; then
-        daytime=" $(get_duration "$((sun_set-now))")"
-    else
-        daytime=" $(get_duration "$((sun_rise-now))")"
-    fi
-
-    echo "$(get_icon "$current_icon") $current_temp$SYMBOL  $trend  $(get_icon "$forecast_icon") $forecast_temp$SYMBOL   $daytime"
+    echo "$(get_icon "$current_icon") $current_temp$SYMBOL  $trend  $(get_icon "$forecast_icon") $forecast_temp$SYMBOL"
 fi
