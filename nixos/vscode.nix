@@ -19,6 +19,12 @@ in
           vscodeExtensions = with vscode-extensions; [ bbenoist.Nix ms-python.python ]
           ++ vscode-utils.extensionsFromVscodeMarketplace [
             {
+              publisher = "TabNine";
+              name = "tabnine-vscode";
+              version = "2.1.10";
+              sha256 = "10z9xn9haagyky5h9f8r7jfj5q9973lxknjqjm7bqks0qmvpxif3";
+            }
+            {
               publisher = "2gua";
               name = "rainbow-brackets";
               version = "0.0.6";
