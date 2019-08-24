@@ -46,7 +46,7 @@ in
         autoPrune.enable = true;
       };
 
-      fonts.fonts = [ pkgs.powerline-fonts pkgs.weather-icons pkgs.material-icons ];
+      fonts.fonts = [ pkgs.powerline-fonts pkgs.weather-icons pkgs.material-icons pkgs.source-code-pro ];
 
       nix = {
         autoOptimiseStore = true;

@@ -16,8 +16,8 @@
       tabspaces = 4;
 
       font = {
-        family = "DejaVu Sans Mono for Powerline";
-        size = 8.0;
+        family = "Source Code Pro";
+        size = 7.0;
       };
 
       draw_bold_text_with_bright_colors = true;

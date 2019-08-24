@@ -49,6 +49,7 @@ in
             "${mod}+Shift+c" = "reload";
             "${mod}+Shift+r" = "restart";
             "${mod}+Shift+l" = "exec physlock -d";
+            "${mod}+Return" = "exec i3-sensible-terminal";
 
             "XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%";
             "XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@  -5%";
