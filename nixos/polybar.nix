@@ -14,6 +14,7 @@
       "settings" = {screenchange-reload = "true";};
       "bar/main_bar" = {
         font-0 = "DejaVu Sans Mono for Powerline:size=12.0;weight=bold";
+        font-1 = "Weather Icons:size=12;0";
         background = "#002b36";
         foreground = "#839496";
         bottom = "false";
@@ -24,7 +25,7 @@
         module-margin-left = 1;
         module-margin-right = 1;
         modules-left = "i3";
-        modules-center = "date";
+        modules-center = "date weather";
         modules-right = "memory swap cpu temperature battery1 battery0";
         tray-position = "right";
       };
@@ -35,6 +36,13 @@
         date = "%a %d.%m";
         time = "%H:%M";
         label = "%date% %time%";
+      };
+
+      "module/weather" = {
+        type = "custom/script";
+        interval = 600;
+        exec = "~/dev/dotfiles/openweathermap-fullfeatured.sh";
+        label-font = 2;
       };
 
       "module/i3" = {
