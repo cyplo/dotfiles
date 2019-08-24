@@ -4,9 +4,13 @@
     neovim.override {
       vimAlias = true;
       configure = {
-        customRC = builtins.readFile /home/cyryl/dev/dotfiles/.vimrc.nixos;
+        customRC = ''
+          if filereadable($HOME . "/.vimrc")
+            source ~/.vimrc
+          endif
+        '';
 
-        vam.knownPlugins = vimPlugins;
+        vam.knownPlugins = unstable.vimPlugins;
         vam.pluginDictionaries = [
           { names = [
             "ack-vim"

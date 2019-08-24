@@ -27,10 +27,13 @@ in
       mono calcurse calibre fbreader file python37Packages.binwalk-full
       slack discord obs-studio kpcli
     ];
+
     home.sessionVariables = {
       TERMINAL="termite";
       CM_LAUNCHER="rofi";
     };
+
+    home.file.".vimrc".source = ~/dev/dotfiles/.vimrc.nixos;
 
     imports = [
       ./programs/tmux.nix

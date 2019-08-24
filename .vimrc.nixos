@@ -1,3 +1,3 @@
-source /home/cyryl/dev/dotfiles/.vimrc.plugins-settings
-source /home/cyryl/dev/dotfiles/.vimrc.settings
-source /home/cyryl/dev/dotfiles/.vimrc.keymap
+source ~/dev/dotfiles/.vimrc.plugins-settings
+source ~/dev/dotfiles/.vimrc.settings
+source ~/dev/dotfiles/.vimrc.keymap
