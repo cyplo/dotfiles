@@ -19,6 +19,18 @@ in
           vscodeExtensions = with vscode-extensions; [ bbenoist.Nix ms-python.python ]
           ++ vscode-utils.extensionsFromVscodeMarketplace [
             {
+              publisher = "justusadam";
+              name = "language-haskell";
+              version = "2.6.0";
+              sha256 = "1891pg4x5qkh151pylvn93c4plqw6vgasa4g40jbma5xzq8pygr4";
+            }
+            {
+              publisher = "UCL";
+              name = "haskelly";
+              version = "0.5.5";
+              sha256 = "0s6a3hdckn2ssk7wkxdv09c0gjk4g0h8071bf7x8br0brnnrwsgi";
+            }
+            {
               publisher = "TabNine";
               name = "tabnine-vscode";
               version = "2.1.10";
