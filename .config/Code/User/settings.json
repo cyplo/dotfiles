@@ -25,5 +25,6 @@
         "editor.insertSpaces": false
     },
     "editor.fontLigatures": true,
-    "editor.fontFamily": "\"Fira Code\""
+    "editor.fontFamily": "\"Fira Code\"",
+    "terminal.integrated.shell.linux": "bash"
 }
