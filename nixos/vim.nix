@@ -6,7 +6,7 @@
       configure = {
         customRC = ''
           if filereadable($HOME . "/.vimrc")
-            source ~/.vimrc
+            source $HOME/.vimrc
           endif
         '';
 
