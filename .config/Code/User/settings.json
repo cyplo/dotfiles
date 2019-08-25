@@ -1,30 +1,22 @@
 {
-    "window.zoomLevel": 1,
-    "extensions.autoUpdate": true,
     "editor.cursorStyle": "block",
-    "editor.wordWrap": "on",
-    "files.autoSave": "onFocusChange",
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
+    "editor.wordWrap": "on",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "extensions.autoUpdate": true,
+    "files.autoSave": "onFocusChange",
     "files.trimTrailingWhitespace": true,
-    "better-comments.highlightPlainText": true,
     "rust-client.updateOnStartup": true,
     "rust.all_features": true,
-    "rust.goto_def_racer_fallback": true,
-    "explorer.confirmDelete": false,
-    "yaml.format.enable": true,
-    "liveshare.audio.joinCallBehavior": "accept",
-    "editor.formatOnPaste": true,
+    "terminal.integrated.shell.linux": "bash",
+    "window.zoomLevel": 1,
     "workbench.editor.highlightModifiedTabs": true,
-    "gitlens.codeLens.authors.enabled": false,
-    "explorer.confirmDragAndDrop": false,
-    "lua.format.linebreakMultipleAssignments": true,
-    "[lua]": {
-        "editor.formatOnSave": false
-    },
+    "yaml.format.enable": true,
     "[makefile]": {
         "editor.insertSpaces": false
     },
-    "editor.fontLigatures": true,
-    "editor.fontFamily": "\"Fira Code\"",
-    "terminal.integrated.shell.linux": "bash"
 }
