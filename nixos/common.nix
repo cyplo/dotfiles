@@ -48,7 +48,7 @@ in
         autoPrune.enable = true;
       };
 
-      fonts.fonts = [ pkgs.powerline-fonts pkgs.weather-icons pkgs.material-icons pkgs.source-code-pro pkgs.fira-code ];
+      fonts.fonts = with pkgs; [ powerline-fonts weather-icons material-icons source-code-pro fira-code noto-fonts-emoji emojione ];
 
       nix = {
         autoOptimiseStore = true;
