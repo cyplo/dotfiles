@@ -9,6 +9,7 @@ in
       package = pkgs.i3-gaps;
       config = {
         startup = [
+          { command = "exec hsetroot -solid '#002b36'"; always = true; notification = false; }
           { command = "exec setxkbmap -layout pl"; always = true; notification = false; }
           { command = "exec autorandr -c"; always = true; notification = false; }
           { command = "exec i3-sensible-terminal"; always = false; notification = false; }

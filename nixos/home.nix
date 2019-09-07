@@ -14,7 +14,7 @@ in
       };
     };
     home.packages = with pkgs; [
-      cabal-install stack
+      cabal-install stack hsetroot
       wirelesstools ranger xpdf apvlv unstable.xidlehook blueman
       fontconfig nodejs rustup gcc gdb steam
       binutils xclip pkgconfig veracrypt gitAndTools.diff-so-fancy
