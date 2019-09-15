@@ -12,9 +12,10 @@ in
           { command = "exec hsetroot -solid '#002b36'"; always = true; notification = false; }
           { command = "exec setxkbmap -layout pl"; always = true; notification = false; }
           { command = "exec autorandr -c"; always = true; notification = false; }
-          { command = "exec i3-sensible-terminal"; always = false; notification = false; }
           { command = "exec $HOME/dev/dotfiles/lock.sh"; always = false; notification = false; }
+          { command = "exec xdg-mime default org.gnome.Evince.desktop application/pdf"; always = false; notification = false; }
         ];
+
         window = {
           hideEdgeBorders = "horizontal";
           titlebar = false;
@@ -77,6 +78,7 @@ in
           "${mod}+Shift+9" = "move container to workspace 9";
           "${mod}+Shift+0" = "move container to workspace 10";
         };
+
       };
     };
 
