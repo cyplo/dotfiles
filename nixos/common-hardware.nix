@@ -22,7 +22,7 @@
     '';
   };
 
-  powerManagement.enable = true;
+  powerManagement.enable = (lib.mkForce true);
   powerManagement.cpuFreqGovernor = (lib.mkForce null);
   powerManagement.powertop.enable = true;
 }
