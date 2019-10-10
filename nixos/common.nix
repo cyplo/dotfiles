@@ -60,7 +60,6 @@ in
       };
 
       system = {
-        autoUpgrade.enable = true;
         stateVersion = "19.09";
       };
     }
