@@ -3,6 +3,7 @@
 
   networking.hostName = "foureighty";
   boot = {
+    kernelPackages = pkgs.linuxPackages_hardened;
     extraModulePackages = with config.boot.kernelPackages; [ wireguard ];
     initrd.kernelModules = [ "i915" ];
     initrd.availableKernelModules = [
