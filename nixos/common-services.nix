@@ -2,7 +2,14 @@
 {
   services = {
     fwupd.enable = true;
-    tlp.enable = true;
+
+    tlp = {
+      enable = true;
+      extraConfig = ''
+        DISK_IOSCHED="mq-deadline"
+      '';
+    };
+
     fstrim.enable = true;
     clipmenu.enable = true;
 
