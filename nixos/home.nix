@@ -16,7 +16,7 @@ in
     home.packages = with pkgs; [
       cabal-install stack hsetroot
       wirelesstools ranger xpdf apvlv unstable.xidlehook blueman
-      fontconfig nodejs rustup gcc gdb steam
+      fontconfig nodejs rustup gcc gdb
       binutils xclip pkgconfig veracrypt gitAndTools.diff-so-fancy
       openjdk gimp restic glxinfo discord ghc
       unstable.notable jq awscli evince signal-desktop

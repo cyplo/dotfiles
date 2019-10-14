@@ -13,6 +13,7 @@ in
     virtualisation.virtualbox.host = {
       enable = true;
       enableExtensionPack = true;
-      enableHardening = false;
+      enableHardening = true;
+      package = pkgs.virtualbox.override { enable32bitGuests = false; };
     };
   }
