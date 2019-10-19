@@ -16,8 +16,14 @@ in
     users.users.cyryl = {
       packages = with pkgs; [
         (unstable.vscode-with-extensions.override {
-          vscodeExtensions = with vscode-extensions; [ bbenoist.Nix ]
+          vscodeExtensions = with vscode-extensions; [ bbenoist.Nix  ]
           ++ vscode-utils.extensionsFromVscodeMarketplace [
+            {
+              publisher = "ms-python";
+              name = "python";
+              version = "2019.10.41019";
+              sha256 = "0szikd76vy8mgv8zc0m90rx1jrnwwphx5bb8928drln65xwbzs1q";
+            }
             {
               publisher = "justusadam";
               name = "language-haskell";
