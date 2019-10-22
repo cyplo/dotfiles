@@ -4,6 +4,6 @@ system="/run/current-system/sw/bin/"
 
 sensors="$profile/sensors"
 
-max_temp=`$sensors | $system/egrep -o '[0-9][0-9]\.[0-9]' | $system/sort | $system/uniq | $system/tail -n 1`
+max_temp=`$sensors | $system/egrep -o '[0-9][0-9]\.[0-9].*\(' | $system/cut -d' ' -f 1 | $system/sort | $system/uniq | $system/tail -n 1`
 
-echo "${max_temp}°C"
+echo "${max_temp}"
