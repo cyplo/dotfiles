@@ -45,7 +45,7 @@
   };
 
   imports = [
-    ./polybar.nix
-    ./i3.nix
+    ./i3/polybar/polybar.nix
+    ./i3/i3.nix
   ];
 }

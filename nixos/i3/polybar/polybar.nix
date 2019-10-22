@@ -41,7 +41,7 @@
       "module/weather" = {
         type = "custom/script";
         interval = 600;
-        exec = "~/dev/dotfiles/openweathermap-fullfeatured.sh";
+        exec = "~/dev/dotfiles/nixos/i3/polybar/openweathermap-fullfeatured.sh";
         label-font = 2;
       };
 
@@ -58,7 +58,7 @@
       "module/temperature" = {
         type = "custom/script";
         interval = 5;
-        exec = "~/dev/dotfiles/cpu-temp.sh";
+        exec = "~/dev/dotfiles/nixos/i3/polybar/cpu-temp.sh";
       };
 
       "module/memory" = {
