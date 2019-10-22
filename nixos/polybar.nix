@@ -56,10 +56,9 @@
       };
 
       "module/temperature" = {
-        type = "internal/temperature";
-        thermal-zone = 3;
+        type = "custom/script";
         interval = 5;
-        format = "TEMP: <label>";
+        exec = "~/dev/dotfiles/cpu-temp.sh";
       };
 
       "module/memory" = {
