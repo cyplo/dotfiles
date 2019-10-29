@@ -29,8 +29,7 @@ in
       };
 
       environment.systemPackages = with pkgs; [
-        wget git gnupg curl tmux python36Packages.glances htop atop firefox home-manager alacritty pciutils powertop
-
+        wget git gnupg curl tmux python36Packages.glances htop atop firefox home-manager alacritty pciutils powertop linuxPackages_hardened.bcc
       ];
 
       i18n.defaultLocale = "en_GB.UTF-8";

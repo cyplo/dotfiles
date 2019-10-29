@@ -5,6 +5,26 @@
   boot = {
     kernelPackages = pkgs.linuxPackages_hardened;
     extraModulePackages = with config.boot.kernelPackages; [ wireguard ];
+    kernelPatches = [{
+      name = "bpf";
+      patch = null;
+      extraConfig = ''
+        BPF y
+        BPF_EVENTS y
+        BPF_JIT y
+        BPF_SYSCALL y
+        DUMMY m
+        HAVE_EBPF_JIT y
+        KALLSYMS_ALL y
+        NET_ACT_BPF m
+        NET_ACT_GACT m
+        NET_ACT_POLICE m
+        NET_CLS_BPF m
+        NET_SCH_SFQ m
+        VXLAN m
+      '';}
+    ];
+
     initrd.kernelModules = [ "i915" ];
     initrd.availableKernelModules = [
       "aes_x86_64"
