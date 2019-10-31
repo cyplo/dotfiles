@@ -14,7 +14,7 @@ in
       };
     };
     home.packages = with pkgs; [
-      cabal-install stack hsetroot lm_sensors
+      cabal-install stack hsetroot lm_sensors gnome3.gnome-screenshot
       wirelesstools ranger xpdf apvlv unstable.xidlehook blueman
       fontconfig nodejs rustup gcc gdb
       binutils xclip pkgconfig veracrypt gitAndTools.diff-so-fancy
