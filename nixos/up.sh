@@ -36,8 +36,6 @@ set -e
 rustup default stable
 
 (test -x "${HOME}/.cargo/bin/cargo-install-update" || nix-shell -p gcc pkgconfig zlib openssl --run "cargo install cargo-update" )
-(test -x "${HOME}/.cargo/bin/rg" || cargo install ripgrep)
-(test -x "${HOME}/.cargo/bin/fd" || cargo install fd-find)
 (test -x "${HOME}/.cargo/bin/genpass" || cargo install genpass)
 
 set +e
