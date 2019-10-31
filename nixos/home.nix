@@ -14,6 +14,8 @@ in
       };
     };
     home.packages = with pkgs; [
+      ( pass.withExtensions (ext: [ ext.pass-otp ext.pass-import ext.pass-genphrase ext.pass-audit ext.pass-update ]))
+      passff-host
       cabal-install stack hsetroot lm_sensors gnome3.gnome-screenshot
       wirelesstools ranger xpdf apvlv unstable.xidlehook blueman
       fontconfig nodejs rustup gcc gdb
@@ -32,10 +34,12 @@ in
     home.sessionVariables = {
       TERMINAL="termite";
       CM_LAUNCHER="rofi";
+      PASSWORD_STORE_ENABLE_EXTENSIONS="true";
     };
 
     home.file.".vimrc".source = ~/dev/dotfiles/.vimrc.nixos;
     home.file.".config/nixpkgs/config.nix".source = ~/dev/dotfiles/nixos/shell-config.nix;
+    home.file.".mozilla/native-messaging-hosts/passff.json".source = "${pkgs.passff-host}/share/passff-host/passff.json";
 
     imports = [
       ./programs/tmux.nix
@@ -50,7 +54,6 @@ in
 
       rofi.enable = true;
       fzf.enable = true;
-      firefox.enable = true;
       chromium.enable = true;
       go.enable = true;
       bat.enable = true;
