@@ -3,7 +3,7 @@
 
   networking.hostName = "foureighty";
   boot = {
-    kernelPackages = pkgs.linuxPackages_hardened;
+    kernelPackages = pkgs.linuxPackages_latest_hardened;
     extraModulePackages = with config.boot.kernelPackages; [ wireguard ];
     kernelPatches = [{
       name = "bpf";
@@ -61,9 +61,10 @@
     hardware.opengl.extraPackages = [ pkgs.linuxPackages.nvidia_x11.out ];
     hardware.opengl.extraPackages32 = [ pkgs.linuxPackages.nvidia_x11.lib32 ];
 
+    services.throttled.enable = true;
+
     imports = [
       /etc/nixos/hardware-configuration.nix
-      ../quirks/thinkpad-cpu-throttling.nix
       ../boot.nix
       ../common.nix
       ../gfx-intel.nix
