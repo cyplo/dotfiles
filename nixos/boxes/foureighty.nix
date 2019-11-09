@@ -6,9 +6,16 @@
     kernelPackages = pkgs.linuxPackages_latest_hardened;
     extraModulePackages = with config.boot.kernelPackages; [ wireguard ];
     kernelPatches = [{
-      name = "bpf";
+      name = "bpf_plus_newer_intel";
       patch = null;
       extraConfig = ''
+        MCORE2 y
+        ENERGY_MODEL y
+        X86_INTEL_MPX y
+        INTEL_TXT y
+
+        PREEMPT_VOLUNTARY y
+
         BPF y
         BPF_EVENTS y
         BPF_JIT y

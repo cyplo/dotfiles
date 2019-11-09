@@ -23,7 +23,7 @@ in
       openjdk gimp restic glxinfo discord ghc
       unstable.notable jq awscli evince signal-desktop
       nodejs-10_x hugo mercurial terraform libreoffice
-      unzip tor-browser-bundle-bin aria vlc
+      unzip unstable.tor-browser-bundle-bin aria vlc
       jetbrains.goland unstable.jetbrains.clion jetbrains.idea-ultimate
       (wine.override { wineBuild = "wineWow"; }) winetricks
       yubico-piv-tool yubikey-personalization yubikey-personalization-gui yubikey-manager-qt

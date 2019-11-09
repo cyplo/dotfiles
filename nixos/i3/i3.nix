@@ -12,7 +12,7 @@ in
           { command = "exec hsetroot -solid '#002b36'"; always = true; notification = false; }
           { command = "exec setxkbmap -layout pl"; always = true; notification = false; }
           { command = "exec autorandr -c"; always = true; notification = false; }
-          { command = "exec $HOME/dev/dotfiles/lock.sh"; always = false; notification = false; }
+          { command = "exec $HOME/dev/dotfiles/nixos/i3/lock.sh"; always = false; notification = false; }
           { command = "exec xdg-mime default org.gnome.Evince.desktop application/pdf"; always = false; notification = false; }
         ];
 
