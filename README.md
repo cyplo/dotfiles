@@ -5,7 +5,7 @@ bootstrap new machine with NixOS:
 
 1. Launch [NixOS livecd](https://nixos.org/nixos/download.html).
 
-1. `[livecd]` `curl https://raw.githubusercontent.com/cyplo/dotfiles/master/nixos/bootstrap-livecd.sh | bash`
+1. `[livecd]` `curl https://raw.githubusercontent.com/cyplo/dotfiles/master/nixos/bootstrap-livecd.sh | bash` or `curl -L  https://tinyurl.com/cyplo-nixos-bootstrap1 | bash`
 
 2. Reboot into the system running from the disk drive.
 
