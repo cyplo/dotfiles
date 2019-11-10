@@ -1,15 +1,10 @@
 My dotfiles - including my vim, terminal and font configs.
 Mostly focusing on setting things up on NixOS, but supporting other OSes where posible.
 
-install:
-```
-ssh-keygen -t ed25519
-cat .ssh/id_ed25519.pub 
-#add the above key to github
+bootstrap new machine with NixOS:
 
-mkdir ~/dev
-cd ~/dev
-git clone git@github.com:cyplo/dotfiles.git
-cd dotfiles
+1. Launch `curl https://raw.githubusercontent.com/cyplo/dotfiles/master/nixos/bootstrap-livecd.sh | bash` from NixOS live cd.
 
-```
+2. Reboot into the system running from the disk drive.
+
+3. Launch `curl https://raw.githubusercontent.com/cyplo/dotfiles/master/nixos/bootstrap-rebooted.sh | bash` from the installed system.
