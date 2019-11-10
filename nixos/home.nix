@@ -24,7 +24,7 @@ in
       unstable.notable jq awscli evince signal-desktop
       nodejs-10_x hugo mercurial terraform libreoffice
       unzip unstable.tor-browser-bundle-bin aria vlc
-      jetbrains.goland unstable.jetbrains.clion jetbrains.idea-ultimate
+      jetbrains.goland unstable.jetbrains.clion jetbrains.idea-ultimate unstable.android-studio
       (wine.override { wineBuild = "wineWow"; }) winetricks
       yubico-piv-tool yubikey-personalization yubikey-personalization-gui yubikey-manager-qt
       mono calcurse calibre fbreader file python37Packages.binwalk-full
