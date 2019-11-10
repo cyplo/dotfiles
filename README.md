@@ -3,7 +3,9 @@ Mostly focusing on setting things up on NixOS, but supporting other OSes where p
 
 bootstrap new machine with NixOS:
 
-1. Launch `curl https://raw.githubusercontent.com/cyplo/dotfiles/master/nixos/bootstrap-livecd.sh | bash` from NixOS live cd.
+1. Launch [NixOS livecd](https://nixos.org/nixos/download.html).
+
+1. `[livecd]` `curl https://raw.githubusercontent.com/cyplo/dotfiles/master/nixos/bootstrap-livecd.sh | bash`
 
 2. Reboot into the system running from the disk drive.
 
