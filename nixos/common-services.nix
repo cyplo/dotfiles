@@ -1,12 +1,15 @@
 { config, pkgs, ... }:
 {
   services = {
-    fwupd.enable = true;
+    fwupd = {
+      enable = true;
+      package = pkgs.unstable.fwupd;
+    };
 
     tlp = {
       enable = true;
       extraConfig = ''
-        DISK_IOSCHED="mq-deadline"
+          DISK_IOSCHED="mq-deadline"
       '';
     };
 
@@ -47,8 +50,8 @@
       useGlamor = true;
 
       deviceSection = ''
-        Option "TearFree" "true"
-        Option "AccelMethod" "sna"
+          Option "TearFree" "true"
+          Option "AccelMethod" "sna"
       '';
 
       displayManager.sddm = {

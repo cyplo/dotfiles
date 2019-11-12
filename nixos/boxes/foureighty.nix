@@ -5,32 +5,6 @@
   boot = {
     kernelPackages = pkgs.linuxPackages_latest_hardened;
     extraModulePackages = with config.boot.kernelPackages; [ wireguard ];
-    kernelPatches = [{
-      name = "bpf_plus_newer_intel";
-      patch = null;
-      extraConfig = ''
-        MCORE2 y
-        ENERGY_MODEL y
-        X86_INTEL_MPX y
-        INTEL_TXT y
-
-        PREEMPT_VOLUNTARY y
-
-        BPF y
-        BPF_EVENTS y
-        BPF_JIT y
-        BPF_SYSCALL y
-        DUMMY m
-        HAVE_EBPF_JIT y
-        KALLSYMS_ALL y
-        NET_ACT_BPF m
-        NET_ACT_GACT m
-        NET_ACT_POLICE m
-        NET_CLS_BPF m
-        NET_SCH_SFQ m
-        VXLAN m
-      '';}
-    ];
 
     initrd.kernelModules = [ "i915" ];
     initrd.availableKernelModules = [
