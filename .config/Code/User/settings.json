@@ -19,4 +19,5 @@
     "[makefile]": {
         "editor.insertSpaces": false
     },
+    "editor.renderWhitespace": "all",
 }

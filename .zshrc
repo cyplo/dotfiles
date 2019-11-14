@@ -45,3 +45,5 @@ export PATH="$PATH:$HOME/.rvm/bin"
 alias tmate="tmux detach-client -E 'tmate;tmux'"
 
 
+
+[ -s "/home/cyryl/.jabba/jabba.sh" ] && source "/home/cyryl/.jabba/jabba.sh"
