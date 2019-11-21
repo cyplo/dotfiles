@@ -23,7 +23,6 @@ in
     imports = [
       ./programs/tmux.nix
       ./programs/zsh.nix
-      ./programs/vim.nix
       ./programs/alacritty.nix
       ./programs/git.nix
     ];
