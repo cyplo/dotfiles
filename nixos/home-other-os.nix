@@ -18,10 +18,11 @@ in
       PASSWORD_STORE_ENABLE_EXTENSIONS="true";
     };
 
+    home.file.".gitconfig".source = ~/dev/dotfiles/.gitconfig.linux.form3;
+
     imports = [
       ./programs/tmux.nix
       ./programs/zsh.nix
-      ./programs/git.nix
       ./programs/vim.nix
       ./programs/alacritty.nix
       ./programs.nix
