@@ -23,7 +23,7 @@ in
       ./programs/zsh.nix
       ./programs/git.nix
       ./programs/vim.nix
-      ./programs/termite.nix
+      ./programs/alacritty.nix
       ./programs.nix
       ./links.nix
       ./cli.nix
