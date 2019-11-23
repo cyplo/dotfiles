@@ -13,23 +13,6 @@ in
         };
       };
     };
-    home.packages = with pkgs; [
-      ( pass.withExtensions (ext: [ ext.pass-otp ext.pass-import ext.pass-genphrase ext.pass-audit ext.pass-update ]))
-      passff-host
-      cabal-install stack hsetroot lm_sensors gnome3.gnome-screenshot
-      wirelesstools ranger xpdf apvlv unstable.xidlehook blueman
-      fontconfig nodejs rustup gcc gdb
-      binutils xclip pkgconfig veracrypt gitAndTools.diff-so-fancy
-      openjdk gimp restic glxinfo discord ghc
-      unstable.notable jq awscli evince signal-desktop
-      nodejs-10_x hugo mercurial terraform libreoffice
-      unzip unstable.tor-browser-bundle-bin aria vlc
-      jetbrains.goland unstable.jetbrains.clion jetbrains.idea-ultimate unstable.android-studio
-      (wine.override { wineBuild = "wineWow"; }) winetricks
-      yubico-piv-tool yubikey-personalization yubikey-personalization-gui yubikey-manager-qt
-      mono calcurse calibre fbreader file python37Packages.binwalk-full
-      slack discord obs-studio kpcli
-    ];
 
     home.sessionVariables = {
       TERMINAL="termite";
@@ -37,34 +20,18 @@ in
       PASSWORD_STORE_ENABLE_EXTENSIONS="true";
     };
 
-    home.file.".vimrc".source = ~/dev/dotfiles/.vimrc.nixos;
-    home.file.".config/nixpkgs/config.nix".source = ~/dev/dotfiles/nixos/shell-config.nix;
-    home.file.".mozilla/native-messaging-hosts/passff.json".source = "${pkgs.passff-host}/share/passff-host/passff.json";
-
     imports = [
       ./programs/tmux.nix
       ./programs/zsh.nix
       ./programs/termite.nix
       ./programs/git.nix
+      ./programs/vim.nix
+      ./programs.nix
+      ./links.nix
       ./user-xsession.nix
+      ./cli.nix
+      ./gui.nix
     ];
-
-    programs = {
-      home-manager.enable = true;
-
-      z-lua = {
-        enable = true;
-        enableAliases = true;
-        enableBashIntegration = true;
-        enableZshIntegration = true;
-      };
-
-      rofi.enable = true;
-      fzf.enable = true;
-      chromium.enable = true;
-      go.enable = true;
-      bat.enable = true;
-    };
 
     gtk = {
       enable = true;
@@ -72,4 +39,5 @@ in
     qt = {
       enable = true;
     };
+
   }
