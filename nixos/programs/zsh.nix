@@ -44,6 +44,13 @@
         export PATH="$HOME/.cargo/bin:$PATH";
         export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH";
       '';
+      envExtra = ''
+        if [[ -z `nixos-version` ]]; then
+          source /home/cyryl/.nix-profile/etc/profile.d/nix.sh
+          export NIX_PATH="$HOME/.nix-defexpr/channels:$NIX_PATH"
+          echo "non-nixos patches loaded"
+        fi
+      '';
       sessionVariables = {
         TERM="xterm-256color";
         EDITOR="vim";
