@@ -45,7 +45,8 @@
         export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH";
       '';
       envExtra = ''
-        if [[ ! -x nixos-version ]]; then
+        local nixos_version=`which nixos-version`
+        if [[ -z $nixos_version ]]; then
           source /home/cyryl/.nix-profile/etc/profile.d/nix.sh
           export NIX_PATH="$HOME/.nix-defexpr/channels:$NIX_PATH"
           echo "non-nixos patches loaded"
