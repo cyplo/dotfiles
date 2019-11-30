@@ -6,7 +6,7 @@
     gnome3.gnome-screenshot
     xpdf apvlv unstable.xidlehook blueman
     fontconfig xclip gimp glxinfo
-    unstable.notable evince signal-desktop
+    notable evince signal-desktop
     libreoffice unstable.tor-browser-bundle-bin vlc
     jetbrains.goland unstable.jetbrains.clion jetbrains.idea-ultimate unstable.android-studio
     (wine.override { wineBuild = "wineWow"; }) winetricks

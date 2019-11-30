@@ -36,7 +36,10 @@
     time.timeZone = "Europe/London";
 
     hardware.trackpoint.enable = true;
-    services.fprintd.enable = true;
+    services.fprintd = {
+      enable = true;
+      package = pkgs.unstable.fprintd-thinkpad;
+    };
 
     hardware.nvidiaOptimus.disable = true;
     hardware.opengl.extraPackages = [ pkgs.linuxPackages.nvidia_x11.out ];
