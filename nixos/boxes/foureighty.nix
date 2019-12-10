@@ -38,7 +38,7 @@
     hardware.trackpoint.enable = true;
     services.fprintd = {
       enable = true;
-      package = pkgs.unstable.fprintd-thinkpad;
+      package = pkgs.fprintd-thinkpad;
     };
 
     hardware.nvidiaOptimus.disable = true;

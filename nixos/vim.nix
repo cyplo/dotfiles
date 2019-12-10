@@ -10,7 +10,7 @@
           endif
         '';
 
-        vam.knownPlugins = unstable.vimPlugins;
+        vam.knownPlugins = vimPlugins;
         vam.pluginDictionaries = [
           { names = [
             "ack-vim"

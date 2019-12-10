@@ -2,7 +2,6 @@
 
 let
   unstableTarball = fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
-  etesync-dav = import ./packages/etesync-dav/default.nix;
 in
   {
     imports =
@@ -18,18 +17,10 @@ in
 
       nixpkgs.config = {
         allowUnfree = true;
-        packageOverrides = pkgs: {
-          unstable = import unstableTarball {
-            config = config.nixpkgs.config;
-          };
-          cyplo = import /home/cyryl/dev/nixpkgs {
-            config = config.nixpkgs.config;
-          };
-        };
       };
 
       environment.systemPackages = with pkgs; [
-        wget git gnupg curl tmux python36Packages.glances htop atop firefox home-manager alacritty pciutils powertop linuxPackages_hardened.bcc ripgrep-all fd dnsutils
+        wget git gnupg curl tmux python36Packages.glances htop atop firefox home-manager alacritty pciutils powertop ripgrep-all fd dnsutils
       ];
 
       i18n.defaultLocale = "en_GB.UTF-8";

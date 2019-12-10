@@ -3,7 +3,7 @@
   services = {
     fwupd = {
       enable = true;
-      package = pkgs.unstable.fwupd;
+      package = pkgs.fwupd;
     };
 
     tlp = {

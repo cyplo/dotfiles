@@ -2,7 +2,7 @@
 {
   users.users.cyryl = {
     packages = with pkgs; [
-      (unstable.vscode-with-extensions.override {
+      (vscode-with-extensions.override {
         vscodeExtensions = with vscode-extensions; [ bbenoist.Nix  ]
         ++ vscode-utils.extensionsFromVscodeMarketplace [
           {
