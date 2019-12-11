@@ -16,5 +16,6 @@
     chromium.enable = true;
     go.enable = true;
     bat.enable = true;
+    browserpass.enable = true;
   };
 }
