@@ -45,6 +45,7 @@
         export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH";
       '';
       envExtra = ''
+        [ -s "/home/cyryl/.jabba/jabba.sh" ] && source "/home/cyryl/.jabba/jabba.sh"
         local nixos_version=`which nixos-version`
         if [[ ! -x "$nixos_version" ]]; then
           source /home/cyryl/.nix-profile/etc/profile.d/nix.sh
