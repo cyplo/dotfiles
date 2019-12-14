@@ -17,6 +17,11 @@ in
 
       nixpkgs.config = {
         allowUnfree = true;
+        packageOverrides = pkgs: {
+          unstable = import unstableTarball {
+            config = config.nixpkgs.config;
+          };
+        };
       };
 
       environment.systemPackages = with pkgs; [

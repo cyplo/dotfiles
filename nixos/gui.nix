@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     passff-host
     gnome3.gnome-screenshot
-    xpdf apvlv unstable.xidlehook blueman
+    xpdf apvlv xidlehook blueman
     fontconfig xclip gimp glxinfo
     notable evince signal-desktop
     libreoffice unstable.tor-browser-bundle-bin vlc

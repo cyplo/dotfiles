@@ -52,6 +52,5 @@
       ../boot.nix
       ../common.nix
       ../gfx-intel.nix
-      ../virtualbox.nix
     ];
   }
