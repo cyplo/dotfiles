@@ -12,6 +12,6 @@
     hugo mercurial terraform
     unzip aria
     mono calcurse file python37Packages.binwalk-full
-    nixops
+    nixops imagemagick
   ];
 }
