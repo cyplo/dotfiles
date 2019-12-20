@@ -3,7 +3,7 @@
 
   networking.hostName = "foureighty";
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest_hardened;
+    kernelPackages = pkgs.linuxPackages_hardened;
     extraModulePackages = with config.boot.kernelPackages; [ wireguard ];
 
     initrd.kernelModules = [ "i915" ];
@@ -52,5 +52,6 @@
       ../boot.nix
       ../common.nix
       ../gfx-intel.nix
+      ../virtualbox.nix
     ];
   }
