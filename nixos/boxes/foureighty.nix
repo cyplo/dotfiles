@@ -53,5 +53,6 @@
       ../common.nix
       ../gfx-intel.nix
       ../virtualbox.nix
+      ../zerotier.nix
     ];
   }
