@@ -34,7 +34,7 @@
     restic.backups.home = {
       passwordFile = "/etc/nixos/secrets/restic-password";
       paths = [ "/home" ];
-      repository = "sftp:fetcher@brix:/mnt/data/backup-targets";
+      repository = "rest:http://brix.local:8000/";
       timerConfig = { OnCalendar = "hourly"; };
     };
 
