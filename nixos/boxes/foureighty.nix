@@ -45,8 +45,6 @@
     hardware.opengl.extraPackages = [ pkgs.linuxPackages.nvidia_x11.out ];
     hardware.opengl.extraPackages32 = [ pkgs.linuxPackages.nvidia_x11.lib32 ];
 
-    services.throttled.enable = true;
-
     imports = [
       /etc/nixos/hardware-configuration.nix
       ../boot.nix
