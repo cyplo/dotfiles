@@ -9,10 +9,12 @@
     notable evince signal-desktop
     libreoffice unstable.tor-browser-bundle-bin vlc
     jetbrains.goland unstable.jetbrains.clion jetbrains.idea-ultimate unstable.android-studio
-    (wine.override { wineBuild = "wineWow"; }) winetricks
     yubico-piv-tool yubikey-personalization yubikey-personalization-gui yubikey-manager-qt
     slack discord obs-studio gnome3.nautilus gnome3.eog
     hopper
+    (wine.override { wineBuild = "wineWow"; }) winetricks
+    steam
+#    (steam.override { withPrimus = true; extraPkgs = pkgs: [ bumblebee glxinfo ]; nativeOnly = true; })
   ];
 
 }
