@@ -13,6 +13,7 @@
       '';
     };
 
+    upower.enable = true;
     fstrim.enable = true;
     clipmenu.enable = true;
 
