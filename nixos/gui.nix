@@ -14,7 +14,7 @@
     hopper
     (wine.override { wineBuild = "wineWow"; }) winetricks
     steam
-#    (steam.override { withPrimus = true; extraPkgs = pkgs: [ bumblebee glxinfo ]; nativeOnly = true; })
+    kicad-with-packages3d
   ];
 
 }
