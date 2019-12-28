@@ -48,6 +48,7 @@
     time.timeZone = "Europe/London";
 
     hardware.trackpoint.enable = true;
+    services.hardware.bolt.enable = true;
     services.fprintd = {
       enable = true;
       package = pkgs.fprintd-thinkpad;
