@@ -39,6 +39,8 @@
       timerConfig = { OnCalendar = "hourly"; };
     };
 
+    autorandr.enable = true;
+
     xserver = {
       enable = true;
       layout = "pl";
