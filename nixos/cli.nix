@@ -13,5 +13,6 @@
     unzip aria
     mono calcurse file python37Packages.binwalk-full
     nixops imagemagick
+    docker-compose
   ];
 }

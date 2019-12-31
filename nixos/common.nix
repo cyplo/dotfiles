@@ -36,6 +36,10 @@ in
         shell = pkgs.zsh;
       };
 
+      networking.hosts = {
+        "127.0.0.1" = [ "czateria.pl" "interia.pl" ];
+      };
+
       programs.light.enable = true;
       programs.adb.enable = true;
 
