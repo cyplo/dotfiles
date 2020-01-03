@@ -17,7 +17,7 @@
 
       font = {
         family = "Fira Code";
-        size = 7.5;
+        size = 8;
       };
 
       draw_bold_text_with_bright_colors = true;
