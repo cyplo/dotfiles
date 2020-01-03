@@ -67,7 +67,7 @@
   };
 
   imports = [
-    ./i3/polybar/polybar.nix
-    ./i3/i3.nix
+    ./polybar/polybar.nix
+    ./i3.nix
   ];
 }

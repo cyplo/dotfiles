@@ -28,7 +28,7 @@ in
       ./programs/vim.nix
       ./programs.nix
       ./links.nix
-      ./user-xsession.nix
+      ./i3/x.nix
       ./cli.nix
       ./gui.nix
       ./games.nix
