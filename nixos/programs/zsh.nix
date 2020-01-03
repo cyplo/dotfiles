@@ -50,6 +50,8 @@
         if [[ ! -x "$nixos_version" ]]; then
           source /home/cyryl/.nix-profile/etc/profile.d/nix.sh
           export NIX_PATH="$HOME/.nix-defexpr/channels:$NIX_PATH"
+          export NVM_DIR="$HOME/.nvm"
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
           echo "non-nixos patches loaded"
         fi
       '';
