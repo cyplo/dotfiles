@@ -14,7 +14,6 @@
     hopper
     (wine.override { wineBuild = "wineWow"; }) winetricks
     steam
-    kicad-with-packages3d
     unstable.qemu unstable.aqemu
   ];
 

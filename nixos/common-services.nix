@@ -41,6 +41,7 @@
 
     autorandr.enable = true;
 
+    colord.enable = true;
     xserver = {
       enable = true;
       layout = "pl";
