@@ -31,6 +31,7 @@ in
       ./user-xsession.nix
       ./cli.nix
       ./gui.nix
+      ./games.nix
     ];
 
     gtk = {
