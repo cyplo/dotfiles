@@ -63,4 +63,8 @@
       };
       shellAliases = { tmate = "tmux detach-client -E 'tmate;tmux'"; cat = "bat -p"; };
     };
+    programs.direnv = {
+      enable = true;
+      enableZshIntegration = true;
+    };
   }
