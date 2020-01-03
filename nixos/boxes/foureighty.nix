@@ -3,7 +3,7 @@
 
   networking.hostName = "foureighty";
   nixpkgs.config.packageOverrides = pkgs: {
-    linux_latest_hardened = pkgs.linux_hardened.override {
+    linux_latest_hardened = pkgs.linux_latest_hardened.override {
       extraConfig = ''
         IA32_EMULATION y
         KVM m
