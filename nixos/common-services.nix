@@ -39,9 +39,6 @@
       timerConfig = { OnCalendar = "hourly"; };
     };
 
-    autorandr.enable = true;
-
-    colord.enable = true;
     xserver = {
       enable = true;
       layout = "pl";
@@ -58,10 +55,6 @@
           Option "AccelMethod" "sna"
       '';
 
-      displayManager.sddm = {
-        enable = true;
-        enableHidpi = true;
-      };
     };
   };
 }

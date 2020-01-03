@@ -1,6 +1,5 @@
 { config, pkgs, ... }:
 {
-
   networking.hostName = "foureighty";
   nixpkgs.config.packageOverrides = pkgs: {
     linux_latest_hardened = pkgs.linux_latest_hardened.override {
@@ -67,5 +66,6 @@
       ../gfx-intel.nix
       ../virtualbox.nix
       ../zerotier.nix
+      ../i3/root.nix
     ];
   }
