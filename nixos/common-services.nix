@@ -17,11 +17,6 @@
     fstrim.enable = true;
     clipmenu.enable = true;
 
-    physlock = {
-      enable = true;
-      allowAnyUser = true;
-    };
-
     printing = {
       enable = true;
       drivers = [ pkgs.epson-escpr pkgs.samsung-unified-linux-driver pkgs.splix ];

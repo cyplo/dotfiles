@@ -66,6 +66,6 @@
       ../gfx-intel.nix
       ../virtualbox.nix
       ../zerotier.nix
-      ../gnome.nix
+      ../kde.nix
     ];
   }
