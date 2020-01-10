@@ -16,6 +16,7 @@
     upower.enable = true;
     fstrim.enable = true;
     clipmenu.enable = true;
+    lorri.enable = true;
 
     printing = {
       enable = true;
