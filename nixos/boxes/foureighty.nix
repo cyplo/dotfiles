@@ -66,6 +66,6 @@
       ../gfx-intel.nix
       ../virtualbox.nix
       ../zerotier.nix
-      ../i3/root.nix
+      ../i3/system.nix
     ];
   }

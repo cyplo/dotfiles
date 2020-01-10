@@ -40,5 +40,6 @@
       ../common.nix
       ../gfx-intel.nix
       ../zerotier.nix
+      ../i3/system.nix
     ];
   }

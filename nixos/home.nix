@@ -31,7 +31,7 @@ in
       ./cli.nix
       ./gui.nix
       ./games.nix
-      ./i3/x.nix
+      ./i3/home.nix
     ];
 
     gtk = {
