@@ -13,6 +13,7 @@ in
           { command = "exec setxkbmap -layout pl"; always = true; notification = false; }
           { command = "exec autorandr -c"; always = false; notification = false; }
           { command = "exec $HOME/dev/dotfiles/nixos/i3/lock.sh"; always = false; notification = false; }
+          { command = "exec $HOME/dev/dotfiles/nixos/i3/battery-popup.sh"; always = false; notification = false; }
           { command = "exec xdg-mime default org.gnome.Evince.desktop application/pdf"; always = false; notification = false; }
         ];
 
