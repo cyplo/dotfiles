@@ -2,6 +2,7 @@
 {
   sound.enable = true;
   networking.networkmanager.enable = true;
+  services.smatrd.enable = true;
   hardware.enableRedistributableFirmware = true;
   hardware.cpu.intel.updateMicrocode = true;
   hardware.pulseaudio = {

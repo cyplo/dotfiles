@@ -7,6 +7,7 @@
 
   networking.hosts = {
     "172.23.223.219" = [ "brix.local" ];
+    "172.23.28.139" = [ "vultr1.local" ];
   };
 
 }
