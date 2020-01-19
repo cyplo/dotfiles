@@ -3,6 +3,7 @@
 {
   networking.hostName = "thinky";
   boot = {
+    kernelPackages = pkgs.linuxPackages_latest_hardened;
     initrd.luks.devices = [
       {
         name = "root";
