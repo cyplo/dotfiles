@@ -2,6 +2,7 @@
 {
   programs.git = {
     enable = true;
+    lfs.enable = true;
     userName = "Cyryl Płotnicki";
     userEmail = "cyplo@cyplo.net";
     extraConfig = {
