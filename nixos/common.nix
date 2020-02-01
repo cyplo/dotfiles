@@ -12,7 +12,6 @@ in
         ./common-hardware.nix
         ./common-services.nix
         ./vim.nix
-        ./cachix.nix
       ];
 
       nixpkgs.config = {
