@@ -10,6 +10,8 @@ MOUNT_TARGET=$2
 if [[ -z "$MOUNT_TARGET" ]]; then
     MOUNT_TARGET=$HOME/.vault
 fi
+
+sudo chown $USER "$MOUNT_TARGET"
 mkdir -p "$MOUNT_TARGET"
 
 MOUNT_SOURCE=$1
@@ -18,10 +20,13 @@ if [[ -z "$MOUNT_SOURCE" ]]; then
 fi
 
 if [[ -z "$VAULT_PASSWORD" ]]; then
+    echo "interactive mount"
     $VERACRYPT -t --mount "$MOUNT_SOURCE" "$MOUNT_TARGET"
 else
-    $VERACRYPT -t --non-interactive -p $VAULT_PASSWORD --mount "$MOUNT_SOURCE" "$MOUNT_TARGET"
+    echo "non-interactive mount of '$MOUNT_SOURCE' to '$MOUNT_TARGET'"
+    sudo $VERACRYPT -t --non-interactive -p $VAULT_PASSWORD --mount "$MOUNT_SOURCE" "$MOUNT_TARGET"
 fi
+
 sudo chown $USER "$MOUNT_TARGET"
 
 echo "$MOUNT_SOURCE -> $MOUNT_TARGET"
