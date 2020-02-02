@@ -1,17 +1,6 @@
 { config, pkgs, ... }:
 {
   networking.hostName = "foureighty";
-  nixpkgs.config.packageOverrides = pkgs: {
-    linux_latest_hardened = pkgs.linux_latest_hardened.override {
-      extraConfig = ''
-        IA32_EMULATION y
-        KVM m
-        KVM_INTEL m
-      '';
-      features.ia32Emulation = true;
-      enableParallelBuilding = true;
-    };
-  };
 
   boot = {
     kernelPackages = pkgs.linuxPackagesFor pkgs.linux_latest_hardened;
@@ -40,7 +29,6 @@
         efiSupport = true;
       };
       loader.efi.canTouchEfiVariables = true;
-
     };
 
     time.hardwareClockInLocalTime = true;
@@ -55,12 +43,10 @@
 
     hardware.nvidiaOptimus.disable = true;
     hardware.opengl.extraPackages = [ pkgs.linuxPackages.nvidia_x11.out ];
-    hardware.opengl.extraPackages32 = [ pkgs.linuxPackages.nvidia_x11.lib32 pkgs.pkgsi686Linux.libva ];
-    hardware.opengl.driSupport32Bit = true;
-    hardware.pulseaudio.support32Bit = true;
 
     imports = [
       /etc/nixos/hardware-configuration.nix
+      ./i32emulation.nix
       ../boot.nix
       ../common.nix
       ../gfx-intel.nix

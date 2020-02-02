@@ -1,5 +1,10 @@
 { config, pkgs, ... }:
 {
+  docker-containers.meditate = {
+    image = "meditate";
+    ports = [ "80:80" ];
+  };
+
   services = {
     fwupd = {
       enable = true;
