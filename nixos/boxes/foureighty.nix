@@ -46,7 +46,6 @@
 
     imports = [
       /etc/nixos/hardware-configuration.nix
-      ./i32emulation.nix
       ../boot.nix
       ../common.nix
       ../gfx-intel.nix
