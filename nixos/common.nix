@@ -36,7 +36,7 @@ in
       };
 
       networking.hosts = {
-        "127.0.0.1" = [ "czateria.pl" "interia.pl" ];
+        "127.0.0.1" = [ "czateria.pl" "interia.pl" "czateria.interia.pl"];
       };
 
       programs.light.enable = true;
