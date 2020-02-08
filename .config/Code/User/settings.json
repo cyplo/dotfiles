@@ -15,12 +15,9 @@
     "terminal.integrated.shell.linux": "bash",
     "window.zoomLevel": 1,
     "workbench.editor.highlightModifiedTabs": true,
-    "yaml.format.enable": true,
     "[makefile]": {
         "editor.insertSpaces": false
     },
     "editor.renderWhitespace": "all",
-    "terraform.languageServer": {
-        "enabled": true,
-    }
+    "git.autofetch": true
 }

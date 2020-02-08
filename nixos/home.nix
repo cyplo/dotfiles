@@ -30,7 +30,6 @@ in
       ./links.nix
       ./cli.nix
       ./gui.nix
-      ./games.nix
       ./i3/home.nix
     ];
 
