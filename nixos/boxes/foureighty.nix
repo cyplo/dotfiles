@@ -3,20 +3,6 @@
   networking.hostName = "foureighty";
 
   boot = {
-    kernelPackages = pkgs.linuxPackagesFor pkgs.linux_latest_hardened;
-    extraModulePackages = with config.boot.kernelPackages; [ wireguard ];
-
-    initrd.kernelModules = [ "i915" ];
-    initrd.availableKernelModules = [
-      "aes_x86_64"
-      "crypto_simd"
-      "aesni_intel"
-      "cryptd"
-    ];
-    kernelParams = [
-      "mds=full"
-    ];
-
     initrd.luks.devices = [
       {
         name = "root";
