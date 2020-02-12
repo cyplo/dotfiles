@@ -11,7 +11,7 @@
     restic ghc jq awscli
     hugo mercurial terraform
     unzip aria
-    mono calcurse file python37Packages.binwalk-full
+    calcurse file python37Packages.binwalk-full
     nixops imagemagick
     docker-compose
   ];
