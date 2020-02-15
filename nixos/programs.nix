@@ -11,7 +11,6 @@
       enableZshIntegration = true;
     };
 
-    rofi.enable = true;
     fzf.enable = true;
     chromium.enable = true;
     go.enable = true;

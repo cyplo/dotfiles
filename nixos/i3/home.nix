@@ -5,6 +5,7 @@
     ./i3.nix
     ./dunst.nix
     ./autorandr.nix
+    ./rofi.nix
   ];
 
   services = {
