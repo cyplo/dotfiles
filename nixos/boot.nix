@@ -11,7 +11,6 @@
       "kernel.dmesg_restrict" = true;
       "kernel.unprivileged_bpf_disabled" = true;
       "kernel.unprivileged_userns_clone" = 1;
-      "net.core.bpf_jit_enable" = pkgs.lib.mkDefault false;
       "net.core.bpf_jit_harden" = true;
     };
     loader.grub = {

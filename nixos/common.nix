@@ -6,6 +6,7 @@ in
   {
     imports =
       [
+        <nixpkgs/nixos/modules/profiles/hardened.nix>
         ./vscode.nix
         ./syncthing.nix
         ./gsconnect.nix
@@ -13,6 +14,8 @@ in
         ./common-services.nix
         ./vim.nix
       ];
+
+      security.allowUserNamespaces = true;
 
       nixpkgs.config = {
         allowUnfree = true;
