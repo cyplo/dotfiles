@@ -43,6 +43,7 @@ nix-shell -p gcc pkgconfig zlib openssl --run "cargo install-update -a"
 set -e
 nix-shell -p gcc pkgconfig zlib openssl --run "rustup run nightly cargo install-update -a"
 
+sudo nix-channel --add https://nixos.org/channels/nixos-19.09-small nixos
 nix-channel --add https://github.com/rycee/home-manager/archive/release-19.09.tar.gz home-manager
 nix-channel --update
 nix-shell '<home-manager>' -A install
