@@ -12,10 +12,12 @@
         allowDiscards = true;
       };
     };
+
     loader.grub = {
       device = "nodev";
       efiSupport = true;
     };
+
     loader.efi.canTouchEfiVariables = true;
   };
 
@@ -30,7 +32,6 @@
   };
 
   hardware.nvidiaOptimus.disable = true;
-  hardware.opengl.extraPackages = [ pkgs.linuxPackages.nvidia_x11.out ];
 
   imports = [
     /etc/nixos/hardware-configuration.nix
@@ -40,5 +41,6 @@
     ../virtualbox.nix
     ../zerotier.nix
     ../i3/system.nix
+    ../distributed-builds.nix
   ];
 }
