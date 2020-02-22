@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 set -e
+set -o pipefail
+
 VERACRYPT="veracrypt"
 if [[ "$OSTYPE" == "darwin"* ]]; then
     VERACRYPT="/Applications/VeraCrypt.app/Contents/MacOS/VeraCrypt"
@@ -19,6 +21,8 @@ if [[ -z "$MOUNT_SOURCE" ]]; then
     MOUNT_SOURCE="$HOME/vaults/vault.vera"
 fi
 
+chmod a+x "$MOUNT_SOURCE"
+
 if [[ -z "$VAULT_PASSWORD" ]]; then
     echo "interactive mount"
     $VERACRYPT -t --mount "$MOUNT_SOURCE" "$MOUNT_TARGET"
@@ -26,9 +30,10 @@ else
     echo "non-interactive mount of '$MOUNT_SOURCE' to '$MOUNT_TARGET'"
     sudo $VERACRYPT -t --non-interactive -p $VAULT_PASSWORD --mount "$MOUNT_SOURCE" "$MOUNT_TARGET"
 fi
-
+echo "mounted"
 sudo chown $USER "$MOUNT_TARGET"
+echo "chowned"
 
 echo "$MOUNT_SOURCE -> $MOUNT_TARGET"
 
-$MOUNT_TARGET/install
+"$MOUNT_TARGET/install"
