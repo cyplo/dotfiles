@@ -6,8 +6,7 @@
       sshUser = "nix-builder";
       sshKey = "/home/cyryl/.ssh/id_ed25519";
       system = "x86_64-linux";
-      maxJobs = 2;
-      speedFactor = 1;
+      maxJobs = 1;
       supportedFeatures = [ "kvm" ];
       mandatoryFeatures = [ ];
     }
@@ -16,8 +15,7 @@
       sshUser = "nix-builder";
       sshKey = "/home/cyryl/.ssh/id_ed25519";
       system = "x86_64-linux";
-      maxJobs = 4;
-      speedFactor = 4;
+      maxJobs = 2;
       supportedFeatures = [ ];
       mandatoryFeatures = [ ];
     }

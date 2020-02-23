@@ -43,4 +43,7 @@
     ../i3/system.nix
     ../distributed-builds.nix
   ];
+
+  nix.maxJobs = 4;
+  nix.buildCores = 2;
 }
