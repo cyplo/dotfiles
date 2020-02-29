@@ -38,12 +38,12 @@
     ../boot.nix
     ../common.nix
     ../gfx-intel.nix
-    ../virtualbox.nix
     ../zerotier.nix
     ../i3/system.nix
     ../distributed-builds.nix
+    ../libvirt.nix
   ];
 
-  nix.maxJobs = 4;
-  nix.buildCores = 2;
+  nix.maxJobs = 2;
+  nix.buildCores = 6;
 }

@@ -15,7 +15,7 @@ in
     };
 
     home.sessionVariables = {
-      TERMINAL="termite";
+      TERMINAL="alacritty";
       CM_LAUNCHER="rofi";
       PASSWORD_STORE_ENABLE_EXTENSIONS="true";
     };
@@ -23,7 +23,7 @@ in
     imports = [
       ./programs/tmux.nix
       ./programs/zsh.nix
-      ./programs/termite.nix
+      ./programs/alacritty.nix
       ./programs/git.nix
       ./programs/vim.nix
       ./programs.nix

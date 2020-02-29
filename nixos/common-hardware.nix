@@ -12,7 +12,6 @@
     extraModules = [ pkgs.pulseaudio-modules-bt ];
   };
   hardware.u2f.enable = true;
-  hardware.brightnessctl.enable = true;
   hardware.sane.enable = true;
   hardware.bluetooth = {
     enable = true;
