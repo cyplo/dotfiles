@@ -6,7 +6,7 @@
     ( pass.withExtensions (ext: [ ext.pass-otp ext.pass-import ext.pass-genphrase ext.pass-audit ext.pass-update ]))
     cabal-install stack hsetroot lm_sensors
     wirelesstools ranger apvlv
-    fontconfig rustup gcc gdb
+    fontconfig gcc gdb
     binutils veracrypt gitAndTools.diff-so-fancy
     restic ghc jq awscli
     hugo mercurial terraform

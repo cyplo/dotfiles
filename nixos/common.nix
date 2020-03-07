@@ -34,7 +34,7 @@ in
 
       users.users.cyryl = {
         isNormalUser = true;
-        extraGroups = [ "wheel" "networkmanager" "video" "scanner" "lp" "docker" "vboxusers" "adbusers" ];
+        extraGroups = [ "wheel" "networkmanager" "video" "scanner" "lp" "docker" "vboxusers" "adbusers" "libvirtd" ];
         shell = pkgs.zsh;
       };
 
