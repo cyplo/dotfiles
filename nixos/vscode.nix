@@ -6,6 +6,24 @@
         vscodeExtensions = with vscode-extensions; [ bbenoist.Nix  ]
         ++ vscode-utils.extensionsFromVscodeMarketplace [
           {
+            publisher = "vscodevim";
+            name = "vim";
+            version = "1.13.0";
+            sha256 = "07i8p0grc238h3xqh1yyxh95231pvf6m7pbdfz9002rhj5mav87k";
+          }
+          {
+            publisher = "TabNine";
+            name = "tabnine-vscode";
+            version = "2.2.3";
+            sha256 = "0wxffsl3sfhxvgl8gz2s0115fpabjqfrrvszbv7ijy6m8shf1clm";
+          }
+          {
+            publisher = "matklad";
+            name = "rust-analyzer";
+            version = "0.1.20200302";
+            sha256 = "0lck4cqk7n9ankygq4c2qjrqz2dznrrsghmbra9c6478pgr6ip6q";
+          }
+          {
             publisher = "ms-python";
             name = "python";
             version = "2019.10.41019";
@@ -24,22 +42,10 @@
             sha256 = "0s6a3hdckn2ssk7wkxdv09c0gjk4g0h8071bf7x8br0brnnrwsgi";
           }
           {
-            publisher = "TabNine";
-            name = "tabnine-vscode";
-            version = "2.1.10";
-            sha256 = "10z9xn9haagyky5h9f8r7jfj5q9973lxknjqjm7bqks0qmvpxif3";
-          }
-          {
             publisher = "2gua";
             name = "rainbow-brackets";
             version = "0.0.6";
             sha256 = "1m5c7jjxphawh7dmbzmrwf60dz4swn8c31svbzb5nhaazqbnyl2d";
-          }
-          {
-            publisher = "vscodevim";
-            name = "vim";
-            version = "1.4.0";
-            sha256 = "0vfhvsp485rgik3pjzbpnc4jxrjpiykynl563a16rlz8h85x2m4f";
           }
           {
             publisher = "swyphcosmo";
@@ -124,12 +130,6 @@
             name = "nunjucks";
             version = "0.2.3";
             sha256 = "119xgyn1dggw2rcqkn2mnz364iw5jlrxg7pcydbijsqj5d3zdfsf";
-          }
-          {
-            publisher = "rust-lang";
-            name = "rust";
-            version = "0.6.1";
-            sha256 = "0f66z6b374nvnrn7802dg0xz9f8wq6sjw3sb9ca533gn5jd7n297";
           }
           {
             publisher = "serayuzgur";
