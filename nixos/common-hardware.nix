@@ -1,8 +1,12 @@
 { config, pkgs, lib, ... }:
 {
-  sound.enable = true;
-  networking.networkmanager.enable = true;
+  boot.kernelModules = [ "fuse" ];
   services.smartd.enable = true;
+
+  sound.enable = true;
+
+  networking.networkmanager.enable = true;
+
   hardware.enableRedistributableFirmware = true;
   hardware.cpu.intel.updateMicrocode = true;
   hardware.pulseaudio = {

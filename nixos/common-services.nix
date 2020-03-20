@@ -6,6 +6,8 @@
   };
 
   services = {
+    udev.packages = [ pkgs.android-udev-rules ];
+
     fwupd = {
       enable = true;
       package = pkgs.fwupd;
