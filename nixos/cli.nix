@@ -13,6 +13,6 @@
     unzip aria
     calcurse file python37Packages.binwalk-full
     nixops imagemagick
-    docker-compose
+    docker-compose rustup
   ];
 }
