@@ -13,7 +13,7 @@
     yubico-piv-tool yubikey-personalization yubikey-personalization-gui yubikey-manager-qt
     slack discord obs-studio gnome3.nautilus gnome3.eog
     hopper
-    unstable.qemu unstable.aqemu
+    unstable.qemu unstable.aqemu unstable.foldingathome
   ];
 
 }

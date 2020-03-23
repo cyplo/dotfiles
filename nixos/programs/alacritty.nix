@@ -4,7 +4,6 @@
     enable = true;
     settings = {
       window.decorations = "none";
-      window.startup_mode = "Fullscreen";
 
       scrolling = {
         history = 32000;
