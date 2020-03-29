@@ -2,23 +2,8 @@
 {
   networking.hostName = "skinnyv";
 
-  nixpkgs.config.packageOverrides = pkgs: {
-    linux_latest_hardened = pkgs.linux_latest_hardened.override {
-      extraConfig = ''
-        IA32_EMULATION y
-        KVM m
-        KVM_INTEL m
-      '';
-      features.ia32Emulation = true;
-      enableParallelBuilding = true;
-    };
-  };
-
   boot = {
     kernelPackages = pkgs.linuxPackagesFor pkgs.linux_latest_hardened;
-    kernelParams = [
-      "i915.enable_rc6=7"
-    ];
     initrd.luks.devices = [
       {
         name = "root";
