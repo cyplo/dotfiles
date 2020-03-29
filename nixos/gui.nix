@@ -14,6 +14,7 @@
     slack discord obs-studio gnome3.nautilus gnome3.eog
     hopper
     unstable.qemu unstable.aqemu unstable.foldingathome
+    spotify
   ];
 
 }
