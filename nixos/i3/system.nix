@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 {
+  programs.dconf.enable = true;
   services = {
     physlock = {
       enable = true;
