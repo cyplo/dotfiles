@@ -26,8 +26,8 @@ cp -v "$DIR/keeweb.desktop" ~/.local/share/applications/
 ln -vfs "$DIR/tools" ~/
 echo "all links done"
 
-sudo nix-channel --add https://nixos.org/channels/nixos-19.09-small nixos
-nix-channel --add https://github.com/rycee/home-manager/archive/release-19.09.tar.gz home-manager
+sudo nix-channel --add https://nixos.org/channels/nixos-20.03 nixos
+nix-channel --add https://github.com/rycee/home-manager/archive/release-20.03.tar.gz home-manager
 nix-channel --update
 nix-shell '<home-manager>' -A install
 

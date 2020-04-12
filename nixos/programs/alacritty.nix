@@ -8,7 +8,6 @@
       scrolling = {
         history = 32000;
         multiplier = 3;
-        faux_multiplier = 3;
         auto_scroll = false;
       };
 
