@@ -40,6 +40,7 @@
     ../gfx-intel.nix
     ../zerotier.nix
     ../i3/system.nix
+    ../virtualbox.nix
   ];
 
   nix.maxJobs = 2;
