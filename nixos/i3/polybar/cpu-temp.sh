@@ -1,9 +1,11 @@
-#!/bin/sh
-profile="$HOME/.nix-profile/bin/"
-system="/run/current-system/sw/bin/"
+#!/usr/bin/env bash
+sensors=`which sensors`
+egrep=`which egrep`
+cut=`which cut`
+sort=`which sort`
+uniq=`which uniq`
+tail=`which tail`
 
-sensors="$profile/sensors"
-
-max_temp=`$sensors | $system/egrep -o '[0-9][0-9]\.[0-9].*\(' | $system/cut -d' ' -f 1 | $system/sort | $system/uniq | $system/tail -n 1`
+max_temp=`$sensors | $egrep -o '[0-9][0-9]\.[0-9].*\(' | $cut -d' ' -f 1 | $sort | $uniq | $tail -n 1`
 
 echo "${max_temp}"

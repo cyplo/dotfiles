@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 source $HOME/.open-secrets.sh
 
@@ -9,11 +9,12 @@ SYMBOL="°"
 
 API="https://api.openweathermap.org/data/2.5"
 
-CURL="/run/current-system/sw/bin/curl -sf"
-CUT="/run/current-system/sw/bin/cut"
-DATE="/run/current-system/sw/bin/date"
-JQ="$HOME/.nix-profile/bin/jq"
-UNAME="/run/current-system/sw/bin/uname"
+CURL=`which curl`
+CURL="$CURL -sf"
+CUT=`which cut`
+DATE=`which date`
+JQ=`which jq`
+UNAME=`which uname`
 
 get_icon() {
     case $1 in
