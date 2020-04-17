@@ -25,12 +25,6 @@ in
 
         workspaceLayout = "tabbed";
         bars = [];
-        gaps = {
-          inner = 8;
-          outer = 0;
-          smartGaps = true;
-          smartBorders = "on";
-        };
 
         modifier = mod;
         keybindings = {
