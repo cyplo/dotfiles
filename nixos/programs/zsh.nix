@@ -52,6 +52,7 @@
           export NIX_PATH="$HOME/.nix-defexpr/channels:$NIX_PATH"
           export NVM_DIR="$HOME/.nvm"
           [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+          polybar -r main_bar &
           echo "non-nixos patches loaded"
         fi
       '';

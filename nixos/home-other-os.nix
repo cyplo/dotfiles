@@ -28,5 +28,6 @@ in
       ./programs.nix
       ./links.nix
       ./cli.nix
+      ./i3/home.nix
     ];
   }
