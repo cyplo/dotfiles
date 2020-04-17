@@ -5,7 +5,7 @@ set -v
 
 sudo apt update
 sudo apt -y upgrade
-sudo apt -y --fix-missing install apt-file aptitude git curl flatpak
+sudo apt -y --fix-missing install apt-file aptitude git curl flatpak i3
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
