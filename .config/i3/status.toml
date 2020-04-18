@@ -6,38 +6,6 @@ name = "awesome"
 memory_mem = " "
 cpu = ""
 cogs = " "
-music = " "
-
-[[block]]
-block = "cpu"
-interval = 5
-format = "{barchart}"
-
-
-[[block]]
-block = "memory"
-display_type = "memory"
-format_mem = "{Mup}%"
-format_swap = "{SUp}%"
-
-
-[[block]]
-block = "load"
-interval = 5
-format = "{1m} {5m}"
-
-[[block]]
-block = "sound"
-
-[[block]]
-block = "disk_space"
-path = "/"
-alias = "/"
-info_type = "available"
-unit = "GB"
-interval = 20
-warning = 20.0
-alert = 10.0
 
 [[block]]
 block = "time"
@@ -45,7 +13,33 @@ interval = 60
 format = "%a %d.%m %R"
 
 [[block]]
+block = "cpu"
+interval = 5
+format = "{barchart}"
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{Mup}%"
+format_swap = "{SUp}%"
+
+[[block]]
+block = "load"
+interval = 5
+format = "{1m} {5m}"
+
+[[block]]
+block = "disk_space"
+path = "/"
+alias = ""
+info_type = "available"
+unit = "GiB"
+interval = 20
+warning = 20.0
+alert = 10.0
+
+[[block]]
 block = "temperature"
-collapsed = false
+collapsed = true
 interval = 10
-format = "{max}°"
+format = "{max}° max, {average}° avg"

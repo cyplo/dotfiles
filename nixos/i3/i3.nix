@@ -32,7 +32,7 @@ in
         bars = [
           {
             position = "top";
-            fonts = [ "Iosevka" "FontAwesome 10" ];
+            fonts = [ "FontAwesome 10" "Iosevka 10" ];
             statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${config.xdg.configHome}/i3/status.toml";
           }
         ];
