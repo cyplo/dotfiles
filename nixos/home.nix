@@ -21,6 +21,7 @@ in
     };
 
     news.display = "show";
+    home.file.".config/i3/status.toml".source = ~/dev/dotfiles/.config/i3/status-double-bat.toml;
 
     imports = [
       ./programs/tmux.nix
