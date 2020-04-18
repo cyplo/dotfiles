@@ -20,6 +20,8 @@ in
       PASSWORD_STORE_ENABLE_EXTENSIONS="true";
     };
 
+    news.display = "show";
+
     imports = [
       ./programs/tmux.nix
       ./programs/zsh.nix
