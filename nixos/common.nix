@@ -50,7 +50,7 @@ in
         autoPrune.enable = true;
       };
 
-      fonts.fonts = with pkgs; [ powerline-fonts weather-icons material-icons source-code-pro fira-code noto-fonts-emoji emojione iosevka ];
+      fonts.fonts = with pkgs; [ powerline-fonts weather-icons material-icons source-code-pro fira-code noto-fonts-emoji emojione iosevka font-awesome ];
 
       services.haveged.enable = true;
 

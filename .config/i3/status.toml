@@ -1,5 +1,33 @@
 theme = "solarized-dark"
-icons = "awesome"
+
+[icons]
+name = "awesome"
+[icons.overrides]
+memory_mem = " "
+cpu = ""
+cogs = " "
+music = " "
+
+[[block]]
+block = "cpu"
+interval = 5
+format = "{barchart}"
+
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{Mup}%"
+format_swap = "{SUp}%"
+
+
+[[block]]
+block = "load"
+interval = 5
+format = "{1m} {5m}"
+
+[[block]]
+block = "sound"
 
 [[block]]
 block = "disk_space"
@@ -12,25 +40,12 @@ warning = 20.0
 alert = 10.0
 
 [[block]]
-block = "memory"
-display_type = "memory"
-format_mem = "{Mup}%"
-format_swap = "{SUp}%"
-
-[[block]]
-block = "cpu"
-interval = 1
-
-[[block]]
-block = "load"
-interval = 1
-format = "{1m}"
-
-[[block]]
-block = "sound"
-
-[[block]]
 block = "time"
 interval = 60
-format = "%a %d/%m %R"
+format = "%a %d.%m %R"
 
+[[block]]
+block = "temperature"
+collapsed = false
+interval = 10
+format = "{max}°"
