@@ -3,7 +3,12 @@ let
   mod = "Mod4";
 in
   {
+    home.packages = with pkgs; [
+      font-awesome-ttf
+      i3status-rust
+    ];
 
+    home.file.".config/i3/status.toml".source = ~/dev/dotfiles/.config/i3/status.toml;
     xsession.windowManager.i3 = {
       enable = true;
       package = pkgs.i3-gaps;
@@ -24,7 +29,13 @@ in
         };
 
         workspaceLayout = "tabbed";
-        bars = [];
+        bars = [
+          {
+            position = "top";
+            fonts = [ "Iosevka" "FontAwesome 10" ];
+            statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${config.xdg.configHome}/i3/status.toml";
+          }
+        ];
 
         modifier = mod;
         keybindings = {

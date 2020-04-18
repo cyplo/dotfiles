@@ -8,7 +8,7 @@
       postswitch = {
         "restart-compton" = "systemctl --user restart picom";
         "restart-i3" = "i3-msg restart";
-        "restart-services" = "systemctl --user restart kdeconnect-indicator.service kdeconnect.service network-manager-applet.service pasystray.service polybar.service";
+        "restart-services" = "systemctl --user restart kdeconnect-indicator.service kdeconnect.service network-manager-applet.service pasystray.service";
       };
     };
 

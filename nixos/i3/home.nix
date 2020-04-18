@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./polybar/polybar.nix
     ./i3.nix
     ./dunst.nix
     ./autorandr.nix
