@@ -1,0 +1,46 @@
+theme = "solarized-dark"
+
+[icons]
+name = "awesome"
+[icons.overrides]
+memory_mem = "  "
+cogs = "  "
+
+[[block]]
+block = "time"
+interval = 60
+format = "%R %a %d.%m"
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{Mup}%"
+format_swap = "{SUp}%"
+
+[[block]]
+block = "load"
+interval = 5
+format = "{1m} {5m}"
+
+[[block]]
+block = "disk_space"
+path = "/"
+alias = ""
+info_type = "available"
+unit = "GiB"
+interval = 20
+warning = 20.0
+alert = 10.0
+
+[[block]]
+block = "battery"
+device = "BAT0"
+interval = 10
+format = "{percentage}%"
+
+[[block]]
+block = "temperature"
+collapsed = true
+interval = 10
+format = "{max}° max, {average}° avg"
+

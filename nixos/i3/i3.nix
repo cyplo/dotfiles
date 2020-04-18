@@ -8,7 +8,6 @@ in
       i3status-rust
     ];
 
-    home.file.".config/i3/status.toml".source = ~/dev/dotfiles/.config/i3/status.toml;
     xsession.windowManager.i3 = {
       enable = true;
       package = pkgs.i3-gaps;

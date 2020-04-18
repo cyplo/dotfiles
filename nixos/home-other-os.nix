@@ -21,6 +21,7 @@ in
     news.display = "show";
     targets.genericLinux.enable = true;
     home.file.".gitconfig".source = ~/dev/dotfiles/.gitconfig.linux.form3;
+    home.file.".config/i3/status.toml".source = ~/dev/dotfiles/.config/i3/status-single-bat.toml;
 
     imports = [
       ./programs/tmux.nix
