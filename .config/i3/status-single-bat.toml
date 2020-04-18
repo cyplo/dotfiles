@@ -1,10 +1,7 @@
 theme = "solarized-dark"
 
 [icons]
-name = "awesome"
-[icons.overrides]
-memory_mem = "  "
-cogs = "  "
+name = "none"
 
 [[block]]
 block = "time"
@@ -31,12 +28,6 @@ unit = "GiB"
 interval = 20
 warning = 20.0
 alert = 10.0
-
-[[block]]
-block = "battery"
-device = "BAT0"
-interval = 10
-format = "{percentage}%"
 
 [[block]]
 block = "temperature"
