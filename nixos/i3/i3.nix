@@ -55,7 +55,7 @@ in
 
           "Print" = "exec ${pkgs.gnome3.gnome-screenshot}/bin/gnome-screenshot -i";
 
-          "${mod}+r" = "exec ${pkgs.rofi}/bin/rofi -show combi -combi-modi window#run#ssh -modi combi";
+          "${mod}+r" = "exec nix-shell -p glibcLocales --run '${pkgs.rofi}/bin/rofi -show combi -combi-modi window#run#ssh -modi combi'";
           "${mod}+c" = "exec ${pkgs.clipmenu}/bin/clipmenu";
           "${mod}+q" = "kill";
           "${mod}+f" = "fullscreen toggle";
