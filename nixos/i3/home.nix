@@ -9,9 +9,9 @@
   ];
 
   services = {
-    compton = {
+    picom = {
       enable = true;
-      vSync = "opengl-oml";
+      vSync = true;
     };
     kdeconnect = {
       enable = true;
