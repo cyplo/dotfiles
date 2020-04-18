@@ -10,7 +10,7 @@ cogs = " "
 [[block]]
 block = "time"
 interval = 60
-format = "%a %d.%m %R"
+format = "%R %a %d.%m"
 
 [[block]]
 block = "cpu"
@@ -39,7 +39,20 @@ warning = 20.0
 alert = 10.0
 
 [[block]]
+block = "battery"
+device = "BAT1"
+interval = 10
+format = "{percentage}%"
+
+[[block]]
+block = "battery"
+device = "BAT0"
+interval = 10
+format = "{percentage}%"
+
+[[block]]
 block = "temperature"
 collapsed = true
 interval = 10
 format = "{max}° max, {average}° avg"
+
