@@ -1,9 +1,9 @@
 { config, pkgs, ... }:
 {
   imports = [
+    ./grobi.nix
     ./i3.nix
     ./dunst.nix
-    ./autorandr.nix
     ./rofi.nix
   ];
 
