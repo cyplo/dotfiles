@@ -36,11 +36,5 @@ in
       ./i3/home.nix
     ];
 
-    gtk = {
-      enable = true;
-    };
-    qt = {
-      enable = true;
-    };
 
   }

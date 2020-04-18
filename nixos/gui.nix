@@ -1,6 +1,16 @@
 { config, pkgs, ... }:
 
 {
+  gtk = {
+    enable = true;
+    iconTheme = {
+      name = "Adwaita";
+      package = pkgs.gnome3.adwaita-icon-theme;
+    };
+  };
+  qt = {
+    enable = true;
+  };
   home.packages = with pkgs; [
     passff-host
     gnome3.gnome-screenshot

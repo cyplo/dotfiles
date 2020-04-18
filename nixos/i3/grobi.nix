@@ -7,7 +7,7 @@
     executeAfter = [
       "systemctl --user restart picom"
       "i3-msg restart"
-      "systemctl --user restart kdeconnect-indicator.service kdeconnect.service network-manager-applet.service pasystray.service"
+      "systemctl --user restart kdeconnect-indicator kdeconnect network-manager-applet pasystray udiskie"
     ];
     rules = [
       {
