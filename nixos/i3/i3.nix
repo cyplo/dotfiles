@@ -32,7 +32,8 @@ in
         bars = [
           {
             position = "top";
-            fonts = [ "FontAwesome 10" "Iosevka 10" ];
+            colors.background= "#002b36";
+            fonts = [ "FontAwesome 8" "Iosevka 10" ];
             statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${config.xdg.configHome}/i3/status.toml";
           }
         ];

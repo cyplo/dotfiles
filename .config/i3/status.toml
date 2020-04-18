@@ -3,19 +3,13 @@ theme = "solarized-dark"
 [icons]
 name = "awesome"
 [icons.overrides]
-memory_mem = " "
-cpu = ""
-cogs = " "
+memory_mem = "  "
+cogs = "  "
 
 [[block]]
 block = "time"
 interval = 60
 format = "%R %a %d.%m"
-
-[[block]]
-block = "cpu"
-interval = 5
-format = "{barchart}"
 
 [[block]]
 block = "memory"
