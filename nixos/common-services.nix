@@ -41,7 +41,7 @@
       repository = "rest:http://brix.local:8000/";
       timerConfig = { OnCalendar = "hourly"; };
     };
-
+    geoclue2.enable = true;
     xserver = {
       enable = true;
       layout = "pl";

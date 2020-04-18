@@ -25,8 +25,8 @@
         module-margin-left = 1;
         module-margin-right = 1;
         modules-left = "i3";
-        modules-center = "date weather";
-        modules-right = "memory swap cpu temperature battery1 battery0";
+        modules-center = "date ";
+        modules-right = "memory swap cpu battery1 battery0";
         tray-position = "right";
       };
 
@@ -41,7 +41,7 @@
       "module/weather" = {
         type = "custom/script";
         interval = 600;
-        exec = "~/dev/dotfiles/nixos/i3/polybar/openweathermap-fullfeatured.sh";
+        exec = "${pkgs.bash}/bin/bash -c 'source ~/dev/dotfiles/nixos/i3/polybar/openweathermap-fullfeatured.sh'";
         label-font = 2;
       };
 
@@ -58,7 +58,7 @@
       "module/temperature" = {
         type = "custom/script";
         interval = 5;
-        exec = "~/dev/dotfiles/nixos/i3/polybar/cpu-temp.sh";
+        exec = "${pkgs.bash}/bin/bash -c 'source ~/dev/dotfiles/nixos/i3/polybar/cpu-temp.sh'";
       };
 
       "module/memory" = {

@@ -18,6 +18,7 @@ in
       PASSWORD_STORE_ENABLE_EXTENSIONS="true";
     };
 
+    targets.genericLinux.enable = true;
     home.file.".gitconfig".source = ~/dev/dotfiles/.gitconfig.linux.form3;
 
     imports = [

@@ -16,5 +16,8 @@
     go.enable = true;
     bat.enable = true;
     browserpass.enable = true;
+    obs-studio.enable = true;
+    lsd.enable = true;
+    lsd.enableAliases = true;
   };
 }

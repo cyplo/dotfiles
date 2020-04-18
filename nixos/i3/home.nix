@@ -21,6 +21,10 @@
     pasystray.enable = true;
   };
 
+  services.udiskie.enable = true;
+  services.redshift.enable = true;
+  services.redshift.provider = "geoclue2";
+
   xsession = {
     enable = true;
   };
