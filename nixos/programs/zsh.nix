@@ -52,9 +52,6 @@
           export NIX_PATH="$HOME/.nix-defexpr/channels:$NIX_PATH"
           export NVM_DIR="$HOME/.nvm"
           [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-          pkill polybar
-          while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
-          polybar -r main_bar &
           echo "non-nixos patches loaded"
         fi
       '';
