@@ -16,6 +16,8 @@ in
 
     home.sessionVariables = {
       PASSWORD_STORE_ENABLE_EXTENSIONS="true";
+      LC_ALL="en_GB.UTF-8";
+      LANG="en_GB.UTF-8";
     };
 
     news.display = "show";
