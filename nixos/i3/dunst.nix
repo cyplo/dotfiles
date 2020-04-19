@@ -4,7 +4,7 @@
     enable = true;
     settings = {
       global = {
-        font = "DejaVu Sans Mono for Powerline 10";
+        font = "Fira Code Nerd Font 10";
         sort = "yes";
         indicate_hidden = "yes";
         word_wrap = "yes";
@@ -28,7 +28,7 @@
         frame_color = "#3B7C87";
         foreground = "#3B7C87";
         background = "#191311";
-        timeout = 3;
+        timeout = 5;
       };
 
       normal = {
@@ -36,7 +36,7 @@
         frame_color = "#5B8234";
         foreground = "#5B8234";
         background = "#191311";
-        timeout = 5;
+        timeout = 8;
       };
 
       critical = {
@@ -44,7 +44,7 @@
         frame_color = "#B7472A";
         foreground = "#B7472A";
         background = "#191311";
-        timeout = 8;
+        timeout = 15;
       };
     };
   };
