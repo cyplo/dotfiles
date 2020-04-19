@@ -8,7 +8,7 @@
     dynamicTitle = true;
     mouseAutohide = true;
     scrollOnKeystroke = false;
-    font = "Fira Code 12";
+    font = "Fira Code Nerd Font 12";
 
     backgroundColor = "#002b36";
     foregroundColor = "#839496";
