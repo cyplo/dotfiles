@@ -4,7 +4,6 @@
   home.sessionVariables = {
     LC_ALL="en_GB.UTF-8";
     LANG="en_GB.UTF-8";
-    TERMINAL="alacritty";
     CM_LAUNCHER="rofi";
     PASSWORD_STORE_ENABLE_EXTENSIONS="true";
   };
@@ -12,7 +11,10 @@
   news.display = "show";
 
   fonts.fontconfig.enable = true;
-  home.packages = with pkgs; [ nerdfonts ];
+  home.packages = with pkgs; [
+    nerdfonts
+    glibcLocales
+  ];
 
   imports = [
     ./programs/tmux.nix
