@@ -3,7 +3,7 @@ theme = "solarized-dark"
 [icons]
 name = "awesome"
 [icons.overrides]
-memory_mem = "  "
+memory_mem = " "
 cogs = "  "
 
 [[block]]
