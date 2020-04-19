@@ -4,12 +4,17 @@ theme = "solarized-dark"
 name = "awesome"
 [icons.overrides]
 memory_mem = " "
-cogs = "  "
+cogs = "   "
 
 [[block]]
 block = "time"
 interval = 60
 format = "%R %a %d.%m"
+
+[[block]]
+block = "cpu"
+interval = 5
+format = "{utilization}% {frequency}GHz"
 
 [[block]]
 block = "memory"
