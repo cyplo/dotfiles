@@ -14,7 +14,7 @@ in
         startup = [
           { command = "exec hsetroot -solid '#002b36'"; always = true; notification = false; }
           { command = "exec setxkbmap -layout pl"; always = true; notification = false; }
-          { command = "exec grobi update"; always = false; notification = false; }
+          { command = "exec ${pkgs.grobi}/bin/grobi update"; always = false; notification = false; }
           { command = "exec $HOME/dev/dotfiles/nixos/i3/lock.sh"; always = false; notification = false; }
           { command = "exec $HOME/dev/dotfiles/nixos/i3/battery-popup.sh"; always = false; notification = false; }
           { command = "exec xdg-mime default org.gnome.Evince.desktop application/pdf"; always = false; notification = false; }
@@ -40,6 +40,7 @@ in
         keybindings = {
           "${mod}+Shift+e" = "exec i3-msg exit";
           "${mod}+Shift+c" = "reload";
+          "${mod}+Shift+d" = "exec ${pkgs.grobi}/bin/grobi update";
           "${mod}+Shift+r" = "restart";
           "${mod}+Shift+l" = "exec physlock -d";
           "${mod}+Return" = "exec i3-sensible-terminal";
@@ -55,6 +56,7 @@ in
           "Print" = "exec ${pkgs.gnome3.gnome-screenshot}/bin/gnome-screenshot -i";
 
           "${mod}+r" = "exec nix-shell -p glibcLocales --run '${pkgs.rofi}/bin/rofi -show combi -combi-modi window#run#ssh -modi combi'";
+          "${mod}+Alt+r" = "exec ${pkgs.nix}/bin/nix-shell -p glibcLocales --run '${pkgs.rofi}/bin/rofi -show combi -combi-modi window#run#ssh -modi combi'";
           "${mod}+c" = "exec ${pkgs.clipmenu}/bin/clipmenu";
           "${mod}+q" = "kill";
           "${mod}+f" = "fullscreen toggle";
