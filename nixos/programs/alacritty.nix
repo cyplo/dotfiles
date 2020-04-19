@@ -14,7 +14,7 @@
       tabspaces = 4;
 
       font = {
-        family = "Fira Code";
+        family = "Fira Code Nerd Font";
         size = 8;
       };
 

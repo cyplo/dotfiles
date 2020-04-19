@@ -14,27 +14,12 @@ in
       };
     };
 
-    home.sessionVariables = {
-      TERMINAL="alacritty";
-      CM_LAUNCHER="rofi";
-      PASSWORD_STORE_ENABLE_EXTENSIONS="true";
-    };
-
-    news.display = "show";
     home.file.".config/i3/status.toml".source = ~/dev/dotfiles/.config/i3/status-double-bat.toml;
 
     imports = [
-      ./programs/tmux.nix
-      ./programs/zsh.nix
-      ./programs/alacritty.nix
+      ./home-common.nix
       ./programs/git.nix
-      ./programs/vim.nix
-      ./programs.nix
-      ./links.nix
-      ./cli.nix
       ./gui.nix
-      ./i3/home.nix
     ];
-
 
   }
