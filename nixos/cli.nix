@@ -14,5 +14,6 @@
     calcurse file python37Packages.binwalk-full
     nixops imagemagick
     docker-compose rustup
+    knockknock
   ];
 }
