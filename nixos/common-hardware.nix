@@ -16,7 +16,7 @@
     extraModules = [ pkgs.pulseaudio-modules-bt ];
   };
   hardware.u2f.enable = true;
-  hardware.sane.enable = true;
+
   hardware.bluetooth = {
     enable = true;
     package = pkgs.bluezFull;
@@ -28,16 +28,23 @@
 
   services.printing = {
     enable = true;
-    drivers = [ pkgs.epson-escpr pkgs.samsung-unified-linux-driver pkgs.splix ];
+    drivers = with pkgs; [ epson-escpr samsung-unified-linux-driver splix ];
   };
 
   hardware.printers.ensurePrinters = [{
-    description = "Epson XP540";
-    name = "epsonxp540";
+    description = "Epson XP-540";
+    name = "epson_xp540";
     deviceUri = "ipp://epsonxp540.lan/ipp/print";
     model = "epson-inkjet-printer-escpr/Epson-XP-540_Series-epson-escpr-en.ppd";
     ppdOptions = { PageSize = "A4"; Duplex = "DuplexNoTumble"; };
   }];
+
+  hardware.sane = {
+    enable = true;
+    netConf = "epsonxp540.lan";
+  };
+
+  services.saned.enable = true;
 
   powerManagement.enable = (lib.mkForce true);
   powerManagement.cpuFreqGovernor = (lib.mkForce null);
