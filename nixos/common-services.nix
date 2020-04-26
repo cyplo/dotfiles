@@ -25,11 +25,6 @@
     clipmenu.enable = true;
     lorri.enable = true;
 
-    printing = {
-      enable = true;
-      drivers = [ pkgs.epson-escpr pkgs.samsung-unified-linux-driver pkgs.splix ];
-    };
-
     avahi = {
       enable = true;
       nssmdns = true;

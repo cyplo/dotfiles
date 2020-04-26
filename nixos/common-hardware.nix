@@ -26,6 +26,19 @@
     '';
   };
 
+  services.printing = {
+    enable = true;
+    drivers = [ pkgs.epson-escpr pkgs.samsung-unified-linux-driver pkgs.splix ];
+  };
+
+  hardware.printers.ensurePrinters = [{
+    description = "Epson XP540";
+    name = "epsonxp540";
+    deviceUri = "ipp://epsonxp540.lan/ipp/print";
+    model = "epson-inkjet-printer-escpr/Epson-XP-540_Series-epson-escpr-en.ppd";
+    ppdOptions = { PageSize = "A4"; Duplex = "DuplexNoTumble"; };
+  }];
+
   powerManagement.enable = (lib.mkForce true);
   powerManagement.cpuFreqGovernor = (lib.mkForce null);
   powerManagement.powertop.enable = true;
