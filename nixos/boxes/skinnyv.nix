@@ -4,13 +4,14 @@
 
   boot = {
     kernelPackages = pkgs.linuxPackagesFor pkgs.linux_latest_hardened;
-    initrd.luks.devices = [
-      {
-        name = "root";
-        device = "/dev/disk/by-uuid/ef6e91d9-c477-4ab7-ae39-4a0ee413cebe";
-        preLVM = true;
-        allowDiscards = true;
-      }];
+    initrd.luks.devices = {
+      root =
+        {
+          device = "/dev/disk/by-uuid/ef6e91d9-c477-4ab7-ae39-4a0ee413cebe";
+          preLVM = true;
+          allowDiscards = true;
+        };
+      };
       loader.grub = {
         device = "nodev";
         efiSupport = true;
