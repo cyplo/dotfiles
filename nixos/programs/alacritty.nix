@@ -10,8 +10,6 @@
         multiplier = 3;
       };
 
-      tabspaces = 4;
-
       font = {
         family = "Fira Code Nerd Font";
         size = 8;
