@@ -24,33 +24,9 @@ imap <F1> <Esc>
 " special chars
 nmap <leader>l :set list!<CR>
 
-" search/navigate project structure
-nmap <leader>/ :LspWorkspaceSymbol<CR>
-nmap <leader>r :LspReferences<CR>
-nmap <leader>D :LspDeclaration<CR>
-nmap <leader>d :LspDefinition<CR>
-nmap <leader>e :LspNextError<CR>
-nmap <leader><CR> :LspCodeAction<CR>
-nmap <leader>f :Rg 
 " tree
 map <leader>n :NERDTreeToggle<CR>
 
 " quickfix
 nmap <leader>q <Plug>window:quickfix:toggle
 
-" completion
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-inoremap <silent><expr> <TAB>
-  \ pumvisible() ? "\<C-n>" :
-  \ <SID>check_back_space() ? "\<TAB>" :
-  \ asyncomplete#force_refresh()
-
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
-imap <c-space> <Plug>(asyncomplete_force_refresh)
