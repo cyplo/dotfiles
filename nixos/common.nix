@@ -11,7 +11,6 @@ in
         ./gsconnect.nix
         ./common-hardware.nix
         ./common-services.nix
-        ./vim.nix
       ];
 
       security.allowUserNamespaces = true;
