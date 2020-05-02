@@ -4,11 +4,11 @@
     (import ./programs/genpass.nix {})
     wget git gnupg curl tmux htop atop pciutils powertop ripgrep-all fd dnsutils du-dust
     ( pass.withExtensions (ext: [ ext.pass-otp ext.pass-import ext.pass-genphrase ext.pass-audit ext.pass-update ]))
-    cabal-install stack hsetroot lm_sensors
+    hsetroot lm_sensors
     wirelesstools ranger apvlv
-    fontconfig gcc gdb
+    fontconfig
     binutils veracrypt gitAndTools.diff-so-fancy
-    restic ghc jq awscli
+    restic jq awscli
     hugo mercurial terraform
     unzip aria
     calcurse file python37Packages.binwalk-full
