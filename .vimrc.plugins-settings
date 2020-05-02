@@ -9,11 +9,12 @@ au BufWrite * :Autoformat
 let g:rustfmt_autosave = 1
 
 " searching
-let $FZF_DEFAULT_COMMAND = 'rg --files --no-messages "" .'
-set grepprg=rg\ --vimgrep
+let $FZF_DEFAULT_COMMAND = 'rga --files --no-messages "" .'
+set grepprg=rga\ --vimgrep
 let g:fzf_command_prefix = 'Fzf'
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+command! -bang -nargs=* Find call fzf#vim#grep('rga --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_user_command = 'rga %s --files --hidden --color=never --glob ""'
 
 " nerdtree startup
 autocmd StdinReadPre * let s:std_in=1
