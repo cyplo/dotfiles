@@ -43,6 +43,7 @@
     ../zerotier.nix
     ../i3/system.nix
     ../virtualbox.nix
+    ../distributed-builds.nix
   ];
 
   nix.maxJobs = 2;
