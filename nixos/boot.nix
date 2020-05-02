@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 {
   fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
-  security.lockKernelModules = false;
 
   boot = {
     kernel.sysctl = {

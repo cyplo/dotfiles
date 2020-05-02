@@ -3,12 +3,11 @@
   networking.hostName = "foureighty";
 
   boot = {
-    kernelPackages = pkgs.linuxPackagesFor pkgs.linux_hardened;
+    kernelPackages = pkgs.linuxPackagesFor pkgs.linux_latest;
 
     initrd.luks.devices = {
       root = {
         device = "/dev/disk/by-uuid/a9e8a44f-15be-4844-a0a1-46892cc5e44e";
-        preLVM = true;
         allowDiscards = true;
       };
     };
@@ -42,9 +41,9 @@
     ../gfx-intel.nix
     ../zerotier.nix
     ../i3/system.nix
-    ../virtualbox.nix
     ../distributed-builds.nix
   ];
+
 
   nix.maxJobs = 2;
   nix.buildCores = 6;

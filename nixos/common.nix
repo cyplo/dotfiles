@@ -6,11 +6,11 @@ in
   {
     imports =
       [
-        <nixpkgs/nixos/modules/profiles/hardened.nix>
         ./syncthing.nix
         ./gsconnect.nix
         ./common-hardware.nix
         ./common-services.nix
+        ./security.nix
       ];
 
       security.allowUserNamespaces = true;
