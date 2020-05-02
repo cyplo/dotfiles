@@ -11,6 +11,11 @@
   qt = {
     enable = true;
   };
+
+  imports = [
+    ./vscode.nix
+  ];
+
   home.packages = with pkgs; [
     passff-host
     gnome3.gnome-screenshot

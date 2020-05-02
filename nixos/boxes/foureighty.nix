@@ -32,6 +32,8 @@
   };
 
   hardware.nvidiaOptimus.disable = true;
+  hardware.nvidia.optimus_prime.enable = false;
+  hardware.bumblebee.enable = false;
 
   imports = [
     /etc/nixos/hardware-configuration.nix

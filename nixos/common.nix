@@ -7,7 +7,6 @@ in
     imports =
       [
         <nixpkgs/nixos/modules/profiles/hardened.nix>
-        ./vscode.nix
         ./syncthing.nix
         ./gsconnect.nix
         ./common-hardware.nix
