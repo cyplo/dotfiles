@@ -10,6 +10,7 @@
   };
   qt = {
     enable = true;
+    platformTheme = "gnome";
   };
 
   imports = [
@@ -21,7 +22,8 @@
     gnome3.gnome-screenshot
     apvlv xidlehook blueman
     fontconfig xclip gimp glxinfo
-    notable evince signal-desktop
+    notable mindforger
+    evince signal-desktop
     libreoffice vlc
     unstable.tor-browser-bundle-bin
     jetbrains.goland unstable.jetbrains.clion jetbrains.idea-ultimate unstable.android-studio
