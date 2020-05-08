@@ -7,6 +7,7 @@
       allowAnyUser = true;
     };
 
+    fractalart.enable = true;
     colord.enable = true;
     xserver.windowManager.i3.enable = true;
     xserver.displayManager.sddm = {
