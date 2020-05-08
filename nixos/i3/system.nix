@@ -8,7 +8,6 @@
     };
 
     colord.enable = true;
-    autorandr.enable = true;
     xserver.windowManager.i3.enable = true;
     xserver.displayManager.sddm = {
       enable = true;

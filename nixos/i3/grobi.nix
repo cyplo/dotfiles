@@ -5,9 +5,9 @@
   services.grobi = {
     enable = true;
     executeAfter = [
-      "systemctl --user restart picom"
-      "i3-msg restart"
-      "systemctl --user restart kdeconnect-indicator kdeconnect network-manager-applet pasystray udiskie"
+      "${pkgs.systemd}/bin/systemctl --user restart picom"
+      "${pkgs.i3}/bin/i3-msg restart"
+      "${pkgs.systemd}/bin/systemctl --user restart kdeconnect-indicator kdeconnect network-manager-applet pasystray udiskie"
     ];
     rules = [
       {
