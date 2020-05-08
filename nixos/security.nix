@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   nix.allowedUsers = [ "@users" ];
-  security.lockKernelModules = true;
+  security.lockKernelModules = false;
   security.protectKernelImage = true;
   security.forcePageTableIsolation = true;
   security.virtualisation.flushL1DataCache = "always";
