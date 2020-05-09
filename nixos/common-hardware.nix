@@ -20,10 +20,9 @@
   hardware.bluetooth = {
     enable = true;
     package = pkgs.bluezFull;
-    extraConfig = ''
-            [General]
-            Enable=Source,Sink,Media,Socket
-    '';
+    config = {
+      General = { Enable = "Source,Sink,Media,Socket"; };
+    };
   };
 
   services.printing = {

@@ -31,7 +31,7 @@
   };
 
   hardware.nvidiaOptimus.disable = true;
-  hardware.nvidia.optimus_prime.enable = false;
+  hardware.nvidia.prime.sync.enable = false;
   hardware.bumblebee.enable = false;
 
   imports = [
