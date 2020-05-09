@@ -7,6 +7,7 @@
 
   services = {
     udev.packages = [ pkgs.android-udev-rules ];
+    ratbagd.enable = true;
 
     fwupd = {
       enable = true;
