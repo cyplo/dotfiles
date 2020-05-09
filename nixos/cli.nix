@@ -15,5 +15,6 @@
     nixops imagemagick
     docker-compose rustup
     knockknock
+    python38Packages.pygments
   ];
 }

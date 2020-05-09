@@ -24,6 +24,7 @@ in
         };
       };
 
+      environment.enableDebugInfo = true;
       environment.systemPackages = with pkgs; [
         wget git gnupg curl tmux glances htop atop firefox home-manager alacritty pciutils powertop ripgrep-all fd dnsutils
       ];
