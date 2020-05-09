@@ -19,7 +19,7 @@
 
   home.packages = with pkgs; [
     passff-host
-    gnome3.gnome-screenshot
+    gnome3.gnome-screenshot gsettings-desktop-schemas
     apvlv xidlehook blueman
     fontconfig xclip gimp glxinfo
     notable mindforger
