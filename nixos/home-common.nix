@@ -4,7 +4,6 @@
   home.sessionVariables = {
     LC_ALL="en_GB.UTF-8";
     LANG="en_GB.UTF-8";
-    CM_LAUNCHER="rofi";
     PASSWORD_STORE_ENABLE_EXTENSIONS="true";
   };
 

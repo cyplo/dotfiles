@@ -7,6 +7,10 @@
     ./rofi.nix
   ];
 
+  home.sessionVariables = {
+    CM_LAUNCHER="rofi";
+  };
+
   services = {
     picom = {
       enable = true;
