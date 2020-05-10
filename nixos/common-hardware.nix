@@ -14,6 +14,10 @@
     package = pkgs.pulseaudioFull;
     support32Bit = true;
     extraModules = [ pkgs.pulseaudio-modules-bt ];
+    daemon.config = {
+      nice-level= -15;
+      realtime-scheduling = "yes";
+    };
   };
   hardware.u2f.enable = true;
 
