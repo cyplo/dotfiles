@@ -42,6 +42,7 @@
     ../zerotier.nix
     ../gnome/system.nix
     ../distributed-builds.nix
+    ../virtualbox.nix
   ];
 
 

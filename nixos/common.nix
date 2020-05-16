@@ -26,7 +26,7 @@ in
 
       environment.enableDebugInfo = true;
       environment.systemPackages = with pkgs; [
-        wget git gnupg curl tmux glances htop atop firefox home-manager alacritty pciutils powertop ripgrep-all fd dnsutils
+        wget git gnupg curl tmux htop atop firefox home-manager alacritty pciutils powertop ripgrep-all fd dnsutils
       ];
 
       i18n.defaultLocale = "en_GB.UTF-8";
