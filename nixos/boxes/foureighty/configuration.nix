@@ -36,13 +36,13 @@
 
   imports = [
     /etc/nixos/hardware-configuration.nix
-    ../boot.nix
-    ../common.nix
-    ../gfx-intel.nix
-    ../zerotier.nix
-    ../gnome/system.nix
-    ../distributed-builds.nix
-    ../virtualbox.nix
+    ../../boot.nix
+    ../../common.nix
+    ../../gfx-intel.nix
+    ../../zerotier.nix
+    ../../distributed-builds.nix
+    ../../virtualbox.nix
+    ../../gnome/system.nix
   ];
 
 

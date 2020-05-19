@@ -23,7 +23,6 @@
     ./programs.nix
     ./links.nix
     ./cli.nix
-    ./gnome/home.nix
   ];
 
 }
