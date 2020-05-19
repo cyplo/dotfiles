@@ -3,7 +3,7 @@
   networking.hostName = "skinnyv";
 
   boot = {
-    kernelPackages = pkgs.linuxPackagesFor pkgs.linux_latest_hardened;
+    kernelPackages = pkgs.linuxPackages_latest;
     initrd.luks.devices = {
       root =
         {
@@ -22,11 +22,11 @@
 
     imports = [
       /etc/nixos/hardware-configuration.nix
-      ../boot.nix
-      ../common.nix
-      ../gfx-intel.nix
-      ../zerotier.nix
-      ../i3/system.nix
-      ../distributed-builds.nix
+      ../../boot.nix
+      ../../common.nix
+      ../../gfx-intel.nix
+      ../../zerotier.nix
+      ../../i3/system.nix
+      ../../distributed-builds.nix
     ];
   }
