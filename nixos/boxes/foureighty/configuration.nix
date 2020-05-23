@@ -30,15 +30,12 @@
     package = pkgs.fprintd-thinkpad;
   };
 
-  hardware.nvidiaOptimus.disable = true;
-  hardware.nvidia.prime.sync.enable = false;
-  hardware.bumblebee.enable = false;
-
   imports = [
     /etc/nixos/hardware-configuration.nix
     ../../boot.nix
     ../../common.nix
     ../../gfx-intel.nix
+    ../../gfx-nvidia-optimus.nix
     ../../zerotier.nix
     ../../distributed-builds.nix
     ../../virtualbox.nix

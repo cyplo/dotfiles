@@ -11,6 +11,7 @@
       sshKey = "/home/cyryl/.ssh/id_ed25519";
       system = "x86_64-linux";
       maxJobs = 2;
+      speedFactor = 2;
       supportedFeatures = [ "kvm" ];
       mandatoryFeatures = [ ];
     }
@@ -20,6 +21,7 @@
       sshKey = "/home/cyryl/.ssh/id_ed25519";
       system = "x86_64-linux";
       maxJobs = 2;
+      speedFactor = 1;
       supportedFeatures = [ ];
       mandatoryFeatures = [ ];
     }
