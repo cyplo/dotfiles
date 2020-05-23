@@ -38,7 +38,7 @@
     ../../zerotier.nix
     ../../distributed-builds.nix
     ../../virtualbox.nix
-    ../../gnome/system.nix
+    ../../i3/system.nix
   ];
 
 

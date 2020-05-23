@@ -24,7 +24,7 @@ in
       ../../home-common.nix
       ../../programs/git.nix
       ../../gui.nix
-      ../../gnome/home.nix
+      ../../i3/home.nix
     ];
 
   }
