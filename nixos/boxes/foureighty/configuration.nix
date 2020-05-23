@@ -35,7 +35,6 @@
     ../../boot.nix
     ../../common.nix
     ../../gfx-intel.nix
-    ../../gfx-nvidia-optimus.nix
     ../../zerotier.nix
     ../../distributed-builds.nix
     ../../virtualbox.nix
