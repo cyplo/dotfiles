@@ -11,6 +11,7 @@
       allowAnyUser = true;
     };
 
+    dbus.packages = with pkgs; [ gnome2.GConf  ];
     fractalart.enable = true;
     colord.enable = true;
     xserver.windowManager.i3.enable = true;
