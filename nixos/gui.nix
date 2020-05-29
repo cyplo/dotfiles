@@ -23,7 +23,7 @@
     gnome3.gnome-screenshot gsettings-desktop-schemas
     apvlv xidlehook
     fontconfig xclip gimp glxinfo
-    notable mindforger
+    mindforger
     evince signal-desktop
     libreoffice vlc
     unstable.tor-browser-bundle-bin
