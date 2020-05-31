@@ -33,7 +33,7 @@ in
 
       users.users.cyryl = {
         isNormalUser = true;
-        extraGroups = [ "wheel" "networkmanager" "video" "scanner" "lp" "docker" "vboxusers" "adbusers" "libvirtd" ];
+        extraGroups = [ "wheel" "networkmanager" "video" "scanner" "lp" "docker" "vboxusers" "adbusers" "libvirtd" "dialout" ];
         shell = pkgs.zsh;
       };
 
