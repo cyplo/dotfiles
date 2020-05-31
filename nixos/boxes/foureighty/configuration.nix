@@ -36,7 +36,7 @@
     ../../gfx-intel.nix
     ../../zerotier.nix
     ../../distributed-builds.nix
-    ../../virtualbox.nix
+    ../../libvirt.nix
     ../../i3/system.nix
   ];
 
