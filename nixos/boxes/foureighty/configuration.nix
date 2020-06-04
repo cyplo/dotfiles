@@ -38,6 +38,7 @@
     ../../distributed-builds.nix
     ../../libvirt.nix
     ../../i3/system.nix
+    ../../backups.nix
   ];
 
 
