@@ -26,7 +26,6 @@
     mindforger
     evince signal-desktop
     libreoffice vlc
-    unstable.tor-browser-bundle-bin
     jetbrains.goland unstable.jetbrains.clion jetbrains.idea-ultimate unstable.android-studio
     yubico-piv-tool yubikey-personalization yubikey-personalization-gui yubikey-manager-qt
     slack discord gnome3.nautilus gnome3.eog

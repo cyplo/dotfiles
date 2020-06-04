@@ -33,6 +33,7 @@ in
             colors.background= "#002b36";
             fonts = [ "Fira Code Nerd Font 10" ];
             statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${config.xdg.configHome}/i3/status.toml";
+            trayOutput = "primary";
           }
         ];
 

@@ -16,6 +16,7 @@
         configure_single = "DP1";
         execute_after = [
           "${pkgs.xorg.xrandr}/bin/xrandr --dpi 192"
+          "${pkgs.xorg.xrandr}/bin/xrandr --output DP1 --primary"
         ];
       }
       {
