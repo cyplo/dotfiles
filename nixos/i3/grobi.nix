@@ -25,6 +25,7 @@
         configure_single = "eDP1";
         execute_after = [
           "${pkgs.xorg.xrandr}/bin/xrandr --dpi 144"
+          "${pkgs.xorg.xrandr}/bin/xrandr --output eDP1 --primary"
         ];
       }
       {
