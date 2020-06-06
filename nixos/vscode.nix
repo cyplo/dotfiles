@@ -107,12 +107,6 @@
           sha256 = "13fcay9bs861msb5y694casbw66dmhl504xm5cvprssx1qka186p";
         }
         {
-          publisher = "mauve";
-          name = "terraform";
-          version = "1.3.9";
-          sha256 = "0hnarr21rivvv41y5x1sp0skdmzwz7zi9aya3n5z1b13ir7lyy42";
-        }
-        {
           publisher = "mechatroner";
           name = "rainbow-csv";
           version = "1.0.0";
