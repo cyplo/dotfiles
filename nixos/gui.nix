@@ -25,7 +25,7 @@
     fontconfig xclip gimp glxinfo
     mindforger
     evince signal-desktop
-    libreoffice vlc
+    vlc
     jetbrains.goland unstable.jetbrains.clion jetbrains.idea-ultimate unstable.android-studio
     yubico-piv-tool yubikey-personalization yubikey-personalization-gui yubikey-manager-qt
     slack discord gnome3.nautilus gnome3.eog
