@@ -8,7 +8,6 @@
       repository = "rest:http://brix.local:8000/";
       timerConfig = { OnCalendar = "hourly"; };
       extraBackupArgs = [ "--exclude='.cache'" "--exclude='.rustup'" ];
-      pruneOpts = [ "--keep-hourly 9" "--keep-daily 8" "--keep-weekly 5" "--keep-monthly 13" "--keep-yearly 16" ];
     };
 
     restic.backups.home-to-b2 = {
