@@ -29,6 +29,8 @@
     };
   };
 
+  services.blueman.enable = true;
+
   services.printing = {
     enable = true;
     drivers = with pkgs; [ epson-escpr samsung-unified-linux-driver splix ];
