@@ -6,6 +6,7 @@
     userName = "Cyryl Płotnicki";
     userEmail = "cyplo@cyplo.net";
     extraConfig = {
+      credential = { helper ="cache"; };
       core = { pager = "cat"; };
       pager = {
         diff = "diff-so-fancy | less --tabs=1,5 -RFX";
