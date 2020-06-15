@@ -1,35 +1,36 @@
 [user]
-    name = Cyryl Płotnicki
-    email = cyplo@cyplo.net
+name = Cyryl Płotnicki
+email = cyplo@cyplo.net
 [color]
-    ui = true
+ui = true
 [help]
-    autocorrect = 1
+autocorrect = 1
 [push]
-    default = simple
+default = simple
 [core]
-    pager = cat
+pager = cat
 [alias]
-    tree = log --show-signature --color --decorate --date=short --all --graph -n 3
-    newbranch = !git checkout master && git fetch -p && git reset --hard origin/master && git checkout -b "$2"
-    head = log HEAD -n1
-	signedcommit = !git commit -S
+tree = log --show-signature --color --decorate --date=short --all --graph -n 3
+parent = log --pretty=%P -n 1
+newbranch = !git checkout master && git fetch -p && git reset --hard origin/master && git checkout -b "$2"
+head = log HEAD -n1
+signedcommit = !git commit -S
 [core]
-    autocrlf = false
+autocrlf = false
 [diff]
-    tool = vimdiff
+tool = vimdiff
 [difftool]
-    prompt = false
+prompt = false
 [difftool "vimdiff"]
-    cmd = vim -f '+next' '+execute \"DirDiff\" argv(0) argv(1)' $LOCAL $REMOTE '+syntax off'
+cmd = vim -f '+next' '+execute \"DirDiff\" argv(0) argv(1)' $LOCAL $REMOTE '+syntax off'
 [merge]
-    tool = kdiff3
+tool = kdiff3
 [mergetool]
-    keepBackup = false
+keepBackup = false
 [pager]
-    diff = diff-so-fancy | less --tabs=1,5 -RFX
-    show = diff-so-fancy | less --tabs=1,5 -RFX
+diff = diff-so-fancy | less --tabs=1,5 -RFX
+show = diff-so-fancy | less --tabs=1,5 -RFX
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	required = true
+clean = git-lfs clean -- %f
+smudge = git-lfs smudge -- %f
+required = true
