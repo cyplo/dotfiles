@@ -113,12 +113,6 @@
           sha256 = "1fyamgm7zq31r3c00cn6pcb66rrkfhwfmp72qnhrajydmnvcnbg6";
         }
         {
-          publisher = "ms-vscode";
-          name = "Go";
-          version = "0.9.2";
-          sha256 = "0yxnsby8zz1dvnx8nqrhi4xx316mpjf2hs2c5r6fkzh8zhjccwqz";
-        }
-        {
           publisher = "ronnidc";
           name = "nunjucks";
           version = "0.2.3";
