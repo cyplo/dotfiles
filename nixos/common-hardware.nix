@@ -19,7 +19,6 @@
       realtime-scheduling = "yes";
     };
   };
-  hardware.u2f.enable = true;
 
   hardware.bluetooth = {
     enable = true;
