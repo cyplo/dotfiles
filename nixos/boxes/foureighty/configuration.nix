@@ -3,7 +3,7 @@
   networking.hostName = "foureighty";
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_latest_hardened;
 
     initrd.luks.devices = {
       root = {
