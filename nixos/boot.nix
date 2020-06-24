@@ -15,6 +15,7 @@
       enable = true;
       version = 2;
       useOSProber = true;
+      memtest86.enable = true;
     };
   };
 

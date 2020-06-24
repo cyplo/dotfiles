@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   home.packages = with pkgs; [
-    genpass
+    genpass bitwarden-cli
     gdb lldb
     wget git gnupg curl tmux htop atop pciutils powertop ripgrep-all fd dnsutils du-dust
     ( pass.withExtensions (ext: [ ext.pass-otp ext.pass-import ext.pass-genphrase ext.pass-audit ext.pass-update ]))
@@ -9,7 +9,7 @@
     wirelesstools ranger apvlv
     fontconfig
     binutils veracrypt gitAndTools.diff-so-fancy
-    restic jq awscli
+    restic jq
     hugo mercurial terraform
     unzip aria
     calcurse file python37Packages.binwalk-full
