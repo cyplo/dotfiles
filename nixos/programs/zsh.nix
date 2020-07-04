@@ -60,6 +60,11 @@
       [aws]
       disabled = true
 
+      [battery]
+      full_symbol = ""
+      charging_symbol = ""
+      discharging_symbol = ""
+
       [[battery.display]]
       threshold = 10
       style = "bold red"
