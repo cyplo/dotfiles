@@ -13,6 +13,7 @@
     plugins = with pkgs.vimPlugins; [
       coc-highlight
       coc-nvim
+      coc-rust-analyzer
       coc-tabnine
       ctrlp-vim
       editorconfig-vim
