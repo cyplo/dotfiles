@@ -33,5 +33,6 @@
     qemu aqemu foldingathome
     spotify shotwell
     gnome-builder flatpak-builder flatpak python38Packages.lxml python38Packages.jedi meson
+    firefox-wayland
   ];
 }
