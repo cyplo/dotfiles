@@ -33,11 +33,11 @@
     /etc/nixos/hardware-configuration.nix
     ../../boot.nix
     ../../common.nix
-    ../../gfx-intel.nix
+    ../../gfx-nvidia-optimus.nix
     ../../zerotier.nix
     ../../distributed-builds.nix
     ../../libvirt.nix
-    ../../i3/system.nix
+    ../../gnome/system.nix
     ../../backups.nix
   ];
 

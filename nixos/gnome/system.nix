@@ -3,10 +3,11 @@
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
-    displayManager.gdm.wayland = false;
+    displayManager.gdm.wayland = true;
+    displayManager.gdm.nvidiaWayland = true;
     desktopManager.gnome3.enable = true;
   };
-  services.dbus.packages = with pkgs; [ gnome2.GConf ];
+  services.dbus.packages = with pkgs; [ gnome2.GConf gnome3.dconf ];
   users.users.cyryl.packages = with pkgs; [];
 }
 

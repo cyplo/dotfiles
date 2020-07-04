@@ -26,11 +26,12 @@
     mindforger
     evince signal-desktop
     vlc
-    jetbrains.goland unstable.jetbrains.clion jetbrains.idea-ultimate unstable.android-studio
+    jetbrains.goland jetbrains.clion jetbrains.idea-ultimate android-studio
     yubico-piv-tool yubikey-personalization yubikey-personalization-gui yubikey-manager-qt
     slack discord gnome3.nautilus gnome3.eog
     hopper
-    unstable.qemu unstable.aqemu unstable.foldingathome
+    qemu aqemu foldingathome
     spotify shotwell
+    gnome-builder flatpak-builder flatpak python38Packages.lxml python38Packages.jedi meson
   ];
 }

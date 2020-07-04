@@ -12,6 +12,9 @@ in
     environment.systemPackages = [ nvidia-offload ];
 
     services.xserver.videoDrivers = [ "nvidia" ];
+    hardware.opengl = { enable = true; };
+
+    hardware.nvidia.modesetting.enable = true;
     hardware.nvidia.prime.offload.enable = true;
     hardware.nvidia.prime = {
       intelBusId = "PCI:0:2:0";
