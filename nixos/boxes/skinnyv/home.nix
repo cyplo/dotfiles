@@ -14,10 +14,6 @@ in
       };
     };
 
-    home.sessionVariables = {
-      TERMINAL="alacritty";
-    };
-
     home.file.".config/i3/status.toml".source = ~/dev/dotfiles/.config/i3/status-single-bat.toml;
 
     imports = [
