@@ -17,5 +17,6 @@
     docker-compose rustup
     knockknock
     python38Packages.pygments
+    canto-curses
   ];
 }

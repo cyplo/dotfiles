@@ -16,25 +16,11 @@
       enable = true;
       plugins = [ "vi-mode" "git" "python" "history-substring-search" "tmux" ];
     };
-    plugins = [
-      {
-        name = "spaceship";
-        file = "spaceship.zsh";
-        src = pkgs.fetchgit {
-          url = "https://github.com/denysdovhan/spaceship-prompt";
-          rev = "v3.11.1";
-          sha256 = "0habry3r6wfbd9xbhw10qfdar3h5chjffr5pib4bx7j4iqcl8lw8";
-        };
-      }];
-      initExtra = ''
-        SPACESHIP_TIME_SHOW=true
-        SPACESHIP_EXIT_CODE_SHOW=true
-        SPACESHIP_VI_MODE_SHOW=false
-        SPACESHIP_BATTERY_THRESHOLD=30
+    initExtra = ''
         ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=238'
         setopt HIST_IGNORE_ALL_DUPS
-      '';
-      profileExtra = ''
+    '';
+    profileExtra = ''
         export PATH="$HOME/programs:$PATH";
         export PATH="$HOME/tools:$PATH";
         export PATH="$HOME/bin:$PATH";
@@ -43,8 +29,8 @@
         export PATH="$HOME/.rvm/bin:$PATH";
         export PATH="$HOME/.cargo/bin:$PATH";
         export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH";
-      '';
-      envExtra = ''
+    '';
+    envExtra = ''
         [ -s "/home/cyryl/.jabba/jabba.sh" ] && source "/home/cyryl/.jabba/jabba.sh"
         local nixos_version=`which nixos-version`
         if [[ ! -x "$nixos_version" ]]; then
@@ -54,19 +40,49 @@
           [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
           echo "non-nixos patches loaded"
         fi
-      '';
-      sessionVariables = {
-        TERM="xterm-256color";
-        EDITOR="vim";
-        VISUAL="vim";
-        PAGER="less";
-        ZSH_TMUX_AUTOSTART=true;
-        GOPATH="$HOME/go";
-      };
-      shellAliases = { tmate = "tmux detach-client -E 'tmate;tmux'"; cat = "bat -p"; };
+    '';
+    sessionVariables = {
+      TERM="xterm-256color";
+      EDITOR="vim";
+      VISUAL="vim";
+      PAGER="less";
+      ZSH_TMUX_AUTOSTART=true;
+      GOPATH="$HOME/go";
     };
-    programs.direnv = {
-      enable = true;
-      enableZshIntegration = true;
-    };
-  }
+    shellAliases = { tmate = "tmux detach-client -E 'tmate;tmux'"; cat = "bat -p"; };
+  };
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  home.file.".config/starship.toml".text =''
+      [aws]
+      disabled = true
+
+      [[battery.display]]
+      threshold = 10
+      style = "bold red"
+
+      [[battery.display]]
+      threshold = 30
+      style = "bold yellow"
+
+      [memory_usage]
+      disabled = false
+
+      [git_branch]
+      symbol = "git "
+
+      [hg_branch]
+      symbol = "hg "
+
+      [nix_shell]
+      symbol = "nix-shell "
+  '';
+
+  programs.starship = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+}
