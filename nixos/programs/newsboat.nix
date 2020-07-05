@@ -14,6 +14,7 @@
       color article            default   default
     '';
     urls = [
+      { url ="https://nora.codes/index.xml"; }
       { url ="http://hackedfrompieces.wordpress.com/feed/"; }
       { url ="http://notonlyzeroesandones.site40.net/feed/"; }
       { url ="https://tonyarcieri.com/feed"; }

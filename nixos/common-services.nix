@@ -8,6 +8,7 @@
   services = {
     udev.packages = [ pkgs.android-udev-rules ];
     ratbagd.enable = true;
+    flatpak.enable = true;
 
     fwupd = {
       enable = true;
