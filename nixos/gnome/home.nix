@@ -7,6 +7,10 @@
     enable = false;
   };
 
+  home.packages = with pkgs; [
+    gnome-usage gnome3.gnome-tweaks
+  ];
+
   programs.gnome-terminal = {
     enable = true;
     profile = {

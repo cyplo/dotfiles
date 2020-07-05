@@ -30,9 +30,9 @@
     yubico-piv-tool yubikey-personalization yubikey-personalization-gui yubikey-manager-qt
     slack discord gnome3.nautilus gnome3.eog
     hopper
-    qemu aqemu foldingathome
+    qemu aqemu
     spotify shotwell
     gnome-builder flatpak-builder flatpak python38Packages.lxml python38Packages.jedi meson
-    firefox-wayland
+    firefox-wayland libreoffice
   ];
 }
