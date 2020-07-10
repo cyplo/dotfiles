@@ -100,7 +100,6 @@
       { url ="http://www.wrocnet.org/syndication.axd"; }
       { url ="http://www.goldsborough.me/feed.xml"; }
       { url ="http://securitynirvana.blogspot.com/feeds/posts/default"; }
-      { url ="http://syndication.thedailywtf.com/TheDailyWtf"; }
       { url ="http://blog.tilaa.nl/feeds/posts/default"; }
       { url ="http://latkin.org/blog/index.xml"; }
       { url ="https://ind.ie/blog/rss/index.xml"; }
@@ -306,7 +305,6 @@
       { url ="https://www.braintreepayments.com/rss"; }
       { url ="http://edri.org/feed/"; }
       { url ="http://feeds.feedburner.com/GiantRobotsSmashingIntoOtherGiantRobots"; }
-      { url ="http://blog.8thlight.com/feed/atom.xml"; }
       { url ="http://blog.dnsimple.com/feed.xml"; }
       { url ="http://githubengineering.com/atom.xml"; }
       { url ="https://ruudvanasseldonk.com/feed.xml"; }
