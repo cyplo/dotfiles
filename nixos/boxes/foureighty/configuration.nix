@@ -24,13 +24,17 @@
   time.timeZone = "Europe/London";
 
   hardware.trackpoint.enable = true;
+  zramSwap = {
+    enable = true;
+    algorithm = "zstd";
+  };
   services.hardware.bolt.enable = true;
   services.fprintd = {
     enable = true;
   };
 
   imports = [
-    /etc/nixos/hardware-configuration.nix
+    ./hardware-configuration.nix
     ../../boot.nix
     ../../common.nix
     ../../gfx-nvidia-optimus.nix
