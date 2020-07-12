@@ -9,7 +9,7 @@
   boot.extraModulePackages = [ ];
 
   boot.kernel.sysctl = {
-    "vm.swappiness" = 50;
+    "vm.swappiness" = 75;
   };
 
   fileSystems."/" = { device = "/dev/disk/by-uuid/7ae9348d-604e-4196-a27b-24a7495438c3"; fsType = "ext4"; };

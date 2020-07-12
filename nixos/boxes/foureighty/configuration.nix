@@ -27,6 +27,7 @@
   zramSwap = {
     enable = true;
     algorithm = "zstd";
+    memoryPercent = 25;
   };
   services.hardware.bolt.enable = true;
   services.fprintd = {
