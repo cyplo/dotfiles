@@ -18,7 +18,7 @@
   ];
 
   home.packages = with pkgs; [
-    ssb-patchwork zoom-us
+    zoom-us
     passff-host
     gnome3.gnome-screenshot gsettings-desktop-schemas
     apvlv xidlehook

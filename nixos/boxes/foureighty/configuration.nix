@@ -5,6 +5,9 @@
   boot = {
     kernelPackages = pkgs.linuxPackages_latest_hardened;
 
+    kernelModules = [ "acpi_call" ];
+    extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
+
     initrd.luks.devices = {
       root = {
         device = "/dev/disk/by-uuid/a9e8a44f-15be-4844-a0a1-46892cc5e44e";

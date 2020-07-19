@@ -3,7 +3,7 @@
   home.packages = with pkgs; [
     genpass bitwarden-cli
     gdb lldb
-    wget git gnupg curl tmux htop atop pciutils powertop ripgrep-all fd dnsutils du-dust
+    wget git gnupg curl tmux htop atop pciutils powertop ripgrep fd dnsutils du-dust
     ( pass.withExtensions (ext: [ ext.pass-otp ext.pass-import ext.pass-genphrase ext.pass-audit ext.pass-update ]))
     hsetroot lm_sensors
     wirelesstools ranger apvlv
