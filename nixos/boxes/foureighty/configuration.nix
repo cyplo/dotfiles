@@ -24,6 +24,7 @@
   time.timeZone = "Europe/London";
 
   hardware.trackpoint.enable = true;
+  services.throttled.enable = true;
   zramSwap = {
     enable = true;
     algorithm = "zstd";
