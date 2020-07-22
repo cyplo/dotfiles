@@ -3,7 +3,8 @@
   networking.hostName = "foureighty";
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest_hardened;
+    # need unlocked kernel for throttled daemon
+    kernelPackages = pkgs.linuxPackages_latest;
 
     kernelModules = [ "acpi_call" ];
     extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
