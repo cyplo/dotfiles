@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  home.file.".vimrc".source = ~/dev/dotfiles/.vimrc.nixos;
+  home.file.".vimrc".source = /home/cyryl/dev/dotfiles/.vimrc.nixos;
   programs.neovim = {
     enable = true;
     viAlias = true;

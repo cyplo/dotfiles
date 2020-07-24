@@ -46,7 +46,19 @@
     "home-manager=https://github.com/rycee/home-manager/archive/master.tar.gz"
   ];
 
+  fonts.fontconfig.enable = true;
+  home-manager.users.cyryl = {...}: {
+    imports = [
+      ./home.nix
+    ];
+    home.stateVersion = config.system.stateVersion;
+
+    nixpkgs.overlays = config.nixpkgs.overlays;
+    nixpkgs.config = config.nixpkgs.config;
+  };
+
   imports = [
+    <home-manager/nixos>
     ./hardware-configuration.nix
     ../../boot.nix
     ../../common.nix
