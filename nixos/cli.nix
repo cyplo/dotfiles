@@ -1,22 +1,41 @@
 { config, pkgs, ... }:
 {
   home.packages = with pkgs; [
-    genpass bitwarden-cli
-    gdb lldb
-    wget git gnupg curl tmux htop atop pciutils powertop ripgrep fd dnsutils du-dust
     ( pass.withExtensions (ext: [ ext.pass-otp ext.pass-import ext.pass-genphrase ext.pass-audit ext.pass-update ]))
-    hsetroot lm_sensors
-    wirelesstools ranger apvlv
+    apvlv
+    aria
+    atop
+    binutils
+    bitwarden-cli
+    curl
+    dnsutils
+    docker-compose
+    du-dust
+    fd
+    file
     fontconfig
-    binutils veracrypt gitAndTools.diff-so-fancy
-    restic jq
-    hugo mercurial terraform
-    unzip aria
-    calcurse file python37Packages.binwalk-full
-    nixops imagemagick
-    docker-compose rustup
-    knockknock
-    python38Packages.pygments
-    canto-curses
+    genpass
+    git
+    gitAndTools.diff-so-fancy
+    gnupg
+    hsetroot
+    htop
+    imagemagick
+    jq
+    lm_sensors
+    mercurial
+    nixops
+    pciutils
+    powertop
+    ranger
+    restic
+    ripgrep
+    rustup
+    terraform
+    tmux
+    unzip
+    veracrypt
+    wget
+    wirelesstools
   ];
 }

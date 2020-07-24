@@ -39,6 +39,13 @@
     enable = true;
   };
 
+  nix.nixPath = [
+    "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
+    "nixos-config=/etc/nixos/configuration.nix"
+    "/nix/var/nix/profiles/per-user/root/channels"
+    "home-manager=https://github.com/rycee/home-manager/archive/master.tar.gz"
+  ];
+
   imports = [
     ./hardware-configuration.nix
     ../../boot.nix
