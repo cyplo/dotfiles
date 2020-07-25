@@ -12,6 +12,7 @@
     ../../distributed-builds.nix
     ../../libvirt.nix
     ../../backups.nix
+    ../../gui
     ../../gnome
   ];
 
@@ -39,7 +40,6 @@
   home-manager.users.cyryl = {...}: {
     imports = [
       ../../home-manager
-      ../../home-manager/gui.nix
       ../../home-manager/programs/git.nix
     ];
     home.stateVersion = config.system.stateVersion;
