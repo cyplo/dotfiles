@@ -3,13 +3,31 @@
 {
   imports = [ ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ "dm-snapshot" ];
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
+  boot = {
+    kernel.sysctl = {
+      "vm.swappiness" = 75;
+    };
 
-  boot.kernel.sysctl = {
-    "vm.swappiness" = 75;
+    kernelModules = [ "kvm-intel" "acpi_call" ];
+    extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
+
+    initrd = {
+      kernelModules = [ "dm-snapshot" ];
+      availableKernelModules = [ "xhci_pci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
+      luks.devices = {
+        root = {
+          device = "/dev/disk/by-uuid/a9e8a44f-15be-4844-a0a1-46892cc5e44e";
+          allowDiscards = true;
+        };
+      };
+    };
+
+    loader.grub = {
+      device = "nodev";
+      efiSupport = true;
+    };
+
+    loader.efi.canTouchEfiVariables = true;
   };
 
   fileSystems."/" = { device = "/dev/disk/by-uuid/7ae9348d-604e-4196-a27b-24a7495438c3"; fsType = "ext4"; };
@@ -18,5 +36,12 @@
 
   swapDevices = [ ];
 
-  nix.maxJobs = lib.mkDefault 8;
+  zramSwap = {
+    enable = true;
+    algorithm = "zstd";
+    memoryPercent = 25;
+  };
+
+  nix.maxJobs = 2;
+  nix.buildCores = 6;
 }
