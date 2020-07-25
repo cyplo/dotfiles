@@ -9,8 +9,8 @@
       credential = { helper ="cache"; };
       core = { pager = "cat"; };
       pager = {
-        diff = "diff-so-fancy | less --tabs=1,5 -RFX";
-        show = "diff-so-fancy | less --tabs=1,5 -RFX";
+        diff = "${pkgs.gitAndTools.diff-so-fancy}/bin/diff-so-fancy | less --tabs=1,5 -RFX";
+        show = "${pkgs.gitAndTools.diff-so-fancy}/bin/diff-so-fancy | less --tabs=1,5 -RFX";
       };
     };
     aliases =

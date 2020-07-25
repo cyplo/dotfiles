@@ -16,7 +16,6 @@
     fontconfig
     genpass
     git
-    gitAndTools.diff-so-fancy
     gnupg
     hsetroot
     htop
