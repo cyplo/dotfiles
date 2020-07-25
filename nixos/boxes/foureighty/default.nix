@@ -14,6 +14,7 @@
     ../../backups.nix
     ../../gui
     ../../gnome
+    ../../git
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -40,7 +41,6 @@
   home-manager.users.cyryl = {...}: {
     imports = [
       ../../home-manager
-      ../../home-manager/programs/git.nix
     ];
     home.stateVersion = config.system.stateVersion;
 

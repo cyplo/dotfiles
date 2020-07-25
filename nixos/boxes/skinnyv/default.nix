@@ -2,6 +2,19 @@
 {
   networking.hostName = "skinnyv";
 
+  imports = [
+    <home-manager/nixos>
+    /etc/nixos/hardware-configuration.nix
+    ../../boot.nix
+    ../../common.nix
+    ../../gfx-intel.nix
+    ../../zerotier.nix
+    ../../i3/system.nix
+    ../../distributed-builds.nix
+    ../../gui
+    ../../git
+  ];
+
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     initrd.luks.devices = {
@@ -25,8 +38,6 @@
       imports = [
         imports = [
           ../../home-manager
-          ../../home-manager/gui.nix
-          ../../home-manager/programs/git.nix
         ];
       ];
       home.stateVersion = config.system.stateVersion;
@@ -37,14 +48,4 @@
       home.file.".config/i3/status.toml".source = ../../../.config/i3/status-single-bat.toml;
     };
 
-    imports = [
-      <home-manager/nixos>
-      /etc/nixos/hardware-configuration.nix
-      ../../boot.nix
-      ../../common.nix
-      ../../gfx-intel.nix
-      ../../zerotier.nix
-      ../../i3/system.nix
-      ../../distributed-builds.nix
-    ];
   }
