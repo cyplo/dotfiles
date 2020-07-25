@@ -23,12 +23,16 @@
     fonts.fontconfig.enable = true;
     home-manager.users.cyryl = {...}: {
       imports = [
-        ./home.nix
+        ../../home-common.nix
+        ../../programs/git.nix
+        ../../gui.nix
       ];
       home.stateVersion = config.system.stateVersion;
 
       nixpkgs.overlays = config.nixpkgs.overlays;
       nixpkgs.config = config.nixpkgs.config;
+
+      home.file.".config/i3/status.toml".source = ../../../.config/i3/status-single-bat.toml;
     };
 
     imports = [
