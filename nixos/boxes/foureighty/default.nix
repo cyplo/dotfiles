@@ -49,9 +49,9 @@
   fonts.fontconfig.enable = true;
   home-manager.users.cyryl = {...}: {
     imports = [
-      ../../home-common.nix
-      ../../programs/git.nix
-      ../../gui.nix
+      ../../home-manager
+      ../../home-manager/gui.nix
+      ../../home-manager/programs/git.nix
     ];
     home.stateVersion = config.system.stateVersion;
 
