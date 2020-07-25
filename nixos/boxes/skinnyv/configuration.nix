@@ -20,7 +20,19 @@
     };
     time.timeZone = "Europe/London";
 
+    fonts.fontconfig.enable = true;
+    home-manager.users.cyryl = {...}: {
+      imports = [
+        ./home.nix
+      ];
+      home.stateVersion = config.system.stateVersion;
+
+      nixpkgs.overlays = config.nixpkgs.overlays;
+      nixpkgs.config = config.nixpkgs.config;
+    };
+
     imports = [
+      <home-manager/nixos>
       /etc/nixos/hardware-configuration.nix
       ../../boot.nix
       ../../common.nix
