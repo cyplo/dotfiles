@@ -6,6 +6,5 @@
     ../../home-common.nix
     ../../programs/git.nix
     ../../gui.nix
-    ../../i3/home.nix
   ];
 }

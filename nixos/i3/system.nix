@@ -11,7 +11,11 @@
       allowAnyUser = true;
     };
 
-    dbus.packages = with pkgs; [ gnome2.GConf gnome3.dconf ];
+    dbus = {
+      packages = with pkgs; [ gnome2.GConf gnome3.dconf ];
+      socketActivated = true;
+    };
+
     fractalart.enable = true;
     colord.enable = true;
     xserver.windowManager.i3.enable = true;
