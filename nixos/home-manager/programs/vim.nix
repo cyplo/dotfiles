@@ -25,6 +25,7 @@
       vim-airline-themes
       vim-autoformat
       vim-colors-solarized
+      vim-devicons
       vim-dirdiff
       vim-dispatch
       vim-fugitive
