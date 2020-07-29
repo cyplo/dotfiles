@@ -7,13 +7,13 @@
     ./hardware-configuration.nix
     ../../boot.nix
     ../../common.nix
-    ../../gfx-nvidia-optimus.nix
+    ../../gfx-intel.nix
     ../../zerotier.nix
     ../../distributed-builds.nix
     ../../libvirt.nix
     ../../backups.nix
     ../../gui
-    ../../gnome
+    ../../sway
     ../../git
   ];
 
