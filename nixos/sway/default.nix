@@ -24,6 +24,7 @@ in
 
         config = {
           modifier = "${mod}";
+          menu = "${pkgs.wofi}/bin/wofi --show drun,run";
           keybindings = {
             "${mod}+Shift+e" = "exit";
             "${mod}+Shift+c" = "reload";
@@ -41,8 +42,7 @@ in
 
             "Print" = "exec ${pkgs.gnome3.gnome-screenshot}/bin/gnome-screenshot -i";
 
-            "${mod}+r" = "exec nix-shell -p glibcLocales --run '${pkgs.rofi}/bin/rofi -show combi -combi-modi window#run#ssh -modi combi'";
-            "${mod}+z" = "exec ${pkgs.nix}/bin/nix-shell -p glibcLocales --run '${pkgs.rofi}/bin/rofi -show combi -combi-modi window#run#ssh -modi combi'";
+            "${mod}+r" = "exec ${pkgs.wofi}/bin/wofi --show drun,run";
             "${mod}+c" = "exec ${pkgs.clipmenu}/bin/clipmenu";
             "${mod}+q" = "kill";
             "${mod}+f" = "fullscreen toggle";
