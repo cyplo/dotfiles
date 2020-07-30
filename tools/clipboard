@@ -1,2 +1,7 @@
 #!/usr/bin/env bash
-xclip -selection clipboard
+read contents
+if [[ -x `which wl-copy` ]]; then
+    echo "$contents" | wl-copy
+else
+    echo "$contents" | xclip -selection clipboard
+fi

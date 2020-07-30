@@ -16,6 +16,9 @@ in
       home.sessionVariables = {
       };
 
+      home.packages = with pkgs; [
+        wl-clipboard
+      ];
 
       wayland.windowManager.sway = {
         enable = true;
