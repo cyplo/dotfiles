@@ -28,6 +28,7 @@ in
         config = {
           modifier = "${mod}";
           menu = "${pkgs.wofi}/bin/wofi --show drun,run";
+          output.eDP-1.scale = "1.7";
           keybindings = {
             "${mod}+Shift+e" = "exit";
             "${mod}+Shift+c" = "reload";
