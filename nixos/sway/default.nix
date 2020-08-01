@@ -33,6 +33,15 @@ in
           modifier = "${mod}";
           menu = "${pkgs.wofi}/bin/wofi --show drun,run";
           terminal = "${pkgs.alacritty}/bin/alacritty";
+          bars = [
+            {
+              position = "top";
+              colors.background= "#002b36";
+              fonts = [ "Fira Code Nerd Font 10" ];
+              statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3/status.toml";
+              trayOutput = "primary";
+            }
+          ];
           startup = [
             {
               command = "${pkgs.wl-clipboard}/bin/wl-paste -t text --watch ${pkgs.clipman}/bin/clipman store";
