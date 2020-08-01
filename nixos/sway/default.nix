@@ -22,6 +22,7 @@ in
         wofi
       ];
 
+      home.file.".config/wofi/style.css".source = ../../.config/wofi/style.css;
       wayland.windowManager.sway = {
         enable = true;
         wrapperFeatures.base = true;
