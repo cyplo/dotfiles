@@ -8,6 +8,10 @@
     extraConfig = {
       credential = { helper ="cache"; };
       core = { pager = "cat"; };
+      colour.ui = true;
+      help.autocorrect = 1;
+      push.default = "simple";
+      mergetool.keepBackup = false;
       pager = {
         diff = "${pkgs.gitAndTools.diff-so-fancy}/bin/diff-so-fancy | less --tabs=1,5 -RFX";
         show = "${pkgs.gitAndTools.diff-so-fancy}/bin/diff-so-fancy | less --tabs=1,5 -RFX";
