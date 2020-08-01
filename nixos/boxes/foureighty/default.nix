@@ -22,8 +22,6 @@
   time.hardwareClockInLocalTime = true;
   time.timeZone = "Europe/London";
 
-  services.throttled.enable = true;
-
   hardware.trackpoint.enable = true;
   services.hardware.bolt.enable = true;
   services.fprintd = {
