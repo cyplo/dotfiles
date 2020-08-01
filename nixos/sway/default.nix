@@ -29,6 +29,13 @@ in
           modifier = "${mod}";
           menu = "${pkgs.wofi}/bin/wofi --show drun,run";
           output.eDP-1.scale = "1.7";
+          input."1:1:AT_Translated_Set_2_keyboard" = {
+            xkb_layout = "pl";
+            xkb_options = "caps:ctrl_modifier";
+          };
+          input."2:7:SynPS/2_Synaptics_TouchPad" = {
+            tap = "enabled";
+          };
           keybindings = {
             "${mod}+Shift+e" = "exit";
             "${mod}+Shift+c" = "reload";
