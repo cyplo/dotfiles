@@ -18,6 +18,8 @@ in
 
       home.packages = with pkgs; [
         wl-clipboard
+        clipman
+        wofi
       ];
 
       wayland.windowManager.sway = {
@@ -28,6 +30,15 @@ in
         config = {
           modifier = "${mod}";
           menu = "${pkgs.wofi}/bin/wofi --show drun,run";
+          terminal = "${pkgs.alacritty}/bin/alacritty";
+          startup = [
+            {
+              command = "${pkgs.wl-clipboard}/bin/wl-paste -t text --watch ${pkgs.clipman}/bin/clipman store";
+            }
+            {
+              command = "${pkgs.clipman}/bin/clipman restore";
+            }
+          ];
           output.eDP-1.scale = "1.7";
           input."1:1:AT_Translated_Set_2_keyboard" = {
             xkb_layout = "pl";
@@ -54,7 +65,7 @@ in
             "Print" = "exec ${pkgs.gnome3.gnome-screenshot}/bin/gnome-screenshot -i";
 
             "${mod}+r" = "exec ${pkgs.wofi}/bin/wofi --show drun,run";
-            "${mod}+c" = "exec ${pkgs.clipmenu}/bin/clipmenu";
+            "${mod}+c" = "exec ${pkgs.clipman}/bin/clipman pick -t wofi";
             "${mod}+q" = "kill";
             "${mod}+f" = "fullscreen toggle";
 
