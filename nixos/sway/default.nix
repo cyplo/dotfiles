@@ -45,7 +45,7 @@ in
           startup = [
             { command = "${pkgs.wl-clipboard}/bin/wl-paste -t text --watch ${pkgs.clipman}/bin/clipman store"; }
             { command = "${pkgs.clipman}/bin/clipman restore"; }
-            { command = ''swayidle -w timeout 300 'swaylock -f -c 000000' timeout 600 'swaymsg "outout * dpms off"' resume 'swaymsg "outout * dpms off"' before-sleep 'swaylock -f -c 000000'
+            { command = ''swayidle -w timeout 300 'swaylock -f -c 000000' timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' before-sleep 'swaylock -f -c 000000'
             ''; }
           ];
           output.eDP-1.scale = "1.7";
