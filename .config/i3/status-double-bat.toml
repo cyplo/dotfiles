@@ -4,7 +4,7 @@ theme = "solarized-dark"
 name = "awesome"
 [icons.overrides]
 memory_mem = " "
-cogs = "  "
+cogs = " "
 
 [[block]]
 block = "time"
