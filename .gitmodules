@@ -1,3 +1,0 @@
-[submodule "tools/icdiff.git"]
-	path = tools/icdiff.git
-	url = https://github.com/jeffkaufman/icdiff.git
