@@ -22,13 +22,10 @@
 @define-color accent   @blue;
 
 window {
-    /* borders aren't drawn by compositors so we do it */
-    border: 3px solid @accent;
-    border-radius: 0px;
-
     background-color: alpha(@bg_color, 0.9);
     color: @base0;
 
+    font-family: "Fira Code Nerd Font";
     font-size: large;
 }
 
