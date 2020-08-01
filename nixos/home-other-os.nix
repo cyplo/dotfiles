@@ -24,5 +24,6 @@ in
     imports = [
       ./home-manager/default.nix
       ./git/home.nix
+      ./mercurial/home.nix
     ];
   }
