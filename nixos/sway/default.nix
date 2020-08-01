@@ -11,7 +11,7 @@ in
       programs.mako.enable = true;
 
       imports = [
-        ./keybinding.nix
+        ./keybindings.nix
       ];
 
       home.sessionVariables = {
