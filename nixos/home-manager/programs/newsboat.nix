@@ -4,6 +4,9 @@
     enable = true;
     autoReload = true;
     extraConfig = ''
+      feed-sort-order unreadarticlecount-asc
+      show-read-feeds no
+      show-read-articles  no
       # solarized
       color background         default   default
       color listnormal         default   default
