@@ -24,6 +24,8 @@ in
       ];
 
       home.file.".config/wofi/style.css".source = ../../.config/wofi/style.css;
+      home.file.".config/waybar/config".source = ../../.config/waybar/config;
+      home.file.".config/waybar/style.css".source = ../../.config/waybar/style.css;
       wayland.windowManager.sway = {
         enable = true;
         wrapperFeatures.base = true;
@@ -33,12 +35,13 @@ in
           modifier = "${mod}";
           menu = "${pkgs.wofi}/bin/wofi --show drun,run";
           terminal = "${pkgs.alacritty}/bin/alacritty";
+          workspaceLayout = "tabbed";
           bars = [
             {
               position = "top";
               colors.background= "#002b36";
               fonts = [ "Fira Code Nerd Font 10" ];
-              statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3/status.toml";
+              command = "${pkgs.waybar}/bin/waybar";
               trayOutput = "primary";
             }
           ];
