@@ -31,11 +31,11 @@
       nssmdns = true;
     };
 
-
     geoclue2.enable = true;
     xserver = {
       enable = true;
       layout = "pl";
+      xkbOptions = "caps:ctrl_modifier";
       libinput = {
         enable = true;
         naturalScrolling = false;
