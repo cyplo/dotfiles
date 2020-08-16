@@ -23,6 +23,7 @@ in
       };
 
       home.packages = with pkgs; [
+        firefox-wayland
         wl-clipboard
         clipman
         wofi

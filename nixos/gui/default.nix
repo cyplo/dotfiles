@@ -19,7 +19,7 @@
     ];
 
     home.packages = with pkgs; [
-      mindforger
+      mindforger digikam
       zoom-us ssb-patchwork
       passff-host
       gnome3.gnome-screenshot gsettings-desktop-schemas
@@ -34,7 +34,7 @@
       qemu aqemu
       spotify shotwell
       gnome-builder flatpak-builder flatpak python38Packages.lxml python38Packages.jedi meson
-      firefox-wayland libreoffice
+      libreoffice
     ];
   };
 }
