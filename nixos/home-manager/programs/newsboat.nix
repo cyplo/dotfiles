@@ -92,7 +92,6 @@
       { url ="https://rachelbythebay.com/w/atom.xml"; }
       { url ="http://sliptonic.com/feed/"; }
       { url ="http://blog.unsecu.re/feeds/posts/default"; }
-      { url ="http://blog.xkcd.com/feed/"; }
       { url ="http://neverworkintheory.org/feed.xml"; }
       { url ="http://kocikocizabci.blogspot.com/feeds/posts/default"; }
       { url ="https://blog.christophersmart.com/feed/"; }
@@ -109,14 +108,12 @@
       { url ="http://spritesmods.com/rss.php"; }
       { url ="http://codeascraft.etsy.com/feed/"; }
       { url ="http://chrisgammell.com/feed/"; }
-      { url ="http://www.c.urvy.org/curvy_rss2.xml"; }
       { url ="http://j2kun.svbtle.com/feed"; }
       { url ="https://www.stellar.org/feed/"; }
       { url ="http://shenzhentrip.blogspot.com/feeds/posts/default"; }
       { url ="https://aphyr.com/posts.atom"; }
       { url ="http://www.latentlaboratories.com/blog?format=RSS"; }
       { url ="http://zentasrobots.com/feed/"; }
-      { url ="http://what-if.xkcd.com/feed.atom"; }
       { url ="http://tuxdiary.com/feed/"; }
       { url ="http://ruby.awsblog.com/blog/feed/recentPosts.rss"; }
       { url ="http://grugq.github.io/atom.xml"; }
@@ -240,7 +237,6 @@
       { url ="http://www.rustfest.eu/feed.xml"; }
       { url ="http://theinvisiblethings.blogspot.com/feeds/posts/default"; }
       { url ="https://spideroak.com/blog/feed"; }
-      { url ="http://xkcd.com/atom.xml"; }
       { url ="http://nullr0ute.com/feed/"; }
       { url ="http://xion.io/feeds/atom.xml"; }
       { url ="http://blog.mozilla.org/nfroyd/feed/"; }
