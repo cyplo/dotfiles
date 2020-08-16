@@ -19,12 +19,12 @@
     ];
 
     home.packages = with pkgs; [
-      zoom-us
+      mindforger
+      zoom-us ssb-patchwork
       passff-host
       gnome3.gnome-screenshot gsettings-desktop-schemas
       apvlv xidlehook
       fontconfig xclip gimp glxinfo
-      mindforger
       evince signal-desktop
       vlc
       jetbrains.goland jetbrains.clion jetbrains.idea-ultimate android-studio

@@ -31,18 +31,21 @@ in
         wrapperFeatures.base = true;
         wrapperFeatures.gtk = true;
 
+        extraConfig = ''
+        '';
         config = {
           modifier = "${mod}";
           menu = "${pkgs.wofi}/bin/wofi --show drun,run";
           terminal = "${pkgs.alacritty}/bin/alacritty";
           workspaceLayout = "tabbed";
+          window = {
+            hideEdgeBorders = "both";
+            titlebar = false;
+          };
           bars = [
             {
               position = "top";
-              colors.background= "#002b36";
-              fonts = [ "Fira Code Nerd Font 10" ];
               command = "${pkgs.waybar}/bin/waybar";
-              trayOutput = "primary";
             }
           ];
           startup = [
