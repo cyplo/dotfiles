@@ -27,7 +27,6 @@
       fontconfig xclip gimp glxinfo
       evince signal-desktop
       vlc
-      jetbrains.goland jetbrains.clion jetbrains.idea-ultimate android-studio
       yubico-piv-tool yubikey-personalization yubikey-personalization-gui yubikey-manager-qt
       slack discord gnome3.nautilus gnome3.eog
       hopper

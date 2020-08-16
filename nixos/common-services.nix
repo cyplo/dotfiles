@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  docker-containers.meditate = {
+  virtualisation.oci-containers.containers.meditate = {
     image = "meditate";
     ports = [ "80:80" ];
   };
@@ -16,9 +16,9 @@
 
     tlp = {
       enable = true;
-      extraConfig = ''
-          DISK_IOSCHED="mq-deadline"
-      '';
+      settings = {
+        "DISK_IOSCHED" = "mq-deadline";
+      };
     };
 
     upower.enable = true;
