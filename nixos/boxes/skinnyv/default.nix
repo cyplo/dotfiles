@@ -9,7 +9,7 @@
     ../../common.nix
     ../../gfx-intel.nix
     ../../zerotier.nix
-    ../../i3/system.nix
+    ../../i3
     ../../distributed-builds.nix
     ../../gui
     ../../git
@@ -44,7 +44,6 @@
     home-manager.users.cyryl = {...}: {
       imports = [
         ../../home-manager
-        ../../i3/home.nix
       ];
       home.stateVersion = config.system.stateVersion;
 
