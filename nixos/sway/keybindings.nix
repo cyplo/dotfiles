@@ -5,8 +5,7 @@ in
   {
     wayland.windowManager.sway.config.keybindings = {
       "${mod}+Shift+e" = "exit";
-      "${mod}+Shift+c" = "reload";
-      "${mod}+Shift+r" = "restart";
+      "${mod}+Shift+r" = "reload";
       "${mod}+Shift+l" = "exec swaylock -c 657b83";
       "${mod}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
 

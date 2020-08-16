@@ -16,8 +16,7 @@
         ],
 
         "modules-right": [
-            "network",
-        "memory",
+            "memory",
         "cpu",
         "temperature",
         "battery",

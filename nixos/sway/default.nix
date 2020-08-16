@@ -15,13 +15,22 @@ in
       ];
 
       home.sessionVariables = {
+        XDG_CURRENT_DESKTOP="Unity";
+        SDL_VIDEODRIVER="wayland";
+        QT_QPA_PLATFORM="wayland-egl";
+        QT_WAYLAND_FORCE_DPI="physical";
+        QT_WAYLAND_DISABLE_WINDOWDECORATION="1";
       };
 
       home.packages = with pkgs; [
         wl-clipboard
         clipman
         wofi
+        libappindicator-gtk3
       ];
+
+      services.udiskie.enable = true;
+      xsession.preferStatusNotifierItems = true;
 
       home.file.".config/wofi/style.css".source = ../../.config/wofi/style.css;
       home.file.".config/waybar/config".source = ../../.config/waybar/config;
@@ -32,6 +41,8 @@ in
         wrapperFeatures.gtk = true;
 
         extraConfig = ''
+        '';
+        extraSessionCommands = ''
         '';
         config = {
           modifier = "${mod}";
