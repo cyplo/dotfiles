@@ -1,2 +1,0 @@
-install: powershell -NoProfile -ExecutionPolicy Bypass -Command "windows\bootstrap.ps1"
-build_script: windows\build.bat
