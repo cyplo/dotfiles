@@ -24,4 +24,9 @@
       enableHidpi = true;
     };
   };
+  home-manager.users.cyryl = {...}: {
+    imports = [
+      ./home.nix
+    ];
+  };
 }

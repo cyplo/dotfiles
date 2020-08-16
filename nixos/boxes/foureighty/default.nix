@@ -13,7 +13,7 @@
     ../../libvirt.nix
     ../../backups.nix
     ../../gui
-    ../../sway
+    ../../i3
     ../../git
     ../../mercurial
   ];
