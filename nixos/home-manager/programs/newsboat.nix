@@ -327,7 +327,6 @@
       { url ="https://krebsonsecurity.com/feed/"; }
       { url ="https://tisiphone.net/feed/"; }
       { url ="https://blog.bastion.rs/feed.xml"; }
-
     ];
   };
 }
