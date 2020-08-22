@@ -117,7 +117,6 @@
       { url ="http://tuxdiary.com/feed/"; }
       { url ="http://ruby.awsblog.com/blog/feed/recentPosts.rss"; }
       { url ="http://grugq.github.io/atom.xml"; }
-      { url ="http://blog.getpelican.com/feeds/all.atom.xml"; }
       { url ="http://gusclass.com/blog/feed/"; }
       { url ="http://www.devttys0.com/feed/"; }
       { url ="http://www.lighttable.com/atom.xml"; }
@@ -300,7 +299,6 @@
       { url ="http://life.hackaday.com/feed/"; }
       { url ="https://stripe.com/blog/feed.rss"; }
       { url ="http://nakedsecurity.sophos.com/feed/"; }
-      { url ="http://www.dissentmagazine.org/feed"; }
       { url ="https://www.braintreepayments.com/rss"; }
       { url ="http://edri.org/feed/"; }
       { url ="http://feeds.feedburner.com/GiantRobotsSmashingIntoOtherGiantRobots"; }
@@ -328,7 +326,6 @@
       { url ="https://www.evilsocket.net/atom.xml"; }
       { url ="https://krebsonsecurity.com/feed/"; }
       { url ="https://tisiphone.net/feed/"; }
-      { url ="http://planet.nixos.org/atom.xml"; }
     ];
   };
 }
