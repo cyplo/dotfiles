@@ -19,7 +19,7 @@
     ];
 
     home.packages = with pkgs; [
-      mindforger digikam
+      mindforger digikam anarchism
       zoom-us ssb-patchwork
       passff-host
       gnome3.gnome-screenshot gsettings-desktop-schemas

@@ -12,6 +12,10 @@ interval = 60
 format = "%R %a %d.%m"
 
 [[block]]
+block = "networkmanager"
+primary_only = true
+
+[[block]]
 block = "cpu"
 interval = 5
 format = "{utilization}% {frequency}GHz"
