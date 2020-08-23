@@ -42,6 +42,9 @@ warning = 20.0
 alert = 10.0
 
 [[block]]
+block = "sound"
+
+[[block]]
 block = "bluetooth"
 mac = "28:11:A5:E1:3C:57"
 

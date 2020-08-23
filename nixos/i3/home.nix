@@ -5,6 +5,7 @@
     ./i3.nix
     ./dunst.nix
     ./rofi.nix
+    ./kdeconnect.nix
   ];
 
   home.sessionVariables = {
@@ -15,10 +16,6 @@
     picom = {
       enable = true;
       vSync = true;
-    };
-    kdeconnect = {
-      enable = true;
-      indicator = true;
     };
     network-manager-applet.enable = true;
     pasystray.enable = true;
