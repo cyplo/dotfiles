@@ -5,6 +5,9 @@ set noswapfile
 set undofile
 set undodir=$HOME/.vim/undo
 set spell spelllang=en_gb
+set updatetime=300
+set nobackup
+set nowritebackup
 
 " buffers can be switched despite having changes
 set hidden

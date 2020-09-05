@@ -11,6 +11,7 @@
     withRuby = true;
 
     plugins = with pkgs.vimPlugins; [
+      ack-vim
       coc-highlight
       coc-nvim
       coc-rust-analyzer
@@ -19,6 +20,7 @@
       fzf-vim
       nerdtree
       nerdtree-git-plugin
+      quickfix-reflector-vim
       rainbow
       tabular
       vim-airline
