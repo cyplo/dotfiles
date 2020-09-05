@@ -15,6 +15,7 @@ in
     };
 
     home.sessionVariables = {
+      LOCALE_ARCHIVE=/usr/lib/locale/locale-archive;
     };
 
     targets.genericLinux.enable = true;
