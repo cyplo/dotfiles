@@ -7,8 +7,8 @@
         {
           publisher = "vscodevim";
           name = "vim";
-          version = "1.13.0";
-          sha256 = "07i8p0grc238h3xqh1yyxh95231pvf6m7pbdfz9002rhj5mav87k";
+          version = "1.16.0";
+          sha256 = "13ng5ib5h2642m1y96a5fdfqbjkmsapfiq6pal8fja3afnkb11l5";
         }
         {
           publisher = "TabNine";
@@ -19,26 +19,14 @@
         {
           publisher = "matklad";
           name = "rust-analyzer";
-          version = "0.1.20200302";
-          sha256 = "0lck4cqk7n9ankygq4c2qjrqz2dznrrsghmbra9c6478pgr6ip6q";
+          version = "0.2.297";
+          sha256 = "0pj29k5pm1p7f987x9rjd0pks552fxvjv72dscxsk84svl132s0f";
         }
         {
           publisher = "ms-python";
           name = "python";
           version = "2019.10.41019";
           sha256 = "0szikd76vy8mgv8zc0m90rx1jrnwwphx5bb8928drln65xwbzs1q";
-        }
-        {
-          publisher = "justusadam";
-          name = "language-haskell";
-          version = "2.6.0";
-          sha256 = "1891pg4x5qkh151pylvn93c4plqw6vgasa4g40jbma5xzq8pygr4";
-        }
-        {
-          publisher = "UCL";
-          name = "haskelly";
-          version = "0.5.5";
-          sha256 = "0s6a3hdckn2ssk7wkxdv09c0gjk4g0h8071bf7x8br0brnnrwsgi";
         }
         {
           publisher = "2gua";
