@@ -2,7 +2,7 @@
 {
   services.kdeconnect = {
     enable = true;
-    indicator = false;
+    indicator = true;
   };
 
   home.packages = with pkgs; [ kdeconnect ] ;
