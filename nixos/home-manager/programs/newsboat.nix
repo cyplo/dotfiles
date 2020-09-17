@@ -185,7 +185,6 @@
       { url ="https://soldernerd.com/feed/"; }
       { url ="http://www.0xrage.com/?feed=rss2"; }
       { url ="http://www.bitscope.com/blog/feed.xml"; }
-      { url ="http://www.padrinorb.com/blog.rss"; }
       { url ="http://theprofoundprogrammer.com/rss"; }
       { url ="http://essentialscrap.com/rss.xml"; }
       { url ="http://handmade.hackaday.com/feed/"; }

@@ -23,12 +23,6 @@
           sha256 = "0pj29k5pm1p7f987x9rjd0pks552fxvjv72dscxsk84svl132s0f";
         }
         {
-          publisher = "ms-python";
-          name = "python";
-          version = "2019.10.41019";
-          sha256 = "0szikd76vy8mgv8zc0m90rx1jrnwwphx5bb8928drln65xwbzs1q";
-        }
-        {
           publisher = "2gua";
           name = "rainbow-brackets";
           version = "0.0.6";

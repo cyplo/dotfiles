@@ -4,6 +4,7 @@
 
   imports = [
     <home-manager/nixos>
+    ./custom-kernel.nix
     ./hardware-configuration.nix
     ../../boot.nix
     ../../common.nix
