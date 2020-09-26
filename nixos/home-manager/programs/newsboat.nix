@@ -17,6 +17,7 @@
       color article            default   default
     '';
     urls = [
+      { url ="https://matklad.github.io/feed.xml"; }
       { url ="https://nora.codes/index.xml"; }
       { url ="http://hackedfrompieces.wordpress.com/feed/"; }
       { url ="http://notonlyzeroesandones.site40.net/feed/"; }
