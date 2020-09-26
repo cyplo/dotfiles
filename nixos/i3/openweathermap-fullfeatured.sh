@@ -87,9 +87,9 @@ if [ -n "$current" ] && [ -n "$forecast" ]; then
     if [ "$current_temp" -gt "$forecast_temp" ]; then
         trend=""
     elif [ "$forecast_temp" -gt "$current_temp" ]; then
-        trend=""
-    else
         trend=""
+    else
+        trend=""
     fi
 
     echo "$(get_icon "$current_icon") $current_temp($current_feels)$SYMBOL $trend $(get_icon "$forecast_icon") $forecast_temp($forecast_feels)$SYMBOL"
