@@ -19,7 +19,8 @@
     ];
 
     home.packages = with pkgs; [
-      mindforger digikam anarchism
+      mindforger trilium-desktop typora
+      digikam anarchism
       zoom-us ssb-patchwork
       passff-host
       gnome3.gnome-screenshot gsettings-desktop-schemas
