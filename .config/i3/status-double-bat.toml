@@ -17,16 +17,6 @@ command = ''' /home/cyryl/dev/dotfiles/nixos/i3/openweathermap-fullfeatured.sh '
 interval = 600
 
 [[block]]
-block = "net"
-device = "wlp3s0"
-ssid = true
-signal_strength = true
-speed_up = false
-speed_down = false
-hide_missing = true
-hide_inactive = true
-
-[[block]]
 block = "cpu"
 interval = 5
 format = "{utilization}% {frequency}GHz"
