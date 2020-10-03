@@ -21,7 +21,7 @@
       }
       {
         name = "foureighty";
-        outputs_connected = [ "eDP1" ];
+        outputs_connected = [ "eDP1-AUO-9014-0--" ];
         configure_single = "eDP1";
         execute_after = [
           "${pkgs.xorg.xrandr}/bin/xrandr --dpi 144"
