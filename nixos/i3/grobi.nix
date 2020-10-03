@@ -29,6 +29,15 @@
         ];
       }
       {
+        name = "skinnyv";
+        outputs_connected = [ "eDP1-AUO-8493-0--" ];
+        configure_single = "eDP1";
+        execute_after = [
+          "${pkgs.xorg.xrandr}/bin/xrandr --dpi 96"
+          "${pkgs.xorg.xrandr}/bin/xrandr --output eDP1 --primary"
+        ];
+      }
+      {
         name = "form3-docked";
         outputs_connected = [ "eDP-1-1" "DP-1-1" ];
         configure_single = "DP-1-1";
