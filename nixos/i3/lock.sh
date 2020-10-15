@@ -14,9 +14,6 @@ xidlehook \
     --timer 60 \
     'xrandr --output "$PRIMARY_DISPLAY" --brightness .1' \
     'xrandr --output "$PRIMARY_DISPLAY" --brightness 1' \
-    --timer 10 \
-    'xrandr --output "$PRIMARY_DISPLAY" --brightness 1; physlock -d' \
-    '' \
     --timer 600 \
     'xrandr --output "$PRIMARY_DISPLAY" --brightness 1; systemctl suspend' \
     ''

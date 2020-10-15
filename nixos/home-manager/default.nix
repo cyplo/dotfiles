@@ -18,7 +18,7 @@
     ./programs/tmux.nix
     ./programs/zsh.nix
     ./programs/vim.nix
-    ./programs/alacritty.nix
+    ./programs/kitty.nix
     ./programs/newsboat.nix
     ./programs.nix
     ./links.nix
