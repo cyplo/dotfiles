@@ -1,12 +1,12 @@
 [include]
-	path = dev/dotfiles/.gitconfig_includes.common
-	path = dev/dotfiles/.gitconfig_includes.linux
+path = dev/dotfiles/.gitconfig_includes.common
+path = dev/dotfiles/.gitconfig_includes.linux
 [gpg]
-	program = gpg2
+program = gpg2
 [user]
-	signingkey = CA6A60C801F3CDAFE4601D76436DDB0D638A3C61
-	email = cyryl.plotnicki@form3.tech
+signingkey = DE56CA9CDE3624848C17B858B79437193B5E9830
+email = cyryl.plotnicki@form3.tech
 [commit]
-	gpgsign = true
+gpgsign = true
 [url "git@github.com:"]
-	insteadOf = https://github.com/
+insteadOf = https://github.com/
