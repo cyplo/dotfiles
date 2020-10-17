@@ -7,6 +7,10 @@
     userEmail = "cyplo@cyplo.net";
     delta = {
       enable = true;
+      options = {
+        line-numbers = true;
+        syntax-theme = "Solarized (dark)";
+      };
     };
     extraConfig = {
       credential = { helper ="cache"; };
