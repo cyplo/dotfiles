@@ -13,6 +13,7 @@
       colour.ui = true;
       help.autocorrect = 1;
       push.default = "simple";
+      pull.ff = "only";
       mergetool.keepBackup = false;
     };
     aliases =
