@@ -1,9 +1,20 @@
 [include]
-	path = dev/dotfiles/.gitconfig_includes.common
-	path = dev/dotfiles/.gitconfig_includes.linux
+path = dev/dotfiles/.gitconfig_includes.common
+path = dev/dotfiles/.gitconfig_includes.linux
 
 [alias]
-	signedcommit = !git commit -S
+signedcommit = !git commit -S
 
 [gpg]
-	program = gpg2
+program = gpg2
+
+[diff]
+tool = kitty
+guitool = kitty.gui
+[difftool]
+prompt = false
+trustExitCode = true
+[difftool "kitty"]
+cmd = kitty +kitten diff $LOCAL $REMOTE
+[difftool "kitty.gui"]
+cmd = kitty kitty +kitten diff $LOCAL $REMOTE
