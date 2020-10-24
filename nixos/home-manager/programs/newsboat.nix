@@ -18,6 +18,7 @@
     '';
     urls = [
       { url ="https://matklad.github.io/feed.xml"; }
+      { url ="https://sourcehut.org/blog/index.xml"; }
       { url ="https://openwrt.org/feed.php?type=rss&mode=list&sort=date&ns=advisory&linkto=current&content=html"; }
       { url ="https://nora.codes/index.xml"; }
       { url ="http://hackedfrompieces.wordpress.com/feed/"; }
