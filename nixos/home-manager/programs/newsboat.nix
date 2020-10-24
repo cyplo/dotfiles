@@ -138,7 +138,6 @@
       { url ="http://the-missing-link-of-agile.com/feed/"; }
       { url ="http://www.kroah.com/log/index.rss"; }
       { url ="http://ebldc.com/?feed=rss2"; }
-      { url ="http://blog.octayn.net/atom.xml"; }
       { url ="http://barwybiedy.blogspot.com/feeds/posts/default"; }
       { url ="http://codegangsta.io/atom.xml"; }
       { url ="http://intorust.com/feed.xml"; }
