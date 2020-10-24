@@ -6,7 +6,8 @@ secrets:
     - e9ca03f3-9207-40ee-8ef6-f59f0bdb53e0
 
 tasks:
-    - setup: |
+    - github_push: |
+        set +xv
         cd dotfiles
         source ~/.github_token
         echo $GITHUB_TOKEN | wc
