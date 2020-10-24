@@ -1,0 +1,9 @@
+image: nixos/latest
+sources:
+    - https://git.sr.ht/~cyplo/dotfiles
+
+tasks:
+    - setup: |
+        echo "hello dotfiles"
+        ls -hal
+
