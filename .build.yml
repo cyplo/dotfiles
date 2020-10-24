@@ -3,7 +3,7 @@ sources:
     - https://git.sr.ht/~cyplo/dotfiles
 
 secrets:
-    -  b7161fff-05f4-4470-b4a1-57bd67dede23
+    - b7161fff-05f4-4470-b4a1-57bd67dede23
 
 tasks:
     - github_push: |
