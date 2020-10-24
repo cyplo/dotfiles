@@ -2,8 +2,12 @@ image: nixos/latest
 sources:
     - https://git.sr.ht/~cyplo/dotfiles
 
+secrets:
+    - e9ca03f3-9207-40ee-8ef6-f59f0bdb53e0
+
 tasks:
     - setup: |
-        echo "hello dotfiles"
-        ls -hal
+        cd dotfiles
+        source ~/.github_token
+        echo $GITHUB_TOKEN | wc
 
