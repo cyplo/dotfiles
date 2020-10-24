@@ -234,7 +234,7 @@
       { url ="http://www.hardhack.org/feed/"; }
       { url ="http://blog.system76.com/rss"; }
       { url ="https://www.mailpile.is/blog/index.rss"; }
-      { url ="http://www.rustfest.eu/feed.xml"; }
+      { url ="https://blog.rustfest.eu/feed.xml"; }
       { url ="http://theinvisiblethings.blogspot.com/feeds/posts/default"; }
       { url ="https://spideroak.com/blog/feed"; }
       { url ="http://nullr0ute.com/feed/"; }
