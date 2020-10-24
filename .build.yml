@@ -3,12 +3,12 @@ sources:
     - https://git.sr.ht/~cyplo/dotfiles
 
 secrets:
-    - e9ca03f3-9207-40ee-8ef6-f59f0bdb53e0
+    -  b7161fff-05f4-4470-b4a1-57bd67dede23
 
 tasks:
     - github_push: |
         set +xv
         cd dotfiles
-        source ~/.github_token
-        echo $GITHUB_TOKEN | wc
-
+        GITHUB_TOKEN=`cat ~/.github_token`
+        git remote add github https://cyplo:$GITHUB_TOKEN@github.com/cyplo/dotfiles.git
+        git push master github
