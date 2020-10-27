@@ -31,10 +31,10 @@
   };
 
   nix.nixPath = [
-    "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
+    "nixpkgs=https://github.com/NixOS/nixpkgs/archive/20.09.tar.gz"
     "nixos-config=/etc/nixos/configuration.nix"
     "/nix/var/nix/profiles/per-user/root/channels"
-    "home-manager=https://github.com/rycee/home-manager/archive/master.tar.gz"
+    "home-manager=https://github.com/rycee/home-manager/archive/release-20.09.tar.gz"
   ];
 
   fonts.fontconfig.enable = true;
