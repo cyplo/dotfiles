@@ -17,7 +17,9 @@
       color article            default   default
     '';
     urls = [
+      { url ="https://ww.telent.net/news.rss"; }
       { url ="https://matklad.github.io/feed.xml"; }
+      { url ="https://sfconservancy.org/feeds/blog/"; }
       { url ="https://sourcehut.org/blog/index.xml"; }
       { url ="https://openwrt.org/feed.php?type=rss&mode=list&sort=date&ns=advisory&linkto=current&content=html"; }
       { url ="https://nora.codes/index.xml"; }
