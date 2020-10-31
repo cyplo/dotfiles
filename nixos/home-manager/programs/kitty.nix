@@ -14,8 +14,8 @@
       bold_italic_font = "auto";
       background = "#001e26";
       foreground = "#708183";
-      selection_foreground ="#001e26";
-      selection_background = "#002731";
+      selection_foreground ="#93a1a1";
+      selection_background = "#002b36";
       cursor = "#708183";
 
       color0  = "#002731";
