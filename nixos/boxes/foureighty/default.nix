@@ -38,6 +38,7 @@
   ];
 
   fonts.fontconfig.enable = true;
+  programs.steam.enable = true;
   home-manager.users.cyryl = {...}: {
     imports = [
       ../../home-manager

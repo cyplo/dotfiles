@@ -11,6 +11,11 @@
       enableZshIntegration = true;
     };
 
+    gpg = {
+      enable = true;
+      settings = {
+      };
+    };
     fzf.enable = true;
     chromium.enable = true;
     go.enable = true;

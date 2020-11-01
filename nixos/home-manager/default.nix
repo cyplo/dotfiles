@@ -14,6 +14,11 @@
     glibcLocales
   ];
 
+  services.gpg-agent= {
+    enable = true;
+    pinentryFlavor = "curses";
+  };
+
   imports = [
     ./programs/tmux.nix
     ./programs/zsh.nix
