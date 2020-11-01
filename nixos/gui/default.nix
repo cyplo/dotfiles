@@ -30,7 +30,7 @@
       vlc
       yubico-piv-tool yubikey-personalization yubikey-personalization-gui yubikey-manager-qt
       slack discord gnome3.nautilus gnome3.eog
-      hopper
+      unstable.hopper unstable.ghidra-bin python38Packages.binwalk-full
       qemu aqemu
       spotify shotwell
       gnome-builder flatpak-builder flatpak python38Packages.lxml python38Packages.jedi meson
