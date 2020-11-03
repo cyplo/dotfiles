@@ -15,7 +15,7 @@
     fd
     file
     fontconfig
-    genpass
+    unstable.genpass
     git
     hsetroot
     htop
