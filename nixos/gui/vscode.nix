@@ -25,12 +25,6 @@
             sha256 = "13ng5ib5h2642m1y96a5fdfqbjkmsapfiq6pal8fja3afnkb11l5";
           }
           {
-            publisher = "TabNine";
-            name = "tabnine-vscode";
-            version = "2.2.3";
-            sha256 = "0wxffsl3sfhxvgl8gz2s0115fpabjqfrrvszbv7ijy6m8shf1clm";
-          }
-          {
             publisher = "matklad";
             name = "rust-analyzer";
             version = "0.2.297";
