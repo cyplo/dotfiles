@@ -1,17 +1,17 @@
 { config, pkgs, ... }:
 {
-  home.packages = with pkgs; [
+  home.packages = with pkgs.unstable; [
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions; [
         bbenoist.Nix
         (
-          pkgs.vscode-utils.buildVscodeExtension {
+          vscode-utils.buildVscodeExtension {
             vscodeExtUniqueId = "vadimcn.vscode-lldb";
-            name = "vadimcn.vscode-lldb-1.5.3";
-            src = pkgs.fetchurl {
+            name = "vadimcn.vscode-lldb-1.6.0";
+            src = fetchurl {
               name = "vadimcn.vscode-lldb.zip";
-              url = "https://github.com/vadimcn/vscode-lldb/releases/download/v1.5.3/codelldb-${pkgs.system}.vsix";
-              sha256 = "0f91nzvgda56zxwryf2c1fd81di6qgsjp822b673cxfpjhzgqznf";
+              url = "https://github.com/vadimcn/vscode-lldb/releases/download/v1.6.0/codelldb-${pkgs.system}.vsix";
+              sha256 = "03klfk5f5x4j675d64p13sdzk4bg177hpihhqzibbkgc787f5yx1";
             };
             buildInputs = with pkgs; [ python37 autoPatchelfHook ];
           }
@@ -27,8 +27,8 @@
           {
             publisher = "matklad";
             name = "rust-analyzer";
-            version = "0.2.297";
-            sha256 = "0pj29k5pm1p7f987x9rjd0pks552fxvjv72dscxsk84svl132s0f";
+            version = "0.2.376";
+            sha256 = "1xpk4vmijann510vkmj3c529baavbm447fck7vmv7fy9mfxcqqcs";
           }
           {
             publisher = "2gua";
