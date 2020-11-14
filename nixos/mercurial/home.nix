@@ -7,6 +7,8 @@
     extraConfig = ''
       [extensions]
       hgext.convert=
+      [ui]
+      paginate = never
     '';
     aliases =
       {
