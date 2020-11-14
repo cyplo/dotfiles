@@ -3,7 +3,7 @@
   programs.mercurial = {
     enable = true;
     userName = "Cyryl Płotnicki";
-    userEmail = "cyplo@cyplo.net";
+    userEmail = "cyplo@cyplo.dev";
     extraConfig = ''
       [extensions]
       hgext.convert=
