@@ -5,12 +5,12 @@ set -o pipefail
 
 VERACRYPT="veracrypt"
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    VERACRYPT="/Applications/VeraCrypt.app/Contents/MacOS/VeraCrypt"
+  VERACRYPT="/Applications/VeraCrypt.app/Contents/MacOS/VeraCrypt"
 fi
 
 MOUNT_TARGET=$2
 if [[ -z "$MOUNT_TARGET" ]]; then
-    MOUNT_TARGET=$HOME/.vault
+  MOUNT_TARGET=$HOME/.vault
 fi
 
 sudo chown $USER "$MOUNT_TARGET"
@@ -18,17 +18,17 @@ mkdir -p "$MOUNT_TARGET"
 
 MOUNT_SOURCE=$1
 if [[ -z "$MOUNT_SOURCE" ]]; then
-    MOUNT_SOURCE="$HOME/vaults/vault.vera"
+  MOUNT_SOURCE="$HOME/vaults/vault.vera"
 fi
 
 chmod a+x "$MOUNT_SOURCE"
 
 if [[ -z "$VAULT_PASSWORD" ]]; then
-    echo "interactive mount"
-    $VERACRYPT -t --mount "$MOUNT_SOURCE" "$MOUNT_TARGET"
+  echo "interactive mount"
+  $VERACRYPT -t --mount "$MOUNT_SOURCE" "$MOUNT_TARGET"
 else
-    echo "non-interactive mount of '$MOUNT_SOURCE' to '$MOUNT_TARGET'"
-    sudo $VERACRYPT -t --non-interactive -p $VAULT_PASSWORD --mount "$MOUNT_SOURCE" "$MOUNT_TARGET"
+  echo "non-interactive mount of '$MOUNT_SOURCE' to '$MOUNT_TARGET'"
+  sudo $VERACRYPT -t --non-interactive -p $VAULT_PASSWORD --mount "$MOUNT_SOURCE" "$MOUNT_TARGET"
 fi
 echo "mounted"
 sudo chown $USER "$MOUNT_TARGET"
@@ -36,4 +36,6 @@ echo "chowned"
 
 echo "$MOUNT_SOURCE -> $MOUNT_TARGET"
 
-"$MOUNT_TARGET/install"
+if [[ -z $NO_INSTALL_VAULT ]]; then
+  "$MOUNT_TARGET/install"
+fi
