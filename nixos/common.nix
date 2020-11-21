@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  unstableTarball = fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixpkgs-unstable.tar.gz;
+  unstableTarball = fetchTarball https://github.com/NixOS/nixpkgs/archive/nixpkgs-unstable.tar.gz;
 in
   {
     imports =
