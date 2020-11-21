@@ -1,8 +1,14 @@
 { config, pkgs, ... }:
 {
-  virtualisation.oci-containers.containers.meditate = {
-    image = "meditate";
-    ports = [ "80:80" ];
+  systemd.services.promtail = {
+    description = "Promtail service for Loki";
+    wantedBy = [ "multi-user.target" ];
+
+    serviceConfig = {
+      ExecStart = ''
+          ${pkgs.grafana-loki}/bin/promtail --config.file ${./promtail.yaml}
+      '';
+    };
   };
 
   services = {
