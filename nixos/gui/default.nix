@@ -19,6 +19,7 @@
     ];
 
     home.packages = with pkgs; [
+      unstable.electrum
       mindforger trilium-desktop typora
       digikam anarchism
       zoom-us ssb-patchwork

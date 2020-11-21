@@ -11,6 +11,7 @@ in
         ./common-hardware.nix
         ./common-services.nix
         ./security.nix
+        ./wireguard.nix
       ];
 
       security.allowUserNamespaces = true;
