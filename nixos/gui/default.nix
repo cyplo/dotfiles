@@ -19,6 +19,7 @@
     ];
 
     home.packages = with pkgs; [
+      keybase-gui
       unstable.electrum
       mindforger trilium-desktop typora
       digikam anarchism

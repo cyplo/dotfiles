@@ -31,18 +31,7 @@
     fstrim.enable = true;
     clipmenu.enable = true;
     lorri.enable = true;
-    i2pd = {
-      enable = true;
-      bandwidth = 2500; # kb/s
-      proto.http.enable = true;
-      proto.httpProxy.enable = true;
-      addressbook.subscriptions = [
-        "http://inr.i2p/export/alive-hosts.txt"
-        "http://i2p-projekt.i2p/hosts.txt"
-        "http://stats.i2p/cgi-bin/newhosts.txt"
-        "http://identiguy.i2p/hosts.txt"
-      ];
-    };
+    keybase.enable=true;
 
     avahi = {
       enable = true;

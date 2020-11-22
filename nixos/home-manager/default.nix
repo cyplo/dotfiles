@@ -19,6 +19,8 @@
     pinentryFlavor = "curses";
   };
 
+  services.kbfs.enable = true;
+
   imports = [
     ./programs/tmux.nix
     ./programs/zsh.nix

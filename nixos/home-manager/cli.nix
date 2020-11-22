@@ -15,12 +15,12 @@
     fd
     file
     fontconfig
-    unstable.genpass
     git
     hsetroot
     htop
     imagemagick
     jq
+    keybase
     lm_sensors
     mercurial
     nixops
@@ -32,6 +32,7 @@
     rustup
     terraform
     tmux
+    unstable.genpass
     unzip
     veracrypt
     wget
