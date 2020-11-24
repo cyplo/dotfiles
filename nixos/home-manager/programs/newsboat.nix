@@ -122,7 +122,6 @@
       { url ="http://www.latentlaboratories.com/blog?format=RSS"; }
       { url ="http://zentasrobots.com/feed/"; }
       { url ="http://tuxdiary.com/feed/"; }
-      { url ="http://ruby.awsblog.com/blog/feed/recentPosts.rss"; }
       { url ="http://grugq.github.io/atom.xml"; }
       { url ="http://gusclass.com/blog/feed/"; }
       { url ="http://www.devttys0.com/feed/"; }
@@ -296,7 +295,6 @@
       { url ="http://feeds.feedburner.com/TheLifeOfKenneth"; }
       { url ="http://feeds.feedburner.com/WebServices20"; }
       { url ="http://feeds.feedburner.com/zotero/"; }
-      { url ="http://feeds.feedburner.com/AmazonWebServicesBlog"; }
       { url ="http://corporat.blox.pl/rss2"; }
       { url ="http://feeds.feedburner.com/codinghorror/"; }
       { url ="https://feeds.feedburner.com/ezyang"; }
