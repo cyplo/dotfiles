@@ -18,6 +18,7 @@
     '';
     urls = [
       { url ="https://ww.telent.net/news.rss"; }
+      { url ="https://guix.gnu.org/feeds/blog.atom"; }
       { url ="https://blog.servo.org/feed.xml"; }
       { url ="https://www.radicalroutes.org.uk/?format=feed&type=atom"; }
       { url ="https://matklad.github.io/feed.xml"; }
