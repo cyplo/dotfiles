@@ -326,7 +326,6 @@
       { url ="https://blog.makersacademy.com/feed"; }
       { url ="https://semaphoreci.com/blog/feed.xml"; }
       { url ="https://sensepost.com/rss.xml"; }
-      { url ="http://dev.to/feed"; }
       { url ="https://www.evilsocket.net/atom.xml"; }
       { url ="https://krebsonsecurity.com/feed/"; }
       { url ="https://tisiphone.net/feed/"; }
