@@ -17,6 +17,7 @@
       color article            default   default
     '';
     urls = [
+      { url ="https://initialcommit.com/blog/rss.xml"; }
       { url ="https://ww.telent.net/news.rss"; }
       { url ="https://guix.gnu.org/feeds/blog.atom"; }
       { url ="https://blog.servo.org/feed.xml"; }
