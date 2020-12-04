@@ -6,7 +6,7 @@
 
   nix.buildMachines = [
     {
-      hostName = "brix.lan";
+      hostName = "brix.local";
       sshUser = "nix-builder";
       sshKey = "/home/cyryl/.ssh/id_ed25519";
       system = "x86_64-linux";
