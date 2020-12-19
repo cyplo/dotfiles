@@ -13,12 +13,14 @@
       };
     };
     extraConfig = {
-      credential = { helper ="cache"; };
       colour.ui = true;
+      credential = { helper ="cache"; };
+      diff.renameLimit = 2048;
+      diff.renames = "copy";
       help.autocorrect = 1;
-      push.default = "simple";
-      pull.ff = "only";
       mergetool.keepBackup = false;
+      pull.ff = "only";
+      push.default = "simple";
     };
     aliases =
       {
