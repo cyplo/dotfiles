@@ -31,7 +31,7 @@
       evince signal-desktop
       vlc
       yubico-piv-tool yubikey-personalization yubikey-personalization-gui yubikey-manager-qt
-      slack discord gnome3.nautilus gnome3.eog
+      slack unstable.discord gnome3.nautilus gnome3.eog
       unstable.hopper unstable.ghidra-bin python38Packages.binwalk-full
       qemu aqemu
       spotify shotwell
