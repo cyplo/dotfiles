@@ -15,6 +15,7 @@
     extraConfig = {
       colour.ui = true;
       credential = { helper ="cache"; };
+      diff.algorithm = "histogram";
       diff.renameLimit = 2048;
       diff.renames = "copy";
       help.autocorrect = 1;
