@@ -30,15 +30,6 @@
     enable = true;
   };
 
-  nix.nixPath = [
-    "nixpkgs=https://github.com/NixOS/nixpkgs/archive/20.09.tar.gz"
-    "nixos-config=/etc/nixos/configuration.nix"
-    "/nix/var/nix/profiles/per-user/root/channels"
-    "home-manager=https://github.com/rycee/home-manager/archive/release-20.09.tar.gz"
-  ];
-
-  fonts.fontconfig.enable = true;
-  programs.steam.enable = true;
   home-manager.users.cyryl = {...}: {
     imports = [
       ../../home-manager
@@ -50,5 +41,7 @@
 
     home.file.".config/i3/status.toml".source = ../../../.config/i3/status-double-bat.toml;
   };
+  fonts.fontconfig.enable = true;
+  programs.steam.enable = true;
 
 }
