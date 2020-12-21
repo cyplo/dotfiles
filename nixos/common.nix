@@ -39,6 +39,7 @@ in
       };
 
       networking.hosts = {
+        "10.11.99.1" = [ "remarkable" ];
       };
 
       programs.light.enable = true;
