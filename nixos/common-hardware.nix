@@ -39,7 +39,7 @@
   hardware.printers.ensurePrinters = [{
     description = "Epson XP-540 via brix";
     name = "epson_xp540_via_brix";
-    deviceUri = "ipp://brix.local/ipp/print";
+    deviceUri = "ipp://brix.local:631/printers/epson_xp540";
     model = "epson-inkjet-printer-escpr/Epson-XP-540_Series-epson-escpr-en.ppd";
     ppdOptions = { PageSize = "A4"; Duplex = "DuplexNoTumble"; };
   }];

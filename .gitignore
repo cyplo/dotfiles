@@ -1,9 +1,9 @@
+result
 .vim/undo/
 .vim/.netrwhist
-.vim/bundle/*
+.DS_Store
 .vim/view/
 !.vim/bundle/Vundle.vim
 setup*.exe
 *mirror*cygwin*/
-.DS_Store
-
+.vim/bundle/*
