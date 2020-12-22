@@ -33,10 +33,11 @@
       yubico-piv-tool yubikey-personalization yubikey-personalization-gui yubikey-manager-qt
       slack unstable.discord gnome3.nautilus gnome3.eog
       unstable.hopper unstable.ghidra-bin python38Packages.binwalk-full
+      unstable.wireshark
       qemu aqemu
       spotify shotwell
       gnome-builder flatpak-builder flatpak python38Packages.lxml python38Packages.jedi meson
-      libreoffice
+      libreoffice simple-scan
     ];
   };
 }

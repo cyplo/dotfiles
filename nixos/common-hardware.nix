@@ -46,10 +46,14 @@
 
   hardware.sane = {
     enable = true;
-    netConf = "brix.local";
+    netConf = ''
+      10.0.0.232
+      brix.local
+      brix.vpn
+    '';
+    snapshot = true;
+    extraBackends = with pkgs; [ sane-airscan utsushi ];
   };
-
-  services.saned.enable = true;
 
   powerManagement.enable = (lib.mkForce true);
   powerManagement.cpuFreqGovernor = (lib.mkForce null);

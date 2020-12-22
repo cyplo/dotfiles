@@ -34,7 +34,7 @@ in
 
       users.users.cyryl = {
         isNormalUser = true;
-        extraGroups = [ "wheel" "networkmanager" "video" "scanner" "lp" "docker" "vboxusers" "adbusers" "libvirtd" "dialout" ];
+        extraGroups = [ "wheel" "networkmanager" "video" "scanner" "lp" "docker" "vboxusers" "adbusers" "libvirtd" "dialout" "wireshark" ];
         shell = pkgs.zsh;
       };
 
@@ -44,6 +44,7 @@ in
 
       programs.light.enable = true;
       programs.adb.enable = true;
+      programs.wireshark.enable=true;
 
       virtualisation.docker = {
         enable = true;
