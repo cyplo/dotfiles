@@ -6,7 +6,7 @@
 
   nix.buildMachines = [
     {
-      hostName = "brix.local";
+      hostName = "brix.vpn";
       sshUser = "nix-builder";
       sshKey = "/home/cyryl/.ssh/id_ed25519";
       system = "x86_64-linux";
@@ -16,7 +16,7 @@
       mandatoryFeatures = [ ];
     }
     {
-      hostName = "vultr1.local";
+      hostName = "vultr1.vpn";
       sshUser = "nix-builder";
       sshKey = "/home/cyryl/.ssh/id_ed25519";
       system = "x86_64-linux";

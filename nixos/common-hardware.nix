@@ -37,16 +37,16 @@
   };
 
   hardware.printers.ensurePrinters = [{
-    description = "Epson XP-540";
-    name = "epson_xp540";
-    deviceUri = "ipp://epsonxp540.lan/ipp/print";
+    description = "Epson XP-540 via brix";
+    name = "epson_xp540_via_brix";
+    deviceUri = "ipp://brix.local/ipp/print";
     model = "epson-inkjet-printer-escpr/Epson-XP-540_Series-epson-escpr-en.ppd";
     ppdOptions = { PageSize = "A4"; Duplex = "DuplexNoTumble"; };
   }];
 
   hardware.sane = {
     enable = true;
-    netConf = "epsonxp540.lan";
+    netConf = "brix.local";
   };
 
   services.saned.enable = true;
