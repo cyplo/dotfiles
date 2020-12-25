@@ -21,14 +21,14 @@
           {
             publisher = "vscodevim";
             name = "vim";
-            version = "1.16.0";
-            sha256 = "13ng5ib5h2642m1y96a5fdfqbjkmsapfiq6pal8fja3afnkb11l5";
+            version = "1.18.5";
+            sha256 = "0cbmmhkbr4f1afk443sgdihp2q5zkzchbr2yhp7bm5qnv7xdv5l4";
           }
           {
             publisher = "matklad";
             name = "rust-analyzer";
-            version = "0.2.400";
-            sha256 = "1awgnxljdaw5g5w6pxyxzkk1kh4h4bk87bsmfx71rqsmk8hyxfw0";
+            version = "0.2.424";
+            sha256 = "0hhi7mdq3aa3lzpx63a1v7d0vq8hq8psvvmfpmjncaqigpzf44is";
           }
           {
             publisher = "2gua";
