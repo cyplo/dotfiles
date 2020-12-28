@@ -6,7 +6,6 @@
     enable = true;
     executeAfter = [
       "${pkgs.systemd}/bin/systemctl --user restart picom"
-      "${pkgs.i3}/bin/i3-msg restart"
       "${pkgs.systemd}/bin/systemctl --user restart kdeconnect-indicator kdeconnect network-manager-applet pasystray udiskie"
     ];
     rules = [
