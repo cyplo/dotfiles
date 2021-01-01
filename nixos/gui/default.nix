@@ -21,7 +21,7 @@
     home.packages = with pkgs; [
       keybase-gui
       unstable.electrum
-      (import <cyplo-mindforger>{}).mindforger trilium-desktop typora
+      unstable.mindforger trilium-desktop typora
       digikam anarchism
       zoom-us ssb-patchwork
       passff-host
