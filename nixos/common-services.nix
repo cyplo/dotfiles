@@ -47,6 +47,7 @@
         enable = true;
         naturalScrolling = false;
         clickMethod = "clickfinger";
+        disableWhileTyping = true;
       };
 
       useGlamor = true;
