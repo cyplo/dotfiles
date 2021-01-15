@@ -82,7 +82,6 @@
       { url ="http://blog.ffwll.ch/feeds/posts/default"; }
       { url ="http://blog.pnkfx.org/atom.xml"; }
       { url ="http://metaltronics.wordpress.com/feed/"; }
-      { url ="https://github.com/Infusion-Open-Source/gaming-competition-platform/commits/networking.atom"; }
       { url ="http://ncrmnt.org/wp/feed/"; }
       { url ="http://www.arachnidlabs.com/atom.xml"; }
       { url ="http://blogs.valvesoftware.com/feed/"; }
@@ -221,7 +220,6 @@
       { url ="http://anholt.livejournal.com/data/rss"; }
       { url ="http://www.yesodweb.com/feed"; }
       { url ="http://feeds.feedburner.com/arkency.xml"; }
-      { url ="https://github.com/blog.atom"; }
       { url ="http://lcamtuf.blogspot.com/feeds/posts/default"; }
       { url ="http://feeds.feedburner.com/schneier/fulltext"; }
       { url ="https://simplysecure.org/feed.xml"; }
