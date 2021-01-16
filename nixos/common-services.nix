@@ -2,7 +2,10 @@
 {
   systemd.services.promtail = {
     description = "Promtail service for Loki";
-    after = [ "network.target" ];
+    after =  [ "zerotierone.service" "network.target" ];
+    requires = [ "zerotierone.service" "network.target" ];
+    wants = [ "zerotierone.service" "network.target" ];
+
     wantedBy = [ "multi-user.target" ];
 
     serviceConfig = {
