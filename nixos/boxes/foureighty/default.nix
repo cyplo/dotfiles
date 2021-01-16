@@ -19,7 +19,7 @@
     ../../mercurial
   ];
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.unstable.linuxPackages_latest;
 
   time.hardwareClockInLocalTime = true;
   time.timeZone = "Europe/London";
@@ -28,6 +28,7 @@
   services.hardware.bolt.enable = true;
   services.fprintd = {
     enable = true;
+    package = pkgs.unstable.fprintd;
   };
 
   home-manager.users.cyryl = {...}: {
