@@ -204,7 +204,6 @@
       { url ="http://lambdaops.com/feed"; }
       { url ="http://simon-says-architecture.com/feed/"; }
       { url ="https://sha2017.org/rss.xml"; }
-      { url ="http://blog.bitbucket.org/feed/"; }
       { url ="http://www.davidhunt.ie/feed/"; }
       { url ="https://begriffs.com/atom.xml"; }
       { url ="http://dankaminsky.com/feed/"; }
@@ -307,7 +306,6 @@
       { url ="http://edri.org/feed/"; }
       { url ="http://feeds.feedburner.com/GiantRobotsSmashingIntoOtherGiantRobots"; }
       { url ="http://blog.dnsimple.com/feed.xml"; }
-      { url ="http://githubengineering.com/atom.xml"; }
       { url ="https://ruudvanasseldonk.com/feed.xml"; }
       { url ="http://www.lowrisc.org//index.xml"; }
       { url ="http://feeds.feedburner.com/NadBrzegiemBiurkaUsiadamIPakaam"; }
