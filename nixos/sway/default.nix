@@ -5,8 +5,11 @@ in
   {
     services.dbus.packages = with pkgs; [ gnome2.GConf gnome3.dconf ];
     services.dbus.socketActivated = true;
+    programs.dconf.enable = true;
     programs.sway.enable = true;
+    programs.qt5ct.enable = true;
     systemd.defaultUnit = "graphical.target";
+
     home-manager.users.cyryl = {...}: {
       programs.mako.enable = true;
 
@@ -28,6 +31,10 @@ in
         clipman
         wofi
         libappindicator-gtk3
+        gtk-engine-murrine
+        gtk_engines
+        gsettings-desktop-schemas
+        lxappearance
       ];
 
       services.udiskie.enable = true;

@@ -7,7 +7,7 @@ in
       "${mod}+Shift+e" = "exit";
       "${mod}+Shift+r" = "reload";
       "${mod}+Shift+l" = "exec swaylock -c 657b83";
-      "${mod}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
+      "${mod}+Return" = "exec ${pkgs.kitty}/bin/kitty";
 
       "XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%";
       "XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@  -5%";
