@@ -8,4 +8,8 @@
     set auto-load safe-path /
     source /home/cyryl/dev/dotfiles/.gdbinit
   '';
+  home.file.".gdbinit.d/dashboard".text = ''
+    dashboard -layout breakpoints source expressions stack threads variables
+    dashboard variables -style compact 0
+  '';
 }
