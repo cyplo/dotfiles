@@ -11,5 +11,6 @@
   home.file.".gdbinit.d/dashboard".text = ''
     dashboard -layout breakpoints source expressions stack threads variables
     dashboard variables -style compact 0
+    dashboard source -style height 20
   '';
 }
