@@ -5,6 +5,7 @@
   home.file.".gdbinit".text = ''
     set auto-load python-scripts on
     add-auto-load-safe-path /home/cyryl/dev/dotfiles/.gdbinit
+    set auto-load safe-path /
     source /home/cyryl/dev/dotfiles/.gdbinit
   '';
 }
