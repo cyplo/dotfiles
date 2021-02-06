@@ -19,7 +19,7 @@
     ../../mercurial
   ];
 
-  boot.kernelPackages = pkgs.unstable.linuxPackages_latest;
+  boot.kernelPackages = pkgs.unstable.linuxPackages_latest_hardened;
 
   time.hardwareClockInLocalTime = true;
   time.timeZone = "Europe/London";
