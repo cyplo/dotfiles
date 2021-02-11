@@ -28,7 +28,7 @@
       gnome3.gnome-screenshot gsettings-desktop-schemas
       apvlv xidlehook
       fontconfig xclip gimp glxinfo
-      evince signal-desktop
+      evince unstable.signal-desktop
       vlc
       yubico-piv-tool yubikey-personalization yubikey-personalization-gui yubikey-manager-qt
       slack unstable.discord gnome3.nautilus gnome3.eog
