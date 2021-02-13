@@ -17,6 +17,7 @@
       color article            default   default
     '';
     urls = [
+      { url ="https://fosdem.org/2021/atom.xml"; }
       { url ="https://tailscale.com/blog/index.xml"; }
       { url ="https://nrdxp.dev/feed.xml"; }
       { url ="https://initialcommit.com/blog/rss.xml"; }
