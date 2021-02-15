@@ -88,7 +88,6 @@
       { url ="http://www.arachnidlabs.com/atom.xml"; }
       { url ="http://blogs.valvesoftware.com/feed/"; }
       { url ="http://billmccloskey.wordpress.com/feed/"; }
-      { url ="http://blog.ncrunch.net/syndication.axd"; }
       { url ="http://sparkleshare.org/feed/"; }
       { url ="http://osprintingllc.com/feed/"; }
       { url ="https://forum.openwrt.org/extern.php?action=feed&fid=11&type=rss"; }
