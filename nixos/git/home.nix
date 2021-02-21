@@ -19,6 +19,7 @@
       diff.renameLimit = 2048;
       diff.renames = "copy";
       help.autocorrect = 1;
+      merge.renamelimit = 8192;
       mergetool.keepBackup = false;
       pull.ff = "only";
       push.default = "simple";
