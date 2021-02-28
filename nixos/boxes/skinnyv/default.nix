@@ -4,7 +4,7 @@
 
   imports = [
     <home-manager/nixos>
-    /etc/nixos/hardware-configuration.nix
+    ./hardware-configuration.nix
     ../../boot.nix
     ../../common.nix
     ../../gfx-intel.nix
