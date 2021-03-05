@@ -23,7 +23,6 @@
     keybase
     lm_sensors
     mercurial
-    nixops
     pciutils
     powertop
     ranger
@@ -33,6 +32,7 @@
     terraform
     tmux
     unstable.genpass
+    unstable.topgrade
     unzip
     veracrypt
     wget
