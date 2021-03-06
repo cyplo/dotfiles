@@ -4,6 +4,7 @@
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions; [
         bbenoist.Nix
+        ms-python.python
         (
           vscode-utils.buildVscodeExtension {
             vscodeExtUniqueId = "vadimcn.vscode-lldb";
