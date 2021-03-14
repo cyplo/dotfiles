@@ -36,6 +36,7 @@
     unzip
     veracrypt
     wget
+    whois
     wirelesstools
   ];
 }
