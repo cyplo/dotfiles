@@ -2,6 +2,7 @@
 
 let
   unstableTarball = fetchTarball https://github.com/NixOS/nixpkgs/archive/nixpkgs-unstable.tar.gz;
+  nurTarball = fetchTarball https://github.com/nix-community/NUR/archive/master.tar.gz;
 in
   {
     imports =
@@ -21,6 +22,9 @@ in
         packageOverrides = pkgs: {
           unstable = import unstableTarball {
             config = config.nixpkgs.config;
+          };
+          nur = import nurTarball {
+            inherit pkgs;
           };
         };
       };
