@@ -23,6 +23,7 @@
     keybase
     lm_sensors
     mercurial
+    nixops
     pciutils
     powertop
     ranger
