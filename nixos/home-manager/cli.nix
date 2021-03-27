@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     ( pass.withExtensions (ext: [ ext.pass-otp ext.pass-import ext.pass-genphrase ext.pass-audit ext.pass-update ]))
+    nur.repos.emmanuelrosa.bisq-desktop
     apvlv
     aria
     atop
