@@ -33,6 +33,7 @@
     rustup
     terraform
     tmux
+    unstable.exercism
     unstable.genpass
     unstable.topgrade
     unzip

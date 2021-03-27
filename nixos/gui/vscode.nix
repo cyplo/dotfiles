@@ -20,6 +20,18 @@
         ]
         ++ vscode-utils.extensionsFromVscodeMarketplace [
           {
+            publisher = "sjhuangx";
+            name = "vscode-scheme";
+            version = "0.4.0";
+            sha256 = "07vjfymvfv98s5r5a4b5iqhgfz1wpgq2l8h3wlq1bnhhhvmq5pq4";
+          }
+          {
+            publisher = "shaunlebron";
+            name = "vscode-parinfer";
+            version = "0.6.2";
+            sha256 = "0h4v4rnximy6rbh83y4s2qj1cqbj66g9wld39mzd0zwgi6ig9syd";
+          }
+          {
             publisher = "vscodevim";
             name = "vim";
             version = "1.18.5";
