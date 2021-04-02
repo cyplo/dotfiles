@@ -40,8 +40,8 @@
           {
             publisher = "matklad";
             name = "rust-analyzer";
-            version = "0.2.529";
-            sha256 = "0njhpc098zg7szayd9s482kg7x10mg1awqrqrb70nxy3k6aybn9y";
+            version = "0.2.538";
+            sha256 = "0ivf8yxs17x10z6q44ij3vpamwzga0wiqfg9hzp3bs6mff9szfmb";
           }
           {
             publisher = "2gua";
