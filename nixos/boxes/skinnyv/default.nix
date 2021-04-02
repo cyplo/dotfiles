@@ -13,6 +13,7 @@
     ../../distributed-builds.nix
     ../../gui
     ../../git
+    ../../backups.nix
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest_hardened;
