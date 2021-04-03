@@ -1,7 +1,7 @@
 My dotfiles - including my vim, terminal and font configs.
 Mostly focusing on setting things up on NixOS, but supporting other OSes where possible.
 
-bootstrap new machine with NixOS:
+## bootstrap new machine with NixOS:
 
 1. boot the target machine from the livecd
 1. change password for the default user `nixos`
@@ -23,3 +23,7 @@ bootstrap new machine with NixOS:
 1. `swapon /dev/sda3`
 1. `nixos-generate-config --root /mnt`
 1. `vim /mnt/etc/nixos/configuration.nix`
+
+## guix
+
+I'm just starting to play with guix, these are just loose notes:

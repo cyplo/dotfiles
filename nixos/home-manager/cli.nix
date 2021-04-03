@@ -6,6 +6,7 @@
     apvlv
     aria
     atop
+    bfg-repo-cleaner
     binutils
     bitwarden-cli
     btrfs-progs
