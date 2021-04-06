@@ -76,17 +76,17 @@ EndSection
   (mapped-devices
     (list (mapped-device
             (source
-              (uuid "d47f7041-717d-4e6d-a3c4-f2f02cb39c1f"))
+              (uuid "a3b9288c-5669-4b6d-80ec-206ce1d765e6"))
             (target "cryptroot")
             (type luks-device-mapping))))
   (file-systems
     (cons* (file-system
+             (mount-point "/")
+             (device "/dev/mapper/cryptroot")
+             (type "btrfs")
+             (dependencies mapped-devices))
+           (file-system
              (mount-point "/boot/efi")
              (device (uuid "5B87-265F" 'fat32))
              (type "vfat"))
-           (file-system
-             (mount-point "/")
-             (device "/dev/mapper/cryptroot")
-             (type "ext4")
-             (dependencies mapped-devices))
            %base-file-systems)))
