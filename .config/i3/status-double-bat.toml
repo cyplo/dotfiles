@@ -56,6 +56,12 @@ format_disconnected = ""
 [[block]]
 block = "bluetooth"
 mac = "28:11:A5:E1:3C:57"
+hide_disconnected = true
+
+[[block]]
+block = "bluetooth"
+mac = "AC:9B:0A:12:75:DB"
+hide_disconnected = true
 
 [[block]]
 block = "battery"

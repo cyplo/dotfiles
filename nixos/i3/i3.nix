@@ -5,7 +5,7 @@ in
   {
     home.packages = with pkgs; [
       font-awesome-ttf
-      i3status-rust
+      unstable.i3status-rust
     ];
 
     xsession.windowManager.i3 = {
@@ -32,7 +32,7 @@ in
             position = "top";
             colors.background = "#002b36";
             fonts = [ "Fira Code Nerd Font 10" ];
-            statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${config.xdg.configHome}/i3/status.toml";
+            statusCommand = "${pkgs.unstable.i3status-rust}/bin/i3status-rs ${config.xdg.configHome}/i3/status.toml";
             trayOutput = "primary";
           }
         ];
