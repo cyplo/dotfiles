@@ -28,8 +28,6 @@
 
     nixpkgs.overlays = config.nixpkgs.overlays;
     nixpkgs.config = config.nixpkgs.config;
-
-    home.file.".config/i3/status.toml".source = ../../../.config/i3/status-single-bat.toml;
   };
 
 }
