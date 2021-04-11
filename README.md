@@ -6,23 +6,35 @@ Mostly focusing on setting things up on NixOS, but supporting other OSes where p
 1. boot the target machine from the livecd
 1. change password for the default user `nixos`
 1. ssh from another, already bootstrapped, machine
-1. `sudo su -`
-1. `yes | parted /dev/sda -- mklabel gpt`
-1. [ ] LUKS !
-1. `parted /dev/sda -- mkpart ESP fat32 1MiB 1GiB`
-1. `parted /dev/sda -- set 1 esp on`
-1. `parted /dev/sda -- mkpart primary btrfs 1GiB -8193MiB`
-1. http://opensource.hqcodeshop.com/Parted%20calculator/parted_mkpart_calc.sh
-1. `parted /dev/sda -- mkpart primary linux-swap XXX 100%`
-1. `mkfs.fat -F 32 -n boot /dev/sda1`
-1. `mkfs.btrfs -L nixos /dev/sda2`
-1. `mkswap -L swap /dev/sda3`
-1. `mount /dev/disk/by-label/nixos /mnt`
-1. `mkdir -p /mnt/boot`
-1. `mount /dev/disk/by-label/boot /mnt/boot`
-1. `swapon /dev/sda3`
-1. `nixos-generate-config --root /mnt`
-1. `vim /mnt/etc/nixos/configuration.nix`
+
+```bash
+sudo su -
+# `efibootmgr -b 000x -B` if you want to remove entry number x
+yes | parted /dev/sda -- mklabel gpt
+parted /dev/sda -- rm 1
+parted /dev/sda -- rm 2
+parted /dev/sda -- rm 3
+parted /dev/sda -- rm 4
+parted /dev/sda -- mkpart ESP fat32 1MiB 1GiB
+parted /dev/sda -- set 1 esp on
+parted /dev/sda -- mkpart primary 1GiB 100%
+cryptsetup luksFormat /dev/sda2
+```
+
+```bash
+cryptsetup luksOpen /dev/sda2 crypt
+```
+
+```bash
+mkfs.fat -F 32 -n boot /dev/sda1
+mkfs.btrfs -L nixos /dev/mapper/crypt
+sleep 1
+mount /dev/disk/by-label/nixos /mnt
+mkdir -p /mnt/boot
+mount /dev/disk/by-label/boot /mnt/boot
+nixos-generate-config --root /mnt
+nixos-install
+```
 
 ## guix
 
