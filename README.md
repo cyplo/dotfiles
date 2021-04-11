@@ -85,6 +85,8 @@ reboot
 
 ```bash
 ssh-keygen -t ed25519
+# syncthing
+# vault
 # firefox sync
 # bitwarden
 # add key to sr.ht
