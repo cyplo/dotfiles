@@ -78,9 +78,19 @@ cd ~/dev/dotfiles/
 mkdir -p nixos/boxes/HOSTNAME
 cp nixos/boxes/bootstrap/2.nix nixos/boxes/HOSTNAME/default.nix
 cp nixos/boxes/bootstrap/hardware-configuration.nix nixos/boxes/HOSTNAME/
-ln -vfs /home/cyryl/dev/dotfiles/nixos/boxes/HOSTNAME/default.nix /etc/nixos/configuration.nix
+sudo ln -vfs /home/cyryl/dev/dotfiles/nixos/boxes/HOSTNAME/default.nix /etc/nixos/configuration.nix
 sudo nixos-rebuild switch --upgrade
 reboot
+```
+
+```bash
+ssh-keygen -t ed25519
+# firefox sync
+# bitwarden
+# add key to sr.ht
+cd ~/dev/dotfiles
+git remote add git@git.sr.ht:~cyplo/dotfiles
+git checkout nixos/boxes/bootstrap
 ```
 
 ## guix
