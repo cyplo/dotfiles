@@ -60,17 +60,28 @@ nixos-install
 reboot
 ```
 
-logged in as root on the target box:
+ctrl-alt-f1 root login:
 
 ```bash
 ln -vfs /home/cyryl/dev/dotfiles/nixos/boxes/bootstrap/2.nix /etc/nixos/configuration.nix
 vim /home/cyryl/dev/dotfiles/nixos/boxes/bootstrap/2.nix
 nixos-rebuild switch
 passwd cyryl
+chown cyryl -R /home/cyryl
 reboot
 ```
 
-4. Create new / update the `boxes/hostname` entry with the edited bootstrap files from above
+gui-login as cyryl:
+
+```bash
+cd ~/dev/dotfiles/
+mkdir -p nixos/boxes/HOSTNAME
+cp nixos/boxes/bootstrap/2.nix nixos/boxes/HOSTNAME/default.nix
+cp nixos/boxes/bootstrap/hardware-configuration.nix nixos/boxes/HOSTNAME/
+ln -vfs /home/cyryl/dev/dotfiles/nixos/boxes/HOSTNAME/default.nix /etc/nixos/configuration.nix
+sudo nixos-rebuild switch --upgrade
+reboot
+```
 
 ## guix
 
