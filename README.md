@@ -4,8 +4,8 @@ Mostly focusing on setting things up on NixOS, but supporting other OSes where p
 ## bootstrap new machine with NixOS:
 
 1. boot the target machine from the livecd
-1. change password for the default user `nixos`
-1. ssh from another, already bootstrapped, machine
+2. change password for the default user `nixos`
+3. ssh from another, already bootstrapped, machine
 
 remote:
 
@@ -67,7 +67,10 @@ ln -vfs /home/cyryl/dev/dotfiles/nixos/boxes/bootstrap/2.nix /etc/nixos/configur
 vim /home/cyryl/dev/dotfiles/nixos/boxes/bootstrap/2.nix
 nixos-rebuild switch
 passwd cyryl
+reboot
 ```
+
+4. Create new / update the `boxes/hostname` entry with the edited bootstrap files from above
 
 ## guix
 
