@@ -7,6 +7,8 @@ Mostly focusing on setting things up on NixOS, but supporting other OSes where p
 1. change password for the default user `nixos`
 1. ssh from another, already bootstrapped, machine
 
+remote:
+
 ```bash
 sudo su -
 # `efibootmgr -b 000x -B` if you want to remove entry number x
@@ -21,9 +23,13 @@ parted /dev/sda -- mkpart primary 1GiB 100%
 cryptsetup luksFormat /dev/sda2
 ```
 
+remote:
+
 ```bash
 cryptsetup luksOpen /dev/sda2 crypt
 ```
+
+remote:
 
 ```bash
 mkfs.fat -F 32 -n boot /dev/sda1
@@ -33,10 +39,34 @@ mount /dev/disk/by-label/nixos /mnt
 mkdir -p /mnt/boot
 mount /dev/disk/by-label/boot /mnt/boot
 nixos-generate-config --root /mnt
+nixos-install
 ```
 
+local:
+
 ```bash
+tar -cvz . > ../dotfiles.tar.gz
+scp ../dotfiles.tar.gz nixos@remote:/tmp
+```
+
+remote:
+
+```bash
+mkdir -p /mnt/home/cyryl/dev/dotfiles/
+tar -xvf /tmp/dotfiles.tar.gz -C /mnt/home/cyryl/dev/dotfiles
+cp /mnt/etc/nixos/hardware-configuration.nix /mnt/home/cyryl/dev/dotfiles/nixos/boxes/bootstrap/
+ln -vfs /mnt/home/cyryl/dev/dotfiles/nixos/boxes/bootstrap/1.nix /mnt/etc/nixos/configuration.nix
 nixos-install
+reboot
+```
+
+logged in as root on the target box:
+
+```bash
+ln -vfs /home/cyryl/dev/dotfiles/nixos/boxes/bootstrap/2.nix /etc/nixos/configuration.nix
+vim /home/cyryl/dev/dotfiles/nixos/boxes/bootstrap/2.nix
+nixos-rebuild switch
+passwd cyryl
 ```
 
 ## guix

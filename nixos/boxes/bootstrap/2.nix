@@ -17,6 +17,8 @@
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest_hardened;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
   time.timeZone = "Europe/London";
 
   fonts.fontconfig.enable = true;

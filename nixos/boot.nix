@@ -10,12 +10,8 @@
       "kernel.unprivileged_userns_clone" = 1;
       "net.core.bpf_jit_harden" = true;
     };
-    loader.grub = {
-      enable = true;
-      version = 2;
-      useOSProber = true;
-      memtest86.enable = true;
-    };
   };
 
+
 }
+

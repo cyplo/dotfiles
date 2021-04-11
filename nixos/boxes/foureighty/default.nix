@@ -19,7 +19,12 @@
   ];
 
   boot.kernelPackages = pkgs.unstable.linuxPackages_latest_hardened;
-
+  loader.grub = {
+   enable = true;
+   version = 2;
+   useOSProber = true;
+   memtest86.enable = true;
+  };
   time.hardwareClockInLocalTime = true;
   time.timeZone = "Europe/London";
 

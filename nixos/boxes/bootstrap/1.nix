@@ -6,17 +6,12 @@
     ./hardware-configuration.nix
     ../../boot.nix
     ../../common.nix
-    ../../gfx-intel.nix
-    ../../zerotier.nix
-    ../../i3
     ../../distributed-builds.nix
-    ../../gui
-    ../../git
-    ../../backups.nix
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest_hardened;
-  time.timeZone = "Europe/London";
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
-  fonts.fontconfig.enable = true;
+  time.timeZone = "Europe/London";
 }
