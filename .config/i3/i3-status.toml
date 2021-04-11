@@ -39,8 +39,8 @@ alias = ""
 info_type = "available"
 unit = "GiB"
 interval = 20
-warning = 20.0
-alert = 10.0
+warning = 10.0
+alert = 5.0
 
 [[block]]
 block = "sound"
