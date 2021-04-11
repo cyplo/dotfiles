@@ -46,11 +46,6 @@ alert = 10.0
 block = "sound"
 
 [[block]]
-block = "kdeconnect"
-format = "{name}"
-format_disconnected = ""
-
-[[block]]
 block = "bluetooth"
 mac = "28:11:A5:E1:3C:57"
 hide_disconnected = true
@@ -65,12 +60,16 @@ block = "battery"
 device = "BAT1"
 interval = 10
 format = "{percentage}%"
+allow_missing = true
+hide_missing = true
 
 [[block]]
 block = "battery"
 device = "BAT0"
 interval = 10
 format = "{percentage}%"
+allow_missing = true
+hide_missing = true
 
 [[block]]
 block = "temperature"
