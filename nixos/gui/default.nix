@@ -19,6 +19,7 @@
     ];
 
     home.packages = with pkgs; [
+      bisq.bisq-desktop
       keybase-gui
       unstable.electrum
       unstable.mindforger trilium-desktop typora
@@ -41,6 +42,7 @@
       unstable.freecad
       unstable.openscad
       unstable.inkscape
+      unstable.qcad
     ];
   };
 }
