@@ -38,6 +38,9 @@
       spotify shotwell
       gnome-builder flatpak-builder flatpak python38Packages.lxml python38Packages.jedi meson
       libreoffice simple-scan
+      unstable.freecad
+      unstable.openscad
+      unstable.inkscape
     ];
   };
 }
