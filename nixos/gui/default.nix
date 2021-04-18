@@ -19,30 +19,45 @@
     ];
 
     home.packages = with pkgs; [
+      anarchism
+      apvlv
       bisq.bisq-desktop
+      digikam
+      evince
+      fontconfig
+      gimp
+      glxinfo
+      gnome3.eog
+      gnome3.gnome-screenshot
+      gnome3.nautilus
+      gsettings-desktop-schemas
       keybase-gui
-      unstable.electrum
-      unstable.mindforger trilium-desktop typora
-      digikam anarchism
-      zoom-us ssb-patchwork
-      passff-host
-      gnome3.gnome-screenshot gsettings-desktop-schemas
-      apvlv xidlehook
-      fontconfig xclip gimp glxinfo
-      evince unstable.signal-desktop
-      vlc
-      yubico-piv-tool yubikey-personalization yubikey-personalization-gui yubikey-manager-qt
-      slack unstable.discord gnome3.nautilus gnome3.eog
-      unstable.hopper unstable.ghidra-bin python38Packages.binwalk-full
-      unstable.wireshark
-      qemu aqemu
-      spotify shotwell
-      gnome-builder flatpak-builder flatpak python38Packages.lxml python38Packages.jedi meson
       libreoffice simple-scan
+      passff-host
+      python38Packages.binwalk-full
+      qemu aqemu
+      slack
+      spotify shotwell
+      ssb-patchwork
+      unstable.discord
+      unstable.electrum
       unstable.freecad
-      unstable.openscad
+      unstable.ghidra-bin
+      unstable.hopper
       unstable.inkscape
+      unstable.mindforger
+      unstable.openscad
       unstable.qcad
+      unstable.signal-desktop
+      unstable.wireshark
+      vlc
+      xclip
+      xidlehook
+      yubico-piv-tool
+      yubikey-manager-qt
+      yubikey-personalization
+      yubikey-personalization-gui
+      zoom-us
     ];
   };
 }
