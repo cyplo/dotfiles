@@ -20,6 +20,7 @@
     hsetroot
     htop
     imagemagick
+    jmtpfs
     jq
     keybase
     lm_sensors
