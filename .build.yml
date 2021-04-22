@@ -11,4 +11,4 @@ tasks:
       cd dotfiles
       GITHUB_TOKEN=`cat ~/.github_token`
       git remote add github https://cyplo:$GITHUB_TOKEN@github.com/cyplo/dotfiles.git
-      git push github master
+      git push github --all --force
