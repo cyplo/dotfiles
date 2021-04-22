@@ -1,14 +1,14 @@
 image: nixos/latest
 sources:
-    - https://git.sr.ht/~cyplo/dotfiles
+  - https://git.sr.ht/~cyplo/dotfiles
 
 secrets:
-    - b7161fff-05f4-4470-b4a1-57bd67dede23
+  - 6c23a8c1-7a30-4a7e-b3b7-0171e898a7d3
 
 tasks:
-    - github_push: |
-        set +xv
-        cd dotfiles
-        GITHUB_TOKEN=`cat ~/.github_token`
-        git remote add github https://cyplo:$GITHUB_TOKEN@github.com/cyplo/dotfiles.git
-        git push github master
+  - github_push: |
+      set +xv
+      cd dotfiles
+      GITHUB_TOKEN=`cat ~/.github_token`
+      git remote add github https://cyplo:$GITHUB_TOKEN@github.com/cyplo/dotfiles.git
+      git push github master
