@@ -43,7 +43,7 @@
 
     nixpkgs.overlays = config.nixpkgs.overlays;
     nixpkgs.config = config.nixpkgs.config;
-    packages = with pkgs; [
+    home.packages = with pkgs; [
       bisq.bisq-desktop
     ];
   };
