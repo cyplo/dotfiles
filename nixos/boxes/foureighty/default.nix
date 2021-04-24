@@ -43,6 +43,9 @@
 
     nixpkgs.overlays = config.nixpkgs.overlays;
     nixpkgs.config = config.nixpkgs.config;
+    packages = with pkgs; [
+      bisq.bisq-desktop
+    ];
   };
   fonts.fontconfig.enable = true;
   programs.steam.enable = true;

@@ -21,7 +21,6 @@
     home.packages = with pkgs; [
       anarchism
       apvlv
-      bisq.bisq-desktop
       digikam
       evince
       fontconfig
