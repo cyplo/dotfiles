@@ -75,7 +75,12 @@ in
           "/nix/var/nix/profiles/per-user/root/channels"
           "home-manager=https://github.com/rycee/home-manager/archive/release-20.09.tar.gz"
         ];
+        package = pkgs.nixUnstable;
+        extraOptions = ''
+          experimental-features = nix-command flakes
+        '';
       };
+
 
       system = {
         stateVersion = "20.03";
