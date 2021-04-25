@@ -17,6 +17,7 @@
       color article            default   default
     '';
     urls = [
+      { url ="https://osarch.org/feed/"; }
       { url ="https://fosdem.org/2021/atom.xml"; }
       { url ="https://tailscale.com/blog/index.xml"; }
       { url ="https://nrdxp.dev/feed.xml"; }
@@ -39,7 +40,6 @@
       { url ="http://feeds.falkvinge.net/Falkvinge-on-Infopolicy"; }
       { url ="http://www.veronicabelmont.com/feed/"; }
       { url ="https://perplexinglyemma.blogspot.com/feeds/posts/default"; }
-      { url ="http://mobiwroclaw.nazwa.pl/rsschannel/channels/Wszystkie.xml"; }
       { url ="http://www.davecooper.org/blog/feed/"; }
       { url ="http://hackaweek.com/hacks/?feed=rss2"; }
       { url ="https://www.hadean.com/blog/rss.xml"; }
@@ -48,10 +48,7 @@
       { url ="https://www.destroyallsoftware.com/blog/index.xml"; }
       { url ="http://metajack.im/"; }
       { url ="https://haskell-at-work.com/feed.xml"; }
-      { url ="http://kingdomcomerpg.com/?feed=rss2"; }
       { url ="http://temporal.pr0.pl/devblog/feed/"; }
-      { url ="https://ohm2013.org/site/feed/"; }
-      { url ="http://www.wroclaw.pl/rss.xml"; }
       { url ="https://superevr.com/blog/feed/"; }
       { url ="http://thejoysofcode.com/rss"; }
       { url ="http://www.rsspect.com/rss/threeps.xml"; }
@@ -219,7 +216,6 @@
       { url ="http://buffered.io/index.xml"; }
       { url ="http://anholt.livejournal.com/data/rss"; }
       { url ="http://www.yesodweb.com/feed"; }
-      { url ="http://feeds.feedburner.com/arkency.xml"; }
       { url ="http://lcamtuf.blogspot.com/feeds/posts/default"; }
       { url ="http://feeds.feedburner.com/schneier/fulltext"; }
       { url ="https://simplysecure.org/feed.xml"; }
@@ -251,7 +247,6 @@
       { url ="http://www.planet-rust.com/atom.xml"; }
       { url ="http://www.elidedbranches.com/feeds/posts/default"; }
       { url ="http://www.eevblog.com/feed/"; }
-      { url ="http://blog.chromium.org/feeds/posts/default"; }
       { url ="http://www.questionablecontent.net/QCRSS.xml"; }
       { url ="http://davidegironi.blogspot.com/feeds/posts/default"; }
       { url ="http://intorust.com/blog/feed.xml"; }
@@ -260,7 +255,6 @@
       { url ="http://feeds.feedburner.com/gadgetfactory/zjHC"; }
       { url ="http://feeds.feedburner.com/Karosium"; }
       { url ="http://embedderslife.wordpress.com/feed/"; }
-      { url ="http://kernel.org/kdist/rss.xml"; }
       { url ="https://www.blackhat.com/BlackHatRSS.xml"; }
       { url ="http://blog.ctf365.com/feed/"; }
       { url ="http://bristolcrypto.blogspot.com/feeds/posts/default"; }
@@ -305,7 +299,6 @@
       { url ="http://nakedsecurity.sophos.com/feed/"; }
       { url ="https://www.braintreepayments.com/rss"; }
       { url ="http://edri.org/feed/"; }
-      { url ="http://feeds.feedburner.com/GiantRobotsSmashingIntoOtherGiantRobots"; }
       { url ="http://blog.dnsimple.com/feed.xml"; }
       { url ="https://ruudvanasseldonk.com/feed.xml"; }
       { url ="http://www.lowrisc.org//index.xml"; }
