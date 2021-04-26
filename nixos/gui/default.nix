@@ -19,6 +19,7 @@
     ];
 
     home.packages = with pkgs; [
+      wineFull
       anarchism
       apvlv
       digikam
