@@ -17,6 +17,7 @@
       color article            default   default
     '';
     urls = [
+      { url ="https://alecmuffett.com/article/tag/essay/feed"; }
       { url ="https://osarch.org/feed/"; }
       { url ="https://fosdem.org/2021/atom.xml"; }
       { url ="https://tailscale.com/blog/index.xml"; }
