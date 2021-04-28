@@ -175,7 +175,6 @@
       { url ="http://panoptykon.org/rss.xml"; }
       { url ="http://blog.piston.rs/atom.xml"; }
       { url ="http://tenderlovemaking.com/atom.xml"; }
-      { url ="http://www.sublimetext.com/blog/feed"; }
       { url ="https://kaktuscircuits.blogspot.com/feeds/posts/default"; }
       { url ="http://www.wired.com/threatlevel/feed/"; }
       { url ="http://onethingwell.org/rss"; }
