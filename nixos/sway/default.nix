@@ -6,7 +6,6 @@ in
     services.dbus.packages = with pkgs; [ gnome2.GConf gnome3.dconf ];
     services.dbus.socketActivated = true;
     programs.dconf.enable = true;
-    programs.sway.enable = true;
     programs.qt5ct.enable = true;
     systemd.defaultUnit = "graphical.target";
 
@@ -47,8 +46,9 @@ in
         enable = true;
         wrapperFeatures.base = true;
         wrapperFeatures.gtk = true;
-
+        package = pkgs.unstable.sway;
         extraConfig = ''
+          default_border none
         '';
         extraSessionCommands = ''
         '';
@@ -60,6 +60,7 @@ in
           window = {
             hideEdgeBorders = "both";
             titlebar = false;
+            border = 0;
           };
           bars = [
             {
