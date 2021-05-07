@@ -300,7 +300,6 @@
       { url ="http://nakedsecurity.sophos.com/feed/"; }
       { url ="https://www.braintreepayments.com/rss"; }
       { url ="http://edri.org/feed/"; }
-      { url ="http://blog.dnsimple.com/feed.xml"; }
       { url ="https://ruudvanasseldonk.com/feed.xml"; }
       { url ="http://www.lowrisc.org//index.xml"; }
       { url ="http://feeds.feedburner.com/NadBrzegiemBiurkaUsiadamIPakaam"; }
