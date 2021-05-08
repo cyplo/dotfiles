@@ -24,6 +24,7 @@
     version = 2;
     useOSProber = true;
     memtest86.enable = true;
+    splashImage = ./boot.png;
   };
   time.hardwareClockInLocalTime = true;
   time.timeZone = "Europe/London";
