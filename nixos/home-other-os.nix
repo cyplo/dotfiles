@@ -22,8 +22,38 @@ in
     home.file.".gitconfig".source = ~/dev/dotfiles/.gitconfig.linux.form3;
 
     imports = [
-      ./home-manager/default.nix
       ./git/home.nix
-      ./mercurial/home.nix
+      ./home-manager/programs/tmux.nix
+      ./home-manager/programs/zsh.nix
+      ./home-manager/links.nix
+      ./home-manager/programs/vim.nix
+    ];
+    home.packages = with pkgs; [
+      aria
+      atop
+      bfg-repo-cleaner
+      curl
+      dnsutils
+      docker-compose
+      du-dust
+      fd
+      file
+      fontconfig
+      git
+      hsetroot
+      htop
+      imagemagick
+      jmtpfs
+      jq
+      ripgrep
+      rustup
+      terraform
+      tmux
+      unstable.exercism
+      unstable.genpass
+      unstable.topgrade
+      unzip
+      wget
+      whois
     ];
   }
