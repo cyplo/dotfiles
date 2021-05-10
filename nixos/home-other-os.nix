@@ -28,6 +28,28 @@ in
       ./home-manager/links.nix
       ./home-manager/programs/vim.nix
     ];
+    programs = {
+      home-manager.enable = true;
+
+      z-lua = {
+        enable = true;
+        enableAliases = true;
+        enableBashIntegration = true;
+        enableZshIntegration = true;
+      };
+
+      gpg = {
+        enable = true;
+        settings = {
+        };
+      };
+      taskwarrior.enable = true;
+      fzf.enable = true;
+      go.enable = true;
+      bat.enable = true;
+      lsd.enable = true;
+      lsd.enableAliases = true;
+    };
     home.packages = with pkgs; [
       aria
       atop
