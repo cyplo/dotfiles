@@ -15,16 +15,6 @@
       supportedFeatures = [ "kvm" ];
       mandatoryFeatures = [ ];
     }
-    {
-      hostName = "vultr1.vpn";
-      sshUser = "nix-builder";
-      sshKey = "/home/cyryl/.ssh/id_ed25519";
-      system = "x86_64-linux";
-      maxJobs = 2;
-      speedFactor = 1;
-      supportedFeatures = [ ];
-      mandatoryFeatures = [ ];
-    }
   ];
 
   nix.extraOptions = ''

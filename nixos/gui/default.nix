@@ -19,7 +19,6 @@
     ];
 
     home.packages = with pkgs; [
-      wineFull
       anarchism
       apvlv
       digikam
@@ -32,12 +31,15 @@
       gnome3.nautilus
       gsettings-desktop-schemas
       keybase-gui
-      libreoffice simple-scan
+      libreoffice
+      mindforgerPatched.mindforger
       passff-host
       python38Packages.binwalk-full
       qemu aqemu
+      shotwell
+      simple-scan
       slack
-      spotify shotwell
+      spotify
       ssb-patchwork
       unstable.discord
       unstable.electrum
@@ -45,12 +47,12 @@
       unstable.ghidra-bin
       unstable.hopper
       unstable.inkscape
-      unstable.mindforger
       unstable.openscad
       unstable.qcad
       unstable.signal-desktop
       unstable.wireshark
       vlc
+      wineFull
       xclip
       xidlehook
       yubico-piv-tool
