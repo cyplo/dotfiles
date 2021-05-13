@@ -24,8 +24,6 @@ format = "{utilization}% {frequency}"
 [[block]]
 block = "memory"
 display_type = "memory"
-format_mem = "{Mup}%"
-format_swap = "{SUp}%"
 
 [[block]]
 block = "load"
@@ -37,7 +35,6 @@ block = "disk_space"
 path = "/"
 alias = ""
 info_type = "available"
-unit = "GiB"
 interval = 20
 warning = 10.0
 alert = 5.0

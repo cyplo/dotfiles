@@ -2,7 +2,7 @@
 
 let
   unstableTarball = fetchTarball https://github.com/NixOS/nixpkgs/archive/nixpkgs-unstable.tar.gz;
-  bisqTarball = fetchTarball https://github.com/emmanuelrosa/nixpkgs/archive/6ee154d2bc8c4c48cde2d7ae5bcd0a3da28b2b72.tar.gz;
+  bisqTarball = fetchTarball https://github.com/emmanuelrosa/nixpkgs/archive/3a681b0daaed9841cbd3ea2ebd51f9cca4c836f2.tar.gz;
   mindforgerTarball = fetchTarball https://github.com/cyplo/nixpkgs/archive/80286e3d62406777c08c4afbeeb5deeb1c44062b.tar.gz;
   nurTarball = fetchTarball https://github.com/nix-community/NUR/archive/master.tar.gz;
 in
