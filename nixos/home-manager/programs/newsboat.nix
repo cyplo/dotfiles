@@ -17,6 +17,7 @@
       color article            default   default
     '';
     urls = [
+      { url ="https://shealevy.com/blog/index.xml"; }
       { url ="https://oxide.computer/blog/index.xml"; }
       { url ="https://alecmuffett.com/article/tag/essay/feed"; }
       { url ="https://osarch.org/feed/"; }
