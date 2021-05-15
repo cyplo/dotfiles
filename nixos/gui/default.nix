@@ -47,6 +47,7 @@
       unstable.ghidra-bin
       unstable.hopper
       unstable.inkscape
+      unstable.nyxt
       unstable.openscad
       unstable.qcad
       unstable.signal-desktop
