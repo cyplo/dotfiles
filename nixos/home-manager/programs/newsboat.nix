@@ -17,6 +17,7 @@
       color article            default   default
     '';
     urls = [
+      { url ="https://ambrevar.xyz/atom.xml"; }
       { url ="https://openprivacy.ca/feed/discreet-log.xml"; }
       { url ="https://shealevy.com/blog/index.xml"; }
       { url ="https://oxide.computer/blog/index.xml"; }
