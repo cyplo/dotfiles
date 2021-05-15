@@ -20,6 +20,12 @@
         ]
         ++ vscode-utils.extensionsFromVscodeMarketplace [
           {
+            publisher = "matklad";
+            name = "rust-analyzer";
+            version = "0.2.591";
+            sha256 = "6Kix740Y3thDbOtQGFrUU4l6e1+Ojl0TbyqobQiZltc=";
+          }
+          {
             publisher = "sjhuangx";
             name = "vscode-scheme";
             version = "0.4.0";
@@ -36,12 +42,6 @@
             name = "vim";
             version = "1.18.5";
             sha256 = "0cbmmhkbr4f1afk443sgdihp2q5zkzchbr2yhp7bm5qnv7xdv5l4";
-          }
-          {
-            publisher = "matklad";
-            name = "rust-analyzer";
-            version = "0.2.538";
-            sha256 = "0ivf8yxs17x10z6q44ij3vpamwzga0wiqfg9hzp3bs6mff9szfmb";
           }
           {
             publisher = "2gua";
