@@ -24,6 +24,7 @@ format = "{utilization}% {frequency}"
 [[block]]
 block = "memory"
 display_type = "memory"
+format_mem = "{mem_used} /{mem_total}({mem_used_percents})"
 
 [[block]]
 block = "load"
@@ -51,6 +52,7 @@ hide_disconnected = true
 block = "bluetooth"
 mac = "AC:9B:0A:12:75:DB"
 hide_disconnected = true
+format = "{label}"
 
 [[block]]
 block = "battery"
