@@ -5,7 +5,7 @@ in
   {
     home.packages = with pkgs; [
       font-awesome-ttf
-      unstable.i3status-rust
+      intel-gpu-tools
     ];
 
     xsession.windowManager.i3 = {

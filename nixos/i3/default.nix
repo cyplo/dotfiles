@@ -5,6 +5,13 @@
   ];
   programs.dconf.enable = true;
 
+  security.sudo.extraRules = [
+    {
+      users = [ "cyryl" ];
+      commands = [ { command = "${pkgs.intel-gpu-tools}/bin/intel_gpu_top"; options = [ "NOPASSWD" ]; } ];
+    }
+  ];
+
   services = {
     physlock = {
       enable = true;
