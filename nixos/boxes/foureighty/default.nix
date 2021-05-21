@@ -18,7 +18,7 @@
     ../../mercurial
   ];
 
-  boot.kernelPackages = pkgs.unstable.linuxPackages_latest_hardened;
+  boot.kernelPackages = pkgs.linuxPackages_latest_hardened;
   boot.loader.grub = {
     enable = true;
     version = 2;

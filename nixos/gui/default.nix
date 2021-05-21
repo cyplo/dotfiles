@@ -34,6 +34,7 @@
       libreoffice
       mindforgerPatched.mindforger
       passff-host
+      pdfarranger
       python38Packages.binwalk-full
       qemu aqemu
       shotwell
