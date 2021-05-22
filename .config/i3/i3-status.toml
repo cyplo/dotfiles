@@ -52,6 +52,7 @@ block = "sound"
 block = "bluetooth"
 mac = "28:11:A5:E1:3C:57"
 hide_disconnected = true
+format = "{label}"
 
 [[block]]
 block = "bluetooth"
