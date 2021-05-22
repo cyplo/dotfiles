@@ -42,6 +42,7 @@
       slack
       spotify
       ssb-patchwork
+      unstable.torbrowser
       unstable.discord
       unstable.electrum
       unstable.freecad
