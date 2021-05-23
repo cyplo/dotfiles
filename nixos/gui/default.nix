@@ -42,9 +42,9 @@
       slack
       spotify
       ssb-patchwork
-      unstable.torbrowser
       unstable.discord
       unstable.electrum
+      unstable.element-desktop
       unstable.freecad
       unstable.ghidra-bin
       unstable.hopper
@@ -53,6 +53,7 @@
       unstable.openscad
       unstable.qcad
       unstable.signal-desktop
+      unstable.torbrowser
       unstable.wireshark
       vlc
       wineFull
