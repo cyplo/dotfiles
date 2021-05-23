@@ -5,6 +5,7 @@
   imports = [
     <home-manager/nixos>
     ./hardware-configuration.nix
+    ./lte-modem.nix
     ../../boot.nix
     ../../common.nix
     ../../gfx-intel.nix

@@ -33,6 +33,7 @@
       keybase-gui
       libreoffice
       mindforgerPatched.mindforger
+      modem-manager-gui
       passff-host
       pdfarranger
       python38Packages.binwalk-full
