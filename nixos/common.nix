@@ -39,7 +39,7 @@ in
 
       environment.enableDebugInfo = true;
       environment.systemPackages = with pkgs; [
-        wget git gnupg curl tmux htop atop home-manager pciutils powertop fd dnsutils
+        wget git gnupg curl tmux htop atop home-manager pciutils powertop fd dnsutils usbutils
       ];
 
       i18n.defaultLocale = "en_GB.UTF-8";
