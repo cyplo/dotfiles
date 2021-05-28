@@ -42,7 +42,7 @@
       simple-scan
       slack
       spotify
-      ssb-patchwork
+      unstable.ssb-patchwork
       unstable.discord
       unstable.electrum
       unstable.element-desktop
