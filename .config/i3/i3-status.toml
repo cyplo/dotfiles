@@ -50,7 +50,7 @@ block = "sound"
 
 [[block]]
 block = "bluetooth"
-mac = "EE:37:68:50:54:31"
+mac = "ED:D8:1F:00:62:C8"
 hide_disconnected = true
 
 [[block]]
