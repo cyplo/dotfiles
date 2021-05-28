@@ -25,6 +25,7 @@
     ./programs/tmux.nix
     ./programs/zsh.nix
     ./programs/vim.nix
+    ./programs/emacs/home.nix
     ./programs/kitty.nix
     ./programs/newsboat.nix
     ./programs.nix
