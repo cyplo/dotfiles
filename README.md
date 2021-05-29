@@ -95,6 +95,20 @@ git remote add git@git.sr.ht:~cyplo/dotfiles
 git checkout nixos/boxes/bootstrap
 ```
 
+### Good Links [tm]
+* https://nixpk.gs/pr-tracker.html
+* https://pr-tracker.nevarro.space/
+
+### inspiration
+* https://github.com/cole-mickens/nixcfg/tree/main
+* https://git.sr.ht/~afontaine/nix/tree/main/item/andrew/mail/default.nix#L125-129 - proton mail bridge
+* https://github.com/expipiplus1/dotfiles/blob/3d6ca2c8bcba3181bfe7bf16d331baf407c7a9dd/tests/home-test.nix - testing on CI
+
+### things to check out
+* `nix-top`
+* https://github.com/divnix/devos
+
+
 ## guix
 
 I'm just starting to play with guix, these are just loose notes:

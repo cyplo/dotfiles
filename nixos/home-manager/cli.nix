@@ -25,6 +25,7 @@
     keybase
     lm_sensors
     mercurial
+    nix-top
     nixops
     pciutils
     powertop
