@@ -58,6 +58,21 @@
         ];
         specialArgs = { inherit inputs; };
       };
+      skinnyv = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          (import ./nixos/boxes/skinnyv)
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.cyryl = import ./nixos/home-manager;
+          }
+
+        ];
+        specialArgs = { inherit inputs; };
+      };
     };
   };
 }

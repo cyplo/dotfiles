@@ -3,7 +3,6 @@
   networking.hostName = "skinnyv";
 
   imports = [
-    <home-manager/nixos>
     ./hardware-configuration.nix
     ../../boot.nix
     ../../common.nix
@@ -22,14 +21,4 @@
   time.timeZone = "Europe/London";
 
   fonts.fontconfig.enable = true;
-  home-manager.users.cyryl = {...}: {
-    imports = [
-      ../../home-manager
-    ];
-    home.stateVersion = config.system.stateVersion;
-
-    nixpkgs.overlays = config.nixpkgs.overlays;
-    nixpkgs.config = config.nixpkgs.config;
-  };
-
 }
