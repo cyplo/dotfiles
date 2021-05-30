@@ -100,14 +100,38 @@ git checkout nixos/boxes/bootstrap
 * https://pr-tracker.nevarro.space/
 
 ### inspiration
+* start with flakes - https://github.com/mjlbach/nix-dotfiles/blob/4777ae6cf1a2bf88f5320a300e05bbe7ada57df8/nixos/flake.nix#L1-L10
+* flakes - https://github.com/MatthewCroughan/nixcfg/blob/master/flake.nix#L45 for T480
 * https://github.com/cole-mickens/nixcfg/tree/main
 * https://git.sr.ht/~afontaine/nix/tree/main/item/andrew/mail/default.nix#L125-129 - proton mail bridge
 * https://github.com/expipiplus1/dotfiles/blob/3d6ca2c8bcba3181bfe7bf16d331baf407c7a9dd/tests/home-test.nix - testing on CI
+* https://git.knightsofthelambdacalcul.us/hazel/etc
 
 ### things to check out
+* https://github.com/ryantm/agenix
 * `nix-top`
+* naersk for genpass
 * https://github.com/divnix/devos
+* https://github.com/tazjin/nix-1p
+* https://github.com/nix-community/neovim-nightly-overlay
 
+### flakes
+
+```
+inputs = {
+nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+};
+
+outputs = { self, nixpkgs, ... }@inputs: {
+nixosConfigurations = {
+hyacinth = nixpkgs.lib.nixosSystem {
+system = "x86_64-linux";
+modules = [
+(import ./machines/hyacinth)
+];
+specialArgs = { inherit inputs; };
+};
+```
 
 ## guix
 
