@@ -1,11 +1,11 @@
 {
   description = "NixOS configuration with flakes";
   inputs = {
-    futils = {
+    nixpkgs = {
       type = "github";
-      owner = "numtide";
-      repo = "flake-utils";
-      ref = "master";
+      owner = "NixOS";
+      repo = "nixpkgs";
+      ref = "nixos-unstable";
     };
 
     home-manager = {
@@ -18,11 +18,11 @@
       };
     };
 
-    nixpkgs = {
+    flake-utils = {
       type = "github";
-      owner = "NixOS";
-      repo = "nixpkgs";
-      ref = "nixos-unstable";
+      owner = "numtide";
+      repo = "flake-utils";
+      ref = "master";
     };
 
     nur = {
@@ -40,19 +40,19 @@
     };
   };
 
-  outputs = { self, futils, home-manager, nixpkgs, nur, bisq } @ inputs: {
+  outputs = { self, flake-utils, home-manager, nixpkgs, nur, bisq } @ inputs: {
 
     nixosConfigurations = {
       foureighty = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          (import ./boxes/foureighty)
+          (import ./nixos/boxes/foureighty)
 
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.cyryl = import ./home-manager;
+            home-manager.users.cyryl = import ./nixos/home-manager;
           }
 
         ];

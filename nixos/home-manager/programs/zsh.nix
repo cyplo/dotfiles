@@ -32,13 +32,13 @@
     '';
     envExtra = ''
         [ -s "/home/cyryl/.jabba/jabba.sh" ] && source "/home/cyryl/.jabba/jabba.sh"
+        tmux source-file ~/.config/tmux/tmux.conf
         local nixos_version=`which nixos-version`
         if [[ ! -x "$nixos_version" ]]; then
           source /home/cyryl/.nix-profile/etc/profile.d/nix.sh
           export NIX_PATH="$HOME/.nix-defexpr/channels:$NIX_PATH"
           export NVM_DIR="$HOME/.nvm"
           [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-          tmux source-file ~/.config/tmux/tmux.conf
           echo "non-nixos patches loaded"
         fi
     '';
