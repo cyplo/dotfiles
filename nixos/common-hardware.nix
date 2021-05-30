@@ -8,6 +8,13 @@
   networking.networkmanager.enable = true;
 
   hardware.enableAllFirmware = true;
+
+
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
+
+
   hardware.enableRedistributableFirmware = true;
   hardware.cpu.intel.updateMicrocode = true;
   hardware.pulseaudio = {
@@ -24,7 +31,7 @@
   hardware.bluetooth = {
     enable = true;
     package = pkgs.bluezFull;
-    config = {
+    settings = {
       General = { Enable = "Source,Sink,Media,Socket"; };
     };
   };

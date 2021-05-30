@@ -34,9 +34,11 @@
       xkbOptions = "caps:ctrl_modifier";
       libinput = {
         enable = true;
-        naturalScrolling = false;
-        clickMethod = "clickfinger";
-        disableWhileTyping = true;
+        touchpad = {
+          naturalScrolling = false;
+          clickMethod = "clickfinger";
+          disableWhileTyping = true;
+        };
       };
 
       useGlamor = true;

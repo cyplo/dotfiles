@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> {} }:
+{ pkgs }:
 let
   myEmacs = pkgs.emacs-nox;
   emacsWithPackages = (pkgs.emacsPackagesGen myEmacs).emacsWithPackages;

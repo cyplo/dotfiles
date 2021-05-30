@@ -35,9 +35,9 @@
     rustup
     terraform
     tmux
-    unstable.exercism
-    unstable.genpass
-    unstable.topgrade
+    exercism
+    genpass
+    topgrade
     unzip
     veracrypt
     wget

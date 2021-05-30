@@ -5,6 +5,5 @@
     user = "cyryl";
     dataDir = "/home/cyryl/.syncthing";
     openDefaultPorts = true;
-    package = pkgs.unstable.syncthing;
   };
 }

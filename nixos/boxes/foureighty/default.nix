@@ -1,11 +1,9 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 {
   networking.hostName = "foureighty";
 
   imports = [
-    <home-manager/nixos>
     ./hardware-configuration.nix
-    ./lte-modem.nix
     ../../boot.nix
     ../../common.nix
     ../../gfx-intel.nix
@@ -34,22 +32,12 @@
   services.hardware.bolt.enable = true;
   services.fprintd = {
     enable = true;
-    package = pkgs.unstable.fprintd;
   };
 
-  home-manager.users.cyryl = {...}: {
-    imports = [
-      ../../home-manager
-    ];
-    home.stateVersion = config.system.stateVersion;
-
-    nixpkgs.overlays = config.nixpkgs.overlays;
-    nixpkgs.config = config.nixpkgs.config;
-    home.packages = with pkgs; [
-      bisq.bisq-desktop
-    ];
-  };
   fonts.fontconfig.enable = true;
   programs.steam.enable = true;
 
+  home-manager.users.cyryl = {...}: {
+    home.packages = [ inputs.bisq.legacyPackages."x86_64-linux".bisq-desktop ];
+  };
 }

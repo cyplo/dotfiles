@@ -12,6 +12,8 @@
     qt = {
       enable = true;
       platformTheme = "gnome";
+      style.name = "adwaita-dark";
+      style.package = pkgs.adwaita-qt;
     };
 
     imports = [
@@ -32,30 +34,30 @@
       gsettings-desktop-schemas
       keybase-gui
       libreoffice
-      mindforgerPatched.mindforger
+      mindforger
       modem-manager-gui
       passff-host
       pdfarranger
       python38Packages.binwalk-full
-      qemu aqemu
+      qemu
       shotwell
       simple-scan
       slack
       spotify
-      unstable.ssb-patchwork
-      unstable.discord
-      unstable.electrum
-      unstable.element-desktop
-      unstable.freecad
-      unstable.ghidra-bin
-      unstable.hopper
-      unstable.inkscape
-      unstable.nyxt
-      unstable.openscad
-      unstable.qcad
-      unstable.signal-desktop
-      unstable.torbrowser
-      unstable.wireshark
+      ssb-patchwork
+      discord
+      electrum
+      element-desktop
+      freecad
+      ghidra-bin
+      hopper
+      inkscape
+      nyxt
+      openscad
+      qcad
+      signal-desktop
+      torbrowser
+      wireshark
       vlc
       wineFull
       xclip

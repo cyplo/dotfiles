@@ -1,0 +1,100 @@
+{
+  "nodes": {
+    "bisq": {
+      "locked": {
+        "lastModified": 1620344115,
+        "narHash": "sha256-xnssmdoQsDyZL8vWSuv9QmAc260JMPzBCFRYznOna78=",
+        "owner": "emmanuelrosa",
+        "repo": "nixpkgs",
+        "rev": "3a681b0daaed9841cbd3ea2ebd51f9cca4c836f2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "emmanuelrosa",
+        "ref": "3a681b0daaed9841cbd3ea2ebd51f9cca4c836f2",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "futils": {
+      "locked": {
+        "lastModified": 1620759905,
+        "narHash": "sha256-WiyWawrgmyN0EdmiHyG2V+fqReiVi8bM9cRdMaKQOFg=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "b543720b25df6ffdfcf9227afafc5b8c1fabfae8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "ref": "master",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1622368473,
+        "narHash": "sha256-5/HXUr8uv+L9ZerwEF3UefYL8Ik+j4uPoMpnxealANo=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "d2aaeac42c563cf8cf76ee3b90d9585dadbb91e0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "master",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1622194753,
+        "narHash": "sha256-76qtvFp/vFEz46lz5iZMJ0mnsWQYmuGYlb0fHgKqqMg=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "540dccb2aeaffa9dc69bfdc41c55abd7ccc6baa3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nur": {
+      "locked": {
+        "lastModified": 1622369728,
+        "narHash": "sha256-VLnaYJDw2DFP2p1LHDgEpV0FV6vyYGj3uV2ciJFuAiE=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "58be3aa3e3940dd8f2401370ea348aaf97f5bbe6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "master",
+        "repo": "NUR",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "bisq": "bisq",
+        "futils": "futils",
+        "home-manager": "home-manager",
+        "nixpkgs": "nixpkgs",
+        "nur": "nur"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

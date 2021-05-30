@@ -20,7 +20,6 @@
 
     dbus = {
       packages = with pkgs; [ gnome2.GConf gnome3.dconf ];
-      socketActivated = true;
     };
 
     fractalart.enable = true;
