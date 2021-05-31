@@ -7,6 +7,8 @@
     dataDir = "/data/restic";
     appendOnly = true;
     prometheus = true;
+    listenAddress = "brix.vpn:8000";
+    extraFlags = [ "--no-auth" ];
   };
 
 }
