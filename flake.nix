@@ -1,8 +1,8 @@
 {
   description = "NixOS configuration with flakes";
-  outputs = { self, flake-utils, home-manager, nixpkgs, nixpkgs-stable, nur, bisq, agenix } @ inputs: {
+  outputs = { self, flake-utils, home-manager, nixpkgs-nixos-unstable, nixpkgs-stable, nur, bisq, agenix } @ inputs: {
     nixosConfigurations = {
-      foureighty = nixpkgs.lib.nixosSystem {
+      foureighty = nixpkgs-stable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           (import ./nixos/boxes/foureighty)
@@ -17,7 +17,7 @@
         ];
         specialArgs = { inherit inputs; };
       };
-      skinnyv = nixpkgs.lib.nixosSystem {
+      skinnyv = nixpkgs-stable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           (import ./nixos/boxes/skinnyv)
@@ -43,7 +43,7 @@
     };
   };
   inputs = {
-    nixpkgs = {
+    nixpkgs-nixos-unstable = {
       type = "github";
       owner = "NixOS";
       repo = "nixpkgs";
@@ -54,16 +54,16 @@
       type = "github";
       owner = "NixOS";
       repo = "nixpkgs";
-      ref = "nixos-20.09";
+      ref = "nixos-21.05";
     };
 
     home-manager = {
       type = "github";
       owner = "nix-community";
       repo = "home-manager";
-      ref = "master";
+      ref = "release-21.05";
       inputs = {
-        nixpkgs.follows = "nixpkgs";
+        nixpkgs.follows = "nixpkgs-stable";
       };
     };
 
