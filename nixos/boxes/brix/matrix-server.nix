@@ -35,7 +35,7 @@
     extraConfig = ''
       experimental_features: { spaces_enabled: true }
     '';
-    package = inputs.nixpkgs.legacyPackages."x86_64-linux".matrix-synapse;
+    package = inputs.nixpkgs-nixos-unstable.legacyPackages."x86_64-linux".matrix-synapse;
   };
 
   networking.firewall.allowedTCPPorts = [ 8008 ];
