@@ -17,6 +17,7 @@
       color article            default   default
     '';
     urls = [
+      { url ="https://ciko.io/index.xml"; }
       { url ="https://blog.thea.codes/feed.xml"; }
       { url ="https://ambrevar.xyz/atom.xml"; }
       { url ="https://openprivacy.ca/feed/discreet-log.xml"; }
