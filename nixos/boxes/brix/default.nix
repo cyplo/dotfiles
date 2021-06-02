@@ -3,10 +3,9 @@
   imports = [
     ./brix-boot.nix
     ./real-hardware.nix
-    ./security.nix
-    ./cli.nix
-    ./vpn.nix
-    ./prometheus-node.nix
+    ../security.nix
+    ../cli.nix
+    ../vpn.nix
     ./restic-server.nix
     ./i2p.nix
     ./print-server.nix

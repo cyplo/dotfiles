@@ -40,6 +40,14 @@
         ];
         specialArgs = { inherit inputs; };
       };
+      vultr1 = nixpkgs-stable.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          (import ./nixos/boxes/vultr1)
+          agenix.nixosModules.age
+        ];
+        specialArgs = { inherit inputs; };
+      };
     };
   };
   inputs = {
