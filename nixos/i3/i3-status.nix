@@ -21,6 +21,12 @@
         };
         position = 3;
       };
+      "time" = {
+        settings = {
+          format = "%H:%M %a %d/%m";
+        };
+        position = 9;
+      };
     };
   };
 
