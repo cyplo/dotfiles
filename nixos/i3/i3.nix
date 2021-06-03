@@ -3,10 +3,6 @@ let
   mod = "Mod4";
 in
   {
-    programs.i3status= {
-      enable = true;
-      enableDefault = true;
-    };
     home.packages = with pkgs; [
       font-awesome-ttf
       intel-gpu-tools
@@ -34,7 +30,8 @@ in
         bars = [
           {
             position = "top";
-            colors.background = "#002b36";
+            colors.background = "#001e26";
+            colors.statusline = "#708183";
             fonts = {
               names = [ "Fira Code Nerd Font" ];
               size = 10.0;

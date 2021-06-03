@@ -3,6 +3,7 @@
   imports = [
     ./grobi.nix
     ./i3.nix
+    ./i3-status.nix
     ./dunst.nix
     ./rofi.nix
     ./kdeconnect.nix
