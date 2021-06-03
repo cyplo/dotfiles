@@ -3,6 +3,10 @@ let
   mod = "Mod4";
 in
   {
+    programs.i3status= {
+      enable = true;
+      enableDefault = true;
+    };
     home.packages = with pkgs; [
       font-awesome-ttf
       intel-gpu-tools
@@ -36,7 +40,6 @@ in
               size = 10.0;
             };
 
-            statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${./../../.config/i3/i3-status.toml}";
             trayOutput = "primary";
           }
         ];
