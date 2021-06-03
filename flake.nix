@@ -85,7 +85,7 @@
       type = "github";
       owner = "emmanuelrosa";
       repo = "nixpkgs";
-      ref = "3a681b0daaed9841cbd3ea2ebd51f9cca4c836f2";
+      ref = "39d42b8e83726c2fec873c023d4e1d6c37f4a187";
     };
 
     agenix = {
