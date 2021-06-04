@@ -4,6 +4,9 @@
     enable = true;
     enableDefault = false;
     modules = {
+      "load" = {
+        position = 1;
+      };
       "disk /" = {
         position = 2;
         settings = {
