@@ -15,8 +15,8 @@
       };
       "memory" = {
         settings = {
-          format = "  %available";
-          format_degraded = "  LOW: %free";
+          format = " %available";
+          format_degraded = " LOW: %free";
           memory_used_method = "classical";
         };
         position = 2;
