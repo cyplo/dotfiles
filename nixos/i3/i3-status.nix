@@ -4,14 +4,19 @@
     enable = true;
     enableDefault = false;
     modules = {
-      "memory" = {
-        position = 2;
-      };
       "disk /" = {
         position = 2;
         settings = {
-          format = "/ %avail";
+          format = " %avail";
         };
+      };
+      "memory" = {
+        settings = {
+          format = "  %free";
+          format_degraded = "  LOW: %free";
+          memory_used_method = "classical";
+        };
+        position = 2;
       };
       "battery all" = {
         settings = {
@@ -25,7 +30,7 @@
       };
       "time" = {
         settings = {
-          format = "%H:%M %a %d/%m";
+          format = "%a %d/%m %H:%M";
         };
         position = 9;
       };
