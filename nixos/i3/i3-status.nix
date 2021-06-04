@@ -18,6 +18,8 @@
           status_chr = "";
           status_bat = "";
           status_full = "";
+          low_threshold = 30;
+          threshold_type = "time";
         };
         position = 3;
       };
