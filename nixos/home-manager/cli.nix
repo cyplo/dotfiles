@@ -31,7 +31,7 @@
     powertop
     ranger
     restic
-    ripgrep
+    ripgrep-all
     rustup
     terraform
     tmux
