@@ -114,6 +114,7 @@ git checkout nixos/boxes/bootstrap
 * https://github.com/divnix/devos
 * https://github.com/tazjin/nix-1p
 * https://github.com/nix-community/neovim-nightly-overlay
+* install ISO - https://christine.website/blog/my-homelab-2021-06-08
 
 ### flakes
 
