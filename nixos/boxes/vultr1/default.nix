@@ -4,11 +4,11 @@
 
   imports = [
     ./vultr-boot.nix
-    ../vpn.nix
     ../../server-security.nix
+    ../../tailscale.nix
+    ./tailscale-vultr1.nix
     ../cli.nix
     ./nginx.nix
-    ./search.nix
     ./folding.nix
     ./matrix-front.nix
   ];

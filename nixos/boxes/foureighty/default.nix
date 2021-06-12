@@ -7,7 +7,6 @@
     ../../boot.nix
     ../../common.nix
     ../../gfx-intel.nix
-    ../../zerotier.nix
     ../../tailscale.nix
     ./tailscale-foureighty.nix
     ../../distributed-builds.nix

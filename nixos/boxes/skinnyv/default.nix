@@ -7,7 +7,6 @@
     ../../boot.nix
     ../../common.nix
     ../../gfx-intel.nix
-    ../../zerotier.nix
     ../../i3
     ../../distributed-builds.nix
     ../../gui

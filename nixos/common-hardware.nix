@@ -9,12 +9,6 @@
 
   hardware.enableAllFirmware = true;
 
-
-  nixpkgs.config = {
-    allowUnfree = true;
-  };
-
-
   hardware.enableRedistributableFirmware = true;
   hardware.cpu.intel.updateMicrocode = true;
   hardware.pulseaudio = {
@@ -46,7 +40,7 @@
   hardware.printers.ensurePrinters = [{
     description = "Epson XP-540 via brix";
     name = "epson_xp540_via_brix";
-    deviceUri = "ipp://brix.vpn:631/printers/epson_xp540";
+    deviceUri = "ipp://brix:631/printers/epson_xp540";
     model = "epson-inkjet-printer-escpr/Epson-XP-540_Series-epson-escpr-en.ppd";
     ppdOptions = { PageSize = "A4"; Duplex = "DuplexNoTumble"; };
   }];
@@ -56,7 +50,7 @@
     netConf = ''
       10.0.0.232
       brix.local
-      brix.vpn
+      brix
     '';
     snapshot = true;
     extraBackends = with pkgs; [ sane-airscan utsushi ];

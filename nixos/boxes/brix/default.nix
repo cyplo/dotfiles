@@ -5,7 +5,6 @@
     ./real-hardware.nix
     ../../server-security.nix
     ../cli.nix
-    ../vpn.nix
     ../../tailscale.nix
     ./tailscale-brix.nix
     ./restic-server.nix

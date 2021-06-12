@@ -18,7 +18,7 @@
     listeners = [
       {
         port = 8008;
-        bind_address = "brix.vpn";
+        bind_address = "brix";
         type = "http";
         tls = false;
         x_forwarded = true;

@@ -1,5 +1,8 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "fahclient"
+  ];
   services.foldingathome = {
     enable = true;
     user = "cyplo";

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
 
   networking.firewall.enable = true;
@@ -17,6 +17,8 @@
     '';
   };
 
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+  ];
   hardware.printers.ensurePrinters = [{
     description = "Epson XP-540";
     location = "connected to brix";
@@ -28,7 +30,7 @@
 
   hardware.sane = {
     enable = true;
-    extraBackends = with pkgs; [ epkowa utsushi sane-airscan gawk ];
+    extraBackends = with pkgs; [ utsushi sane-airscan gawk ];
     snapshot = true;
   };
 

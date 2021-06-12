@@ -31,7 +31,7 @@
             '';
 
             locations."/_matrix" = {
-              proxyPass = "http://brix.vpn:8008"; # without a trailing /
+              proxyPass = "http://brix:8008"; # without a trailing /
             };
           };
         };

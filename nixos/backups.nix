@@ -8,7 +8,7 @@ in
       restic.backups.home-to-brix = {
         passwordFile = "/etc/nixos/secrets/restic-password-brix";
         paths = [ "/home" ];
-        repository = "rest:http://brix.vpn:8000/";
+        repository = "rest:http://brix:8000/";
         timerConfig = { OnCalendar = "hourly"; };
         extraBackupArgs = extraArgs;
       };
