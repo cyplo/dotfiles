@@ -6,6 +6,8 @@
     ../../server-security.nix
     ../cli.nix
     ../vpn.nix
+    ../../tailscale.nix
+    ./tailscale-brix.nix
     ./restic-server.nix
     ./i2p.nix
     ./print-server.nix
