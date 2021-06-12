@@ -8,6 +8,8 @@
     ../../common.nix
     ../../gfx-intel.nix
     ../../zerotier.nix
+    ../../tailscale.nix
+    ./tailscale-foureighty.nix
     ../../distributed-builds.nix
     ../../libvirt.nix
     ../../backups.nix
