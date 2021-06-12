@@ -74,16 +74,16 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1623315106,
-        "narHash": "sha256-a2/8mVCuZWQUIWOQGCmUvtT813ZwnL0VRdwE3VzRaLU=",
-        "owner": "NixOS",
+        "lastModified": 1623489190,
+        "narHash": "sha256-p+aJJZ2BE57+59FDjHuUzaWow1M+bZ0MZDxqeB2/TKI=",
+        "owner": "cyplo",
         "repo": "nixos-hardware",
-        "rev": "6bea9761693b5d185d34bef205edb25a8081db57",
+        "rev": "1a4ac0b996f2bd5f2fba8b94ea5d7c96d1f6e114",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "master",
+        "owner": "cyplo",
+        "ref": "add-t480",
         "repo": "nixos-hardware",
         "type": "github"
       }

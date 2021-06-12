@@ -1,15 +1,16 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
-  imports = [ ];
+  imports = [
+    inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t480
+  ];
 
   boot = {
     kernel.sysctl = {
       "vm.swappiness" = 75;
     };
 
-    kernelModules = [ "kvm-intel" "acpi_call" ];
-    extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
+    kernelModules = [ "kvm-intel" ];
 
     initrd = {
       kernelModules = [ "dm-snapshot" ];
