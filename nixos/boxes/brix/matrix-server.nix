@@ -18,7 +18,7 @@
     listeners = [
       {
         port = 8008;
-        bind_address = "brix";
+        bind_address = "brix.cyplo.github.beta.tailscale.net";
         type = "http";
         tls = false;
         x_forwarded = true;
