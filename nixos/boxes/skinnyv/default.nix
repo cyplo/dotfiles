@@ -8,6 +8,8 @@
     ../../common.nix
     ../../gfx-intel.nix
     ../../i3
+    ../../tailscale.nix
+    ./tailscale-skinnyv.nix
     ../../distributed-builds.nix
     ../../gui
     ../../git
