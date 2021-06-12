@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
   imports =
     [
@@ -11,8 +11,10 @@
     security.allowUserNamespaces = true;
 
     environment.enableDebugInfo = true;
+
+    nixpkgs.config.allowUnfree = true;
     environment.systemPackages = with pkgs; [
-      wget git gnupg curl tmux htop atop home-manager pciutils powertop fd dnsutils usbutils
+      wget git gnupg curl tmux htop atop home-manager pciutils powertop fd dnsutils usbutils veracrypt
     ];
 
     i18n.defaultLocale = "en_GB.UTF-8";
@@ -52,7 +54,7 @@
       ];
       package = pkgs.nixUnstable;
       extraOptions = ''
-        experimental-features = nix-command flakes
+            experimental-features = nix-command flakes
       '';
     };
 

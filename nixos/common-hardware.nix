@@ -7,8 +7,6 @@
 
   networking.networkmanager.enable = true;
 
-  hardware.enableAllFirmware = true;
-
   hardware.enableRedistributableFirmware = true;
   hardware.cpu.intel.updateMicrocode = true;
   hardware.pulseaudio = {
@@ -34,7 +32,7 @@
 
   services.printing = {
     enable = true;
-    drivers = with pkgs; [ epson-escpr samsung-unified-linux-driver splix ];
+    drivers = with pkgs; [ epson-escpr splix ];
   };
 
   hardware.printers.ensurePrinters = [{
