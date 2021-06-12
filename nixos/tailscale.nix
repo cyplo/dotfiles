@@ -1,9 +1,12 @@
-{ config, pkgs, ... }:
-{
-  environment.systemPackages = [ pkgs.tailscale ];
+{ config, pkgs, inputs, ... }:
+let
+  tailscale =  inputs.nixpkgs-nixos-unstable.legacyPackages."x86_64-linux".tailscale;
+
+in {
+  environment.systemPackages = [ tailscale ];
   services.tailscale = {
     enable = true;
-    package = pkgs.tailscale;
+    package = tailscale;
   };
 
   networking.firewall = {
