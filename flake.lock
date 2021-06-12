@@ -74,11 +74,11 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1623489190,
-        "narHash": "sha256-p+aJJZ2BE57+59FDjHuUzaWow1M+bZ0MZDxqeB2/TKI=",
+        "lastModified": 1623490714,
+        "narHash": "sha256-Em9Rf+iTY1mTeFOVCLFGGAoSdcx0ekuxuf45ePjsqnY=",
         "owner": "cyplo",
         "repo": "nixos-hardware",
-        "rev": "1a4ac0b996f2bd5f2fba8b94ea5d7c96d1f6e114",
+        "rev": "a67ed0c3a2d1b31f8233195cbd36bb2501bdf1bc",
         "type": "github"
       },
       "original": {

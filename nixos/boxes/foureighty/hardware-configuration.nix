@@ -7,7 +7,7 @@
 
   boot = {
     kernel.sysctl = {
-      "vm.swappiness" = 75;
+      "vm.swappiness" = 95;
     };
 
     kernelModules = [ "kvm-intel" ];
@@ -40,7 +40,7 @@
   zramSwap = {
     enable = true;
     algorithm = "zstd";
-    memoryPercent = 50;
+    memoryPercent = 75;
   };
 
   nix.maxJobs = 2;
