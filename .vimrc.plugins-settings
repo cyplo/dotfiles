@@ -9,12 +9,12 @@ au BufWrite * :Autoformat
 let g:rustfmt_autosave = 1
 
 " searching
-let $FZF_DEFAULT_COMMAND = 'rg --files --no-messages "" .'
-set grepprg=rg\ --vimgrep
+let $FZF_DEFAULT_COMMAND = 'rga --files --no-messages "" .'
+set grepprg=rga\ --vimgrep
 let g:fzf_command_prefix = 'Fzf'
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+command! -bang -nargs=* Find call fzf#vim#grep('rga --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 let g:ctrlp_show_hidden = 1
-let g:ctrlp_user_command = 'rg %s --files --hidden --color=never --glob ""'
+let g:ctrlp_user_command = 'rga %s --files --hidden --color=never --glob ""'
 
 " nerdtree startup
 autocmd StdinReadPre * let s:std_in=1
@@ -30,11 +30,11 @@ set signcolumn=yes
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 augroup mygroup
-    autocmd!
-    " Setup formatexpr specified filetype(s).
-    autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-    " Update signature help on jump placeholder.
-    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder.
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
 command! -nargs=0 Format :call CocAction('format')
@@ -44,6 +44,6 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " ack
-let g:ackprg = 'rg --vimgrep --smart-case'
+let g:ackprg = 'rga --vimgrep --smart-case'
 let g:ack_autoclose = 1
 let g:ack_use_cword_for_empty_search = 1
