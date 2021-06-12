@@ -3,7 +3,7 @@
   imports = [
     ./brix-boot.nix
     ./real-hardware.nix
-    ../security.nix
+    ../../server-security.nix
     ../cli.nix
     ../vpn.nix
     ./restic-server.nix

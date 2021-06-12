@@ -5,7 +5,7 @@
   imports = [
     ./vultr-boot.nix
     ../vpn.nix
-    ../security.nix
+    ../../server-security.nix
     ../cli.nix
     ./nginx.nix
     ./search.nix

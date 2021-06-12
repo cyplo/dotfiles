@@ -1,20 +1,12 @@
 { config, pkgs, ... }:
 {
   imports = [
+    ./security.nix
   ];
   security.acme.email = "admin@cyplo.dev";
   security.acme.acceptTerms = true;
-  security.forcePageTableIsolation = true;
-  security.protectKernelImage = true;
-  security.apparmor.enable = true;
-  security.lockKernelModules = true;
 
-  services.haveged.enable = true;
   services.fail2ban.enable = true;
-
-  environment.systemPackages = with pkgs; [
-    knockknock
-  ];
 
   services.openssh = {
     enable = true;

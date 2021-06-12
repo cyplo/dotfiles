@@ -6,6 +6,7 @@
   security.forcePageTableIsolation = true;
   security.virtualisation.flushL1DataCache = "always";
   security.apparmor.enable = true;
+  services.haveged.enable = true;
   boot.kernelParams = [
     "page_poison=1"
     "page_alloc.shuffle=1"

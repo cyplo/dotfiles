@@ -38,8 +38,6 @@
 
     fonts.fonts = with pkgs; [ powerline-fonts weather-icons material-icons source-code-pro fira-code noto-fonts-emoji emojione iosevka font-awesome nerdfonts ];
 
-    services.haveged.enable = true;
-
     nix = {
       autoOptimiseStore = true;
       daemonIONiceLevel = 7;
