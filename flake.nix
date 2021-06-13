@@ -6,6 +6,7 @@
         system = "x86_64-linux";
         modules = [
           (import ./nixos/boxes/foureighty)
+          (import ./nixos/email-accounts.nix)
 
           home-manager.nixosModules.home-manager
           {
