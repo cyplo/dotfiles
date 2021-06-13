@@ -67,9 +67,9 @@
 
     nixos-hardware = {
       type = "github";
-      owner = "cyplo";
+      owner = "NixOS";
       repo = "nixos-hardware";
-      ref = "add-t480";
+      ref = "master";
     };
 
     home-manager = {
