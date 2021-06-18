@@ -10,6 +10,7 @@
 (use-modules (gnu packages ssh))
 
 (use-service-modules desktop networking ssh xorg)
+(use-service-modules spice)
 
 (define %xorg-libinput-config
   "Section \"InputClass\"
@@ -60,10 +61,12 @@ EndSection
   (services
     (append
       (list (service gnome-desktop-service-type)
+            (spice-vdagent-service)
             (set-xorg-configuration
               (xorg-configuration
                 (keyboard-layout keyboard-layout)
-                (extra-config (list %xorg-libinput-config)))))
+                (extra-config (list %xorg-libinput-config))))
+                )
       %desktop-services))
   (bootloader
     (bootloader-configuration
