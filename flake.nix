@@ -1,54 +1,42 @@
 {
   description = "NixOS configuration with flakes";
-  outputs = { self, flake-utils, home-manager, nixpkgs-nixos-unstable, nixpkgs-stable, nixos-hardware, nur, bisq, agenix, neuron } @ inputs: {
+  outputs = { self, flake-utils, home-manager, nixpkgs-nixos-unstable, nixpkgs-stable, nixos-hardware, nur, bisq, agenix, neuron } @ inputs:
+
+  let
+    mkServer = pkgs: system: hostname:
+    pkgs.lib.nixosSystem {
+      system = system;
+      modules = [
+        (./. + "/nixos/boxes/${hostname}")
+        agenix.nixosModules.age
+      ];
+      specialArgs = { inherit inputs; };
+    };
+    mkWorkstation = pkgs: system: hostname:
+    pkgs.lib.nixosSystem {
+      system = system;
+      modules = [
+        (./. + "/nixos/boxes/${hostname}")
+        (import ./nixos/email-accounts.nix)
+
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.cyryl = import ./nixos/home-manager;
+        }
+
+      ];
+      specialArgs = { inherit inputs; };
+    };
+  in
+
+  {
     nixosConfigurations = {
-      foureighty = nixpkgs-stable.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          (import ./nixos/boxes/foureighty)
-          (import ./nixos/email-accounts.nix)
-
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.cyryl = import ./nixos/home-manager;
-          }
-
-        ];
-        specialArgs = { inherit inputs; };
-      };
-      skinnyv = nixpkgs-stable.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          (import ./nixos/boxes/skinnyv)
-
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.cyryl = import ./nixos/home-manager;
-          }
-
-        ];
-        specialArgs = { inherit inputs; };
-      };
-      brix = nixpkgs-stable.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          (import ./nixos/boxes/brix)
-          agenix.nixosModules.age
-        ];
-        specialArgs = { inherit inputs; };
-      };
-      vultr1 = nixpkgs-stable.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          (import ./nixos/boxes/vultr1)
-          agenix.nixosModules.age
-        ];
-        specialArgs = { inherit inputs; };
-      };
+      foureighty = mkWorkstation nixpkgs-stable "x86_64-linux" "foureighty";
+      skinnyv = mkWorkstation nixpkgs-stable "x86_64-linux" "skinnyv";
+      brix = mkServer nixpkgs-stable "x86_64-linux" "brix";
+      vultr1 = mkServer nixpkgs-stable "x86_64-linux" "vultr1";
     };
   };
   inputs = {
