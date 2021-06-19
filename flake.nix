@@ -1,6 +1,6 @@
 {
   description = "NixOS configuration with flakes";
-  outputs = { self, flake-utils, home-manager, nixpkgs-nixos-unstable, nixpkgs-stable, nixos-hardware, nur, bisq, agenix } @ inputs: {
+  outputs = { self, flake-utils, home-manager, nixpkgs-nixos-unstable, nixpkgs-stable, nixos-hardware, nur, bisq, agenix, neuron } @ inputs: {
     nixosConfigurations = {
       foureighty = nixpkgs-stable.lib.nixosSystem {
         system = "x86_64-linux";
@@ -108,6 +108,13 @@
       type = "github";
       owner = "ryantm";
       repo = "agenix";
+      ref = "master";
+    };
+
+    neuron = {
+      type = "github";
+      owner = "srid";
+      repo = "neuron";
       ref = "master";
     };
   };
