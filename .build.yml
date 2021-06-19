@@ -7,7 +7,8 @@ secrets:
 
 tasks:
   - check: |
-      nix flake check
+      cd dotfiles
+      nix-shell --pure --run 'nix-experimental flake check'
   - github_push: |
       set +xv
       cd dotfiles
