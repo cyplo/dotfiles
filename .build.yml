@@ -6,6 +6,8 @@ secrets:
   - 6c23a8c1-7a30-4a7e-b3b7-0171e898a7d3
 
 tasks:
+  - check: |
+      nix flake check
   - github_push: |
       set +xv
       cd dotfiles
