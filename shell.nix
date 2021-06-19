@@ -8,6 +8,7 @@ in
       (pkgs.writeShellScriptBin "nix-experimental" ''
         exec ${pkgs.nixUnstable}/bin/nix --experimental-features "nix-command flakes" "$@"
       '')
+      cacert
       git
     ];
     shellHook = ''
