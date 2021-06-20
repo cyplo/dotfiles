@@ -17,6 +17,8 @@
       color article            default   default
     '';
     urls = [
+      { url ="https://deninet.com/rss.xml"; }
+      { url ="https://berthub.eu/articles/index.xml"; }
       { url ="https://ciko.io/index.xml"; }
       { url ="https://blog.thea.codes/feed.xml"; }
       { url ="https://ambrevar.xyz/atom.xml"; }
