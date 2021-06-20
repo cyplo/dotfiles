@@ -33,7 +33,6 @@
     restic
     ripgrep-all
     rustup
-    terraform
     tmux
     exercism
     genpass
