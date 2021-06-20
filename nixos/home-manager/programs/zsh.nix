@@ -55,6 +55,7 @@
   programs.direnv = {
     enable = true;
     enableZshIntegration = true;
+    enableNixDirenvIntegration = true;
   };
 
   home.file.".config/starship.toml".text =''
