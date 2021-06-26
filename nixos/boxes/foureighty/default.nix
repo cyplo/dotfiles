@@ -19,6 +19,10 @@
     ../../mercurial
   ];
 
+  fileSystems."/" = {
+    options = [ "compress=zstd" ];
+  };
+
   zramSwap = {
     enable = true;
     algorithm = "zstd";
