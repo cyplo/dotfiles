@@ -46,12 +46,6 @@
       daemonNiceLevel = 19;
       gc.automatic = true;
       optimise.automatic = true;
-      nixPath = [
-        "nixpkgs=https://github.com/NixOS/nixpkgs/archive/20.09.tar.gz"
-        "nixos-config=/etc/nixos/configuration.nix"
-        "/nix/var/nix/profiles/per-user/root/channels"
-        "home-manager=https://github.com/rycee/home-manager/archive/release-20.09.tar.gz"
-      ];
       package = pkgs.nixUnstable;
       extraOptions = ''
             experimental-features = nix-command flakes
