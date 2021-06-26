@@ -50,7 +50,11 @@
       ZSH_TMUX_AUTOSTART=true;
       GOPATH="$HOME/go";
     };
-    shellAliases = { tmate = "tmux detach-client -E 'tmate;tmux'"; cat = "bat -p"; };
+    shellAliases = {
+      tmate = "tmux detach-client -E 'tmate;tmux'";
+      cat = "bat -p";
+      rg = "rga";
+    };
   };
   programs.direnv = {
     enable = true;
