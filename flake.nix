@@ -33,6 +33,13 @@
 
   {
     nixosConfigurations = {
+      bootstrap = nixpkgs-stable.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          (./. + "/nixos/boxes/bootstrap")
+        ];
+        specialArgs = { inherit inputs; };
+      };
       foureighty = mkWorkstation nixpkgs-stable "x86_64-linux" "foureighty";
       skinnyv = mkWorkstation nixpkgs-stable "x86_64-linux" "skinnyv";
       brix = mkServer nixpkgs-stable "x86_64-linux" "brix";

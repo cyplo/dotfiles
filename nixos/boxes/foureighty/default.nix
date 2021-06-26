@@ -19,14 +19,6 @@
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest_hardened;
-  boot.loader.grub = {
-    enable = true;
-    version = 2;
-    useOSProber = true;
-    memtest86.enable = true;
-    splashImage = ./boot.png;
-  };
-  time.hardwareClockInLocalTime = true;
   time.timeZone = "Europe/London";
 
   hardware.trackpoint.enable = true;

@@ -1,15 +1,6 @@
 { config, lib, pkgs, inputs, ... }:
-
 {
-  imports = [
-    inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t480
-  ];
-
   boot = {
-    kernel.sysctl = {
-      "vm.swappiness" = 95;
-    };
-
     kernelModules = [ "kvm-intel" ];
 
     initrd = {
@@ -34,15 +25,6 @@
   };
 
   swapDevices = [ ];
-
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
-  hardware.video.hidpi.enable = lib.mkDefault true;
-
-  zramSwap = {
-    enable = true;
-    algorithm = "zstd";
-    memoryPercent = 75;
-  };
 
   nix.maxJobs = 2;
   nix.buildCores = 6;
