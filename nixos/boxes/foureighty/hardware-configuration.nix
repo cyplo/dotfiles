@@ -15,12 +15,6 @@
     initrd = {
       kernelModules = [ "dm-snapshot" ];
       availableKernelModules = [ "xhci_pci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
-      luks.devices = {
-        root = {
-          device = "/dev/disk/by-uuid/a9e8a44f-15be-4844-a0a1-46892cc5e44e";
-          allowDiscards = true;
-        };
-      };
     };
 
     loader.grub = {
@@ -31,11 +25,22 @@
     loader.efi.canTouchEfiVariables = true;
   };
 
-  fileSystems."/" = { device = "/dev/disk/by-uuid/7ae9348d-604e-4196-a27b-24a7495438c3"; fsType = "ext4"; };
+  fileSystems."/" =
+    { device = "/dev/mapper/crypt";
+    fsType = "btrfs";
+  };
 
-  fileSystems."/boot" = { device = "/dev/disk/by-uuid/C4DD-2374"; fsType = "vfat"; };
+  boot.initrd.luks.devices."crypt".device = "/dev/disk/by-uuid/c2b23e5e-82c6-45dc-b07d-a8f9be03440e";
+
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/C380-BA8A";
+    fsType = "vfat";
+  };
 
   swapDevices = [ ];
+
+  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+  hardware.video.hidpi.enable = lib.mkDefault true;
 
   zramSwap = {
     enable = true;

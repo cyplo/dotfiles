@@ -7,7 +7,7 @@ Mostly focusing on setting things up on NixOS, but supporting other OSes where p
 2. change password for the default user `nixos`
 3. ssh from another, already bootstrapped, machine
 
-remote:
+remote (sata):
 
 ```bash
 sudo su -
@@ -23,19 +23,53 @@ parted /dev/sda -- mkpart primary 1GiB 100%
 cryptsetup luksFormat /dev/sda2
 ```
 
-remote:
+remote (nvme):
+```bash
+sudo su -
+# `efibootmgr -b 000x -B` if you want to remove entry number x
+yes | parted /dev/nvme0n1 -- mklabel gpt
+parted /dev/nvme0n1 -- rm 1
+parted /dev/nvme0n1 -- rm 2
+parted /dev/nvme0n1 -- rm 3
+parted /dev/nvme0n1 -- rm 4
+parted /dev/nvme0n1 -- mkpart ESP fat32 1MiB 1GiB
+parted /dev/nvme0n1 -- set 1 esp on
+parted /dev/nvme0n1 -- mkpart primary 1GiB 100%
+cryptsetup luksFormat /dev/nvme0n1p2
+
+```
+remote (sata):
 
 ```bash
 cryptsetup luksOpen /dev/sda2 crypt
 ```
 
-remote:
+remote (nvme):
+
+```bash
+cryptsetup luksOpen /dev/nvme0n1p2 crypt
+```
+
+remote (sata):
 
 ```bash
 mkfs.fat -F 32 -n boot /dev/sda1
 mkfs.btrfs -L nixos /dev/mapper/crypt
 sleep 1
 mount /dev/disk/by-label/nixos /mnt
+mkdir -p /mnt/boot
+mount /dev/disk/by-label/boot /mnt/boot
+nixos-generate-config --root /mnt
+nixos-install
+```
+
+remote (nvme):
+
+```bash
+mkfs.fat -F 32 -n boot /dev/nvme0n1p1
+mkfs.btrfs -L nixos /dev/mapper/crypt
+sleep 1
+mount /dev/mapper/crypt /mnt
 mkdir -p /mnt/boot
 mount /dev/disk/by-label/boot /mnt/boot
 nixos-generate-config --root /mnt
@@ -54,17 +88,15 @@ remote:
 ```bash
 mkdir -p /mnt/home/cyryl/dev/dotfiles/
 tar -xvf /tmp/dotfiles.tar.gz -C /mnt/home/cyryl/dev/dotfiles
-cp /mnt/etc/nixos/hardware-configuration.nix /mnt/home/cyryl/dev/dotfiles/nixos/boxes/bootstrap/
-ln -vfs /mnt/home/cyryl/dev/dotfiles/nixos/boxes/bootstrap/1.nix /mnt/etc/nixos/configuration.nix
-nixos-install
+cp /mnt/etc/nixos/hardware-configuration.nix /mnt/home/cyryl/dev/dotfiles/nixos/boxes/hostname/
+nix-shell -p nixUnstable git
+nixos-install --flake '.#hostname-bootstrap'
 reboot
 ```
 
 ctrl-alt-f1 root login:
 
 ```bash
-ln -vfs /home/cyryl/dev/dotfiles/nixos/boxes/bootstrap/2.nix /etc/nixos/configuration.nix
-vim /home/cyryl/dev/dotfiles/nixos/boxes/bootstrap/2.nix
 nixos-rebuild switch
 passwd cyryl
 chown cyryl -R /home/cyryl
