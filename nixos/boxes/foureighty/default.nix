@@ -3,6 +3,7 @@
   networking.hostName = "foureighty";
 
   imports = [
+    inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t480
     ./hardware-configuration.nix
     ../../boot.nix
     ../../common.nix
@@ -17,6 +18,12 @@
     ../../git
     ../../mercurial
   ];
+
+  zramSwap = {
+    enable = true;
+    algorithm = "zstd";
+    memoryPercent = 75;
+  };
 
   boot.kernelPackages = pkgs.linuxPackages_latest_hardened;
   time.timeZone = "Europe/London";

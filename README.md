@@ -32,6 +32,7 @@ parted /dev/nvme0n1 -- rm 1
 parted /dev/nvme0n1 -- rm 2
 parted /dev/nvme0n1 -- rm 3
 parted /dev/nvme0n1 -- rm 4
+parted /dev/nvme0n1 -- rm 5
 parted /dev/nvme0n1 -- mkpart ESP fat32 1MiB 1GiB
 parted /dev/nvme0n1 -- set 1 esp on
 parted /dev/nvme0n1 -- mkpart primary 1GiB 100%
@@ -69,7 +70,9 @@ remote (nvme):
 mkfs.fat -F 32 -n boot /dev/nvme0n1p1
 mkfs.btrfs -L nixos /dev/mapper/crypt
 sleep 1
-mount /dev/mapper/crypt /mnt
+cryptsetup luksClose crypt
+cryptsetup luksOpen /dev/nvme0n1p2 crypt
+mount /dev/disk/by-label/nixos /mnt
 mkdir -p /mnt/boot
 mount /dev/disk/by-label/boot /mnt/boot
 nixos-generate-config --root /mnt
@@ -90,14 +93,14 @@ mkdir -p /mnt/home/cyryl/dev/dotfiles/
 tar -xvf /tmp/dotfiles.tar.gz -C /mnt/home/cyryl/dev/dotfiles
 cp /mnt/etc/nixos/hardware-configuration.nix /mnt/home/cyryl/dev/dotfiles/nixos/boxes/hostname/
 nix-shell -p nixUnstable git
-nixos-install --flake '.#hostname-bootstrap'
+nixos-install --flake '.#bootstrap'
 reboot
 ```
 
 ctrl-alt-f1 root login:
 
 ```bash
-nixos-rebuild switch
+# nixos-rebuild switch
 passwd cyryl
 chown cyryl -R /home/cyryl
 reboot

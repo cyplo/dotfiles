@@ -1,15 +1,6 @@
 { config, lib, pkgs, inputs, ... }:
-
 {
-  imports = [
-    inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t480
-  ];
-
   boot = {
-    kernel.sysctl = {
-      "vm.swappiness" = 95;
-    };
-
     kernelModules = [ "kvm-intel" ];
 
     initrd = {
@@ -21,28 +12,22 @@
     loader.systemd-boot.enable = true;
   };
 
-  boot.initrd.luks.devices."crypt".device = "replaceme";
-
-  fileSystems."/" = {
-    device = "replaceme";
-    fsType = "btrfs";
-  };
+  boot.initrd.luks.devices."crypt".device = "/dev/disk/by-uuid/c2deaeaa-cb76-4d29-a603-0cf42f6e829f";
 
   fileSystems."/boot" = {
-    device = "replaceme";
+    device = "/dev/disk/by-uuid/FC06-82E6";
     fsType = "vfat";
+  };
+
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/cb12122c-f0ef-4c43-bac1-6b8410a51a54";
+    fsType = "btrfs";
   };
 
   swapDevices = [ ];
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.video.hidpi.enable = lib.mkDefault true;
-
-  zramSwap = {
-    enable = true;
-    algorithm = "zstd";
-    memoryPercent = 75;
-  };
 
   nix.maxJobs = 2;
   nix.buildCores = 6;
