@@ -26,7 +26,7 @@ in
       fi
 
       # otherwise authenticate with tailscale
-      ${tailscale}/bin/tailscale up -authkey tskey-bd6b308c9c22272a0a66c442
+      ${tailscale}/bin/tailscale up -authkey tskey-a295261979b09701fd84f2df
     '';
   };
 }
