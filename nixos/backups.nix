@@ -16,10 +16,10 @@ in
       restic.backups.home-to-b2 = {
         passwordFile = "/etc/nixos/secrets/restic-password-b2";
         paths = [ "/home" ];
-        repository = "b2:cyplo-restic-foureighty:/";
+        repository = "b2:cyplo-restic-${config.networking.hostName}:/";
         timerConfig = { OnCalendar = "hourly"; };
         extraBackupArgs = extraArgs;
-        s3CredentialsFile = "/etc/nixos/secrets/b2";
+        s3CredentialsFile = "/etc/nixos/secrets/b2-env";
       };
     };
   }
