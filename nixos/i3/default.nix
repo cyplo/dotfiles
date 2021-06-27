@@ -8,6 +8,10 @@
   security.sudo.extraRules = [
     {
       users = [ "cyryl" ];
+      commands = [ { command = "${pkgs.i3}/bin/i3-msg"; options = [ "NOPASSWD" ]; } ];
+    }
+    {
+      users = [ "cyryl" ];
       commands = [ { command = "${pkgs.intel-gpu-tools}/bin/intel_gpu_top"; options = [ "NOPASSWD" ]; } ];
     }
   ];

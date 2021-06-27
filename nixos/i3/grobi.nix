@@ -6,7 +6,7 @@
     enable = true;
     executeAfter = [
       "${pkgs.systemd}/bin/systemctl --user restart picom"
-      "${pkgs.systemd}/bin/systemctl --user restart kdeconnect-indicator kdeconnect network-manager-applet pasystray udiskie"
+      "${pkgs.i3}/bin/i3-msg restart"
     ];
     rules = [
       {
@@ -34,22 +34,6 @@
         execute_after = [
           "${pkgs.xorg.xrandr}/bin/xrandr --dpi 120"
           "${pkgs.xorg.xrandr}/bin/xrandr --output eDP1 --primary"
-        ];
-      }
-      {
-        name = "form3-docked";
-        outputs_connected = [ "eDP-1-1" "DP-1-1" ];
-        configure_single = "DP-1-1";
-        execute_after = [
-          "${pkgs.xorg.xrandr}/bin/xrandr --dpi 192"
-        ];
-      }
-      {
-        name = "form3";
-        outputs_connected = [ "eDP-1-1" ];
-        configure_single = "eDP-1-1";
-        execute_after = [
-          "${pkgs.xorg.xrandr}/bin/xrandr --dpi 256"
         ];
       }
     ];
