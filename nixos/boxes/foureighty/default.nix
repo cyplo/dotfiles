@@ -5,6 +5,7 @@
   imports = [
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t480
     ./hardware-configuration.nix
+    ./nvidia.nix
     ../../boot.nix
     ../../common.nix
     ../../gfx-intel.nix
