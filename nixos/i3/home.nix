@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 {
   imports = [
+    ./autorandr.nix
     ./i3.nix
     ./i3-status.nix
     ./dunst.nix
