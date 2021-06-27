@@ -8,7 +8,6 @@
     ./nvidia.nix
     ../../boot.nix
     ../../common.nix
-    ../../gfx-intel.nix
     ../../tailscale.nix
     ./tailscale-foureighty.nix
     ../../distributed-builds.nix
