@@ -118,7 +118,6 @@
       { url ="http://sunrider-vn.com/feed/"; }
       { url ="http://www.wrocnet.org/syndication.axd"; }
       { url ="http://www.goldsborough.me/feed.xml"; }
-      { url ="http://securitynirvana.blogspot.com/feeds/posts/default"; }
       { url ="http://blog.tilaa.nl/feeds/posts/default"; }
       { url ="http://latkin.org/blog/index.xml"; }
       { url ="https://ind.ie/blog/rss/index.xml"; }
@@ -135,7 +134,6 @@
       { url ="http://grugq.github.io/atom.xml"; }
       { url ="http://gusclass.com/blog/feed/"; }
       { url ="http://www.devttys0.com/feed/"; }
-      { url ="http://www.lighttable.com/atom.xml"; }
       { url ="https://www.ruma.io/news/feed.atom"; }
       { url ="http://runawaybrainz.blogspot.com/feeds/posts/default"; }
       { url ="http://blog.ploeh.dk/rss.xml"; }
@@ -151,10 +149,8 @@
       { url ="http://the-missing-link-of-agile.com/feed/"; }
       { url ="http://www.kroah.com/log/index.rss"; }
       { url ="http://ebldc.com/?feed=rss2"; }
-      { url ="http://barwybiedy.blogspot.com/feeds/posts/default"; }
       { url ="http://codegangsta.io/atom.xml"; }
       { url ="http://intorust.com/feed.xml"; }
-      { url ="http://feeds.feedburner.com/debugshow"; }
       { url ="http://carol-nichols.com/feed.xml"; }
       { url ="http://blogs.msdn.com/b/ericlippert/atom.aspx"; }
       { url ="http://kroah.com/log/index.rss"; }
@@ -170,7 +166,6 @@
       { url ="https://gergely.imreh.net/blog/feed/"; }
       { url ="https://freelabpl.wordpress.com/feed/"; }
       { url ="http://www.sigrok.org/blog/rss.xml"; }
-      { url ="http://www.sigrok.org/blog/blog/feed"; }
       { url ="https://thesquareplanet.com/feed.xml"; }
       { url ="http://feedpress.me/inessential"; }
       { url ="http://wheningit.tumblr.com/rss"; }
@@ -184,7 +179,6 @@
       { url ="http://panoptykon.org/rss.xml"; }
       { url ="http://blog.piston.rs/atom.xml"; }
       { url ="http://tenderlovemaking.com/atom.xml"; }
-      { url ="https://kaktuscircuits.blogspot.com/feeds/posts/default"; }
       { url ="http://www.wired.com/threatlevel/feed/"; }
       { url ="http://onethingwell.org/rss"; }
       { url ="http://serialized.net/rss.xml"; }
@@ -218,12 +212,9 @@
       { url ="http://www.analogzoo.com/feed/"; }
       { url ="http://blog.makezine.com/feed/"; }
       { url ="http://wot.lv/feeds/all.atom.xml"; }
-      { url ="http://www.tridimake.com/feeds/posts/default"; }
       { url ="http://www.bunniestudios.com/blog/?feed=rss2"; }
-      { url ="http://feeds.feedburner.com/ElixirLang?format=xml"; }
       { url ="http://lukelectro.wordpress.com/feed/"; }
       { url ="http://buffered.io/index.xml"; }
-      { url ="http://anholt.livejournal.com/data/rss"; }
       { url ="http://www.yesodweb.com/feed"; }
       { url ="http://lcamtuf.blogspot.com/feeds/posts/default"; }
       { url ="http://feeds.feedburner.com/schneier/fulltext"; }
@@ -235,7 +226,6 @@
       { url ="http://feeds.feedburner.com/GlosyWmojejGlowie"; }
       { url ="http://corenominal.org/feed/"; }
       { url ="http://fulmicoton.com/atom.xml"; }
-      { url ="http://mechanical-sympathy.blogspot.com/feeds/posts/default"; }
       { url ="http://rys.io/en/rss"; }
       { url ="https://rust-embedded.github.io/blog/rss.xml"; }
       { url ="https://pointersgonewild.com/feed/"; }
@@ -244,7 +234,6 @@
       { url ="http://blog.system76.com/rss"; }
       { url ="https://www.mailpile.is/blog/index.rss"; }
       { url ="https://blog.rustfest.eu/feed.xml"; }
-      { url ="http://theinvisiblethings.blogspot.com/feeds/posts/default"; }
       { url ="https://spideroak.com/blog/feed"; }
       { url ="http://nullr0ute.com/feed/"; }
       { url ="http://xion.io/feeds/atom.xml"; }
@@ -262,22 +251,17 @@
       { url ="http://londyn.msz.gov.pl/rss/ambasadalondynaktualnosci.xml450"; }
       { url ="http://www.thegamercat.com/feed/"; }
       { url ="http://feeds.feedburner.com/gadgetfactory/zjHC"; }
-      { url ="http://feeds.feedburner.com/Karosium"; }
       { url ="http://embedderslife.wordpress.com/feed/"; }
-      { url ="https://www.blackhat.com/BlackHatRSS.xml"; }
       { url ="http://blog.ctf365.com/feed/"; }
-      { url ="http://bristolcrypto.blogspot.com/feeds/posts/default"; }
       { url ="http://owncloud.org/news/feed/"; }
       { url ="http://jreeblog.wordpress.com/feed/"; }
       { url ="http://www.wildcircuits.com/feeds/posts/default"; }
       { url ="http://www.raspberrypi.org/feed"; }
-      { url ="http://feeds.feedburner.com/bartongeorge/nMQw"; }
       { url ="https://apollo.open-resource.org/mission:log:feed"; }
       { url ="http://bikerglen.com/blog/feed/"; }
       { url ="http://www.crypto.com/blog/rss20.xml"; }
       { url ="https://www.platymuus.com/feed.xml"; }
       { url ="http://oneweekwonder.blogspot.com/feeds/posts/default"; }
-      { url ="https://revvrysuje.blogspot.com/feeds/posts/default"; }
       { url ="https://blog.mozilla.org/thunderbird/feed/"; }
       { url ="https://blog.mozilla.org/research/feed/"; }
       { url ="http://thesignalpath.com/blogs/feed/"; }
@@ -289,7 +273,6 @@
       { url ="http://blog.computationalcomplexity.org/feeds/posts/default"; }
       { url ="https://github.com/ogham/exa/releases.atom"; }
       { url ="http://blog.humblebundle.com/rss"; }
-      { url ="http://blog.reprap.org/feeds/posts/default"; }
       { url ="https://copperhead.co/feed.xml"; }
       { url ="http://blog.xamarin.com/feed/"; }
       { url ="http://coreos.com/atom.xml"; }
@@ -297,7 +280,6 @@
       { url ="http://feeds.feedburner.com/technicalblogging"; }
       { url ="http://feeds.feedburner.com/TheBitBangTheory_en?format=xml"; }
       { url ="http://feeds.feedburner.com/TheLifeOfKenneth"; }
-      { url ="http://feeds.feedburner.com/WebServices20"; }
       { url ="http://feeds.feedburner.com/zotero/"; }
       { url ="http://corporat.blox.pl/rss2"; }
       { url ="http://feeds.feedburner.com/codinghorror/"; }
@@ -310,7 +292,6 @@
       { url ="http://edri.org/feed/"; }
       { url ="https://ruudvanasseldonk.com/feed.xml"; }
       { url ="http://www.lowrisc.org//index.xml"; }
-      { url ="http://feeds.feedburner.com/NadBrzegiemBiurkaUsiadamIPakaam"; }
       { url ="http://feeds.feedburner.com/Phoronix"; }
       { url ="http://jvns.ca/atom.xml"; }
       { url ="http://feeds.feedburner.com/37signals/beMH"; }
