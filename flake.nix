@@ -1,6 +1,6 @@
 {
   description = "NixOS configuration with flakes";
-  outputs = { self, flake-utils, home-manager, nixpkgs-nixos-unstable, nixpkgs-stable, nixos-hardware, nur, bisq, agenix, neuron } @ inputs:
+  outputs = { self, flake-utils, home-manager, nixpkgs-nixos-unstable, nixpkgs-stable, nixos-hardware, nur, agenix, neuron } @ inputs:
 
   let
     mkServer = pkgs: system: hostname:
@@ -90,13 +90,6 @@
       owner = "nix-community";
       repo = "NUR";
       ref = "master";
-    };
-
-    bisq = {
-      type = "github";
-      owner = "emmanuelrosa";
-      repo = "nixpkgs";
-      ref = "39d42b8e83726c2fec873c023d4e1d6c37f4a187";
     };
 
     agenix = {

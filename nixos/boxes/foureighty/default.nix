@@ -42,6 +42,6 @@
   programs.steam.enable = true;
 
   home-manager.users.cyryl = {...}: {
-    home.packages = [ inputs.bisq.legacyPackages."x86_64-linux".bisq-desktop ];
+    home.packages = [ inputs.nixpkgs-nixos-unstable.legacyPackages."x86_64-linux".bisq-desktop ];
   };
 }
