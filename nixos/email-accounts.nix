@@ -26,10 +26,20 @@
         create = "maildir";
       };
       folders = {
-        drafts = "drafts";
-        inbox = "inbox";
-        sent = "sent";
-        trash = "trash";
+        drafts = "Drafts";
+        inbox = "INBOX";
+        sent = "Sent";
+        trash = "Trash";
+      };
+    };
+
+    services = {
+      imapnotify.enable = true;
+
+      mbsync = {
+        enable = true;
+        frequency = "hourly";
+        postExec = "${pkgs.notmuch}/bin/notmuch new";
       };
     };
 
@@ -58,6 +68,8 @@
     home.packages = with pkgs; [
       hydroxide
     ];
+
+
 
     systemd.user.services."hydroxide" = {
       Unit.Description = "Bridge to ProtonMail";
