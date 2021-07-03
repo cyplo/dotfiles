@@ -84,7 +84,6 @@
       { url ="http://feeds.feedburner.com/kernelmag?format=xml"; }
       { url ="http://www.malwaretech.com/feeds/posts/default"; }
       { url ="https://nixos.org/blogs.xml"; }
-      { url ="http://this8bitlife.com/feed/"; }
       { url ="http://spaceismore.com/feed/"; }
       { url ="https://blog.cyplo.dev/index.xml"; }
       { url ="https://blog.kobol.io/feed.xml"; }
@@ -282,7 +281,6 @@
       { url ="http://feeds.feedburner.com/TheLifeOfKenneth"; }
       { url ="http://feeds.feedburner.com/zotero/"; }
       { url ="http://corporat.blox.pl/rss2"; }
-      { url ="http://feeds.feedburner.com/codinghorror/"; }
       { url ="https://feeds.feedburner.com/ezyang"; }
       { url ="http://www.willowgarage.com/news/feed"; }
       { url ="http://life.hackaday.com/feed/"; }
