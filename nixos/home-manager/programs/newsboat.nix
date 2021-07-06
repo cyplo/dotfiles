@@ -292,7 +292,6 @@
       { url ="http://www.lowrisc.org//index.xml"; }
       { url ="http://feeds.feedburner.com/Phoronix"; }
       { url ="http://jvns.ca/atom.xml"; }
-      { url ="http://feeds.feedburner.com/37signals/beMH"; }
       { url ="http://feeds.feedburner.com/steveklabnik/words"; }
       { url ="https://blog.torproject.org/blog/feed"; }
       { url ="http://this-week-in-rust.org/atom.xml"; }
