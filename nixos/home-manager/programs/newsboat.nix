@@ -207,7 +207,6 @@
       { url ="http://www.davidhunt.ie/feed/"; }
       { url ="https://begriffs.com/atom.xml"; }
       { url ="http://dankaminsky.com/feed/"; }
-      { url ="https://www.bios-mods.com/feed/"; }
       { url ="http://www.analogzoo.com/feed/"; }
       { url ="http://blog.makezine.com/feed/"; }
       { url ="http://wot.lv/feeds/all.atom.xml"; }
@@ -222,8 +221,6 @@
       { url ="https://nathanleclaire.com/index.xml"; }
       { url ="http://downingsbasement.com/feed/"; }
       { url ="http://www.pxdojo.net/feeds/posts/default"; }
-      { url ="http://feeds.feedburner.com/GlosyWmojejGlowie"; }
-      { url ="http://corenominal.org/feed/"; }
       { url ="http://fulmicoton.com/atom.xml"; }
       { url ="http://rys.io/en/rss"; }
       { url ="https://rust-embedded.github.io/blog/rss.xml"; }
@@ -239,7 +236,6 @@
       { url ="http://blog.mozilla.org/nfroyd/feed/"; }
       { url ="http://anniemachon.ch/feed"; }
       { url ="http://befinitiv.wordpress.com/feed/"; }
-      { url ="http://michaelfeathers.typepad.com/michael_feathers_blog/atom.xml"; }
       { url ="http://www.2600.com/rss.xml"; }
       { url ="http://www.planet-rust.com/atom.xml"; }
       { url ="http://www.elidedbranches.com/feeds/posts/default"; }
@@ -270,18 +266,15 @@
       { url ="https://www.trueos.org/feed/"; }
       { url ="http://nautil.us/rss/all"; }
       { url ="http://blog.computationalcomplexity.org/feeds/posts/default"; }
-      { url ="https://github.com/ogham/exa/releases.atom"; }
       { url ="http://blog.humblebundle.com/rss"; }
       { url ="https://copperhead.co/feed.xml"; }
       { url ="http://blog.xamarin.com/feed/"; }
       { url ="http://coreos.com/atom.xml"; }
       { url ="http://lowpowerlab.com/feed/"; }
-      { url ="http://feeds.feedburner.com/technicalblogging"; }
       { url ="http://feeds.feedburner.com/TheBitBangTheory_en?format=xml"; }
       { url ="http://feeds.feedburner.com/TheLifeOfKenneth"; }
       { url ="http://feeds.feedburner.com/zotero/"; }
       { url ="http://corporat.blox.pl/rss2"; }
-      { url ="https://feeds.feedburner.com/ezyang"; }
       { url ="http://www.willowgarage.com/news/feed"; }
       { url ="http://life.hackaday.com/feed/"; }
       { url ="https://stripe.com/blog/feed.rss"; }
