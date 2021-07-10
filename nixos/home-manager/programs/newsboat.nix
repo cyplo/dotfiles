@@ -17,6 +17,7 @@
       color article            default   default
     '';
     urls = [
+      { url ="https://michael.stapelberg.ch/feed.xml"; }
       { url ="https://blog.nelhage.com/atom.xml"; }
       { url ="https://deninet.com/rss.xml"; }
       { url ="https://berthub.eu/articles/index.xml"; }
